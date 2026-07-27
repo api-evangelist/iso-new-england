@@ -1,0 +1,413 @@
+aid: iso-new-england
+name: ISO New England
+review:
+  question: What real, public API surface does ISO New England expose, and what energy-data
+    obligation actually applies to it?
+  date: '2026-07-27'
+  reviewer: API Evangelist
+  tier: system-operator
+  homeMarket: United States
+  primaryDomain: iso-ne.com
+  verdict: >
+    ISO New England is an open market-data publisher with a credential-gated but
+    self-serve API and no consumer-data surface whatsoever. One real, documented,
+    live API was confirmed: the ISO New England Web Services API v1.1 at
+    https://webservices.iso-ne.com/api/v1.1, whose public Enunciate documentation
+    lists 477 path templates across 90 root resources and which answered HTTP 401
+    to every anonymous probe. Separately, genuinely open anonymous market data was
+    confirmed: full nodal day-ahead LMP CSV files from ISO Express and a live JSON
+    feed behind the public dashboards. No machine-readable API contract is publicly
+    downloadable - the WADL exists but is behind the same authentication - so no
+    OpenAPI was harvested and none was authored.
+mandate:
+  regime: other
+  regimeName: >
+    FERC open-access and wholesale-market transparency regime. Specifically FERC
+    Order No. 889 (Open Access Same-Time Information System and Standards of
+    Conduct), implemented through the New England OASIS node and NAESB standards,
+    together with the FERC-approved ISO New England Transmission, Markets and
+    Services Tariff and Open Access Transmission Tariff under which ISO New England
+    is authorized to operate. There is NO consumer energy data-portability mandate
+    in play.
+  status: live-implemented
+  statusEvidence: >
+    The obligation and the implementation were checked as separate facts, and the
+    two halves of the obligation resolved differently - both are recorded here
+    rather than averaged.
+
+    VERIFIED BY DIRECT ANONYMOUS PROBE (this is the implementation, not a claim):
+    the market-transparency posting is real and open. On 2026-07-27, with no
+    cookies, no account and no credentials,
+    https://www.iso-ne.com/static-transform/csv/histRpts/da-lmp/WW_DALMP_ISO_20260726.csv
+    returned HTTP 200, text/csv, 2,458,956 bytes - the complete day-ahead nodal LMP
+    set for a single operating day. The ISO Express report trees
+    (/isoexpress/web/reports/pricing/-/tree/lmps-da-hourly) returned 200 and listed
+    one such CSV per day. An anonymous POST to https://www.iso-ne.com/ws/wsclient
+    returned live JSON for /genfuelmix/current.json, /fiveminutesystemload/current.json,
+    /fiveminutelmp/current/location/4000.json and /hourlyloadforecast/current.json.
+    ISO New England's own page states plainly that "ISO Express is the ISO's portal
+    for public operations and markets data. It's open to the public."
+
+    CLAIMED BUT NOT VERIFIED BY THIS REVIEW: the Order No. 889 OASIS surface itself.
+    ISO New England's OASIS page (HTTP 200) states that participation in OASIS is
+    required for external transactions, cites FERC Order No. 889 by name, states that
+    the standards are defined by NAESB and that ISO-NE uses the vendor Open Access
+    Technology International (OATI), and links to https://www.oasis.oati.com/isne/.
+    That host resolves in DNS (174.141.249.8, 216.234.82.8) but the TLS connection
+    could not be established from the probe environment, so no HTTP status was
+    obtained. The OASIS node is therefore recorded as claimed-unverified, and the
+    live-implemented verdict rests on the ISO Express open-data evidence above, not
+    on the OASIS link.
+  notMandated: >
+    No consumer energy data mandate reaches ISO New England. Green Button (NAESB
+    ESPI) is voluntary in the United States and nothing compels its adoption; the
+    Australian Consumer Data Right and Ontario's Green Button regulation are foreign
+    regimes; there is no US federal smart-meter data-access mandate of the UK DCC
+    kind. More fundamentally, ISO New England has no retail customers to have data
+    about. Its own "What We Do" page lists under "Things We Don't Do": "Handle retail
+    electricity", "Own power grid infrastructure", "Have a stake in companies that
+    own grid infrastructure". Consumer usage and billing data in New England lives
+    with the investor-owned utilities and competitive suppliers, not with the ISO.
+    `green-button-voluntary` was considered and rejected: a text search of the site
+    search results for "green button" returned zero occurrences, and no ESPI, Green
+    Button, Download My Data or Connect My Data reference appears on any ISO-NE
+    surface probed.
+  cdrRegisterEntry: not applicable - no CDR or equivalent consumer-data register
+    exists in the United States, and none was sought or found.
+dataStandard:
+  standard: >
+    Proprietary ISO New England XML/JSON schema on the Web Services API (WADL-described,
+    Enunciate-generated); NAESB WEQ OASIS standards claimed on the FERC Order 889
+    posting surface but not verified; no Green Button/ESPI reference found.
+  detail: >
+    The Web Services API v1.1 is not built on any energy-sector data standard. It is
+    a proprietary ISO New England resource model - GenFuelMixes, FiveMinLmps,
+    HourlyRcps, FCMRAResults, NCPCs, Op4Alerts and about 200 other named types -
+    generated and documented with Enunciate and described by a WADL at
+    https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml (HTTP 401 anonymously).
+    Payloads are XML or JSON selected by extension or Accept header.
+
+    Where a standard IS named, it is on the OASIS side: ISO New England's OASIS page
+    states that "Standards for this system are defined by the North American Energy
+    Standards Board (NAESB), approved by the Federal Energy Regulatory Commission
+    (FERC) and implemented by software vendors", with OATI as the vendor. That is a
+    claim about a surface this review could not reach.
+
+    One real machine-readable contract artifact was harvested: the NEXTT external
+    transaction XML Schema at
+    https://www.iso-ne.com/static-assets/documents/2019/09/nextt-web-services.xsd
+    (HTTP 200, 12,751 bytes, targetNamespace http://www.iso-ne.com/2018/nextt, 68
+    declared elements, parses cleanly as XSD). It is saved verbatim at
+    schemas/nextt-web-services.xsd. It is an XML Schema, not an OpenAPI, and is not
+    counted as an OpenAPI harvest.
+
+    NOT FOUND anywhere on any ISO-NE surface probed: Green Button / ESPI, CDR
+    Consumer Data Standards, IEC CIM 61968/61970, IEEE 2030.5, OpenADR, OCPP, OCPI.
+dataSplit:
+  marketDataOpen: true
+  marketDataDetail: >
+    Open, and verifiably so. ISO Express (https://www.iso-ne.com/isoexpress/, HTTP
+    200) is explicitly public - real-time maps and charts, pricing reports, grid
+    reports, energy/load/demand reports, operations reports, billing and settlements
+    reports, auction reports. Historical report files download anonymously as CSV
+    from https://www.iso-ne.com/static-transform/csv/histRpts/... - the day-ahead
+    nodal LMP file for 2026-07-26 was 2.46 MB of text/csv with no account. The public
+    dashboards are fed by an undocumented but anonymous JSON proxy at
+    https://www.iso-ne.com/ws/wsclient, which returns the same resource paths as the
+    authenticated Web Services API. That proxy is recorded here as observed evidence,
+    not promoted into apis[], because ISO New England does not document it as an API
+    and no developer should be told to depend on it.
+  consumerDataApi: false
+  consumerDataDetail: >
+    Zero, and structurally so. ISO New England exposes no individual customer usage,
+    billing, consent, account or premise data through any API, and no consent flow,
+    accredited-recipient model or third-party authorization surface exists. It has no
+    retail customers - its own site lists "Handle retail electricity" under things it
+    does not do. Individual consumption data in New England sits with the
+    distribution utilities and competitive suppliers, and in the US that layer is
+    voluntary Green Button at best and commercial aggregators (Arcadia, UtilityAPI,
+    Genability) in practice.
+  theFinding: >
+    ISO New England is the wholesale-operator shape of the sector split: open on
+    market and system data, absent on consumer data - with a third state in between
+    that the sector's usual binary misses. The programmatic surface is neither open
+    nor closed; it is credential-gated behind a free, self-serve, no-approval account.
+    Anyone can get the data anonymously as bulk CSV; only an account holder can get it
+    as a REST call. The gate costs nothing but it is a real gate, and it means the
+    machine-readable path and the human path have different entry conditions.
+accessGate:
+  gate: self-serve
+  whatADeveloperMustDo: >
+    For the open data: nothing. Browse ISO Express and download CSV anonymously.
+
+    For the Web Services API: create a free ISO Express account. The sign-up at
+    https://www.iso-ne.com/signup (HTTP 200) is an ordinary self-serve web form -
+    first name, last name, phone, company name, email, re-entered email, password,
+    CAPTCHA, Continue. No market-participant status, no NEPOOL membership, no
+    contract, no data licence, no human review step is described. ISO New England's
+    access page states: "Those with ISO Express accounts are automatically granted
+    access to publicly available operational data from the ISO New England website
+    via the ISO's Representational State Transfer (REST) interface", and "To apply
+    for automated data access: Sign up for ISO Express. If you already have an ISO
+    Express account, you have access to ISO Data Feeds." The sign-up page's own
+    benefits list phrases it slightly more cautiously - "Qualify for and sign up to
+    access ISO New England data feeds direct to your own systems" - so a residual
+    qualification step cannot be ruled out from outside the account. No account was
+    created for this review, so the grant was not exercised end to end. The gate is
+    recorded as self-serve on ISO New England's own documented statement.
+
+    Separate and much heavier gates exist for the participant systems that are NOT
+    part of this open surface: OASIS/NEXTT/JESS/EIR registration for external
+    transactions, eFTR registration with risk-management policy review by the credit
+    department, FCTS registration by emailed form, and CAMS security-administrator
+    provisioning with digital certificates. None of those are needed to read market
+    data.
+  gated: true
+  gatedNote: The documented API cannot be called anonymously (HTTP 401), so gated is
+    true even though the gate is free and self-serve, and even though an equivalent
+    anonymous bulk-file surface exists alongside it.
+authModel:
+  scheme: HTTP Basic authentication over SSL
+  detail: >
+    The API documentation states it directly: "In order to utilize ISO New England's
+    RESTFul interface, your client must support HTTP Basic Authentication over SSL.
+    If you do not have credentials, you can apply for access by visiting ISO Express."
+    Confirmed by probe - https://webservices.iso-ne.com/api/v1.1,
+    /api/v1.1/fiveminutelmp/current.json and the WADL URL each returned HTTP 401 to an
+    anonymous request. No API key header, no OAuth2, no OpenID Connect, no mTLS and no
+    accreditation scheme applies to this API. Digital certificates and CAMS-issued
+    identities exist at ISO New England, but for participant applications (NEXTT,
+    eFTR, JESS, MIS), not for the public data feeds.
+  wellKnownProbe: >
+    https://www.iso-ne.com/.well-known/openid-configuration -> HTTP 404.
+    https://webservices.iso-ne.com/.well-known/openid-configuration -> HTTP 404.
+    No OIDC discovery document is served anywhere.
+probes:
+  date: '2026-07-27'
+  method: anonymous curl, no cookies, no credentials, desktop user agent
+  results:
+  - url: https://www.iso-ne.com/
+    status: 200
+    note: Corporate site (Liferay).
+  - url: https://iso-ne.com/
+    status: 0
+    note: Apex host does not resolve; www is canonical.
+  - url: https://webservices.iso-ne.com/docs/v1.1/
+    status: 200
+    note: Public Enunciate-generated technical documentation, "ISO New England Web
+      Services API v1.1". 477 unique path templates, 90 root resources extracted.
+      Names base path https://webservices.iso-ne.com/api/v1.1 and the WADL URL.
+      Footer reads "Copyright 2012 ISO New England Inc. Generated by Enunciate."
+  - url: https://webservices.iso-ne.com/docs/v1.1/index.html
+    status: 200
+    note: Same document.
+  - url: https://webservices.iso-ne.com/docs/
+    status: 403
+  - url: https://webservices.iso-ne.com/api/v1.1
+    status: 401
+    note: HTTP Basic challenge. Anonymous access refused.
+  - url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
+    status: 401
+    note: The WADL exists but is behind the same Basic auth. Not harvestable.
+  - url: https://webservices.iso-ne.com/api/v1.1/fiveminutelmp/current.json
+    status: 401
+  - url: https://webservices.iso-ne.com/api/v1.1/openapi.json
+    status: 401
+  - url: https://webservices.iso-ne.com/openapi.json
+    status: 404
+  - url: https://webservices.iso-ne.com/swagger.json
+    status: 404
+  - url: https://webservices.iso-ne.com/api-docs
+    status: 404
+  - url: https://webservices.iso-ne.com/docs/v1.1/openapi.json
+    status: 404
+  - url: https://webservices.iso-ne.com/docs/v1.1/swagger.json
+    status: 404
+  - url: https://webservices.iso-ne.com/.well-known/openid-configuration
+    status: 404
+  - url: https://www.iso-ne.com/participate/support/web-services-data
+    status: 200
+    note: Canonical prose documentation - base path, WADL, XML/JSON formats, current
+      version 1.1 deployed November 2013, full parameter tables (load zones, dispatch
+      zones, external nodes, reserve zones, capacity zones, interfaces, NCPC types,
+      fuel categories including Batteries added May 2026, bid types, ARA, commitment
+      period, market type, outage type, equipment type, company codes).
+  - url: https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
+    status: 200
+    note: 'The access rule, verbatim: "Those with ISO Express accounts are
+      automatically granted access to publicly available operational data from the
+      ISO New England website via the ISO''s Representational State Transfer (REST)
+      interface." Also documents the much heavier gates for OASIS/NEXTT/JESS/EIR,
+      eFTR, FCTS and CAMS.'
+  - url: https://www.iso-ne.com/signup
+    status: 200
+    note: Self-serve ISO Express registration form - first/last name, phone, company,
+      email, re-enter email, password, CAPTCHA. Benefits list includes "Qualify for
+      and sign up to access ISO New England data feeds direct to your own systems."
+  - url: https://www.iso-ne.com/isoexpress/
+    status: 200
+    note: Real-Time Maps and Charts. Public; optional account for customization.
+  - url: https://isoexpress.iso-ne.com/
+    status: 0
+    note: Resolves to 205.172.241.239 but no HTTP response obtained; ISO Express is
+      served from www.iso-ne.com/isoexpress.
+  - url: https://www.iso-ne.com/markets-operations/iso-express/pricing-reports
+    status: 200
+  - url: https://www.iso-ne.com/markets-operations/iso-express/real-time-maps-and-charts
+    status: 200
+  - url: https://www.iso-ne.com/isoexpress/web/reports/pricing/-/tree/lmps-da-hourly
+    status: 200
+    note: Report tree listing one CSV per operating day.
+  - url: https://www.iso-ne.com/static-transform/csv/histRpts/da-lmp/WW_DALMP_ISO_20260726.csv
+    status: 200
+    note: text/csv, 2,458,956 bytes. Full day-ahead nodal LMP set, anonymous. This is
+      the open-market-data proof.
+  - url: https://www.iso-ne.com/static-transform/csv/histRpts/rt-lmp/lmp_rt_final_20260725.csv
+    status: 200
+    note: text/csv, 31 bytes - path pattern valid, file effectively empty for that
+      date. Recorded honestly rather than presented as data.
+  - url: https://www.iso-ne.com/ws/wsclient
+    status: 200
+    note: 'POST with _nstmp_requestType=url and _nstmp_requestUrl=<resource path>
+      returns live JSON anonymously. Verified for /genfuelmix/current.json (live fuel
+      mix, Batteries 16 MW, Hydro 260 MW, Natural Gas 7,141 MW marginal),
+      /fiveminutesystemload/current.json, /fiveminutelmp/current/location/4000.json
+      and /hourlyloadforecast/current.json. UNDOCUMENTED portlet proxy behind the
+      public dashboards - real and reproducible, but not published as an API and
+      deliberately not listed in apis[]. A GET to the same URL returns 500.'
+  - url: https://www.iso-ne.com/static-assets/documents/2017/06/webservices_documentation.xlsx
+    status: 200
+    note: 55,150 bytes, XLSX. The "ISO Web Services Business Documentation
+      Spreadsheet" - report list, descriptions, web service address of each report and
+      available parameters. Linked from the web-services-data page as "updated July
+      2025" though the asset path is dated 2017/06.
+  - url: https://www.iso-ne.com/static-assets/documents/2019/09/nextt-web-services.xsd
+    status: 200
+    note: 12,751 bytes. Valid W3C XML Schema, targetNamespace
+      http://www.iso-ne.com/2018/nextt, 68 declared elements (TRANSACTIONS,
+      TRANSACTION, DA_DETAIL, RT_DETAIL, SUBMITTAL_RESPONSE...). Saved verbatim to
+      schemas/nextt-web-services.xsd.
+  - url: https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis
+    status: 200
+    note: Cites FERC Order No. 889 and NAESB, names OATI as the vendor, links to
+      https://www.oasis.oati.com/isne/.
+  - url: https://www.oasis.oati.com/isne/
+    status: 0
+    note: DNS resolves (174.141.249.8, 216.234.82.8) but the TLS connection could not
+      be established from the probe environment. NOT verified. Recorded as claimed.
+  - url: http://www.naesbwry.oati.com/
+    status: 0
+    note: DNS resolves (174.141.249.134, 216.234.87.134); no response obtained.
+  - url: https://www.iso-ne.com/about/what-we-do/
+    status: 200
+    note: 'Six-state footprint (CT, RI, MA, VT, NH, most of ME); three roles - grid
+      operation, market administration, power system planning. "Things We Don''t Do"
+      list begins "Handle retail electricity".'
+  - url: https://www.iso-ne.com/participate/support/feeds
+    status: 200
+    note: Web Feeds page; no RSS/Atom URLs exposed in the rendered markup.
+  - url: https://www.iso-ne.com/participate/support/user-guides
+    status: 200
+  - url: https://isonewswire.com/
+    status: 200
+    note: ISO Newswire, the ISO's news blog.
+  - url: https://isonewswire.com/feed/
+    status: 200
+    note: application/rss+xml, 55,491 bytes. Valid feed.
+  - url: https://www.linkedin.com/company/iso-new-england
+    status: 200
+  - url: https://x.com/isonewengland
+    status: 200
+  - url: https://www.youtube.com/@isonewengland
+    status: 200
+    note: Canonical YouTube handle taken from the site footer; /user/isonewengland
+      returns 404.
+  - url: https://askiso.iso-ne.com/s/login/SelfRegister
+    status: 200
+    note: Ask ISO self-registration for case tracking; open to non-participants.
+  - url: https://api.github.com/orgs/iso-ne
+    status: 200
+    note: GitHub organization "iso-ne", name "ISO New England", blog www.iso-ne.com,
+      0 public repositories.
+  - url: https://www.iso-ne.com/developers
+    status: 404
+  - url: https://www.iso-ne.com/api
+    status: 404
+  - url: https://www.iso-ne.com/docs
+    status: 404
+  - url: https://www.iso-ne.com/data
+    status: 404
+  - url: https://www.iso-ne.com/robots.txt
+    status: 404
+  - url: https://www.iso-ne.com/sitemap.xml
+    status: 404
+  - url: https://api.iso-ne.com/
+    status: 0
+    note: NXDOMAIN.
+  - url: https://developer.iso-ne.com/
+    status: 0
+    note: NXDOMAIN.
+  - url: https://developers.iso-ne.com/
+    status: 0
+    note: NXDOMAIN.
+  - url: https://docs.iso-ne.com/
+    status: 0
+    note: NXDOMAIN.
+  - url: https://data.iso-ne.com/
+    status: 0
+    note: NXDOMAIN.
+specHarvest:
+  harvested: false
+  specsCount: 0
+  openapiDirectoryOmitted: true
+  detail: >
+    No OpenAPI, Swagger, RAML or Postman collection is published by ISO New England.
+    The only machine-readable description of the Web Services API is a WADL, and it
+    is served from inside the authenticated base path
+    (https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml -> HTTP 401), so it
+    could not be harvested anonymously. The public documentation at
+    https://webservices.iso-ne.com/docs/v1.1/ is Enunciate-generated HTML, not a
+    downloadable contract. /openapi.json, /swagger.json, /api-docs and the docs-tree
+    equivalents all returned 404. The GitHub organization iso-ne has 0 public
+    repositories. No spec was authored from the HTML documentation, because
+    reconstructing 477 path templates from prose would be fabrication rather than
+    harvest.
+  otherArtifactsHarvested:
+  - path: schemas/nextt-web-services.xsd
+    sourceURL: https://www.iso-ne.com/static-assets/documents/2019/09/nextt-web-services.xsd
+    fetchDate: '2026-07-27'
+    httpStatus: 200
+    bytes: 12751
+    format: W3C XML Schema (XSD)
+    parsed: true
+    note: External transaction submittal schema for NEXTT. A real ISO New England
+      machine-readable contract, but an XSD and not an OpenAPI - not counted in
+      specsCount.
+sources:
+- url: https://webservices.iso-ne.com/docs/v1.1/
+  type: APIReference
+  note: ISO New England Web Services API v1.1 technical documentation - base path,
+    authentication, resource list, data types.
+- url: https://www.iso-ne.com/participate/support/web-services-data
+  type: Documentation
+  note: Web Services Data - version history, WADL location, formats, parameter tables.
+- url: https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
+  type: Documentation
+  note: Requests to Access Software and Systems - the data-feeds access rule and every
+    other ISO system gate.
+- url: https://www.iso-ne.com/signup
+  type: SignUp
+  note: Self-serve ISO Express account registration form.
+- url: https://www.iso-ne.com/isoexpress/
+  type: Portal
+  note: ISO Express - the public operations and markets data portal.
+- url: https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis
+  type: Regulation
+  note: FERC Order No. 889 OASIS obligation, NAESB standards, OATI as vendor.
+- url: https://www.iso-ne.com/about/what-we-do/
+  type: Documentation
+  note: FERC-authorized RTO for six New England states; explicitly does not handle
+    retail electricity.
+- url: https://isonewswire.com/feed/
+  type: BlogRSS
+  note: ISO Newswire RSS feed.

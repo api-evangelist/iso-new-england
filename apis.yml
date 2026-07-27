@@ -1,0 +1,123 @@
+aid: iso-new-england
+url: https://raw.githubusercontent.com/api-evangelist/iso-new-england/refs/heads/main/apis.yml
+name: ISO New England
+kind: company
+description: ISO New England Inc. is the independent, nonprofit regional transmission organization
+  authorized by the Federal Energy Regulatory Commission to operate the high-voltage power system,
+  administer the wholesale electricity markets, and plan the power system for Connecticut, Rhode
+  Island, Massachusetts, Vermont, New Hampshire, and most of Maine. Home market is the United
+  States. It sits at the wholesale layer of the value chain, between generators, transmission
+  owners, interconnections with New York and Canada, and the load-serving entities that resell
+  power to retail customers - and it states on its own site that handling retail electricity is
+  something it does not do. Its API posture is the sector's classic split, read from the wholesale
+  end. Market and system data is genuinely open, so open that the ISO Express portal serves full
+  nodal day-ahead LMP files as anonymous CSV and the public dashboards are backed by an anonymous
+  JSON feed. Consumer data does not exist here at all, and cannot, because ISO New England holds no
+  retail customer relationships and no Green Button, ESPI, or consumer data-portability mandate
+  reaches it. The one documented programmatic contract, the Web Services API v1.1, is a real,
+  richly documented RESTful surface of 477 path templates across 90 market and operations
+  resources, but it answers 401 to anonymous callers - a developer must first create a free,
+  self-serve ISO Express account, which the ISO says automatically grants access to the data feeds,
+  and then authenticate with HTTP Basic over SSL.
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Free - Self-serve ISO Express account required for the API
+  confidence: high
+  source:
+  - probe
+  - documentation
+  generated: '2026-07-27'
+  method: observed
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/groq.png
+tags:
+- Energy
+- United States
+- Electricity
+- Energy Markets
+- Grid
+- Open Data
+- Wholesale Markets
+- Demand Response
+- Renewables
+- New England
+created: '2026-07-27'
+modified: '2026-07-27'
+specificationVersion: '0.19'
+apis:
+- aid: iso-new-england:iso-ne-web-services-api
+  name: ISO New England Web Services API v1.1
+  description: ISO New England's RESTful interface to energy and market data, deployed November
+    2013 and still the current version. The public Enunciate-generated technical documentation at
+    webservices.iso-ne.com/docs/v1.1/ lists 477 unique path templates across 90 root resources -
+    five-minute and hourly locational marginal prices, day-ahead and real-time demand, generation
+    fuel mix, system load, external interchange and flows, day-ahead and real-time constraints,
+    operating reserve and reserve prices, regulation clearing prices, Forward Capacity Market
+    auction and reconfiguration results, FTR auction clearing prices and results, NCPC, outages,
+    seven-day and seven-day wind forecasts, load forecasts, power system status and conditions,
+    demand response dispatch and price-response events, locations, and hourly-bid participant
+    resources. Every feed is available in XML and JSON, selected by a .xml/.json extension on the
+    request URL or by an Accept header. A WADL description is published at
+    https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml but is itself behind authentication.
+    Authentication is HTTP Basic over SSL; anonymous requests to the base path, to any resource,
+    and to the WADL all return HTTP 401. Credentials come from a free ISO Express account, which
+    ISO New England states automatically grants access to the data feeds.
+  humanURL: https://webservices.iso-ne.com/docs/v1.1/
+  baseURL: https://webservices.iso-ne.com/api/v1.1
+  tags:
+  - Energy Markets
+  - Electricity
+  - Grid
+  - Pricing
+  - Demand
+  - Forecasting
+  properties:
+  - type: APIReference
+    url: https://webservices.iso-ne.com/docs/v1.1/
+  - type: Documentation
+    url: https://www.iso-ne.com/participate/support/web-services-data
+  - type: Documentation
+    url: https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
+  - type: Documentation
+    url: https://www.iso-ne.com/static-assets/documents/2017/06/webservices_documentation.xlsx
+  - type: SignUp
+    url: https://www.iso-ne.com/signup
+  - type: Portal
+    url: https://www.iso-ne.com/isoexpress/
+  - type: XMLSchema
+    url: schemas/nextt-web-services.xsd
+common:
+- type: Website
+  url: https://www.iso-ne.com/
+- type: Portal
+  url: https://www.iso-ne.com/isoexpress/
+- type: APIReference
+  url: https://webservices.iso-ne.com/docs/v1.1/
+- type: Documentation
+  url: https://www.iso-ne.com/participate/support/web-services-data
+- type: SignUp
+  url: https://www.iso-ne.com/signup
+- type: Documentation
+  url: https://www.iso-ne.com/markets-operations/iso-express
+- type: Regulation
+  url: https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis
+- type: Blog
+  url: https://isonewswire.com/
+- type: BlogRSS
+  url: https://isonewswire.com/feed/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/iso-new-england/
+- type: Twitter
+  url: https://twitter.com/isonewengland
+- type: YouTube
+  url: https://www.youtube.com/@isonewengland
+- type: GitHubOrganization
+  url: https://github.com/iso-ne
+- type: Support
+  url: https://askiso.iso-ne.com/s/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
