@@ -1,0 +1,441 @@
+generated: '2026-07-27'
+method: searched
+source: https://www.iso-ne.com/participate/support/web-services-data
+also_sourced_from:
+- https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+- https://www.iso-ne.com/ws/wsclient -> /locations/all.json (anonymous, 2026-07-27)
+description: Controlled vocabularies used as path parameters and enumerated values by the ISO New England
+  Web Services API v1.1. Every term below is published by ISO New England - the parameter tables on the
+  Web Services Data page ("Parameters and Formats for ISO Web Services", last updated May 2026 - Added
+  Batteries Fuel Category), the xs:simpleType enumerations in the published ns0.xsd, or the live /locations/all
+  feed. Nothing is invented; lists marked partial are the published examples, not the full registry.
+vocabularies:
+- name: Day parameter
+  format: yyyymmdd
+  example: '20140702'
+  applies_to: day path parameter
+- name: Month parameter
+  format: yyyymm
+  example: '201312'
+  applies_to: month path parameter
+- name: Year parameter
+  format: yyyy
+  example: '2013'
+  applies_to: year path parameter
+- name: Load Zone
+  format: nnnn
+  complete: true
+  terms:
+  - id: 4000
+    name: Hub
+  - id: 4001
+    name: Maine Load Zone
+  - id: 4002
+    name: New Hampshire Load Zone
+  - id: 4003
+    name: Vermont Load Zone
+  - id: 4004
+    name: Connecticut Load Zone
+  - id: 4005
+    name: Rhode Island Load Zone
+  - id: 4006
+    name: Southeastern Massachusetts Load Zone
+  - id: 4007
+    name: Western/Central Massachusetts Load Zone
+  - id: 4008
+    name: Northeastern Massachusetts Load Zone
+- name: Dispatch Zone
+  format: nnnn
+  complete: true
+  terms:
+  - id: 7500
+    name: Eastern CT
+  - id: 7501
+    name: Northern CT
+  - id: 7502
+    name: Norwalk - Stamford
+  - id: 7503
+    name: Western CT
+  - id: 7504
+    name: Bangor Hydro
+  - id: 7505
+    name: Maine
+  - id: 7506
+    name: Portland Maine
+  - id: 7507
+    name: Boston
+  - id: 7508
+    name: North Shore
+  - id: 7509
+    name: New Hampshire
+  - id: 7510
+    name: Seacoast
+  - id: 7511
+    name: Lower SEMA
+  - id: 7512
+    name: SEMA
+  - id: 7513
+    name: Northwest Vermont
+  - id: 7514
+    name: Vermont
+  - id: 7515
+    name: Central MA
+  - id: 7516
+    name: Springfield MA
+  - id: 7517
+    name: Western MA
+  - id: 7518
+    name: Rhode Island
+- name: External Node
+  format: nnnn
+  complete: true
+  terms:
+  - id: 4010
+    name: New Brunswick
+  - id: 4011
+    name: New York Northern AC
+  - id: 4012
+    name: HQ Phase II
+  - id: 4013
+    name: HQ - Highgate
+  - id: 4014
+    name: NY Cross Sound Cable
+  - id: 4017
+    name: NY Norwalk-Northport
+  - id: 4018
+    name: NECEC
+- name: Reserve Zone
+  format: nnnn
+  complete: true
+  terms:
+  - id: 7000
+    name: Rest Of System
+  - id: 7001
+    name: Southwest Connecticut
+  - id: 7002
+    name: Connecticut
+  - id: 7003
+    name: NEMA/Boston
+- name: Capacity Zone
+  format: '[n]nnnn'
+  complete: true
+  terms:
+  - id: 8500
+    name: Rest-of-Pool
+  - id: 8501
+    name: Connecticut
+  - id: 8502
+    name: NEMA-Boston
+  - id: 8503
+    name: Maine
+  - id: 8504
+    name: SEMA/Rhode Island
+- name: Interface Name
+  complete: true
+  terms:
+  - id: NY Oakdale 345KV
+    name: NY Oakdale 345KV
+  - id: NY Central-East
+    name: NY Central-East
+  - id: NY Oakdale 230KV
+    name: NY Oakdale 230KV
+  - id: NY Rochester 345KV
+    name: NY Rochester 345KV
+  - id: PJM 5004/5005
+    name: PJM 5004/5005
+  - id: PJM Central
+    name: PJM Central
+  - id: PJM East
+    name: PJM East
+  - id: PJM West
+    name: PJM West
+- name: NCPC Type
+  complete: true
+  terms:
+  - id: economic
+    name: Economic
+  - id: highvar
+    name: High VAR
+  - id: var
+    name: VAR
+  - id: gpa
+    name: GPA
+  - id: extloceconomic
+    name: External Location Economic
+  - id: lscpr
+    name: LSCPR
+  - id: rrp
+    name: Rapid Response Pricing Opportunity Cost
+  - id: dloc
+    name: Dispatch Lost Opportunity Cost
+- name: Fuel Category (Rollup)
+  complete: true
+  note: Batteries added May 2026.
+  terms:
+  - id: Batteries
+    name: Batteries
+  - id: Coal
+    name: Coal
+  - id: Hydro
+    name: Hydro
+  - id: Natural Gas
+    name: Natural Gas
+  - id: Nuclear
+    name: Nuclear
+  - id: Oil
+    name: Oil
+  - id: Renewables
+    name: Renewables
+- name: Bid Type
+  complete: true
+  terms:
+  - id: FIXED
+    name: Fixed Demand Bid
+  - id: PRICE
+    name: Price Sensitive Demand Bid
+  - id: DEC
+    name: Decrement (virtual demand) Bid
+  - id: INC
+    name: Increment (virtual supply) Offer
+- name: ARA (Annual Reconfiguration Auction)
+  complete: true
+  terms:
+  - id: ARA1
+    name: First annual reconfiguration auction (FCA 6 and following)
+  - id: ARA2
+    name: Second annual reconfiguration auction
+  - id: ARA3
+    name: Third annual reconfiguration auction
+- name: CP (Commitment Period)
+  format: nnnn-nn
+  example: 2010-11 (FCA1 commitment period)
+- name: Market Type
+  complete: true
+  terms:
+  - id: DA
+    name: Day-Ahead Market
+  - id: RT
+    name: Real-Time Market
+- name: Outage Type
+  complete: true
+  terms:
+  - id: short-term
+    name: Short-Term Outages
+  - id: long-term
+    name: Long-Term Outages
+- name: Equipment Type
+  complete: true
+  terms:
+  - id: Breaker
+    name: Breaker
+  - id: Line
+    name: Line
+  - id: PowerTransformer
+    name: Power Transformer
+- name: Company (control centre)
+  complete: true
+  terms:
+  - id: CMP_CC
+    name: Central Maine Power Control Center
+  - id: CONVEX_CC
+    name: Convex Control Center (Northeast Utilities)
+  - id: ME_CC
+    name: Maine Control Center
+  - id: NH_CC
+    name: New Hampshire Control Center
+  - id: NSTAR_CC
+    name: NSTAR Control Center
+  - id: NYISO_CC
+    name: New York ISO Control Center
+  - id: PSNH_CC
+    name: Public Service of New Hampshire Control Center
+  - id: REMVEC_CC
+    name: REMVEC Control Center (National Grid)
+  - id: VELCO_CC
+    name: Vermont Electric Power Control Center
+- name: Flags
+  complete: true
+  terms:
+  - id: Eco
+    name: Economic Flag
+  - id: Mto
+    name: Major Transmission Outage Flag
+  - id: Ovr
+    name: Overrun Flag
+- name: Status
+  complete: true
+  terms:
+  - id: Approved
+    name: Approved
+  - id: Implemented
+    name: Implemented
+  - id: Interim Approved
+    name: Interim Approved
+  - id: Negotiate
+    name: Negotiate
+  - id: Preliminary
+    name: Preliminary
+  - id: Study
+    name: Study
+  - id: Submitted
+    name: Submitted
+- name: Request Type
+  complete: true
+  terms:
+  - id: Emergency
+    name: Emergency
+  - id: Forced
+    name: Forced
+  - id: Long Term
+    name: Long Term
+  - id: Opportunity
+    name: Opportunity
+  - id: Short Term
+    name: Short Term
+- name: Station
+  complete: false
+  note: ISO New England publishes only these examples on the parameters page and points to the /outages/stations
+    endpoint for the complete listing.
+  terms:
+  - id: AGAWAM
+    name: Agawam
+  - id: CHSTRSVC
+    name: Chester Static Var Compensator
+  - id: MERIMACK
+    name: Merrimack
+  - id: NORTHFLD
+    name: Northfield
+  - id: STONY_HL
+    name: Stony Hill
+  - id: WALTHAM
+    name: Waltham
+- name: Report Type
+  complete: true
+  terms:
+  - id: final
+    name: Final data
+  - id: prelim
+    name: Preliminary data
+- name: Location Type
+  complete: true
+  source: xs:simpleType type_LocationType in ns0.xsd and the live /locations/all feed
+  terms:
+  - id: NETWORK AREA
+    name: NETWORK AREA
+    count_in_locations_feed: 0
+  - id: LOAD ZONE
+    name: LOAD ZONE
+    count_in_locations_feed: 8
+  - id: NETWORK NODE
+    name: NETWORK NODE
+    count_in_locations_feed: 1190
+  - id: HUB
+    name: HUB
+    count_in_locations_feed: 1
+  - id: HUB NODE
+    name: HUB NODE
+    count_in_locations_feed: 32
+  - id: RELIABILITY REGION
+    name: RELIABILITY REGION
+    count_in_locations_feed: 8
+  - id: EXT. NODE
+    name: EXT. NODE
+    count_in_locations_feed: 7
+  - id: RESERVE ZONE
+    name: RESERVE ZONE
+    count_in_locations_feed: 3
+  - id: SYSTEM
+    name: SYSTEM
+    count_in_locations_feed: 1
+  - id: INT. AREA
+    name: INT. AREA
+    count_in_locations_feed: 1
+  - id: EXT. AREA
+    name: EXT. AREA
+    count_in_locations_feed: 5
+  - id: DISPATCH ZONE
+    name: DISPATCH ZONE
+    count_in_locations_feed: 19
+  - id: CAPACITY ZONE
+    name: CAPACITY ZONE
+    count_in_locations_feed: 7
+  - id: DRRAZ
+    name: DRRAZ
+    count_in_locations_feed: 20
+  - id: DRR AGGREGATION ZONE
+    name: DRR AGGREGATION ZONE
+    count_in_locations_feed: 0
+location_registry:
+  source: /locations/all.json observed anonymously 2026-07-27
+  total_locations: 1302
+  by_type:
+    INT. AREA: 1
+    EXT. AREA: 5
+    NETWORK NODE: 1190
+    HUB: 1
+    LOAD ZONE: 8
+    EXT. NODE: 7
+    HUB NODE: 32
+    SYSTEM: 1
+    RESERVE ZONE: 3
+    DISPATCH ZONE: 19
+    DRRAZ: 20
+    CAPACITY ZONE: 7
+    RELIABILITY REGION: 8
+  full_data: examples/iso-new-england-locations_all.json
+  note: Some internal nodes have, by rule, opted out of publishing - ISO New England says the /locations
+    endpoint is the authority.
+  load_zones:
+  - id: 4001
+    name: .Z.MAINE
+  - id: 4002
+    name: .Z.NEWHAMPSHIRE
+  - id: 4003
+    name: .Z.VERMONT
+  - id: 4004
+    name: .Z.CONNECTICUT
+  - id: 4005
+    name: .Z.RHODEISLAND
+  - id: 4006
+    name: .Z.SEMASS
+  - id: 4007
+    name: .Z.WCMASS
+  - id: 4008
+    name: .Z.NEMASSBOST
+  capacity_zones:
+  - id: 8500
+    name: Rest-of-Pool
+  - id: 8501
+    name: Connecticut
+  - id: 8502
+    name: NEMA-Boston
+  - id: 8503
+    name: Maine
+  - id: 8504
+    name: SEMA-RI
+  - id: 8505
+    name: Northern New England
+  - id: 8506
+    name: Southeast New England
+  reserve_zones:
+  - id: 7001
+    name: SWCT
+  - id: 7002
+    name: CT
+  - id: 7003
+    name: NEMABSTN
+  external_nodes:
+  - id: 4010
+    name: .I.SALBRYNB345 1
+  - id: 4011
+    name: .I.ROSETON 345 1
+  - id: 4012
+    name: .I.HQ_P1_P2345 5
+  - id: 4013
+    name: .I.HQHIGATE120 2
+  - id: 4014
+    name: .I.SHOREHAM138 99
+  - id: 4017
+    name: .I.NRTHPORT138 5
+  - id: 4018
+    name: .I.HQMRL_RD345 1

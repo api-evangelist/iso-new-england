@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="isone_web_services">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="type_isone_web_services">
+          <xs:sequence>
+            <xs:element name="annual_maintenance_schedule" type="type_annual_maintenance_schedule" minOccurs="0"/>
+            <xs:element name="nodal_load" type="type_nodal_load" minOccurs="0"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="type_ams_week">
+    <xs:sequence>
+      <xs:element name="week_begin_date" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="supply_resource_capacity_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="demand_resource_capacity_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="external_node_capacity_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="non_commercial_capacity_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="planned_outage_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="unplanned_outage_allowance_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="generation_at_risk_due_to_gas_supply_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="net_available_capacity_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="peak_load_forecast_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="operating_reserve_requirement_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="net_required_capacity_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="operable_capacity_margin_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="opcap_analysis_season_label" type="xs:string" minOccurs="1"/>
+      <xs:element name="season_minimum_opcap_margin_flag" type="type_flag_yn" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_annual_maintenance_schedule">
+    <xs:sequence>
+      <xs:element name="report_day" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ams_week" type="type_ams_week" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_flag_yn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y"/>
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_isone_web_services"/>
+  <xs:complexType name="type_lmp">
+    <xs:sequence>
+      <xs:element name="energy_component" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="marginal_loss_component" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="congestion_component" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="locational_marginal_price" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_load_zone">
+    <xs:sequence>
+      <xs:element name="load_zone_id" type="xs:int" minOccurs="1"/>
+      <xs:element name="load_zone_name" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_market_hour">
+    <xs:sequence>
+      <xs:element name="gmt_begin_date" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="local_day" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="local_hour_end" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_monthly_load_zone_nodal_load">
+    <xs:sequence>
+      <xs:element name="load_zone" type="type_load_zone" minOccurs="1"/>
+      <xs:element name="average_load_weight_factor_pct" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="maximum_load_weight_factor_pct" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="minimum_load_weight_factor_pct" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="std_dev_load_weight_factor_pct" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_network_node">
+    <xs:sequence>
+      <xs:element name="network_node_id" type="xs:int" minOccurs="1"/>
+      <xs:element name="network_node_name" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_nodal_load">
+    <xs:sequence>
+      <xs:element name="month" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="nodal_load_statistics" type="type_nodal_load_statistics" minOccurs="0"/>
+      <xs:element name="nodal_load_weights" type="type_nodal_load_weights" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_nodal_load_statistics">
+    <xs:sequence>
+      <xs:element name="monthly_load_zone_nodal_load" type="type_monthly_load_zone_nodal_load" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_nodal_load_weight">
+    <xs:sequence>
+      <xs:element name="load_zone" type="type_load_zone" minOccurs="1"/>
+      <xs:element name="nodal_load_weight_nodes" type="type_nodal_load_weight_nodes" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_nodal_load_weight_nodes">
+    <xs:sequence>
+      <xs:element name="market_hour" type="type_market_hour" minOccurs="1"/>
+      <xs:element name="network_node" type="type_network_node" minOccurs="1"/>
+      <xs:element name="load_weight_factor_mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="lmp" type="type_lmp" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_nodal_load_weights">
+    <xs:sequence>
+      <xs:element name="nodal_load_weight" type="type_nodal_load_weight" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

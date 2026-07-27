@@ -1,0 +1,76 @@
+{
+ "ActualInterchanges": {
+  "ActualInterchange": [
+   {
+    "Sale": 70,
+    "Purchase": -2,
+    "ActInterchange": 68,
+    "BeginDate": "2026-07-27T15:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4010",
+     "$": ".I.SALBRYNB345 1"
+    }
+   },
+   {
+    "Sale": 1718.75,
+    "Purchase": -938.25,
+    "ActInterchange": 780.5,
+    "BeginDate": "2026-07-27T15:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4011",
+     "$": ".I.ROSETON 345 1"
+    }
+   },
+   {
+    "Sale": 0,
+    "Purchase": 0,
+    "ActInterchange": 0,
+    "BeginDate": "2026-07-27T15:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4012",
+     "$": ".I.HQ_P1_P2345 5"
+    }
+   },
+   {
+    "Sale": 0,
+    "Purchase": 0,
+    "ActInterchange": 0,
+    "BeginDate": "2026-07-27T15:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4013",
+     "$": ".I.HQHIGATE120 2"
+    }
+   },
+   {
+    "Sale": 300,
+    "Purchase": 0,
+    "ActInterchange": 300,
+    "BeginDate": "2026-07-27T15:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4014",
+     "$": ".I.SHOREHAM138 99"
+    }
+   },
+   {
+    "Sale": 200,
+    "Purchase": 0,
+    "ActInterchange": 200,
+    "BeginDate": "2026-07-27T15:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4017",
+     "$": ".I.NRTHPORT138 5"
+    }
+   },
+   {
+    "Sale": 0,
+    "Purchase": -1120,
+    "ActInterchange": -1120,
+    "BeginDate": "2026-07-27T15:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4018",
+     "$": ".I.HQMRL_RD345 1"
+    }
+   }
+  ]
+ }
+}

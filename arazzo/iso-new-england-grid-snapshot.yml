@@ -1,0 +1,80 @@
+arazzo: 1.0.1
+info:
+  title: ISO New England grid snapshot
+  version: 1.0.0
+  description: >-
+    Build a complete current picture of the New England power system - resolve the location
+    registry, check feed freshness, then pull system load, generation fuel mix, Hub price and the
+    hourly load forecast. Every operationId exists verbatim in the referenced OpenAPI. All calls
+    require HTTP Basic credentials from a free ISO Express account; anonymous calls return 401.
+sourceDescriptions:
+- name: isone
+  url: ../openapi/iso-new-england-web-services-openapi.yml
+  type: openapi
+workflows:
+- workflowId: grid-snapshot
+  summary: Current load, fuel mix, Hub LMP and load forecast for the New England system.
+  description: >-
+    Reads five public feeds in sequence. Step 1 resolves the location registry so ids can be checked
+    rather than assumed; step 2 uses the /info freshness endpoint so a caller can skip the pull when
+    nothing has advanced.
+  inputs:
+    type: object
+    properties:
+      locationId:
+        type: string
+        description: Pricing location id. 4000 is the Hub; 4001-4008 are the eight load zones.
+        default: '4000'
+  steps:
+  - stepId: list-locations
+    description: Resolve every published pricing/load location (1,302 entries observed 2026-07-27).
+    operationId: getLocationsAll
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      locations: $response.body#/Locations/Location
+  - stepId: check-freshness
+    description: Read ServiceInfo.LatestBeginDate for the five-minute LMP feed before pulling it.
+    operationId: getFiveminutelmpInfo
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      latestBeginDate: $response.body#/ServiceInfo/LatestBeginDate
+  - stepId: system-load
+    description: Current five-minute system load, including behind-the-meter PV estimates.
+    operationId: getFiveminutesystemloadCurrent
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      load: $response.body#/FiveMinSystemLoad
+  - stepId: fuel-mix
+    description: Current generation fuel mix in MW by fuel category, with the marginal-fuel flag.
+    operationId: getGenfuelmixCurrent
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      fuelMix: $response.body#/GenFuelMixes/GenFuelMix
+  - stepId: hub-price
+    description: Current five-minute LMP for the requested location.
+    operationId: getFiveminutelmpCurrentLocationByLocationId
+    parameters:
+    - name: locationId
+      in: path
+      value: $inputs.locationId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      lmp: $response.body#/FiveMinLmp
+  - stepId: load-forecast
+    description: Current hourly load forecast.
+    operationId: getHourlyloadforecastCurrent
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      forecast: $response.body#/HourlyLoadForecast
+  outputs:
+    latestBeginDate: $steps.check-freshness.outputs.latestBeginDate
+    load: $steps.system-load.outputs.load
+    fuelMix: $steps.fuel-mix.outputs.fuelMix
+    lmp: $steps.hub-price.outputs.lmp
+    forecast: $steps.load-forecast.outputs.forecast

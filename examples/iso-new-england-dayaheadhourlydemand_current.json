@@ -1,0 +1,86 @@
+{
+ "HourlyDaDemands": {
+  "HourlyDaDemand": [
+   {
+    "Load": 17276,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "32",
+     "$": "NEPOOL AREA"
+    }
+   },
+   {
+    "Load": -107.8,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4000",
+     "$": ".H.INTERNAL_HUB"
+    }
+   },
+   {
+    "Load": 1228.4,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4001",
+     "$": ".Z.MAINE"
+    }
+   },
+   {
+    "Load": 1726.2,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4002",
+     "$": ".Z.NEWHAMPSHIRE"
+    }
+   },
+   {
+    "Load": 680.5,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4003",
+     "$": ".Z.VERMONT"
+    }
+   },
+   {
+    "Load": 4401.1,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4004",
+     "$": ".Z.CONNECTICUT"
+    }
+   },
+   {
+    "Load": 1172,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4005",
+     "$": ".Z.RHODEISLAND"
+    }
+   },
+   {
+    "Load": 2100.9,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4006",
+     "$": ".Z.SEMASS"
+    }
+   },
+   {
+    "Load": 2304.4,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4007",
+     "$": ".Z.WCMASS"
+    }
+   },
+   {
+    "Load": 3526.2,
+    "BeginDate": "2026-07-27T17:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4008",
+     "$": ".Z.NEMASSBOST"
+    }
+   }
+  ]
+ }
+}

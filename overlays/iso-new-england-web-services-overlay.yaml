@@ -1,0 +1,91 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the ISO New England Web Services API v1.1
+  version: 1.0.0
+  x-generated: '2026-07-27'
+  x-method: generated
+  x-description: >-
+    Enhancements API Evangelist adds on top of the derived OpenAPI for the ISO New England Web
+    Services API v1.1. The base document itself is a derivation of ISO New England's published
+    Enunciate documentation and XSDs; this overlay carries only API Evangelist's additions - the
+    published parameter vocabularies as concrete allowed values, the evidence/provenance block, and
+    links to the artifacts in this repository. The base OpenAPI is never mutated.
+extends: openapi/iso-new-england-web-services-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      provider: iso-new-england
+      apis_yml: https://raw.githubusercontent.com/api-evangelist/iso-new-england/refs/heads/main/apis.yml
+      artifacts:
+        authentication: authentication/iso-new-england-authentication.yml
+        conventions: conventions/iso-new-england-conventions.yml
+        vocabulary: vocabulary/iso-new-england-vocabulary.yml
+        data_model: data-model/iso-new-england-data-model.yml
+        errors: errors/iso-new-england-problem-types.yml
+        lifecycle: lifecycle/iso-new-england-lifecycle.yml
+        changelog: changelog/iso-new-england-changelog.yml
+        conformance: conformance/iso-new-england-conformance.yml
+        examples: examples/_index.yml
+        skills: skills/_index.yml
+        mcp_candidate: mcp/iso-new-england-mcp.yml
+        agentic_access: agentic-access/iso-new-england-agentic-access.yml
+      spec_provenance: >-
+        Derived from https://webservices.iso-ne.com/docs/v1.1/ (Enunciate HTML) plus ns0.xsd and
+        ns1.xsd. ISO New England publishes no OpenAPI. Its only machine-readable interface
+        description is a WADL that is behind HTTP Basic auth.
+- target: $.info
+  update:
+    x-access:
+      pricing: free
+      onboarding: self-serve
+      anonymous: false
+      signup: https://www.iso-ne.com/signup
+      access_rule: https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
+      bulk_alternative: https://www.iso-ne.com/isoexpress/
+- target: $.components.securitySchemes.basicAuth
+  update:
+    x-credential-source: ISO Express account (free, self-serve)
+    x-verified: 'Anonymous requests returned HTTP 401 on 2026-07-27.'
+- target: $.paths['/locations/all'].get
+  update:
+    x-registry: >-
+      Authoritative registry of every pricing/load location. Observed to return 1,302 locations on
+      2026-07-27 (examples/iso-new-england-locations_all.json). Cache this and resolve locationId
+      values from it rather than hard-coding ids.
+- target: $.paths['/fiveminutelmp/current/location/{locationId}'].get.parameters[?(@.name=='locationId')]
+  update:
+    x-documented-values:
+      source: https://www.iso-ne.com/participate/support/web-services-data
+      examples:
+      - {value: '4000', meaning: Hub}
+      - {value: '4001', meaning: Maine Load Zone}
+      - {value: '4002', meaning: New Hampshire Load Zone}
+      - {value: '4003', meaning: Vermont Load Zone}
+      - {value: '4004', meaning: Connecticut Load Zone}
+      - {value: '4005', meaning: Rhode Island Load Zone}
+      - {value: '4006', meaning: Southeastern Massachusetts Load Zone}
+      - {value: '4007', meaning: Western/Central Massachusetts Load Zone}
+      - {value: '4008', meaning: Northeastern Massachusetts Load Zone}
+      full_vocabulary: vocabulary/iso-new-england-vocabulary.yml
+- target: $.paths['/genfuelmix/current/fuelCategoryRollup/{fuelCategoryRollup}'].get.parameters[?(@.name=='fuelCategoryRollup')]
+  update:
+    x-documented-values:
+      source: https://www.iso-ne.com/participate/support/web-services-data
+      enum: [Batteries, Coal, Hydro, 'Natural Gas', Nuclear, Oil, Renewables]
+      note: Batteries added May 2026 and confirmed live on 2026-07-27.
+- target: $.paths['/outages/current/outageType/{outageType}'].get.parameters[?(@.name=='outageType')]
+  update:
+    x-documented-values:
+      source: https://www.iso-ne.com/participate/support/web-services-data
+      enum: [short-term, long-term]
+- target: $.paths['/morningreport/day/{day}/reportType/{reportType}'].get.parameters[?(@.name=='reportType')]
+  update:
+    x-documented-values:
+      source: https://www.iso-ne.com/participate/support/web-services-data
+      enum: [final, prelim]
+- target: $.tags
+  update:
+    x-note: >-
+      Tags are the 91 root resources of the published API, one per Enunciate resource tree. They are
+      the provider's own resource names, lowercased exactly as they appear in the path templates.

@@ -52,7 +52,9 @@ apis:
   name: ISO New England Web Services API v1.1
   description: ISO New England's RESTful interface to energy and market data, deployed November
     2013 and still the current version. The public Enunciate-generated technical documentation at
-    webservices.iso-ne.com/docs/v1.1/ lists 477 unique path templates across 90 root resources -
+    webservices.iso-ne.com/docs/v1.1/ publishes one page per path template - 489 GET path templates
+    across 91 root resources were harvested from it on 2026-07-27, of which the overview page lists
+    477 -
     five-minute and hourly locational marginal prices, day-ahead and real-time demand, generation
     fuel mix, system load, external interchange and flows, day-ahead and real-time constraints,
     operating reserve and reserve prices, regulation clearing prices, Forward Capacity Market
@@ -64,7 +66,11 @@ apis:
     https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml but is itself behind authentication.
     Authentication is HTTP Basic over SSL; anonymous requests to the base path, to any resource,
     and to the WADL all return HTTP 401. Credentials come from a free ISO Express account, which
-    ISO New England states automatically grants access to the data feeds.
+    ISO New England states automatically grants access to the data feeds. Two W3C XML Schemas
+    describing the whole payload model are published anonymously alongside the documentation
+    (docs/v1.1/ns0.xsd, 205 complex types, and docs/v1.1/ns1.xsd) and are saved verbatim under
+    schemas/; the OpenAPI under openapi/ was derived from those documents by API Evangelist, not
+    published by ISO New England.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -87,9 +93,80 @@ apis:
     url: https://www.iso-ne.com/signup
   - type: Portal
     url: https://www.iso-ne.com/isoexpress/
+  - type: OpenAPI
+    name: ISO New England Web Services API v1.1 (derived from the published Enunciate documentation
+      and XSDs)
+    url: openapi/iso-new-england-web-services-openapi.yml
+  - type: XMLSchema
+    url: schemas/iso-new-england-web-services-ns0.xsd
+  - type: XMLSchema
+    url: schemas/iso-new-england-web-services-ns1.xsd
   - type: XMLSchema
     url: schemas/nextt-web-services.xsd
+  - type: JSONSchema
+    url: json-schema/iso-new-england-web-services-schemas.json
+  - type: Examples
+    url: examples/_index.yml
+  - type: Overlay
+    url: overlays/iso-new-england-web-services-overlay.yaml
+  - type: DataModel
+    url: data-model/iso-new-england-data-model.yml
+  - type: ErrorCatalog
+    url: errors/iso-new-england-problem-types.yml
+  - type: MCPServer
+    url: mcp/iso-new-england-mcp.yml
+  - type: WADL
+    url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 common:
+- type: AgenticAccess
+  url: agentic-access/iso-new-england-agentic-access.yml
+- type: DomainSecurity
+  url: security/iso-new-england-domain-security.yml
+- type: Authentication
+  url: authentication/iso-new-england-authentication.yml
+- type: OpenAPI
+  name: ISO New England Web Services API v1.1 (derived)
+  url: openapi/iso-new-england-web-services-openapi.yml
+- type: JSONSchema
+  url: json-schema/iso-new-england-web-services-schemas.json
+- type: Examples
+  url: examples/_index.yml
+- type: Vocabulary
+  url: vocabulary/iso-new-england-vocabulary.yml
+- type: Conventions
+  url: conventions/iso-new-england-conventions.yml
+- type: ErrorCatalog
+  url: errors/iso-new-england-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/iso-new-england-lifecycle.yml
+- type: ChangeLog
+  url: changelog/iso-new-england-changelog.yml
+- type: Conformance
+  url: conformance/iso-new-england-conformance.yml
+- type: Compliance
+  name: NERC and NPCC Compliance (mandatory reliability standards - no infosec certification is published)
+  url: https://www.iso-ne.com/participate/rules-procedures/nerc-npcc
+- type: Packages
+  url: packages/iso-new-england-packages.yml
+- type: WellKnown
+  url: well-known/iso-new-england-well-known.yml
+- type: MCPServer
+  name: Candidate MCP tool set derived from the OpenAPI (no server is published by ISO New England)
+  url: mcp/iso-new-england-mcp.yml
+- type: DataModel
+  url: data-model/iso-new-england-data-model.yml
+- type: Overlay
+  url: overlays/iso-new-england-web-services-overlay.yaml
+- type: LLMsTxt
+  url: llms/iso-new-england-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Arazzo
+  name: ISO New England grid snapshot
+  url: arazzo/iso-new-england-grid-snapshot.yml
+- type: Arazzo
+  name: ISO New England price spike diagnosis
+  url: arazzo/iso-new-england-price-spike-diagnosis.yml
 - type: Website
   url: https://www.iso-ne.com/
 - type: Portal
@@ -118,6 +195,24 @@ common:
   url: https://github.com/iso-ne
 - type: Support
   url: https://askiso.iso-ne.com/s/
+- type: DeveloperPortal
+  url: https://www.iso-ne.com/participate/support/web-services-data
+- type: GettingStarted
+  name: Requests to Access Software and Systems - the data-feeds access rule
+  url: https://www.iso-ne.com/participate/applications-status-changes/access-software-systems#data-feeds
+- type: FAQ
+  url: https://www.iso-ne.com/participate/support/faq
+- type: Glossary
+  url: https://www.iso-ne.com/participate/support/glossary-acronyms
+- type: Roadmap
+  name: Key Projects - the ISO's published forward work programme
+  url: https://www.iso-ne.com/committees/key-projects/
+- type: TermsOfService
+  name: Legal and Privacy (terms of use and website conditions)
+  url: https://www.iso-ne.com/legal-privacy
+- type: PrivacyPolicy
+  name: Legal and Privacy (cookies and website data collection)
+  url: https://www.iso-ne.com/legal-privacy
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -359,7 +359,7 @@ probes:
 specHarvest:
   harvested: false
   specsCount: 0
-  openapiDirectoryOmitted: true
+  openapiDirectoryOmitted: false
   detail: >
     No OpenAPI, Swagger, RAML or Postman collection is published by ISO New England.
     The only machine-readable description of the Web Services API is a WADL, and it
@@ -369,10 +369,61 @@ specHarvest:
     https://webservices.iso-ne.com/docs/v1.1/ is Enunciate-generated HTML, not a
     downloadable contract. /openapi.json, /swagger.json, /api-docs and the docs-tree
     equivalents all returned 404. The GitHub organization iso-ne has 0 public
-    repositories. No spec was authored from the HTML documentation, because
-    reconstructing 477 path templates from prose would be fabrication rather than
-    harvest.
+    repositories. specsCount stays 0 because ISO New England publishes no OpenAPI.
+  revision:
+    date: '2026-07-27'
+    round: enrichment
+    correction: >
+      The first pass concluded that nothing machine-readable could be taken from the
+      documentation host. That was too pessimistic on two counts, both corrected in
+      this round. (1) The Enunciate documentation publishes TWO real W3C XML Schemas
+      anonymously - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd (HTTP 200,
+      107,647 bytes, 205 complex types, 13 enumerated simple types) and
+      https://webservices.iso-ne.com/docs/v1.1/ns1.xsd (HTTP 200, 5,917 bytes). Both
+      parse cleanly and are saved verbatim under schemas/. They describe the entire
+      payload model of the API and were missed on the first pass. (2) The
+      documentation is not prose - it is machine-generated, one HTML page per path
+      template, each carrying the HTTP method, the parameter table with names,
+      descriptions and locations, the produceable content types, and the response
+      element linked to its XSD type. All 489 pages were fetched and parsed, and an
+      OpenAPI 3.1 was DERIVED from them at
+      openapi/iso-new-england-web-services-openapi.yml - 489 GET operations, 217
+      schemas converted from the XSDs, 91 tags, and 13 response examples taken from
+      real payloads observed anonymously. Every operation carries x-evidence naming
+      the exact documentation page it came from, and the info block records that the
+      document is API Evangelist-derived and NOT published by ISO New England. That
+      distinction is load-bearing - the derived spec must never be presented as an
+      ISO New England artifact.
   otherArtifactsHarvested:
+  - path: schemas/iso-new-england-web-services-ns0.xsd
+    sourceURL: https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    fetchDate: '2026-07-27'
+    httpStatus: 200
+    bytes: 107647
+    format: W3C XML Schema (XSD)
+    parsed: true
+    note: The full ISO New England Web Services payload model - 205 complex types
+      including FiveMinLmps, GenFuelMixes, FCMRAResults, ServiceInfo. Linked from the
+      published documentation and served anonymously.
+  - path: schemas/iso-new-england-web-services-ns1.xsd
+    sourceURL: https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    fetchDate: '2026-07-27'
+    httpStatus: 200
+    bytes: 5917
+    format: W3C XML Schema (XSD)
+    parsed: true
+    note: Second schema namespace - annual maintenance schedule, nodal load, AMS week
+      and forecast capacity analysis types.
+  - path: examples/
+    sourceURL: https://www.iso-ne.com/ws/wsclient
+    fetchDate: '2026-07-27'
+    httpStatus: 200
+    format: JSON
+    parsed: true
+    note: 14 real response payloads observed anonymously through the public ISO
+      Express dashboard proxy, saved with the proxy envelope removed. Evidence of
+      payload shape (XML attributes serialize as "@name", element text as "$") and the
+      source of the response examples wired into the derived OpenAPI.
   - path: schemas/nextt-web-services.xsd
     sourceURL: https://www.iso-ne.com/static-assets/documents/2019/09/nextt-web-services.xsd
     fetchDate: '2026-07-27'

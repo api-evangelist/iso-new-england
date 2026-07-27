@@ -1,0 +1,56 @@
+generated: '2026-07-27'
+method: searched
+source: https://www.iso-ne.com/participate/support/web-services-data
+description: >-
+  ISO New England publishes no dated changelog or release-notes feed for the Web Services API. What
+  it does publish are dated revision statements on the Web Services Data page and on the supporting
+  documents that page links to. Those dated statements are captured verbatim below; nothing has been
+  reconstructed or inferred, and the list is deliberately short because that is all the provider
+  publishes.
+
+scheme: uri-path
+current_version: '1.1'
+changelog_feed: null
+release_notes_url: null
+canonical_page: https://www.iso-ne.com/participate/support/web-services-data
+
+entries:
+- date: '2026-05'
+  version: '1.1'
+  type: addition
+  breaking: false
+  highlight: Batteries added as a Fuel Category (Rollup) parameter value.
+  statement: 'Parameters and Formats for ISO Web Services - Last updated: May 2026 - Added Batteries Fuel Category (Rollup)'
+  source: https://www.iso-ne.com/participate/support/web-services-data
+  affects:
+  - openapi/iso-new-england-web-services-openapi.yml#getGenfuelmixCurrentFuelCategoryRollupByFuelCategoryRollup
+  - openapi/iso-new-england-web-services-openapi.yml#getGenfuelmixDayByDayFuelCategoryRollupByFuelCategoryRollup
+  corroboration: >-
+    Confirmed live on 2026-07-27 - the /genfuelmix/current feed returned a "Batteries" FuelCategory
+    and FuelCategoryRollup row (see examples/iso-new-england-genfuelmix_current.json).
+- date: '2025-07'
+  version: '1.1'
+  type: documentation
+  breaking: false
+  highlight: ISO Web Services Business Documentation Spreadsheet updated.
+  statement: 'download the ISO Web Services Business Documentation Spreadsheet (updated July 2025)'
+  source: https://www.iso-ne.com/static-assets/documents/2017/06/webservices_documentation.xlsx
+  note: >-
+    The linked asset path is dated 2017/06 while the page describes it as updated July 2025; both
+    facts are recorded as published.
+- date: '2013-11'
+  version: '1.1'
+  type: release
+  breaking: true
+  highlight: Web Services API v1.1 deployed - the current version.
+  statement: 'Current version: 1.1 deployed November 2013.'
+  source: https://www.iso-ne.com/participate/support/web-services-data
+
+not_published:
+- dated changelog or release-notes page for the API
+- RSS/Atom feed of API changes
+- per-resource version history
+change_notification_channels:
+- https://www.iso-ne.com/participate/support/feeds
+- https://isonewswire.com/
+- https://isonewswire.com/feed/

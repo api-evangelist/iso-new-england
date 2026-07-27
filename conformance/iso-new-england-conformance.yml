@@ -1,0 +1,115 @@
+generated: '2026-07-27'
+method: derived
+source: openapi/iso-new-england-web-services-openapi.yml
+also_sourced_from:
+- https://www.iso-ne.com/participate/rules-procedures/nerc-npcc
+- https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis
+- https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+description: >-
+  Which cross-cutting API standards and which industry/regulatory regimes the ISO New England Web
+  Services API actually conforms to. API-standard rows are derived from the harvested OpenAPI and
+  XSDs; regime rows are what ISO New England itself publishes. Non-conformance is recorded as
+  plainly as conformance - most of this list is "false", which is the honest reading of a 2013-era
+  Enunciate REST interface.
+
+standards:
+- id: http-basic-rfc7617
+  conforms: true
+  evidence: 'Documented: "your client must support HTTP Basic Authentication over SSL"; anonymous probes returned 401 with a Basic challenge (2026-07-27).'
+- id: tls
+  conforms: true
+  evidence: TLSv1.3 on webservices.iso-ne.com with HSTS max-age 31536000 (security/iso-new-england-domain-security.yml).
+- id: rest
+  conforms: true
+  evidence: 489 resource-oriented GET path templates under one base path; documentation self-describes a Representational State Transfer model.
+- id: xml-schema-w3c
+  conforms: true
+  evidence: Two published W3C XML Schemas (ns0.xsd 205 complex types, ns1.xsd) that both parse; saved under schemas/.
+- id: wadl
+  conforms: true
+  gated: true
+  evidence: 'WADL published at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml but behind the same HTTP Basic auth (401 anonymously, 2026-07-27).'
+- id: openapi
+  conforms: false
+  evidence: ISO New England publishes no OpenAPI/Swagger definition. The document under openapi/ was derived by API Evangelist from the provider's published HTML documentation and XSDs.
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securityScheme; no /.well-known/oauth-authorization-server (404, 2026-07-27).
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returned 404 on both www.iso-ne.com and webservices.iso-ne.com.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json responses documented or observed; errors are bare HTTP statuses.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No Sunset/Deprecation header support or deprecation policy published (lifecycle/iso-new-england-lifecycle.yml).
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404 on www.iso-ne.com and webservices.iso-ne.com (2026-07-27).
+- id: rfc8615-well-known
+  conforms: false
+  evidence: No /.well-known document of any kind was served (well-known/iso-new-england-well-known.yml).
+- id: json-api
+  conforms: false
+  evidence: JSON is a direct XSD mapping (@attribute / $ text), not JSON:API.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface exists to describe.
+- id: mcp
+  conforms: false
+  evidence: No MCP server published; mcp/iso-new-england-mcp.yml is a derived candidate only.
+- id: green-button-espi
+  conforms: false
+  evidence: >-
+    Not applicable and not adopted. ISO New England holds no retail customer relationships - its own
+    "What We Do" page lists "Handle retail electricity" under things it does not do - and a site
+    search for "green button" returned zero results.
+- id: iec-cim-61968-61970
+  conforms: false
+  evidence: The data model is a proprietary ISO New England XSD (GenFuelMixes, FiveMinLmps, FCMRAResults ...), not IEC CIM.
+- id: ieee-2030.5
+  conforms: false
+  evidence: No IEEE 2030.5 / SEP2 reference anywhere on the probed surface.
+- id: openadr
+  conforms: false
+  evidence: Demand response is published as data feeds (/drdispatch, /drtp, /pricerespevent), not as an OpenADR interface.
+
+regimes:
+- id: ferc-order-889-oasis
+  conforms: claimed
+  authority: Federal Energy Regulatory Commission
+  evidence: >-
+    ISO New England's OASIS page (HTTP 200) cites FERC Order No. 889 by name, states that standards
+    are defined by NAESB and approved by FERC, names OATI as the vendor, and links to
+    https://www.oasis.oati.com/isne/. That OASIS host resolved in DNS but no TLS/HTTP response could
+    be obtained from the probe environment, so the OASIS node itself is unverified.
+  url: https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis
+- id: naesb-weq
+  conforms: claimed
+  evidence: Named on the OASIS page as the standards body for the OASIS surface; not verifiable anonymously.
+- id: nerc-npcc-reliability-standards
+  conforms: true
+  authority: North American Electric Reliability Corporation / Northeast Power Coordinating Council
+  evidence: >-
+    ISO New England publishes a NERC and NPCC Compliance section under Rules and Procedures
+    (HTTP 200, 2026-07-27) covering the mandatory reliability standards it operates under.
+  url: https://www.iso-ne.com/participate/rules-procedures/nerc-npcc
+- id: ferc-tariff
+  conforms: true
+  evidence: >-
+    ISO New England operates under the FERC-approved ISO New England Transmission, Markets and
+    Services Tariff and Open Access Transmission Tariff, published under Rules and Procedures.
+  url: https://www.iso-ne.com/participate/rules-procedures
+- id: us-consumer-energy-data-portability
+  conforms: not-applicable
+  evidence: No US federal consumer energy data-portability mandate reaches an RTO, and ISO New England has no retail customer data. See review.yml mandate section.
+
+certifications_published:
+  infosec: none
+  note: >-
+    No SOC 2, ISO 27001, PCI DSS, HIPAA, FedRAMP or CSA STAR certification is published, and no trust
+    centre exists (trust.iso-ne.com does not resolve; probe-security-programs found nothing). The
+    published compliance posture is regulatory - NERC/NPCC reliability standards and the FERC tariff -
+    not information-security certification. The Compliance pointer in apis.yml points at that NERC and
+    NPCC compliance page and should be read that way.

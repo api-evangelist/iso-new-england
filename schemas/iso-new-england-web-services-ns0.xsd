@@ -1,0 +1,1972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://WEBSERV.iso-ne.com" elementFormDefault="qualified" xmlns:ns0="http://WEBSERV.iso-ne.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ActualFifteenMinInterchange" type="ns0:type_ActualFifteenMinInterchange"/>
+  <xs:element name="ActualFifteenMinInterchanges" type="ns0:type_ActualFifteenMinInterchanges"/>
+  <xs:element name="ActualInterchange" type="ns0:type_ActualInterchange"/>
+  <xs:element name="ActualInterchanges" type="ns0:type_ActualInterchanges"/>
+  <xs:element name="CapacityScarcityCondition" type="ns0:type_CapacityScarcityCondition"/>
+  <xs:element name="CapacityScarcityConditions" type="ns0:type_CapacityScarcityConditions"/>
+  <xs:element name="CombinedHourlyDemand" type="ns0:type_CombinedHourlyDemand"/>
+  <xs:element name="CombinedHourlyDemands" type="ns0:type_CombinedHourlyDemands"/>
+  <xs:element name="DailyFrmThresholdPrice" type="ns0:type_DailyFrmThresholdPrice"/>
+  <xs:element name="DailyFrmThresholdPrices" type="ns0:type_DailyFrmThresholdPrices"/>
+  <xs:element name="DailyOfferThreshPrice" type="ns0:type_DailyOfferThreshPrice"/>
+  <xs:element name="DailyOfferThreshPrices" type="ns0:type_DailyOfferThreshPrices"/>
+  <xs:element name="DayAheadConstraint" type="ns0:type_DayAheadConstraint"/>
+  <xs:element name="DayAheadConstraints" type="ns0:type_DayAheadConstraints"/>
+  <xs:element name="DayAheadLmpAvgCongestion" type="ns0:type_DayAheadLmpAvgCongestion"/>
+  <xs:element name="DayAheadLmpAvgCongestions" type="ns0:type_DayAheadLmpAvgCongestions"/>
+  <xs:element name="DayAheadPrdClearing" type="ns0:type_DayAheadPrdClearing"/>
+  <xs:element name="DayAheadPrdClearings" type="ns0:type_DayAheadPrdClearings"/>
+  <xs:element name="DayAheadVirtualProxy" type="ns0:type_DayAheadVirtualProxy"/>
+  <xs:element name="DayAheadVirtualProxys" type="ns0:type_DayAheadVirtualProxys"/>
+  <xs:element name="DrDispatch" type="ns0:type_DrDispatch"/>
+  <xs:element name="DrDispatches" type="ns0:type_DrDispatches"/>
+  <xs:element name="DrtpResult" type="ns0:type_DrtpResult"/>
+  <xs:element name="DrtpResults" type="ns0:type_DrtpResults"/>
+  <xs:element name="ExternalFlow" type="ns0:type_ExternalFlow"/>
+  <xs:element name="ExternalFlows" type="ns0:type_ExternalFlows"/>
+  <xs:element name="FCMBilateralResults" type="ns0:type_FCMBilateralResults"/>
+  <xs:element name="FCMRAResults" type="ns0:type_FCMRAResults"/>
+  <xs:element name="FifteenMinBc" type="ns0:type_FifteenMinBc"/>
+  <xs:element name="FifteenMinBcs" type="ns0:type_FifteenMinBcs"/>
+  <xs:element name="FifteenMinLmp" type="ns0:type_FifteenMinLmp"/>
+  <xs:element name="FifteenMinLmps" type="ns0:type_FifteenMinLmps"/>
+  <xs:element name="FinalHourlyReservePrice" type="ns0:type_FinalHourlyReservePrice"/>
+  <xs:element name="FinalHourlyReservePrices" type="ns0:type_FinalHourlyReservePrices"/>
+  <xs:element name="FiveMinLmp" type="ns0:type_FiveMinLmp"/>
+  <xs:element name="FiveMinLmps" type="ns0:type_FiveMinLmps"/>
+  <xs:element name="FiveMinRcp" type="ns0:type_FiveMinRcp"/>
+  <xs:element name="FiveMinRcps" type="ns0:type_FiveMinRcps"/>
+  <xs:element name="FiveMinReservePrice" type="ns0:type_FiveMinReservePrice"/>
+  <xs:element name="FiveMinReservePrices" type="ns0:type_FiveMinReservePrices"/>
+  <xs:element name="FiveMinSystemLoad" type="ns0:type_FiveMinSystemLoad"/>
+  <xs:element name="FiveMinSystemLoads" type="ns0:type_FiveMinSystemLoads"/>
+  <xs:element name="ForecastCapacityAnalysisReport" type="ns0:type_ForecastCapacityAnalysisReport"/>
+    <xs:element name="ForecastCapacityAnalysisReports" type="ns0:type_ForecastCapacityAnalysisReports"/>
+  <xs:element name="FtrAuctionClearingPrice" type="ns0:type_FtrAuctionClearingPrice"/>
+  <xs:element name="FtrAuctionClearingPrices" type="ns0:type_FtrAuctionClearingPrices"/>
+  <xs:element name="FtrAuctionResult" type="ns0:type_FtrAuctionResult"/>
+  <xs:element name="FtrAuctionResults" type="ns0:type_FtrAuctionResults"/>
+  <xs:element name="GenFuelMix" type="ns0:type_GenFuelMix"/>
+  <xs:element name="GenFuelMixes" type="ns0:type_GenFuelMixes"/>
+  <xs:element name="HbDayAheadArdBids" type="ns0:type_HbDayAheadArdBids"/>
+  <xs:element name="HbDayAheadDemandBid" type="ns0:type_HbDayAheadDemandBid"/>
+  <xs:element name="HbDayAheadDemandBids" type="ns0:type_HbDayAheadDemandBids"/>
+  <xs:element name="HbDayAheadDrrBids" type="ns0:type_HbDayAheadDrrBids"/>
+  <xs:element name="HbDayAheadEnergyOffers" type="ns0:type_HbDayAheadEnergyOffers"/>
+  <xs:element name="HbDayAheadLoadResponseOffer" type="ns0:type_HbDayAheadLoadResponseOffer"/>
+  <xs:element name="HbDayAheadLoadResponseOffers" type="ns0:type_HbDayAheadLoadResponseOffers"/>
+  <xs:element name="HbFTRAuction" type="ns0:type_HbFTRAuction"/>
+  <xs:element name="HbFTRAuctions" type="ns0:type_HbFTRAuctions"/>
+  <xs:element name="HbForwardReserveAuctionOffer" type="ns0:type_HbForwardReserveAuctionOffer"/>
+  <xs:element name="HbForwardReserveAuctionOffers" type="ns0:type_HbForwardReserveAuctionOffers"/>
+  <xs:element name="HbImportExport" type="ns0:type_HbImportExport"/>
+  <xs:element name="HbImportExports" type="ns0:type_HbImportExports"/>
+  <xs:element name="HbRealTimeArdBids" type="ns0:type_HbRealTimeArdBids"/>
+  <xs:element name="HbRealTimeDrrBids" type="ns0:type_HbRealTimeDrrBids"/>
+  <xs:element name="HbRealTimeEnergyOffers" type="ns0:type_HbRealTimeEnergyOffers"/>
+  <xs:element name="HbRegulationOffer" type="ns0:type_HbRegulationOffer"/>
+  <xs:element name="HbRegulationOffers" type="ns0:type_HbRegulationOffers"/>
+  <xs:element name="Hbfcmara" type="ns0:type_Hbfcmara"/>
+  <xs:element name="Hbfcmaras" type="ns0:type_Hbfcmaras"/>
+  <xs:element name="Hbfcmmra" type="ns0:type_Hbfcmmra"/>
+  <xs:element name="Hbfcmmras" type="ns0:type_Hbfcmmras"/>
+  <xs:element name="HourlyBAInterchange" type="ns0:type_HourlyBAInterchange"/>
+  <xs:element name="HourlyBAInterchanges" type="ns0:type_HourlyBAInterchanges"/>
+  <xs:element name="HourlyDaDemand" type="ns0:type_HourlyDaDemand"/>
+  <xs:element name="HourlyDaDemands" type="ns0:type_HourlyDaDemands"/>
+  <xs:element name="HourlyDaOperatingReserve" type="ns0:type_HourlyDaOperatingReserve"/>
+  <xs:element name="HourlyDaOperatingReserves" type="ns0:type_HourlyDaOperatingReserves"/>
+  <xs:element name="HourlyLmp" type="ns0:type_HourlyLmp"/>
+  <xs:element name="HourlyLmps" type="ns0:type_HourlyLmps"/>
+  <xs:element name="HourlyLoadForecast" type="ns0:type_HourlyLoadForecast"/>
+  <xs:element name="HourlyLoadForecasts" type="ns0:type_HourlyLoadForecasts"/>
+  <xs:element name="HourlyLoadGenInterchange" type="ns0:type_HourlyLoadGenInterchange"/>
+  <xs:element name="HourlyLoadGenInterchanges" type="ns0:type_HourlyLoadGenInterchanges"/>
+  <xs:element name="HourlyPeakEnergyRent" type="ns0:type_HourlyPeakEnergyRent"/>
+  <xs:element name="HourlyPeakEnergyRents" type="ns0:type_HourlyPeakEnergyRents"/>
+  <xs:element name="HourlyRcp" type="ns0:type_HourlyRcp"/>
+  <xs:element name="HourlyRcps" type="ns0:type_HourlyRcps"/>
+  <xs:element name="HourlyRtDemand" type="ns0:type_HourlyRtDemand"/>
+  <xs:element name="HourlyRtDemands" type="ns0:type_HourlyRtDemands"/>
+  <xs:element name="HourlyRtOperatingReserve" type="ns0:type_HourlyRtOperatingReserve"/>
+  <xs:element name="HourlyRtOperatingReserves" type="ns0:type_HourlyRtOperatingReserves"/>
+  <xs:element name="HourlySystemLoad" type="ns0:type_HourlySystemLoad"/>
+  <xs:element name="HourlySystemLoads" type="ns0:type_HourlySystemLoads"/>
+  <xs:element name="LmpIndex" type="ns0:type_LmpIndex"/>
+  <xs:element name="LmpIndexes" type="ns0:type_LmpIndexes"/>
+  <xs:element name="LoadZoneNCPC" type="ns0:type_LoadZoneNCPC"/>
+  <xs:element name="LoadZoneNCPCs" type="ns0:type_LoadZoneNCPCs"/>
+  <xs:element name="Location" type="ns0:type_Location"/>
+  <xs:element name="LocationRef" type="ns0:type_LocationRef"/>
+  <xs:element name="Locations" type="ns0:type_Locations"/>
+  <xs:element name="MonthlyLmpIndex" type="ns0:type_MonthlyLmpIndex"/>
+  <xs:element name="MonthlyLmpIndexes" type="ns0:type_MonthlyLmpIndexes"/>
+  <xs:element name="MonthlyNetworkLoad" type="ns0:type_MonthlyNetworkLoad"/>
+  <xs:element name="MonthlyNetworkLoads" type="ns0:type_MonthlyNetworkLoads"/>
+  <xs:element name="MonthlyPeakEnergyRent" type="ns0:type_MonthlyPeakEnergyRent"/>
+  <xs:element name="MonthlyPeakEnergyRents" type="ns0:type_MonthlyPeakEnergyRents"/>
+  <xs:element name="MorningReport" type="ns0:type_MorningReport"/>
+  <xs:element name="MorningReports" type="ns0:type_MorningReports"/>
+  <xs:element name="NCPC" type="ns0:type_NCPC"/>
+  <xs:element name="NCPCMonthlyAsset" type="ns0:type_NCPCMonthlyAsset"/>
+  <xs:element name="NCPCMonthlyAssets" type="ns0:type_NCPCMonthlyAssets"/>
+  <xs:element name="NCPCs" type="ns0:type_NCPCs"/>
+  <xs:element name="NextDayOperationalCapacityReport" type="ns0:type_NextDayOperationalCapacityReport"/>
+  <xs:element name="Op4Alert" type="ns0:type_Op4Alert"/>
+  <xs:element name="Op4Alerts" type="ns0:type_Op4Alerts"/>
+  <xs:element name="Outage" type="ns0:type_Outage"/>
+  <xs:element name="Outages" type="ns0:type_Outages"/>
+  <xs:element name="PerformanceScore" type="ns0:type_PerformanceScore"/>
+  <xs:element name="PerformanceScores" type="ns0:type_PerformanceScores"/>
+  <xs:element name="PowerSystemCondition" type="ns0:type_PowerSystemCondition"/>
+  <xs:element name="PowerSystemConditions" type="ns0:type_PowerSystemConditions"/>
+  <xs:element name="PowerSystemRegion" type="ns0:type_PowerSystemRegion"/>
+  <xs:element name="PowerSystemRegions" type="ns0:type_PowerSystemRegions"/>
+  <xs:element name="PowerSystemStatus" type="ns0:type_PowerSystemStatus"/>
+  <xs:element name="PrelimHourlyReservePrice" type="ns0:type_PrelimHourlyReservePrice"/>
+  <xs:element name="PrelimHourlyReservePrices" type="ns0:type_PrelimHourlyReservePrices"/>
+  <xs:element name="PriceRespEvent" type="ns0:type_PriceRespEvent"/>
+  <xs:element name="PriceRespEvents" type="ns0:type_PriceRespEvents"/>
+  <xs:element name="RealTimeConstraint" type="ns0:type_RealTimeConstraint"/>
+  <xs:element name="RealTimeConstraints" type="ns0:type_RealTimeConstraints"/>
+  <xs:element name="ReliabilityRegionLoadForecast" type="ns0:type_ReliabilityRegionLoadForecast"/>
+  <xs:element name="ReliabilityRegionLoadForecasts" type="ns0:type_ReliabilityRegionLoadForecasts"/>
+  <xs:element name="Schedule2VarStatus" type="ns0:type_Schedule2VarStatus"/>
+  <xs:element name="Schedules2VarStatus" type="ns0:type_Schedules2VarStatus"/>
+  <xs:element name="SeasonalPeakHourData" type="ns0:type_SeasonalPeakHourData"/>
+  <xs:element name="SeasonalPeakHoursData" type="ns0:type_SeasonalPeakHoursData"/>
+  <xs:element name="ServiceInfo" type="ns0:type_ServiceInfo"/>
+  <xs:element name="SevenDayForecast" type="ns0:type_SevenDayForecast"/>
+  <xs:element name="SevenDayForecasts" type="ns0:type_SevenDayForecasts"/>
+  <xs:element name="SevenDayWindForecast" type="ns0:type_SevenDayWindForecast"/>
+  <xs:element name="SevenDayWindForecasts" type="ns0:type_SevenDayWindForecasts"/>
+  <xs:element name="SingleSrcContingencyLimit" type="ns0:type_SingleSrcContingencyLimit"/>
+  <xs:element name="SingleSrcContingencyLimits" type="ns0:type_SingleSrcContingencyLimits"/>
+  <xs:element name="Station" type="ns0:type_Station"/>
+  <xs:element name="Stations" type="ns0:type_Stations"/>
+  <xs:element name="SupplyCurvePair" type="ns0:type_SupplyCurvePair"/>
+  <xs:element name="SupplyCurvePairs" type="ns0:type_SupplyCurvePairs"/>
+  <xs:element name="Ttc" type="ns0:type_Ttc"/>
+  <xs:element name="Ttcs" type="ns0:type_Ttcs"/>
+  <xs:element name="WeeklyLmpIndex" type="ns0:type_WeeklyLmpIndex"/>
+  <xs:element name="WeeklyLmpIndexes" type="ns0:type_WeeklyLmpIndexes"/>
+  <xs:element name="WhlseCost" type="ns0:type_WhlseCost"/>
+  <xs:element name="WhlseCosts" type="ns0:type_WhlseCosts"/>
+  <xs:element name="Years" type="ns0:type_Years"/>
+  <xs:complexType name="type_ActualFifteenMinInterchange">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="ActInterchange" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Purchase" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Sale" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ActualFifteenMinInterchanges">
+    <xs:sequence>
+      <xs:element name="ActualFifteenMinInterchange" type="ns0:type_ActualFifteenMinInterchange" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ActualInterchange">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="ActInterchange" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Purchase" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Sale" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ActualInterchanges">
+    <xs:sequence>
+      <xs:element name="ActualInterchange" type="ns0:type_ActualInterchange" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_CapacityScarcityCondition">
+    <xs:sequence>
+      <xs:element name="TradingIntervalBegin" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="LocationId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="LocationName" type="xs:string" minOccurs="0"/>
+      <xs:element name="SystemCondition" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_CapacityScarcityConditions">
+    <xs:sequence>
+      <xs:element name="CapacityScarcityCondition" type="ns0:type_CapacityScarcityCondition" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_CombinedHourlyDemand">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="DaLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtLoad" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_CombinedHourlyDemands">
+    <xs:sequence>
+      <xs:element name="CombinedHourlyDemand" type="ns0:type_CombinedHourlyDemand" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DailyFrmThresholdPrice">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ForwardReservedHeatRate" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="FuelIndex" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ForwardReserveThresholdPrice" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DailyFrmThresholdPrices">
+    <xs:sequence>
+      <xs:element name="DailyFrmThresholdPrice" type="ns0:type_DailyFrmThresholdPrice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DailyOfferThreshPrice">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="OfferThreshPrice" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DailyOfferThreshPrices">
+    <xs:sequence>
+      <xs:element name="DailyOfferThreshPrice" type="ns0:type_DailyOfferThreshPrice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadConstraint">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Constraint"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadConstraints">
+    <xs:sequence>
+      <xs:element name="DayAheadConstraint" type="ns0:type_DayAheadConstraint" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadLmpAvgCongestion">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="AvgOnPeakDaCongestion" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="AvgOffPeakDaCongestion" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadLmpAvgCongestions">
+    <xs:sequence>
+      <xs:element name="DayAheadLmpAvgCongestion" type="ns0:type_DayAheadLmpAvgCongestion" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadPrdClearing">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="DaClearedMw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadPrdClearings">
+    <xs:sequence>
+      <xs:element name="DayAheadPrdClearing" type="ns0:type_DayAheadPrdClearing" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadVirtualProxy">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="OnPeakIncProxy" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="OnPeakDecProxy" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="OffPeakIncProxy" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="OffPeakDecProxy" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ZonalLMPDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DayAheadVirtualProxys">
+    <xs:sequence>
+      <xs:element name="DayAheadVirtualProxy" type="ns0:type_DayAheadVirtualProxy" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DrDispatch">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="EffectiveDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="DispatchMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DrDispatches">
+    <xs:sequence>
+      <xs:element name="DrDispatch" type="ns0:type_DrDispatch" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DrtpResult">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="CaseId" type="xs:integer" minOccurs="1"/>
+      <xs:element name="HistoricalThresholdPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DemandReductionThresholdPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegressionCoefficientA" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="RegressionCoefficientB" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="RegressionCoefficientC" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="Rsquare" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TradingMonth" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ReferenceMonth" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="FuelIndexTradingMonth" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="FuelIndexReferenceMonth" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="PricePointLowerThreshold" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="PricePointUpperThreshold" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="AdjustedOfferCapacity" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_DrtpResults">
+    <xs:sequence>
+      <xs:element name="DrtpResult" type="ns0:type_DrtpResult" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ExternalFlow">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="ActualFlow" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ImportLimit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ExportLimit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="CurrentSchedule" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Purchase" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Sale" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotalExports" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotalImports" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ExternalFlows">
+    <xs:sequence>
+      <xs:element name="ExternalFlow" type="ns0:type_ExternalFlow" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FCMBilateralResults">
+    <xs:sequence>
+      <xs:element name="FCMBilateralResult" type="ns0:type_FCMBilateralResult" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FCMRAResults">
+    <xs:sequence>
+      <xs:element name="FCMRAResult" type="ns0:type_FCMRAResult" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FifteenMinBc">
+    <xs:sequence>
+      <xs:element name="Type" type="ns0:type_BCType" minOccurs="0"/>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ConstraintName" type="xs:string" minOccurs="1"/>
+      <xs:element name="MarginalValueInterval" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="MarginalValue" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="HourEnd" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FifteenMinBcs">
+    <xs:sequence>
+      <xs:element name="FifteenMinBc" type="ns0:type_FifteenMinBc" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FifteenMinLmp">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Lmp"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_FifteenMinLmps">
+    <xs:sequence>
+      <xs:element name="FifteenMinLmp" type="ns0:type_Lmp" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FinalHourlyReservePrice">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_ReservePrice"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_FinalHourlyReservePrices">
+    <xs:sequence>
+      <xs:element name="FinalHourlyReservePrice" type="ns0:type_FinalHourlyReservePrice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinLmp">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Lmp"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinLmps">
+    <xs:sequence>
+      <xs:element name="FiveMinLmp" type="ns0:type_Lmp" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinRcp">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Rcp"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinRcps">
+    <xs:sequence>
+      <xs:element name="FiveMinRcp" type="ns0:type_FiveMinRcp" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinReservePrice">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_ReservePrice"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinReservePrices">
+    <xs:sequence>
+      <xs:element name="FiveMinReservePrice" type="ns0:type_FiveMinReservePrice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinSystemLoad">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="LoadMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NativeLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ArdDemand" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SystemLoadBtmPv" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NativeLoadBtmPv" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FiveMinSystemLoads">
+    <xs:sequence>
+      <xs:element name="FiveMinSystemLoad" type="ns0:type_FiveMinSystemLoad" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_forecast_capacity_analysis_report">
+		<xs:sequence>
+			<xs:element name="report_day" type="type_day"/>
+			<xs:element name="report_type">
+				<xs:simpleType>
+					<xs:restriction base="type_report_type">
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="report_version_date" type="type_date"/>
+			<xs:element name="forecast_capacity_analysis_hours" type="ns0:type_forecast_capacity_analysis_hours" maxOccurs="25"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="type_forecast_capacity_analysis_hours">
+		<xs:sequence>
+			<xs:element name="market_hour" type="type_market_hour"/>
+			<xs:element name="available_capacity_mw" type="type_mw"/>
+			<xs:element name="load_forecast_mw" type="type_mw"/>
+			<xs:element name="reserve_requirement_mw" type="type_mw"/>
+			<xs:element name="capacity_requirement_mw" type="type_mw"/>
+			<xs:element name="surplus_capacity_mw" type="type_mw"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="type_market_hour">
+		<xs:sequence>
+			<xs:element name="gmt_begin_date" type="type_date"/>
+			<xs:element name="local_day" type="type_day"/>
+			<xs:element name="local_hour_end" type="type_local_hour_end"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:simpleType name="type_report_type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+			<xs:enumeration value="SCRA_A"/>
+			<xs:enumeration value="SCRA_B"/>
+			<xs:enumeration value="SCRA_07"/>
+			<xs:enumeration value="SCRA_11"/>
+			<xs:enumeration value="SCRA_20"/>
+		</xs:restriction>
+	</xs:simpleType>
+  <xs:complexType name="type_forecast_capacity_analysis_reports">
+		<xs:sequence>
+			<xs:element name="forecast_capacity_analysis_report" type="ns0:type_forecast_capacity_analysis_report" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="type_FtrAuctionClearingPrice">
+    <xs:sequence>
+      <xs:element name="AuctionName" type="xs:string" minOccurs="0"/>
+      <xs:element name="ClassType" type="xs:string" minOccurs="0"/>
+      <xs:element name="LocationID" type="xs:integer" minOccurs="1"/>
+      <xs:element name="LocationName" type="xs:string" minOccurs="1"/>
+      <xs:element name="LocationType" type="ns0:type_LocationType" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="ClearingPrice" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FtrAuctionClearingPrices">
+    <xs:sequence>
+      <xs:element name="FtrAuctionClearingPrice" type="ns0:type_FtrAuctionClearingPrice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FtrAuctionResult">
+    <xs:sequence>
+      <xs:element name="AuctionName" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustomerId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="CustomerName" type="xs:string" minOccurs="0"/>
+      <xs:element name="SourceLocation" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="SourceLocationType" type="ns0:type_LocationType" minOccurs="0"/>
+      <xs:element name="SinkLocation" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="SinkLocationType" type="ns0:type_LocationType" minOccurs="0"/>
+      <xs:element name="BuySell" type="xs:string" minOccurs="0"/>
+      <xs:element name="ClassType" type="xs:string" minOccurs="0"/>
+      <xs:element name="AwardFTRMW" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="AwardFTRPrice" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FtrAuctionResults">
+    <xs:sequence>
+      <xs:element name="FtrAuctionResult" type="ns0:type_FtrAuctionResult" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_GenFuelMix">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="GenMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="FuelCategoryRollup" type="xs:string" minOccurs="1"/>
+      <xs:element name="FuelCategory" type="xs:string" minOccurs="0"/>
+      <xs:element name="MarginalFlag" type="ns0:type_FlagYn" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_GenFuelMixes">
+    <xs:sequence>
+      <xs:element name="GenFuelMix" type="ns0:type_GenFuelMix" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDayAheadArdBids">
+    <xs:sequence>
+      <xs:element name="HbDayAheadArdBid" type="ns0:type_HbArdBid" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDayAheadDemandBid">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="MaskedParticipantId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaskedLocationId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="LocationType" type="ns0:type_LocationType" minOccurs="0"/>
+      <xs:element name="BidType" type="xs:string" minOccurs="0"/>
+      <xs:element name="BidId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="Segments" type="ns0:type_Segments" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDayAheadDemandBids">
+    <xs:sequence>
+      <xs:element name="HbDayAheadDemandBid" type="ns0:type_HbDayAheadDemandBid" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDayAheadDrrBids">
+    <xs:sequence>
+      <xs:element name="HbDayAheadDrrBid" type="ns0:type_HbDrrBid" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDayAheadEnergyOffers">
+    <xs:sequence>
+      <xs:element name="HbDayAheadEnergyOffer" type="ns0:type_HbEnergyOffer" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDayAheadLoadResponseOffer">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="MaskedCustomerId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaskedAssetId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="OfferMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="OfferPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="CurtailmentPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MinInterruptHours" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDayAheadLoadResponseOffers">
+    <xs:sequence>
+      <xs:element name="HbDayAheadLoadResponseOffer" type="ns0:type_HbDayAheadLoadResponseOffer" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbFTRAuction">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="SourceLocation" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="SourceLocationType" type="ns0:type_LocationType" minOccurs="0"/>
+      <xs:element name="SinkLocation" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="SinkLocationType" type="ns0:type_LocationType" minOccurs="0"/>
+      <xs:element name="BuySell" type="xs:string" minOccurs="0"/>
+      <xs:element name="ClassType" type="xs:string" minOccurs="0"/>
+      <xs:element name="BidMW" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="BidPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="BidStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="AuctionName" type="xs:string" minOccurs="0"/>
+      <xs:element name="MaskedCustomerId" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbFTRAuctions">
+    <xs:sequence>
+      <xs:element name="HbFTRAuction" type="ns0:type_HbFTRAuction" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbForwardReserveAuctionOffer">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="MaskedCustomerId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="ReserveZone" type="ns0:type_ReserveLocRef" minOccurs="0"/>
+      <xs:element name="ProductType" type="xs:string" minOccurs="0"/>
+      <xs:element name="Segments" type="ns0:type_Segments" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbForwardReserveAuctionOffers">
+    <xs:sequence>
+      <xs:element name="HbForwardReserveAuctionOffer" type="ns0:type_HbForwardReserveAuctionOffer" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbImportExport">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="MarketType" type="xs:string" minOccurs="0"/>
+      <xs:element name="MaskedCustomerId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaskedSourceId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaskedSinkId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="EmergencyFlag" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="Direction" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransactionType" type="xs:string" minOccurs="0"/>
+      <xs:element name="Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Mw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbImportExports">
+    <xs:sequence>
+      <xs:element name="HbImportExport" type="ns0:type_HbImportExport" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbRealTimeArdBids">
+    <xs:sequence>
+      <xs:element name="HbRealTimeArdBid" type="ns0:type_HbArdBid" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbRealTimeDrrBids">
+    <xs:sequence>
+      <xs:element name="HbRealTimeDrrBid" type="ns0:type_HbDrrBid" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbRealTimeEnergyOffers">
+    <xs:sequence>
+      <xs:element name="HbRealTimeEnergyOffer" type="ns0:type_HbEnergyOffer" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbRegulationOffer">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="MaskedParticipantId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaskedAssetId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="RegulationCapability" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegulationOfferPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SelfScheduledRegulation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegulationLowLimit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegulationHighLimit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegulationStatus" type="ns0:type_RegStatus" minOccurs="0"/>
+      <xs:element name="AutomaticResponseRate" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegulationServiceOfferPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegulationCapacityOfferPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="IntertemporalOpportunityCost" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbRegulationOffers">
+    <xs:sequence>
+      <xs:element name="HbRegulationOffer" type="ns0:type_HbRegulationOffer" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Hbfcmara">
+    <xs:sequence>
+      <xs:element name="Cp" type="xs:string" minOccurs="1"/>
+      <xs:element name="AucType" type="xs:string" minOccurs="0"/>
+      <xs:element name="MaskResID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MaskLPID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MaskCZID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ResType" type="xs:string" minOccurs="0"/>
+      <xs:element name="MaskIntfcID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="BidType" type="xs:string" minOccurs="0"/>
+      <xs:element name="Seg1Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg1Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg2Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg2Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg3Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg3Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg4Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg4Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg5Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg5Price" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Hbfcmaras">
+    <xs:sequence>
+      <xs:element name="Hbfcmara" type="ns0:type_Hbfcmara" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Hbfcmmra">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="AucType" type="xs:string" minOccurs="0"/>
+      <xs:element name="MaskResID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MaskLPID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MaskCZID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ResType" type="xs:string" minOccurs="0"/>
+      <xs:element name="MaskIntfcID" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="BidType" type="xs:string" minOccurs="0"/>
+      <xs:element name="Seg1Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg1Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg2Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg2Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg3Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg3Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg4Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg4Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg5Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Seg5Price" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Hbfcmmras">
+    <xs:sequence>
+      <xs:element name="Hbfcmmra" type="ns0:type_Hbfcmmra" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyBAInterchange">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="InterfaceFlow" type="ns0:type_InterfaceFlow" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyBAInterchanges">
+    <xs:sequence>
+      <xs:element name="HourlyBAInterchange" type="ns0:type_HourlyBAInterchange" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyDaDemand">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Demand"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyDaDemands">
+    <xs:sequence>
+      <xs:element name="HourlyDaDemand" type="ns0:type_HourlyDaDemand" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyDaOperatingReserve">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_OperatingReserve"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyDaOperatingReserves">
+    <xs:sequence>
+      <xs:element name="HourlyDaOperatingReserve" type="ns0:type_HourlyDaOperatingReserve" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyLmp">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Lmp"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyLmps">
+    <xs:sequence>
+      <xs:element name="HourlyLmp" type="ns0:type_HourlyLmp" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyLoadForecast">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="CreationDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="LoadMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="LoadAdjustmentMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NetLoadMw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyLoadForecasts">
+    <xs:sequence>
+      <xs:element name="HourlyLoadForecast" type="ns0:type_HourlyLoadForecast" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyLoadGenInterchange">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Load" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NativeLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ArdDemand" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotalGeneration" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotalInterchange" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyLoadGenInterchanges">
+    <xs:sequence>
+      <xs:element name="HourlyLoadGenInterchange" type="ns0:type_HourlyLoadGenInterchange" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyPeakEnergyRent">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="Location" type="ns0:type_CapacityRef" minOccurs="0"/>
+      <xs:element name="RTLMPLocation" type="xs:string" minOccurs="0"/>
+      <xs:element name="RTLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="PERFuelType" type="xs:string" minOccurs="0"/>
+      <xs:element name="StrikePrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SystemLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ScaleFactor" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="HourlyPER" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyPeakEnergyRents">
+    <xs:sequence>
+      <xs:element name="HourlyPeakEnergyRent" type="ns0:type_HourlyPeakEnergyRent" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyRcp">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Rcp"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyRcps">
+    <xs:sequence>
+      <xs:element name="HourlyRcp" type="ns0:type_HourlyRcp" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyRtDemand">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Demand"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyRtDemands">
+    <xs:sequence>
+      <xs:element name="HourlyRtDemand" type="ns0:type_HourlyRtDemand" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyRtOperatingReserve">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_OperatingReserve"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_HourlyRtOperatingReserves">
+    <xs:sequence>
+      <xs:element name="HourlyRtOperatingReserve" type="ns0:type_HourlyRtOperatingReserve" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlySystemLoad">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="Load" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NativeLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ArdDemand" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HourlySystemLoads">
+    <xs:sequence>
+      <xs:element name="HourlySystemLoad" type="ns0:type_HourlySystemLoad" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_LmpIndex">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="OnPeak" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="OffPeak" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="Average" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_LmpIndexes">
+    <xs:sequence>
+      <xs:element name="LmpIndex" type="ns0:type_LmpIndex" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_LoadZoneNCPC">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="DaEconomicCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaHighVoltageCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaLowVoltageCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaLscprCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaScrCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtEconomicCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtHighVoltageCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtLowVoltageCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtPerfAuditCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtLscprCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtRrpocCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtDlocCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtScrCredit" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_LoadZoneNCPCs">
+    <xs:sequence>
+      <xs:element name="LoadZoneNCPC" type="ns0:type_LoadZoneNCPC" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Location">
+    <xs:sequence>
+      <xs:element name="LocationID" type="xs:integer" minOccurs="1"/>
+      <xs:element name="LocationType" type="ns0:type_LocationType" minOccurs="1"/>
+      <xs:element name="LocationName" type="xs:string" minOccurs="1"/>
+      <xs:element name="NetworkNodeType" type="ns0:type_NetworkPnodeType" minOccurs="1"/>
+      <xs:element name="AreaType" type="ns0:type_AreaType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_LocationRef">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="LocId" use="required" type="xs:integer"/>
+        <xs:attribute name="LocType" type="ns0:type_LocationType"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="type_Locations">
+    <xs:sequence>
+      <xs:element name="Location" type="ns0:type_Location" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyLmpIndex">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="DaOnPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaOffPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaAverageLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtOnPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtOffPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtAverageLMP" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyLmpIndexes">
+    <xs:sequence>
+      <xs:element name="MonthlyLmpIndex" type="ns0:type_MonthlyLmpIndex" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyNetworkLoad">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="NetworkLoadId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="NetworkLoadName" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustomerId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="CustomerName" type="xs:string" minOccurs="0"/>
+      <xs:element name="DunsNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="DunsName" type="xs:string" minOccurs="0"/>
+      <xs:element name="ReliabilityRegionId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="ReliabilityRegionName" type="xs:string" minOccurs="0"/>
+      <xs:element name="LocalNetwork" type="xs:string" minOccurs="0"/>
+      <xs:element name="NetworkLoadValueMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="PoolNetworkLoadValueMw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyNetworkLoads">
+    <xs:sequence>
+      <xs:element name="MonthlyNetworkLoad" type="ns0:type_MonthlyNetworkLoad" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyPeakEnergyRent">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="Location" type="ns0:type_CapacityRef" minOccurs="0"/>
+      <xs:element name="MonthlyPER" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyPeakEnergyRents">
+    <xs:sequence>
+      <xs:element name="MonthlyPeakEnergyRent" type="ns0:type_MonthlyPeakEnergyRent" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MorningReport">
+    <xs:sequence>
+      <xs:element name="ReportType" type="xs:string" minOccurs="1"/>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="CreationDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="PeakLoadYesterdayHour" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="PeakLoadYesterdayMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="CsoMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="CapAdditionsMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="GenOutagesReductionMW" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="GenPlannedOutagesReductionMW" type="xs:decimal" minOccurs="1" />
+      <xs:element name="GenForcedOutagesReductionMW" type="xs:decimal" minOccurs="1" />
+      <xs:element name="UncommittedGenBeforePeakMw" type="xs:decimal" minOccurs="1" />
+      <xs:element name="NonMrktSensComnts" type="xs:string" minOccurs="0"/>
+      <xs:element name="UncommittedAvailGenMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DRRCapacityMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="UncommitedAvailDRRMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NetCapDeliveryMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TieDelivery" type="ns0:type_TieDelivery" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="TotAvailCapMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="PeakLoadTodayHour" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="PeakLoadTodayMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TotalOperReserveReqMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="CapRequiredMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="SurplusDeficiencyMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ReplReserveRequiredMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ExcessCommitMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="LargestFirstContMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="AmsPeakLoadExpMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NyIsoSarAvail" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="TenMinReserveReqMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TenMinReserveEstMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ThirtyMinReserveReqMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ThirtyMinReserveEstMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ExpActOp4Mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="AddlCapAvailOp4ActMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="InterchangeDetail" type="ns0:type_InterchangeDetail" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="CityForecastDetail" type="ns0:type_CityForecastDetail" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="NonCommUnitsCapMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="UnitCommMinOrrCount" type="xs:long" minOccurs="1"/>
+      <xs:element name="UnitCommMinOrrMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="GeoMagDistForecast" type="xs:string" minOccurs="0"/>
+      <xs:element name="GeoMagDistAlert" type="xs:string" minOccurs="0"/>
+      <xs:element name="GeoMagDistIntensity" type="xs:string" minOccurs="0"/>
+      <xs:element name="GeoMagDistObsActivity" type="xs:string" minOccurs="0"/>
+      <xs:element name="GeoMagDistIsoAction" type="xs:string" minOccurs="0"/>
+      <xs:element name="GeoMagDistOthCntrAction" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MorningReports">
+    <xs:sequence>
+      <xs:element name="MorningReport" type="ns0:type_MorningReport" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_NCPC">
+    <xs:sequence>
+      <xs:element name="NCPCType" type="ns0:type_NCPCType" minOccurs="0"/>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="CreditType" type="xs:string" minOccurs="0"/>
+      <xs:element name="DaNcpcCharge" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtNcpcCharge" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NcpcCharge" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ExternalNodeCharge" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RelRegnNetworkLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="VarNetworkLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="GpaRtlo" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtNcpcDeviations" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaNcpcLoadObligation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtNcpcLoadObligation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaNcpcChargeRate" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtNcpcChargeRate" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NcpcChargeRate" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ExternalNodeChargeRate" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaGenObligation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaLoadObligation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtRrpLoadObligation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtDlocLoadObligation" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_NCPCMonthlyAsset">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="AssetId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="AssetName" type="xs:string" minOccurs="0"/>
+      <xs:element name="AssetType" type="xs:string" minOccurs="0"/>
+      <xs:element name="DaNcpcCredit" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtNcpcCredit" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_NCPCMonthlyAssets">
+    <xs:sequence>
+      <xs:element name="NCPCMonthlyAsset" type="ns0:type_NCPCMonthlyAsset" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_NCPCs">
+    <xs:sequence>
+      <xs:element name="NCPC" type="ns0:type_NCPC" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_next_day_opcap_report">
+    <xs:sequence>
+      <xs:element name="begin_date" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="creation_date" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="cso_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="capacity_additions_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="generation_planned_outage_and_reduction_mw" type="xs:decimal"/>
+      <xs:element name="generation_forced_outage_and_reduction_mw" type="xs:decimal"/>
+      <xs:element name="generation_outage_and_reduction_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="uncommitted_available_generation_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="drr_capacity_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="uncommitted_available_drr_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="capacity_net_delivery_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="tie_delivery" type="type_tie_delivery" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="total_available_capacity_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="peak_load_today_hour" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="peak_load_today_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="total_operating_reserve_requirement_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="capacity_required_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="surplus_or_deficiency_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="replacement_reserve_requirement_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="excess_commitment_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="largest_first_contingency_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ams_peak_load_exposure_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ten_min_reserve_requirement_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ten_minute_reserve_estimate_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="thirty_minute_reserve_requirement_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="thirty_minute_reserve_estimate_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="expected_op4_actions" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="additional_capacity_available_op4_action_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="interchange_detail" type="type_interchange_detail" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="city_forecast_detail" type="type_city_forecast_detail" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="non_market_sensitive_comments" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="units_for_minimum_orr_count" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:maxInclusive value="9999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="units_for_minimum_orr_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_tie_delivery">
+    <xs:sequence>
+      <xs:element name="interface_name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="tie_flow_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_interchange_detail">
+    <xs:sequence>
+      <xs:element name="interface_name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="import_limit_in_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="export_limit_out_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="scheduled_mw" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_city_forecast_detail">
+    <xs:sequence>
+      <xs:element name="city_name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="high_temperature" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="weather_conditions" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="wind_direction_speed" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Op4Alert">
+    <xs:sequence>
+      <xs:element name="AlertId" type="xs:integer" minOccurs="1"/>
+      <xs:element name="Status" type="ns0:type_AlertStatus" minOccurs="1"/>
+      <xs:element name="Action" type="ns0:type_AlertAction" minOccurs="1"/>
+      <xs:element name="ActionDescription" type="xs:string" minOccurs="1"/>
+      <xs:element name="DateInEffect" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="TimeIn" type="xs:string" minOccurs="1"/>
+      <xs:element name="TimeOut" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Op4Alerts">
+    <xs:sequence>
+      <xs:element name="Op4Alert" type="ns0:type_Op4Alert" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Outage">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="AppNumber" type="xs:integer" minOccurs="1"/>
+      <xs:element name="Company1" type="xs:string" minOccurs="1"/>
+      <xs:element name="Company2" type="xs:string" minOccurs="0"/>
+      <xs:element name="ToStation" type="xs:string" minOccurs="0"/>
+      <xs:element name="FromStation" type="xs:string" minOccurs="0"/>
+      <xs:element name="NonLineStation" type="xs:string" minOccurs="0"/>
+      <xs:element name="EquipType" type="xs:string" minOccurs="0"/>
+      <xs:element name="EquipDesc" type="xs:string" minOccurs="0"/>
+      <xs:element name="Volt" type="xs:integer" minOccurs="0"/>
+      <xs:element name="PlnStart" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="PlnEnd" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ActStart" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ActEnd" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="Status" type="xs:string" minOccurs="0"/>
+      <xs:element name="ReqType" type="xs:string" minOccurs="0"/>
+      <xs:element name="EcoFlag" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="MtoFlag" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="OvrFlag" type="ns0:type_FlagYn" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Outages">
+    <xs:sequence>
+      <xs:element name="Outage" type="ns0:type_Outage" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PerformanceScore">
+    <xs:sequence>
+      <xs:element name="Type" type="ns0:type_BCType" minOccurs="0"/>
+      <xs:element name="TradingDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="HourEnd" type="xs:string" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="CapacityScarcityConditionType" type="xs:string" minOccurs="0"/>
+      <xs:element name="ActualCapacityProvided" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RealTimeReserveDesignation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Load" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ReserveRequirement" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="CapacitySupplyObligation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="BalancingRatio" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TradingInterval" type="xs:dateTime" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PerformanceScores">
+    <xs:sequence>
+      <xs:element name="PerformanceScore" type="ns0:type_PerformanceScore" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PowerSystemCondition">
+    <xs:sequence>
+      <xs:element name="ReportedArea" type="xs:string" minOccurs="0"/>
+      <xs:element name="SystemCondition" type="xs:string" minOccurs="0"/>
+      <xs:element name="TimeIn" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="TimeOut" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ActionDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="Reason" type="xs:string" minOccurs="0"/>
+      <xs:element name="SortOrder" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PowerSystemConditions">
+    <xs:sequence>
+      <xs:element name="PowerSystemCondition" type="ns0:type_PowerSystemCondition" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PowerSystemRegion">
+    <xs:sequence>
+      <xs:element name="RegionId" type="xs:integer" minOccurs="1"/>
+      <xs:element name="RegionName" type="xs:string" minOccurs="1"/>
+      <xs:element name="Status" type="ns0:type_RegionStatus" minOccurs="1"/>
+      <xs:element name="StatusDescription" type="xs:string" minOccurs="1"/>
+      <xs:element name="DateUpdated" type="xs:dateTime" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PowerSystemRegions">
+    <xs:sequence>
+      <xs:element name="PowerSystemRegion" type="ns0:type_PowerSystemRegion" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PowerSystemStatus">
+    <xs:sequence>
+      <xs:element name="Op4Alerts" type="ns0:type_Op4Alerts" minOccurs="0"/>
+      <xs:element name="PowerSystemRegions" type="ns0:type_PowerSystemRegions" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PrelimHourlyReservePrice">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_ReservePrice"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_PrelimHourlyReservePrices">
+    <xs:sequence>
+      <xs:element name="PrelimHourlyReservePrice" type="ns0:type_PrelimHourlyReservePrice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PriceRespEvent">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Program" type="xs:string" minOccurs="0"/>
+      <xs:element name="EventId" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="RegionId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="StartTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="RestoreTime" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_PriceRespEvents">
+    <xs:sequence>
+      <xs:element name="PriceRespEvent" type="ns0:type_PriceRespEvent" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_RealTimeConstraint">
+    <xs:complexContent>
+      <xs:extension base="ns0:type_Constraint"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="type_RealTimeConstraints">
+    <xs:sequence>
+      <xs:element name="RealTimeConstraint" type="ns0:type_RealTimeConstraint" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ReliabilityRegionLoadForecast">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="CreationDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ReliabilityRegion" type="xs:string" minOccurs="0"/>
+      <xs:element name="LoadMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ReliabilityRegionLoadPercentage" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ReliabilityRegionLoadForecasts">
+    <xs:sequence>
+      <xs:element name="ReliabilityRegionLoadForecast" type="ns0:type_ReliabilityRegionLoadForecast" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Schedule2VarStatus">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ReportDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="AssetId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="AssetName" type="xs:string" minOccurs="0"/>
+      <xs:element name="AssetType" type="xs:string" minOccurs="0"/>
+      <xs:element name="LeadStatusEffDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="LeadTestDueDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="LeadProgStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="LagStatusEffDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="LagTestDueDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="LagProgStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="LagTestMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="LagQualVarCap" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="LeadQualVarCap" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotQualVarCap" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Schedules2VarStatus">
+    <xs:sequence>
+      <xs:element name="Schedule2VarStatus" type="ns0:type_Schedule2VarStatus" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SeasonalPeakHourData">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="HourlyPeakLoad" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SystemPeakForecast" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SettlementStatus" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SeasonalPeakHoursData">
+    <xs:sequence>
+      <xs:element name="SeasonalPeakHourData" type="ns0:type_SeasonalPeakHourData" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ServiceInfo">
+    <xs:sequence>
+      <xs:element name="LatestBeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="CreationDate" type="xs:dateTime" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SevenDayForecast">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="MarketDay" type="ns0:type_MarketDay" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="CreationDate" type="xs:dateTime" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SevenDayForecasts">
+    <xs:sequence>
+      <xs:element name="SevenDayForecast" type="ns0:type_SevenDayForecast" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SevenDayWindForecast">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="MarketDays" type="ns0:type_MarketDays" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="CreationDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SevenDayWindForecasts">
+    <xs:sequence>
+      <xs:element name="SevenDayWindForecast" type="ns0:type_SevenDayWindForecast" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SingleSrcContingencyLimit">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="RtFlowMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="LowestLimitMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DistributionFactor" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="InterfaceName" type="xs:string" minOccurs="0"/>
+      <xs:element name="ActMarginMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="AuthorizedMarginMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="BaseLimitMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SingleSrcContingencyMw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SingleSrcContingencyLimits">
+    <xs:sequence>
+      <xs:element name="SingleSrcContingencyLimit" type="ns0:type_SingleSrcContingencyLimit" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Station">
+    <xs:sequence>
+      <xs:element name="StationName" type="xs:string" minOccurs="1"/>
+      <xs:element name="StationType" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Stations">
+    <xs:sequence>
+      <xs:element name="Station" type="ns0:type_Station" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SupplyCurvePair">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="CumulativeSupplyMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="OfferPrice" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TradingMonth" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ReferenceMonth" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SupplyCurvePairs">
+    <xs:sequence>
+      <xs:element name="SupplyCurvePair" type="ns0:type_SupplyCurvePair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Ttc">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="TtcLocations" type="ns0:type_TtcLocations" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Ttcs">
+    <xs:sequence>
+      <xs:element name="Ttc" type="ns0:type_Ttc" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_AlertAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Action 1"/>
+      <xs:enumeration value="Action 2"/>
+      <xs:enumeration value="Action 3"/>
+      <xs:enumeration value="Action 4"/>
+      <xs:enumeration value="Action 5"/>
+      <xs:enumeration value="Action 6"/>
+      <xs:enumeration value="Action 7"/>
+      <xs:enumeration value="Action 8"/>
+      <xs:enumeration value="Action 9"/>
+      <xs:enumeration value="Action 10"/>
+      <xs:enumeration value="Action 11"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="type_AlertStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Caution"/>
+      <xs:enumeration value="Watch"/>
+      <xs:enumeration value="Warning"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="type_AreaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INTERNAL"/>
+      <xs:enumeration value="EXTERNAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_Auction">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:long" minOccurs="0"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="ApprovalDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="AuctionBeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="Type" type="xs:string" minOccurs="0"/>
+      <xs:element name="CommitmentPeriod" type="ns0:type_Period" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_BCType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PRELIM"/>
+      <xs:enumeration value="FINAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_BilatClearedCapacityZone">
+    <xs:sequence>
+      <xs:element name="CapacityZoneID" type="xs:integer" minOccurs="1"/>
+      <xs:element name="CapacityZoneType" type="xs:string" minOccurs="0"/>
+      <xs:element name="CapacityZoneName" type="xs:string" minOccurs="1"/>
+      <xs:element name="TransferringApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="AcquiringApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NetCapacityApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ClearedExternalInterfaces" type="ns0:type_BilatClearedInterfaces" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_BilatClearedCapacityZones">
+    <xs:sequence>
+      <xs:element name="ClearedCapacityZone" type="ns0:type_BilatClearedCapacityZone" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_BilatClearedInterface">
+    <xs:sequence>
+      <xs:element name="ExternalInterfaceId" type="xs:integer" minOccurs="1"/>
+      <xs:element name="ExternalInterfaceName" type="xs:string" minOccurs="1"/>
+      <xs:element name="TransferringApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="AcquiringApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NetCapacityApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ClearedInterfaces" type="ns0:type_BilatClearedInterfaces" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_BilatClearedInterfaces">
+    <xs:sequence>
+      <xs:element name="ClearedExternalInterface" type="ns0:type_BilatClearedInterface" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_BilatSystemResult">
+    <xs:sequence>
+      <xs:element name="TransferringApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="AcquiringApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NetCapacityApproved" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ClearedExternalInterfaces" type="ns0:type_BilatClearedInterfaces" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_CapacityRef">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="CapacityZoneId" use="required" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="type_CityForecastDetail">
+    <xs:sequence>
+      <xs:element name="CityName" type="xs:string" minOccurs="1"/>
+      <xs:element name="HighTemperature" type="xs:long" minOccurs="1"/>
+      <xs:element name="WeatherConditions" type="xs:string" minOccurs="1"/>
+      <xs:element name="WindDirSpeed" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_CityWeather">
+    <xs:sequence>
+      <xs:element name="CityName" type="xs:string" minOccurs="1"/>
+      <xs:element name="HighTempF" type="xs:long" minOccurs="1"/>
+      <xs:element name="DewPointF" type="xs:long" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ClearedCapacityZone">
+    <xs:sequence>
+      <xs:element name="CapacityZoneID" type="xs:integer" minOccurs="1"/>
+      <xs:element name="CapacityZoneType" type="xs:string" minOccurs="0"/>
+      <xs:element name="CapacityZoneName" type="xs:string" minOccurs="1"/>
+      <xs:element name="SupplySubmitted" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DemandSubmitted" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="SupplyCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DemandCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NetCapacityCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ISOSupplySubmitted" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ISOSupplyCleared" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ISODemandSubmitted" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ISODemandCleared" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ClearingPrice" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ClearedExternalInterfaces" type="ns0:type_ClearedInterfaces" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ClearedCapacityZones">
+    <xs:sequence>
+      <xs:element name="ClearedCapacityZone" type="ns0:type_ClearedCapacityZone" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ClearedInterface">
+    <xs:sequence>
+      <xs:element name="ExternalInterfaceId" type="xs:integer" minOccurs="1"/>
+      <xs:element name="ExternalInterfaceName" type="xs:string" minOccurs="1"/>
+      <xs:element name="SupplySubmitted" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DemandSubmitted" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="SupplyCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DemandCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NetCapacityCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ISOSupplySubmitted" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ISOSupplyCleared" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ClearingPrice" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ClearedInterfaces">
+    <xs:sequence>
+      <xs:element name="ClearedExternalInterface" type="ns0:type_ClearedInterface" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Constraint">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ConstraintName" type="xs:string" minOccurs="1"/>
+      <xs:element name="ContingencyName" type="xs:string" minOccurs="0"/>
+      <xs:element name="InterfaceFlag" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="MarginalValue" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Demand">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="Load" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FCMBilateralResult">
+    <xs:sequence>
+      <xs:element name="Auction" type="ns0:type_Auction" minOccurs="1"/>
+      <xs:element name="MonthlyResults" type="ns0:type_MonthlyResults" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_FCMRAResult">
+    <xs:sequence>
+      <xs:element name="Auction" type="ns0:type_Auction" minOccurs="1"/>
+      <xs:element name="ClearedCapacityZones" type="ns0:type_ClearedCapacityZones" minOccurs="1"/>
+      <xs:element name="SystemResults" type="ns0:type_SystemResults" minOccurs="1"/>
+      <xs:element name="ISOAuctionParticipation" type="ns0:type_ISOParticipation" minOccurs="1"/>
+      <xs:element name="SystemDemandCurveResults" type="ns0:type_SystemDemandCurveResults" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_FlagYn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y"/>
+      <xs:enumeration value="N"/>
+      <xs:enumeration value="-"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_HbArdBid">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="MaskedParticipantId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaskedAssetId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="Claim10Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Claim30Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MinimumConsumption" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MaximumConsumption" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Segments" type="ns0:type_Segments" minOccurs="0"/>
+      <xs:element name="UnitStatus" type="ns0:type_UnitStatus" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbDrrBid">
+    <xs:sequence>
+      <xs:element name="Day" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="HourEnd" type="xs:string" minOccurs="1"/>
+      <xs:element name="MaskedParticipantId" type="xs:integer" minOccurs="1"/>
+      <xs:element name="MaskedAssetId" type="xs:integer" minOccurs="1"/>
+      <xs:element name="MaxDailyEnergy" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MinimumReduction" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="MaximumReduction" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="InterruptionCost" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="Segments" type="ns0:type_Segments2" minOccurs="1"/>
+      <xs:element name="Claim10Mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="Claim30Mw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="UnitStatus" type="ns0:type_UnitStatus2" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_HbEnergyOffer">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="MaskedParticipantId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaskedAssetId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MustTakeEnergy" type="xs:integer" minOccurs="0"/>
+      <xs:element name="MaxDailyEnergy" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="EconomicMax" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="EconomicMin" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ColdStartPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="IntermediateStartPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="HotStartPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NoLoadPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Segments" type="ns0:type_Segments" minOccurs="0"/>
+      <xs:element name="Claim10Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Claim30Mw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="UnitStatus" type="ns0:type_UnitStatus" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_ISOParticipation">
+    <xs:sequence>
+      <xs:element name="ISOSupplySubmitted" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ISODemandSubmitted" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ISOSupplyCleared" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ISODemandCleared" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_InterchangeDetail">
+    <xs:sequence>
+      <xs:element name="TieName" type="xs:string" minOccurs="1"/>
+      <xs:element name="ImportLimitInMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ExportLimitOutMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ScheduledMw" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_InterfaceFlow">
+    <xs:sequence>
+      <xs:element name="BalancingAuthority" type="xs:string" minOccurs="1"/>
+      <xs:element name="ActInterchange" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Lmp">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="LmpTotal" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="EnergyComponent" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="CongestionComponent" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="LossComponent" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_LocationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NETWORK AREA"/>
+      <xs:enumeration value="LOAD ZONE"/>
+      <xs:enumeration value="NETWORK NODE"/>
+      <xs:enumeration value="HUB"/>
+      <xs:enumeration value="HUB NODE"/>
+      <xs:enumeration value="RELIABILITY REGION"/>
+      <xs:enumeration value="EXT. NODE"/>
+      <xs:enumeration value="RESERVE ZONE"/>
+      <xs:enumeration value="SYSTEM"/>
+      <xs:enumeration value="INT. AREA"/>
+      <xs:enumeration value="EXT. AREA"/>
+      <xs:enumeration value="DISPATCH ZONE"/>
+      <xs:enumeration value="CAPACITY ZONE"/>
+      <xs:enumeration value="DRRAZ"/>
+      <xs:enumeration value="DRR AGGREGATION ZONE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_MarketDateData">
+    <xs:sequence>
+      <xs:element name="HourEnding" type="xs:string" minOccurs="0"/>
+      <xs:element name="WindPowerForecast" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MarketDateInfo">
+    <xs:sequence>
+      <xs:element name="MarketDateData" type="ns0:type_MarketDateData" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MarketDay">
+    <xs:sequence>
+      <xs:element name="MarketDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="CsoMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ColdWeatherOutagesMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="OtherGenOutagesMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DelistMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TotAvailGenMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="PeakImportMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TotAvailGenImportMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="PeakLoadMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ReplReserveReqMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ReqdReserveMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="ReqdReserveInclReplMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="TotLoadPlusReqdReserveMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DrrMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="SurplusDeficiencyMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="RtegMw" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="PowerWatch" type="ns0:type_FlagYn" minOccurs="1"/>
+      <xs:element name="PowerWarn" type="ns0:type_FlagYn" minOccurs="1"/>
+      <xs:element name="ColdWeatherWatch" type="ns0:type_FlagYn" minOccurs="1"/>
+      <xs:element name="ColdWeatherWarn" type="ns0:type_FlagYn" minOccurs="1"/>
+      <xs:element name="ColdWeatherEvent" type="ns0:type_FlagYn" minOccurs="1"/>
+      <xs:element name="EnergyEmergency" type="ns0:type_FlagYn" minOccurs="1"/>
+      <xs:element name="Weather" type="ns0:type_Weather" minOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="Day" use="required" type="xs:int"/>
+  </xs:complexType>
+  <xs:complexType name="type_MarketDays">
+    <xs:sequence>
+      <xs:element name="MarketDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="MarketDateInfo" type="ns0:type_MarketDateInfo" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="Day" use="required" type="xs:int"/>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyResult">
+    <xs:sequence>
+      <xs:element name="Month" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ClearedCapacityZones" type="ns0:type_BilatClearedCapacityZones" minOccurs="1"/>
+      <xs:element name="SystemResult" type="ns0:type_BilatSystemResult" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_MonthlyResults">
+    <xs:sequence>
+      <xs:element name="MonthlyResult" type="ns0:type_MonthlyResult" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_NCPCType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GPA"/>
+      <xs:enumeration value="VAR"/>
+      <xs:enumeration value="HIGHVAR"/>
+      <xs:enumeration value="EXTLOCECONOMIC"/>
+      <xs:enumeration value="LSCPR"/>
+      <xs:enumeration value="ECONOMIC"/>
+      <xs:enumeration value="RRP"/>
+      <xs:enumeration value="DLOC"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="type_NetworkPnodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNIT"/>
+      <xs:enumeration value="LOAD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_OperatingReserve">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="Econimic" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="Rmr" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="Var" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="RmrVar" type="ns0:type_FlagYn" minOccurs="0"/>
+      <xs:element name="EconomicMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="EconomicCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RmrMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RmrCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="VarMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="VarCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RmrVarMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RmrVarCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotalMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotalCost" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Period">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:long" minOccurs="0"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="Type" type="xs:string" minOccurs="0"/>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="EndDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ParentId" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Rcp">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="RegClearingPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegServiceClearingPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RegCapacityClearingPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="HourEnd" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_RegStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AVAILABLE"/>
+      <xs:enumeration value="UNAVAILABLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="type_RegionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal"/>
+      <xs:enumeration value="Power Caution"/>
+      <xs:enumeration value="Power Watch"/>
+      <xs:enumeration value="Power Warning"/>
+      <xs:enumeration value="Cold Weather Watch Conditions"/>
+      <xs:enumeration value="Cold Weather Warning Conditions"/>
+      <xs:enumeration value="Cold Weather Event Conditions"/>
+      <xs:enumeration value="Master/Local Control Center 2 Alert"/>
+      <xs:enumeration value="Energy Emergency"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_ReserveLocRef">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="LocId" use="required" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="type_ReservePrice">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="ReserveZoneId" type="xs:integer" minOccurs="0"/>
+      <xs:element name="ReserveZoneName" type="xs:string" minOccurs="0"/>
+      <xs:element name="TenMinSpinRequirement" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Total10MinRequirement" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Total30MinRequirement" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TmsrDesignatedMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TmnsrDesignatedMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TmorDesignatedMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TmsrClearingPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TmnsrClearingPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TmorClearingPrice" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="IntervalBeginDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Segment">
+    <xs:sequence>
+      <xs:element name="Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Mw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="Number" use="required" type="xs:integer"/>
+  </xs:complexType>
+  <xs:complexType name="type_Segment2">
+    <xs:sequence>
+      <xs:element name="Price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Mw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="Number" use="required" type="xs:integer"/>
+  </xs:complexType>
+  <xs:complexType name="type_Segments">
+    <xs:sequence>
+      <xs:element name="Segment" type="ns0:type_Segment" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Segments2">
+    <xs:sequence>
+      <xs:element name="Segment" type="ns0:type_Segment2" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SystemDemandCurveResults">
+    <xs:sequence>
+      <xs:element name="SubmittedRepresentativeCsoMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SubmittedSdcMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ClearedRepresentativeCsoMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ClearedSdcMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ClearedNetCapacityMw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_SystemResults">
+    <xs:sequence>
+      <xs:element name="SupplySubmitted" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="SupplyCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DemandSubmitted" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="DemandCleared" type="xs:decimal" minOccurs="1"/>
+      <xs:element name="NetCapacityCleared" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_TieDelivery">
+    <xs:sequence>
+      <xs:element name="TieName" type="xs:string" minOccurs="1"/>
+      <xs:element name="TieFlowMw" type="xs:decimal" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_TtcLocation">
+    <xs:sequence>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="ImportLimitMw" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ExportLimitMw" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_TtcLocations">
+    <xs:sequence>
+      <xs:element name="TtcLocation" type="ns0:type_TtcLocation" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="type_UnitStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MUST_RUN"/>
+      <xs:enumeration value="ECONOMIC"/>
+      <xs:enumeration value="UNAVAILABLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="type_UnitStatus2">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ECONOMIC"/>
+      <xs:enumeration value="UNAVAILABLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="type_Weather">
+    <xs:sequence>
+      <xs:element name="CityWeather" type="ns0:type_CityWeather" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_WeeklyLmpIndex">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="1"/>
+      <xs:element name="DaOnPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaOffPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DaAverageLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtOnPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtOffPeakLMP" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtAverageLMP" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_WeeklyLmpIndexes">
+    <xs:sequence>
+      <xs:element name="WeeklyLmpIndex" type="ns0:type_WeeklyLmpIndex" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_WhlseCost">
+    <xs:sequence>
+      <xs:element name="BeginDate" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="Hour" type="xs:string" minOccurs="1"/>
+      <xs:element name="OnOff" type="xs:string" minOccurs="1"/>
+      <xs:element name="Location" type="ns0:type_LocationRef" minOccurs="0"/>
+      <xs:element name="Lmp" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Capacity" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="FirstC" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="SecondC" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Regulation" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="FwdRsv" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RtRsv" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Inadv" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MLRF" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="ARR" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="DRRCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="PRD" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Sched2" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Sched3" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="NEPOOL" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="TotalCost" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="RTLO" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_WhlseCosts">
+    <xs:sequence>
+      <xs:element name="WhlseCost" type="ns0:type_WhlseCost" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type_Years">
+    <xs:sequence>
+      <xs:element name="Year" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

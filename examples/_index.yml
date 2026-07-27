@@ -1,0 +1,72 @@
+generated: '2026-07-27'
+method: searched
+source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+description: 'Real ISO New England response payloads, observed anonymously on 2026-07-27. ISO New England
+  publishes no example payloads with its documentation, and the REST API itself answers 401 without ISO
+  Express credentials - but the public ISO Express dashboards are fed by an anonymous JSON proxy at https://www.iso-ne.com/ws/wsclient
+  that returns the same resource paths as the authenticated Web Services API. Each file below is the payload
+  that proxy returned for the named resource path, with the proxy envelope ([{"data": ...,"namespace":"_nstmp_"}])
+  and its injected _url key removed. Nothing was edited or synthesised. Values are a real system snapshot
+  from 2026-07-27 and are not stable data - they are examples of shape, not of content. These same payloads
+  are wired as response examples in openapi/iso-new-england-web-services-openapi.yml.'
+caveat: The wsclient proxy is undocumented and unsupported by ISO New England. It is used here only as
+  an evidence source for payload shape; developers should use the documented API at https://webservices.iso-ne.com/api/v1.1
+  with ISO Express credentials.
+count: 14
+examples:
+- file: iso-new-england-actualinterchange_current.json
+  path: /actualinterchange/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/actualinterchange/current.json
+  bytes: 1467
+- file: iso-new-england-dayaheadconstraints_current.json
+  path: /dayaheadconstraints/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/dayaheadconstraints/current.json
+  bytes: 240
+- file: iso-new-england-dayaheadhourlydemand_current.json
+  path: /dayaheadhourlydemand/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/dayaheadhourlydemand/current.json
+  bytes: 1575
+- file: iso-new-england-fifteenminutelmp_final_current.json
+  path: /fifteenminutelmp/final/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/fifteenminutelmp/final/current.json
+  bytes: 25
+- file: iso-new-england-fiveminutelmp_current.json
+  path: /fiveminutelmp/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/fiveminutelmp/current.json
+  bytes: 4438
+- file: iso-new-england-fiveminutelmp_info.json
+  path: /fiveminutelmp/info
+  operation_url: https://webservices.iso-ne.com/api/v1.1/fiveminutelmp/info.json
+  bytes: 128
+- file: iso-new-england-fiveminutesystemload_current.json
+  path: /fiveminutesystemload/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/fiveminutesystemload/current.json
+  bytes: 226
+- file: iso-new-england-genfuelmix_current.json
+  path: /genfuelmix/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/genfuelmix/current.json
+  bytes: 1772
+- file: iso-new-england-genfuelmix_info.json
+  path: /genfuelmix/info
+  operation_url: https://webservices.iso-ne.com/api/v1.1/genfuelmix/info.json
+  bytes: 128
+- file: iso-new-england-hourlyloadforecast_current.json
+  path: /hourlyloadforecast/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/hourlyloadforecast/current.json
+  bytes: 182
+- file: iso-new-england-locations_all.json
+  path: /locations/all
+  operation_url: https://webservices.iso-ne.com/api/v1.1/locations/all.json
+  bytes: 216467
+- file: iso-new-england-morningreport_current.json
+  path: /morningreport/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/morningreport/current.json
+  bytes: 2974
+- file: iso-new-england-realtimehourlydemand_current.json
+  path: /realtimehourlydemand/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/realtimehourlydemand/current.json
+  bytes: 1287
+- file: iso-new-england-sevendayforecast_current.json
+  path: /sevendayforecast/current
+  operation_url: https://webservices.iso-ne.com/api/v1.1/sevendayforecast/current.json
+  bytes: 5699

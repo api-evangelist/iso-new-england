@@ -1,0 +1,68 @@
+generated: '2026-07-27'
+method: probed
+source: anonymous HTTP probes of every host in apis.yml and the OpenAPI servers[] block
+description: >-
+  ISO New England serves NO /.well-known documents on any host. Twenty probes across the corporate
+  host and the API host all returned 404 on 2026-07-27, including robots.txt. Absence is the result,
+  and it is recorded as data: there is no security.txt (RFC 9116), no OIDC or OAuth discovery, no
+  api-catalog (RFC 9727), and no AI-plugin or MCP descriptor. No file is saved because no document
+  was served.
+
+hosts_probed:
+- https://www.iso-ne.com
+- https://webservices.iso-ne.com
+
+documents:
+- path: /.well-known/security.txt
+  spec: RFC 9116
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /.well-known/openid-configuration
+  spec: OpenID Connect Discovery 1.0
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /.well-known/oauth-authorization-server
+  spec: RFC 8414
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /.well-known/oauth-protected-resource
+  spec: RFC 9728
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /.well-known/api-catalog
+  spec: RFC 9727
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /.well-known/ai-plugin.json
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /.well-known/mcp.json
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /.well-known/dnt-policy.txt
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /robots.txt
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+- path: /security.txt
+  note: legacy root location
+  status:
+    www.iso-ne.com: 404
+    webservices.iso-ne.com: 404
+
+files_saved: []
+consequence: >-
+  Nothing in the /.well-known space can be used to discover ISO New England's API, its auth server,
+  or a vulnerability-disclosure contact. Discovery is entirely through the human documentation at
+  https://www.iso-ne.com/participate/support/web-services-data and
+  https://webservices.iso-ne.com/docs/v1.1/.

@@ -1,0 +1,15 @@
+generated: '2026-07-27'
+method: derived
+source: openapi/iso-new-england-web-services-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve
+    ISO Express account; ISO New England states that ISO Express account holders are automatically
+    granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
+  sources:
+  - openapi/iso-new-england-web-services-openapi.yml

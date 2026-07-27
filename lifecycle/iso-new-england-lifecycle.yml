@@ -1,0 +1,80 @@
+generated: '2026-07-27'
+method: searched
+source: https://www.iso-ne.com/participate/support/web-services-data
+description: >-
+  Versioning, deprecation and operational-transparency posture of the ISO New England Web Services
+  API v1.1, from ISO New England's own pages and from anonymous probes on 2026-07-27. Where a policy
+  does not exist it is recorded as absent - ISO New England is a nonprofit RTO, not a commercial API
+  vendor, and it publishes neither an API SLA nor an API deprecation policy.
+
+versioning:
+  scheme: uri-path
+  current: v1.1
+  base_path: https://webservices.iso-ne.com/api/v1.1
+  first_deployed: '2013-11'
+  statement: 'Current version: 1.1 deployed November 2013.'
+  docs: https://www.iso-ne.com/participate/support/web-services-data
+  note: >-
+    One version in twelve years. New feeds and new enumerated values (Batteries fuel category, May
+    2026) are added inside v1.1 rather than by cutting a new version, so consumers should treat new
+    elements and new fuel/location codes as additive changes that can appear without a version bump.
+
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No API deprecation policy, no RFC 8594 Sunset/Deprecation header support, and no documented
+    notice period were found. ISO New England does publish a "Retired Reports" section for the
+    ISO Express report catalogue (https://www.iso-ne.com/markets-operations/iso-express), which is
+    the closest published retirement signal, but it covers reports rather than API resources.
+  retired_reports: https://www.iso-ne.com/markets-operations/iso-express
+
+deprecated_operations: []
+deprecated_operations_note: >-
+  No operation in openapi/iso-new-england-web-services-openapi.yml is marked deprecated in ISO New
+  England's published documentation.
+
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No API service-level agreement or uptime commitment is published. Market-participant systems are
+    governed by the FERC-approved Transmission, Markets and Services Tariff and the ISO's operating
+    procedures, not by an API SLA.
+
+status_page:
+  api_status_page: null
+  note: >-
+    ISO New England publishes no service/uptime status page for the Web Services API. The pages that
+    look like status pages are POWER SYSTEM status, not API status, and are recorded below so they
+    are not mistaken for one. No StatusPage pointer is claimed for this provider.
+  power_system_status:
+  - url: https://www.iso-ne.com/markets-operations/system-forecast-status/current-system-status
+    what: Current power system status (grid conditions, not API availability).
+  - url: https://www.iso-ne.com/markets-operations/system-forecast-status/morning-report
+    what: Morning report of capacity and demand.
+  - url: https://www.iso-ne.com/isoexpress/
+    what: ISO Express real-time maps and charts.
+
+maintenance:
+  notice_channel: https://www.iso-ne.com/participate/support/feeds
+  note: >-
+    ISO New England communicates system and application changes through participant mailing lists,
+    the Web Feeds page, and ISO Newswire (https://isonewswire.com/) rather than through an API
+    changelog feed.
+
+support:
+  channel: https://askiso.iso-ne.com/s/
+  note: Ask ISO case tracking; self-registration is open to non-participants.
+
+access_lifecycle:
+  onboarding: https://www.iso-ne.com/signup
+  access_rule: https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
+  statement: >-
+    "Those with ISO Express accounts are automatically granted access to publicly available
+    operational data from the ISO New England website via the ISO's Representational State Transfer
+    (REST) interface."
+  cost: free
+  approval: self-serve, no documented human review step

@@ -1,0 +1,19 @@
+generated: '2026-07-27'
+method: generated
+source: openapi/iso-new-england-web-services-openapi.yml
+description: >-
+  Native Arazzo 1.0.1 workflows stitching real ISO New England Web Services operations into
+  multi-step use cases. Every operationId used was verified to exist verbatim in the referenced
+  OpenAPI. All steps require HTTP Basic credentials from a free ISO Express account - there is no
+  anonymous mode and no sandbox, so these workflows cannot be run without an account.
+workflows:
+- file: iso-new-england-grid-snapshot.yml
+  workflowId: grid-snapshot
+  title: ISO New England grid snapshot
+  summary: Resolve locations, check feed freshness, then pull system load, fuel mix, Hub LMP and the hourly load forecast.
+  operations: [getLocationsAll, getFiveminutelmpInfo, getFiveminutesystemloadCurrent, getGenfuelmixCurrent, getFiveminutelmpCurrentLocationByLocationId, getHourlyloadforecastCurrent]
+- file: iso-new-england-price-spike-diagnosis.yml
+  workflowId: diagnose-price-spike
+  title: ISO New England price spike diagnosis
+  summary: Correlate a day's day-ahead LMPs with binding constraints, fuel mix and demand-response dispatch.
+  operations: [getHourlylmpDaFinalDayByDayLocationByLocationId, getDayaheadconstraintsDayByDay, getGenfuelmixDayByDay, getDrdispatchDayByDay]

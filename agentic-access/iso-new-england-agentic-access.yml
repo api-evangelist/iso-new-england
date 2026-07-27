@@ -1,0 +1,4904 @@
+generated: '2026-07-27'
+method: generated
+source: openapi/iso-new-england-web-services-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 489
+  by_action_class:
+    connected: 489
+  by_consequence:
+    read: 489
+  human_in_the_loop_required: 0
+operations:
+- path: /actualinterchange
+  method: get
+  operationId: getActualinterchange
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /actualinterchange/current
+  method: get
+  operationId: getActualinterchangeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /actualinterchange/day/{day}
+  method: get
+  operationId: getActualinterchangeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /actualinterchange/info
+  method: get
+  operationId: getActualinterchangeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ams
+  method: get
+  operationId: getAms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ams/current
+  method: get
+  operationId: getAmsCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ams/day/{day}
+  method: get
+  operationId: getAmsDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ams/info
+  method: get
+  operationId: getAmsInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /capacityscarcitycondition
+  method: get
+  operationId: getCapacityscarcitycondition
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /capacityscarcitycondition/current
+  method: get
+  operationId: getCapacityscarcityconditionCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /capacityscarcitycondition/day/{day}
+  method: get
+  operationId: getCapacityscarcityconditionDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /capacityscarcitycondition/info
+  method: get
+  operationId: getCapacityscarcityconditionInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /capacityscarcitycondition/month/{month}
+  method: get
+  operationId: getCapacityscarcityconditionMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /capacityscarcitycondition/year/{year}
+  method: get
+  operationId: getCapacityscarcityconditionYearByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /combinedhourlydemand
+  method: get
+  operationId: getCombinedhourlydemand
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /combinedhourlydemand/day/{day}/location/{locationId}
+  method: get
+  operationId: getCombinedhourlydemandDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /combinedhourlydemand/info
+  method: get
+  operationId: getCombinedhourlydemandInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /daasreservedata/current
+  method: get
+  operationId: getDaasreservedataCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /daasreservedata/day/{day}
+  method: get
+  operationId: getDaasreservedataDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /daasreservedata/info
+  method: get
+  operationId: getDaasreservedataInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /daasstrikeprices/current
+  method: get
+  operationId: getDaasstrikepricesCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /daasstrikeprices/day/{day}
+  method: get
+  operationId: getDaasstrikepricesDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /daasstrikeprices/info
+  method: get
+  operationId: getDaasstrikepricesInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dailyofferthreshprice
+  method: get
+  operationId: getDailyofferthreshprice
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dailyofferthreshprice/current
+  method: get
+  operationId: getDailyofferthreshpriceCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dailyofferthreshprice/day/{day}
+  method: get
+  operationId: getDailyofferthreshpriceDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dailyofferthreshprice/info
+  method: get
+  operationId: getDailyofferthreshpriceInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dailyofferthreshprice/month/{month}
+  method: get
+  operationId: getDailyofferthreshpriceMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadconstraints
+  method: get
+  operationId: getDayaheadconstraints
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadconstraints/current
+  method: get
+  operationId: getDayaheadconstraintsCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadconstraints/day/{day}
+  method: get
+  operationId: getDayaheadconstraintsDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadconstraints/info
+  method: get
+  operationId: getDayaheadconstraintsInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlydemand
+  method: get
+  operationId: getDayaheadhourlydemand
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlydemand/current
+  method: get
+  operationId: getDayaheadhourlydemandCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlydemand/current/location/{locationId}
+  method: get
+  operationId: getDayaheadhourlydemandCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlydemand/current/locationType/{locationType}
+  method: get
+  operationId: getDayaheadhourlydemandCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlydemand/day/{day}/location/{locationId}
+  method: get
+  operationId: getDayaheadhourlydemandDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlydemand/info
+  method: get
+  operationId: getDayaheadhourlydemandInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlyoperatingreserve
+  method: get
+  operationId: getDayaheadhourlyoperatingreserve
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlyoperatingreserve/current/all
+  method: get
+  operationId: getDayaheadhourlyoperatingreserveCurrentAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlyoperatingreserve/current/location/{locationId}
+  method: get
+  operationId: getDayaheadhourlyoperatingreserveCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlyoperatingreserve/current/locationType/{locationType}
+  method: get
+  operationId: getDayaheadhourlyoperatingreserveCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlyoperatingreserve/day/{day}/location/{locationId}
+  method: get
+  operationId: getDayaheadhourlyoperatingreserveDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadhourlyoperatingreserve/info
+  method: get
+  operationId: getDayaheadhourlyoperatingreserveInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadlmpavgcongestion
+  method: get
+  operationId: getDayaheadlmpavgcongestion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadlmpavgcongestion/current
+  method: get
+  operationId: getDayaheadlmpavgcongestionCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadlmpavgcongestion/info
+  method: get
+  operationId: getDayaheadlmpavgcongestionInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadlmpavgcongestion/month/{month}
+  method: get
+  operationId: getDayaheadlmpavgcongestionMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadlmpavgcongestion/month/{month}/location/{locationId}
+  method: get
+  operationId: getDayaheadlmpavgcongestionMonthByMonthLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadprdclearing
+  method: get
+  operationId: getDayaheadprdclearing
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadprdclearing/current
+  method: get
+  operationId: getDayaheadprdclearingCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadprdclearing/info
+  method: get
+  operationId: getDayaheadprdclearingInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadprdclearing/month/{month}
+  method: get
+  operationId: getDayaheadprdclearingMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadprdclearing/month/{month}/location/{locationId}
+  method: get
+  operationId: getDayaheadprdclearingMonthByMonthLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadvirtualproxy
+  method: get
+  operationId: getDayaheadvirtualproxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadvirtualproxy/current
+  method: get
+  operationId: getDayaheadvirtualproxyCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadvirtualproxy/current/location/{locationId}
+  method: get
+  operationId: getDayaheadvirtualproxyCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadvirtualproxy/info
+  method: get
+  operationId: getDayaheadvirtualproxyInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadvirtualproxy/month/{month}
+  method: get
+  operationId: getDayaheadvirtualproxyMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dayaheadvirtualproxy/month/{month}/location/{locationId}
+  method: get
+  operationId: getDayaheadvirtualproxyMonthByMonthLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drdispatch
+  method: get
+  operationId: getDrdispatch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drdispatch/current
+  method: get
+  operationId: getDrdispatchCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drdispatch/current/location/{locationId}
+  method: get
+  operationId: getDrdispatchCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drdispatch/day/{day}
+  method: get
+  operationId: getDrdispatchDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drdispatch/day/{day}/location/{locationId}
+  method: get
+  operationId: getDrdispatchDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drdispatch/info
+  method: get
+  operationId: getDrdispatchInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drtp
+  method: get
+  operationId: getDrtp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drtp/current
+  method: get
+  operationId: getDrtpCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drtp/day/{day}
+  method: get
+  operationId: getDrtpDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drtp/detail/day/{day}
+  method: get
+  operationId: getDrtpDetailDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drtp/info
+  method: get
+  operationId: getDrtpInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmabp/cp/{cp}
+  method: get
+  operationId: getFcmabpCpByCp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmabp/cp/{cp}/arabp/{arabp}
+  method: get
+  operationId: getFcmabpCpByCpArabpByArabp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmabp/current
+  method: get
+  operationId: getFcmabpCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmabp/info
+  method: get
+  operationId: getFcmabpInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmara/cp/{cp}
+  method: get
+  operationId: getFcmaraCpByCp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmara/cp/{cp}/ara/{ara}
+  method: get
+  operationId: getFcmaraCpByCpAraByAra
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmara/current
+  method: get
+  operationId: getFcmaraCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmara/info
+  method: get
+  operationId: getFcmaraInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmbp/cp/{cp}
+  method: get
+  operationId: getFcmmbpCpByCp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmbp/cp/{cp}/month/{month}
+  method: get
+  operationId: getFcmmbpCpByCpMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmbp/current
+  method: get
+  operationId: getFcmmbpCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmbp/info
+  method: get
+  operationId: getFcmmbpInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmra/cp/{cp}
+  method: get
+  operationId: getFcmmraCpByCp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmra/cp/{cp}/month/{month}
+  method: get
+  operationId: getFcmmraCpByCpMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmra/current
+  method: get
+  operationId: getFcmmraCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fcmmra/info
+  method: get
+  operationId: getFcmmraInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteconstraints/{Type}
+  method: get
+  operationId: getFifteenminuteconstraintsByType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteconstraints/{Type}/current
+  method: get
+  operationId: getFifteenminuteconstraintsByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteconstraints/{Type}/day/{day}
+  method: get
+  operationId: getFifteenminuteconstraintsByTypeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteconstraints/{Type}/info
+  method: get
+  operationId: getFifteenminuteconstraintsByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteconstraints/{Type}/month/{month}
+  method: get
+  operationId: getFifteenminuteconstraintsByTypeMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteinterchange
+  method: get
+  operationId: getFifteenminuteinterchange
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteinterchange/current
+  method: get
+  operationId: getFifteenminuteinterchangeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteinterchange/current/location/{locationId}
+  method: get
+  operationId: getFifteenminuteinterchangeCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteinterchange/day/{day}
+  method: get
+  operationId: getFifteenminuteinterchangeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteinterchange/day/{day}/location/{locationId}
+  method: get
+  operationId: getFifteenminuteinterchangeDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminuteinterchange/info
+  method: get
+  operationId: getFifteenminuteinterchangeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminutelmp/{Type}
+  method: get
+  operationId: getFifteenminutelmpByType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminutelmp/{Type}/current
+  method: get
+  operationId: getFifteenminutelmpByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminutelmp/{Type}/current/location/{locationId}
+  method: get
+  operationId: getFifteenminutelmpByTypeCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminutelmp/{Type}/day/{day}/location/{locationId}
+  method: get
+  operationId: getFifteenminutelmpByTypeDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fifteenminutelmp/{Type}/info
+  method: get
+  operationId: getFifteenminutelmpByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteconstraints/{Type}/current
+  method: get
+  operationId: getFiveminuteconstraintsByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteconstraints/{Type}/current/hour
+  method: get
+  operationId: getFiveminuteconstraintsByTypeCurrentHour
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteconstraints/{Type}/day/{day}
+  method: get
+  operationId: getFiveminuteconstraintsByTypeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteconstraints/{Type}/info
+  method: get
+  operationId: getFiveminuteconstraintsByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteestimatedzonalload/current
+  method: get
+  operationId: getFiveminuteestimatedzonalloadCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteestimatedzonalload/current/loadzone/{loadZoneId}
+  method: get
+  operationId: getFiveminuteestimatedzonalloadCurrentLoadzoneByLoadZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteestimatedzonalload/day/{day}
+  method: get
+  operationId: getFiveminuteestimatedzonalloadDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteestimatedzonalload/day/{day}/loadzone/{loadZoneId}
+  method: get
+  operationId: getFiveminuteestimatedzonalloadDayByDayLoadzoneByLoadZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteestimatedzonalload/info
+  method: get
+  operationId: getFiveminuteestimatedzonalloadInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteexternalflow
+  method: get
+  operationId: getFiveminuteexternalflow
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteexternalflow/current
+  method: get
+  operationId: getFiveminuteexternalflowCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteexternalflow/current/location/{locationId}
+  method: get
+  operationId: getFiveminuteexternalflowCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteexternalflow/current/locationType/{locationType}
+  method: get
+  operationId: getFiveminuteexternalflowCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteexternalflow/day/{day}
+  method: get
+  operationId: getFiveminuteexternalflowDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteexternalflow/day/{day}/location/{locationId}
+  method: get
+  operationId: getFiveminuteexternalflowDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminuteexternalflow/info
+  method: get
+  operationId: getFiveminuteexternalflowInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp
+  method: get
+  operationId: getFiveminutelmp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/current
+  method: get
+  operationId: getFiveminutelmpCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/current/all
+  method: get
+  operationId: getFiveminutelmpCurrentAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/current/location/{locationId}
+  method: get
+  operationId: getFiveminutelmpCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/current/locationType/{locationType}
+  method: get
+  operationId: getFiveminutelmpCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/day/{day}/location/{locationId}
+  method: get
+  operationId: getFiveminutelmpDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/info
+  method: get
+  operationId: getFiveminutelmpInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/{Type}/current
+  method: get
+  operationId: getFiveminutelmpByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/{Type}/current/all
+  method: get
+  operationId: getFiveminutelmpByTypeCurrentAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/{Type}/current/location/{locationId}
+  method: get
+  operationId: getFiveminutelmpByTypeCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/{Type}/current/locationType/{locationType}
+  method: get
+  operationId: getFiveminutelmpByTypeCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/{Type}/day/{day}/location/{locationId}
+  method: get
+  operationId: getFiveminutelmpByTypeDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/{Type}/day/{day}/starthour/{sh}
+  method: get
+  operationId: getFiveminutelmpByTypeDayByDayStarthourBySh
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutelmp/{Type}/info
+  method: get
+  operationId: getFiveminutelmpByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutercp
+  method: get
+  operationId: getFiveminutercp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutercp/current
+  method: get
+  operationId: getFiveminutercpCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutercp/day/{day}
+  method: get
+  operationId: getFiveminutercpDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutercp/info
+  method: get
+  operationId: getFiveminutercpInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutercp/{Type}/current
+  method: get
+  operationId: getFiveminutercpByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutercp/{Type}/day/{day}
+  method: get
+  operationId: getFiveminutercpByTypeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutercp/{Type}/info
+  method: get
+  operationId: getFiveminutercpByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice
+  method: get
+  operationId: getFiveminutereserveprice
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/current
+  method: get
+  operationId: getFiveminutereservepriceCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/current/locationType/{locationType}
+  method: get
+  operationId: getFiveminutereservepriceCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/current/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getFiveminutereservepriceCurrentReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/day/{day}
+  method: get
+  operationId: getFiveminutereservepriceDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/day/{day}/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getFiveminutereservepriceDayByDayReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/info
+  method: get
+  operationId: getFiveminutereservepriceInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/{Type}/current
+  method: get
+  operationId: getFiveminutereservepriceByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/{Type}/current/locationType/{locationType}
+  method: get
+  operationId: getFiveminutereservepriceByTypeCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/{Type}/current/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getFiveminutereservepriceByTypeCurrentReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/{Type}/day/{day}
+  method: get
+  operationId: getFiveminutereservepriceByTypeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/{Type}/day/{day}/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getFiveminutereservepriceByTypeDayByDayReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutereserveprice/{Type}/info
+  method: get
+  operationId: getFiveminutereservepriceByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutesystemload
+  method: get
+  operationId: getFiveminutesystemload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutesystemload/current
+  method: get
+  operationId: getFiveminutesystemloadCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutesystemload/day/{day}
+  method: get
+  operationId: getFiveminutesystemloadDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutesystemload/info
+  method: get
+  operationId: getFiveminutesystemloadInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutezonalloadforecast/current
+  method: get
+  operationId: getFiveminutezonalloadforecastCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutezonalloadforecast/current/loadzone/{loadZoneId}
+  method: get
+  operationId: getFiveminutezonalloadforecastCurrentLoadzoneByLoadZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fiveminutezonalloadforecast/info
+  method: get
+  operationId: getFiveminutezonalloadforecastInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /forecastcapacity
+  method: get
+  operationId: getForecastcapacity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /forecastcapacity/current
+  method: get
+  operationId: getForecastcapacityCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /forecastcapacity/day/{day}
+  method: get
+  operationId: getForecastcapacityDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /forecastcapacity/day/{day}/all
+  method: get
+  operationId: getForecastcapacityDayByDayAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /forecastcapacity/day/{day}/reportType/{reportType}
+  method: get
+  operationId: getForecastcapacityDayByDayReportTypeByReportType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /forecastcapacity/info
+  method: get
+  operationId: getForecastcapacityInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /frmdtp
+  method: get
+  operationId: getFrmdtp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /frmdtp/current
+  method: get
+  operationId: getFrmdtpCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /frmdtp/day/{day}
+  method: get
+  operationId: getFrmdtpDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /frmdtp/info
+  method: get
+  operationId: getFrmdtpInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /frmdtp/month/{month}
+  method: get
+  operationId: getFrmdtpMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionclearingprices/{Type}/current
+  method: get
+  operationId: getFtrauctionclearingpricesByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionclearingprices/{Type}/info
+  method: get
+  operationId: getFtrauctionclearingpricesByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionclearingprices/{Type}/month/{month}
+  method: get
+  operationId: getFtrauctionclearingpricesByTypeMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionclearingprices/{Type}/year/{year}
+  method: get
+  operationId: getFtrauctionclearingpricesByTypeYearByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionresults/{Type}/current
+  method: get
+  operationId: getFtrauctionresultsByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionresults/{Type}/info
+  method: get
+  operationId: getFtrauctionresultsByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionresults/{Type}/month/{month}
+  method: get
+  operationId: getFtrauctionresultsByTypeMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ftrauctionresults/{Type}/year/{year}
+  method: get
+  operationId: getFtrauctionresultsByTypeYearByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /genfuelmix
+  method: get
+  operationId: getGenfuelmix
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /genfuelmix/current
+  method: get
+  operationId: getGenfuelmixCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /genfuelmix/current/fuelCategoryRollup/{fuelCategoryRollup}
+  method: get
+  operationId: getGenfuelmixCurrentFuelCategoryRollupByFuelCategoryRollup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /genfuelmix/day/{day}
+  method: get
+  operationId: getGenfuelmixDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /genfuelmix/day/{day}/fuelCategoryRollup/{fuelCategoryRollup}
+  method: get
+  operationId: getGenfuelmixDayByDayFuelCategoryRollupByFuelCategoryRollup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /genfuelmix/info
+  method: get
+  operationId: getGenfuelmixInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbannualftrauction
+  method: get
+  operationId: getHbannualftrauction
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbannualftrauction/current
+  method: get
+  operationId: getHbannualftrauctionCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbannualftrauction/info
+  method: get
+  operationId: getHbannualftrauctionInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbannualftrauction/year/{year}
+  method: get
+  operationId: getHbannualftrauctionYearByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasardoffer/current
+  method: get
+  operationId: getHbdaasardofferCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasardoffer/day/{day}
+  method: get
+  operationId: getHbdaasardofferDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasardoffer/info
+  method: get
+  operationId: getHbdaasardofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasdrroffer/current
+  method: get
+  operationId: getHbdaasdrrofferCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasdrroffer/day/{day}
+  method: get
+  operationId: getHbdaasdrrofferDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasdrroffer/info
+  method: get
+  operationId: getHbdaasdrrofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasenergyoffer/current
+  method: get
+  operationId: getHbdaasenergyofferCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasenergyoffer/day/{day}
+  method: get
+  operationId: getHbdaasenergyofferDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdaasenergyoffer/info
+  method: get
+  operationId: getHbdaasenergyofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadardbid
+  method: get
+  operationId: getHbdayaheadardbid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadardbid/current
+  method: get
+  operationId: getHbdayaheadardbidCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadardbid/day/{day}
+  method: get
+  operationId: getHbdayaheadardbidDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadardbid/info
+  method: get
+  operationId: getHbdayaheadardbidInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddemandbid
+  method: get
+  operationId: getHbdayaheaddemandbid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddemandbid/current
+  method: get
+  operationId: getHbdayaheaddemandbidCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddemandbid/day/{day}
+  method: get
+  operationId: getHbdayaheaddemandbidDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddemandbid/day/{day}/bidType/{bidType}
+  method: get
+  operationId: getHbdayaheaddemandbidDayByDayBidTypeByBidType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddemandbid/day/{day}/locationType/{locationType}
+  method: get
+  operationId: getHbdayaheaddemandbidDayByDayLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddemandbid/info
+  method: get
+  operationId: getHbdayaheaddemandbidInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddrrbid/current
+  method: get
+  operationId: getHbdayaheaddrrbidCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddrrbid/day/{day}
+  method: get
+  operationId: getHbdayaheaddrrbidDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheaddrrbid/info
+  method: get
+  operationId: getHbdayaheaddrrbidInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadenergyoffer
+  method: get
+  operationId: getHbdayaheadenergyoffer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadenergyoffer/current
+  method: get
+  operationId: getHbdayaheadenergyofferCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadenergyoffer/day/{day}
+  method: get
+  operationId: getHbdayaheadenergyofferDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadenergyoffer/info
+  method: get
+  operationId: getHbdayaheadenergyofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadloadresponseoffer
+  method: get
+  operationId: getHbdayaheadloadresponseoffer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadloadresponseoffer/current
+  method: get
+  operationId: getHbdayaheadloadresponseofferCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadloadresponseoffer/info
+  method: get
+  operationId: getHbdayaheadloadresponseofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbdayaheadloadresponseoffer/month/{month}
+  method: get
+  operationId: getHbdayaheadloadresponseofferMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmara
+  method: get
+  operationId: getHbfcmara
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmara/cp/{cp}
+  method: get
+  operationId: getHbfcmaraCpByCp
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmara/cp/{cp}/ara/{ara}
+  method: get
+  operationId: getHbfcmaraCpByCpAraByAra
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmara/current
+  method: get
+  operationId: getHbfcmaraCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmara/info
+  method: get
+  operationId: getHbfcmaraInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmmra
+  method: get
+  operationId: getHbfcmmra
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmmra/current
+  method: get
+  operationId: getHbfcmmraCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmmra/info
+  method: get
+  operationId: getHbfcmmraInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbfcmmra/month/{month}
+  method: get
+  operationId: getHbfcmmraMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbforwardreserveauctionoffer
+  method: get
+  operationId: getHbforwardreserveauctionoffer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbforwardreserveauctionoffer/info
+  method: get
+  operationId: getHbforwardreserveauctionofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbforwardreserveauctionoffer/season/{month}
+  method: get
+  operationId: getHbforwardreserveauctionofferSeasonByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbimportexport
+  method: get
+  operationId: getHbimportexport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbimportexport/info
+  method: get
+  operationId: getHbimportexportInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbimportexport/marketType/{marketType}/current
+  method: get
+  operationId: getHbimportexportMarketTypeByMarketTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbimportexport/marketType/{marketType}/day/{day}
+  method: get
+  operationId: getHbimportexportMarketTypeByMarketTypeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbmonthlyftrauction
+  method: get
+  operationId: getHbmonthlyftrauction
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbmonthlyftrauction/current
+  method: get
+  operationId: getHbmonthlyftrauctionCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbmonthlyftrauction/info
+  method: get
+  operationId: getHbmonthlyftrauctionInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbmonthlyftrauction/month/{month}
+  method: get
+  operationId: getHbmonthlyftrauctionMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeardbid
+  method: get
+  operationId: getHbrealtimeardbid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeardbid/current
+  method: get
+  operationId: getHbrealtimeardbidCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeardbid/day/{day}
+  method: get
+  operationId: getHbrealtimeardbidDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeardbid/info
+  method: get
+  operationId: getHbrealtimeardbidInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimedrrbid/current
+  method: get
+  operationId: getHbrealtimedrrbidCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimedrrbid/day/{day}
+  method: get
+  operationId: getHbrealtimedrrbidDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimedrrbid/info
+  method: get
+  operationId: getHbrealtimedrrbidInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeenergyoffer
+  method: get
+  operationId: getHbrealtimeenergyoffer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeenergyoffer/current
+  method: get
+  operationId: getHbrealtimeenergyofferCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeenergyoffer/day/{day}
+  method: get
+  operationId: getHbrealtimeenergyofferDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbrealtimeenergyoffer/info
+  method: get
+  operationId: getHbrealtimeenergyofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbregulationoffer
+  method: get
+  operationId: getHbregulationoffer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbregulationoffer/current
+  method: get
+  operationId: getHbregulationofferCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbregulationoffer/day/{day}
+  method: get
+  operationId: getHbregulationofferDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hbregulationoffer/info
+  method: get
+  operationId: getHbregulationofferInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlybainterchange
+  method: get
+  operationId: getHourlybainterchange
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlybainterchange/current
+  method: get
+  operationId: getHourlybainterchangeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlybainterchange/day/{day}
+  method: get
+  operationId: getHourlybainterchangeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlybainterchange/info
+  method: get
+  operationId: getHourlybainterchangeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyfinalreserveprice
+  method: get
+  operationId: getHourlyfinalreserveprice
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyfinalreserveprice/current
+  method: get
+  operationId: getHourlyfinalreservepriceCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyfinalreserveprice/current/locationType/{locationType}
+  method: get
+  operationId: getHourlyfinalreservepriceCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyfinalreserveprice/current/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getHourlyfinalreservepriceCurrentReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyfinalreserveprice/day/{day}
+  method: get
+  operationId: getHourlyfinalreservepriceDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyfinalreserveprice/day/{day}/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getHourlyfinalreservepriceDayByDayReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyfinalreserveprice/info
+  method: get
+  operationId: getHourlyfinalreservepriceInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final
+  method: get
+  operationId: getHourlylmpDaFinal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/current
+  method: get
+  operationId: getHourlylmpDaFinalCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/current/all
+  method: get
+  operationId: getHourlylmpDaFinalCurrentAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/current/location/{locationId}
+  method: get
+  operationId: getHourlylmpDaFinalCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/day/latest
+  method: get
+  operationId: getHourlylmpDaFinalDayLatest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/day/{day}
+  method: get
+  operationId: getHourlylmpDaFinalDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/day/{day}/hour/{sh}
+  method: get
+  operationId: getHourlylmpDaFinalDayByDayHourBySh
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/day/{day}/location/{locationId}
+  method: get
+  operationId: getHourlylmpDaFinalDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/da/final/info
+  method: get
+  operationId: getHourlylmpDaFinalInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/final
+  method: get
+  operationId: getHourlylmpRtFinal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/final/day/{day}
+  method: get
+  operationId: getHourlylmpRtFinalDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/final/day/{day}/hour/{sh}
+  method: get
+  operationId: getHourlylmpRtFinalDayByDayHourBySh
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/final/day/{day}/location/{locationId}
+  method: get
+  operationId: getHourlylmpRtFinalDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/final/info
+  method: get
+  operationId: getHourlylmpRtFinalInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim
+  method: get
+  operationId: getHourlylmpRtPrelim
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/current
+  method: get
+  operationId: getHourlylmpRtPrelimCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/current/all
+  method: get
+  operationId: getHourlylmpRtPrelimCurrentAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/current/location/{locationId}
+  method: get
+  operationId: getHourlylmpRtPrelimCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/day/{day}
+  method: get
+  operationId: getHourlylmpRtPrelimDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/day/{day}/hour/{sh}
+  method: get
+  operationId: getHourlylmpRtPrelimDayByDayHourBySh
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/day/{day}/location/{locationId}
+  method: get
+  operationId: getHourlylmpRtPrelimDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/info
+  method: get
+  operationId: getHourlylmpRtPrelimInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/previous
+  method: get
+  operationId: getHourlylmpRtPrelimPrevious
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlylmp/rt/prelim/previous/all
+  method: get
+  operationId: getHourlylmpRtPrelimPreviousAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadforecast
+  method: get
+  operationId: getHourlyloadforecast
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadforecast/all/day/{day}
+  method: get
+  operationId: getHourlyloadforecastAllDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadforecast/current
+  method: get
+  operationId: getHourlyloadforecastCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadforecast/day/{day}
+  method: get
+  operationId: getHourlyloadforecastDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadforecast/info
+  method: get
+  operationId: getHourlyloadforecastInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadgeninterchange
+  method: get
+  operationId: getHourlyloadgeninterchange
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadgeninterchange/current
+  method: get
+  operationId: getHourlyloadgeninterchangeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadgeninterchange/day/{day}
+  method: get
+  operationId: getHourlyloadgeninterchangeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyloadgeninterchange/info
+  method: get
+  operationId: getHourlyloadgeninterchangeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyper
+  method: get
+  operationId: getHourlyper
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyper/current
+  method: get
+  operationId: getHourlyperCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyper/info
+  method: get
+  operationId: getHourlyperInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyper/month/{month}
+  method: get
+  operationId: getHourlyperMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyper/month/{month}/capacityZone/{capacityZoneId}
+  method: get
+  operationId: getHourlyperMonthByMonthCapacityZoneByCapacityZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyprelimreserveprice
+  method: get
+  operationId: getHourlyprelimreserveprice
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyprelimreserveprice/current
+  method: get
+  operationId: getHourlyprelimreservepriceCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyprelimreserveprice/current/locationType/{locationType}
+  method: get
+  operationId: getHourlyprelimreservepriceCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyprelimreserveprice/current/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getHourlyprelimreservepriceCurrentReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyprelimreserveprice/day/{day}
+  method: get
+  operationId: getHourlyprelimreservepriceDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyprelimreserveprice/day/{day}/reserveZone/{reserveZoneId}
+  method: get
+  operationId: getHourlyprelimreservepriceDayByDayReserveZoneByReserveZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyprelimreserveprice/info
+  method: get
+  operationId: getHourlyprelimreservepriceInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/final
+  method: get
+  operationId: getHourlyrcpFinal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/final/current
+  method: get
+  operationId: getHourlyrcpFinalCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/final/day/{day}
+  method: get
+  operationId: getHourlyrcpFinalDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/final/info
+  method: get
+  operationId: getHourlyrcpFinalInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/prelim
+  method: get
+  operationId: getHourlyrcpPrelim
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/prelim/current
+  method: get
+  operationId: getHourlyrcpPrelimCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/prelim/day/{day}
+  method: get
+  operationId: getHourlyrcpPrelimDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlyrcp/prelim/info
+  method: get
+  operationId: getHourlyrcpPrelimInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload
+  method: get
+  operationId: getHourlysysload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload/current
+  method: get
+  operationId: getHourlysysloadCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload/current/location/{locationId}
+  method: get
+  operationId: getHourlysysloadCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload/current/locationType/{locationType}
+  method: get
+  operationId: getHourlysysloadCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload/day/{day}
+  method: get
+  operationId: getHourlysysloadDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload/day/{day}/hour/{sh}
+  method: get
+  operationId: getHourlysysloadDayByDayHourBySh
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload/day/{day}/location/{locationId}
+  method: get
+  operationId: getHourlysysloadDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /hourlysysload/info
+  method: get
+  operationId: getHourlysysloadInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/monthly
+  method: get
+  operationId: getLmpIndexMonthly
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/monthly/da/current/location/{locationId}
+  method: get
+  operationId: getLmpIndexMonthlyDaCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/monthly/da/year/{year}/location/{locationId}
+  method: get
+  operationId: getLmpIndexMonthlyDaYearByYearLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/monthly/info
+  method: get
+  operationId: getLmpIndexMonthlyInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/monthly/rt/current/location/{locationId}
+  method: get
+  operationId: getLmpIndexMonthlyRtCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/monthly/rt/year/{year}/location/{locationId}
+  method: get
+  operationId: getLmpIndexMonthlyRtYearByYearLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/weekly
+  method: get
+  operationId: getLmpIndexWeekly
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/weekly/da/current/location/{locationId}
+  method: get
+  operationId: getLmpIndexWeeklyDaCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/weekly/da/year/{year}/location/{locationId}
+  method: get
+  operationId: getLmpIndexWeeklyDaYearByYearLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/weekly/info
+  method: get
+  operationId: getLmpIndexWeeklyInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/weekly/rt/current/location/{locationId}
+  method: get
+  operationId: getLmpIndexWeeklyRtCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /lmpIndex/weekly/rt/year/{year}/location/{locationId}
+  method: get
+  operationId: getLmpIndexWeeklyRtYearByYearLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /loadzonencpc
+  method: get
+  operationId: getLoadzonencpc
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /loadzonencpc/current
+  method: get
+  operationId: getLoadzonencpcCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /loadzonencpc/current/location/{locationId}
+  method: get
+  operationId: getLoadzonencpcCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /loadzonencpc/day/{day}
+  method: get
+  operationId: getLoadzonencpcDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /loadzonencpc/day/{day}/location/{locationId}
+  method: get
+  operationId: getLoadzonencpcDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /loadzonencpc/info
+  method: get
+  operationId: getLoadzonencpcInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /locations
+  method: get
+  operationId: getLocations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /locations/all
+  method: get
+  operationId: getLocationsAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /locations/{locationId}
+  method: get
+  operationId: getLocationsByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyassetncpc
+  method: get
+  operationId: getMonthlyassetncpc
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyassetncpc/current
+  method: get
+  operationId: getMonthlyassetncpcCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyassetncpc/info
+  method: get
+  operationId: getMonthlyassetncpcInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyassetncpc/month/{month}
+  method: get
+  operationId: getMonthlyassetncpcMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlylmpindex
+  method: get
+  operationId: getMonthlylmpindex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlylmpindex/current
+  method: get
+  operationId: getMonthlylmpindexCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlylmpindex/info
+  method: get
+  operationId: getMonthlylmpindexInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlylmpindex/year/{year}
+  method: get
+  operationId: getMonthlylmpindexYearByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyper
+  method: get
+  operationId: getMonthlyper
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyper/current
+  method: get
+  operationId: getMonthlyperCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyper/info
+  method: get
+  operationId: getMonthlyperInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyper/month/{month}
+  method: get
+  operationId: getMonthlyperMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /monthlyper/month/{month}/capacityZone/{capacityZoneId}
+  method: get
+  operationId: getMonthlyperMonthByMonthCapacityZoneByCapacityZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /morningreport
+  method: get
+  operationId: getMorningreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /morningreport/current
+  method: get
+  operationId: getMorningreportCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /morningreport/day/{day}
+  method: get
+  operationId: getMorningreportDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /morningreport/day/{day}/all
+  method: get
+  operationId: getMorningreportDayByDayAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /morningreport/day/{day}/reportType/{reportType}
+  method: get
+  operationId: getMorningreportDayByDayReportTypeByReportType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /morningreport/info
+  method: get
+  operationId: getMorningreportInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ncpc/{NCPCType}
+  method: get
+  operationId: getNcpcByNCPCType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ncpc/{NCPCType}/current
+  method: get
+  operationId: getNcpcByNCPCTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ncpc/{NCPCType}/day/{day}
+  method: get
+  operationId: getNcpcByNCPCTypeDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ncpc/{NCPCType}/info
+  method: get
+  operationId: getNcpcByNCPCTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ncpc/{NCPCType}/month/{month}
+  method: get
+  operationId: getNcpcByNCPCTypeMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /networkload
+  method: get
+  operationId: getNetworkload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /networkload/current
+  method: get
+  operationId: getNetworkloadCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /networkload/info
+  method: get
+  operationId: getNetworkloadInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /networkload/month/{month}
+  method: get
+  operationId: getNetworkloadMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nextdayoperationalcapacityreport
+  method: get
+  operationId: getNextdayoperationalcapacityreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nextdayoperationalcapacityreport/current
+  method: get
+  operationId: getNextdayoperationalcapacityreportCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nextdayoperationalcapacityreport/day/{day}
+  method: get
+  operationId: getNextdayoperationalcapacityreportDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nextdayoperationalcapacityreport/info
+  method: get
+  operationId: getNextdayoperationalcapacityreportInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadstat
+  method: get
+  operationId: getNodalloadstat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadstat/info
+  method: get
+  operationId: getNodalloadstatInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadstat/month/{month}
+  method: get
+  operationId: getNodalloadstatMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadweight
+  method: get
+  operationId: getNodalloadweight
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadweight/current/loadzone/{loadZoneId}
+  method: get
+  operationId: getNodalloadweightCurrentLoadzoneByLoadZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadweight/current/location/{locationId}
+  method: get
+  operationId: getNodalloadweightCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadweight/info
+  method: get
+  operationId: getNodalloadweightInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadweight/month/{month}/loadzone/{loadZoneId}
+  method: get
+  operationId: getNodalloadweightMonthByMonthLoadzoneByLoadZoneId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /nodalloadweight/month/{month}/location/{locationId}
+  method: get
+  operationId: getNodalloadweightMonthByMonthLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages
+  method: get
+  operationId: getOutages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}/company/{company}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageTypeCompanyByCompany
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}/equipType/{equipType}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageTypeEquipTypeByEquipType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}/flags/{flags}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageTypeFlagsByFlags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}/plannedDay/{plannedDay}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageTypePlannedDayByPlannedDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}/requestType/{requestType}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageTypeRequestTypeByRequestType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}/station/{station}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageTypeStationByStation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/current/outageType/{outageType}/status/{status}
+  method: get
+  operationId: getOutagesCurrentOutageTypeByOutageTypeStatusByStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}/company/{company}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageTypeCompanyByCompany
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}/equipType/{equipType}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageTypeEquipTypeByEquipType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}/flags/{flags}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageTypeFlagsByFlags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}/plannedDay/{plannedDay}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageTypePlannedDayByPlannedDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}/requestType/{requestType}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageTypeRequestTypeByRequestType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}/station/{station}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageTypeStationByStation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/day/{day}/outageType/{outageType}/status/{status}
+  method: get
+  operationId: getOutagesDayByDayOutageTypeByOutageTypeStatusByStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/info
+  method: get
+  operationId: getOutagesInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/stations
+  method: get
+  operationId: getOutagesStations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /outages/stations/{stationType}
+  method: get
+  operationId: getOutagesStationsByStationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /performancescore/{Type}
+  method: get
+  operationId: getPerformancescoreByType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /performancescore/{Type}/current
+  method: get
+  operationId: getPerformancescoreByTypeCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /performancescore/{Type}/info
+  method: get
+  operationId: getPerformancescoreByTypeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /performancescore/{Type}/month/{month}
+  method: get
+  operationId: getPerformancescoreByTypeMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /powersystem
+  method: get
+  operationId: getPowersystem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /powersystem/status
+  method: get
+  operationId: getPowersystemStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /powersystemconditions/current
+  method: get
+  operationId: getPowersystemconditionsCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /powersystemconditions/range
+  method: get
+  operationId: getPowersystemconditionsRange
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /powersystemconditions/year/{year}
+  method: get
+  operationId: getPowersystemconditionsYearByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /powersystemconditions/years
+  method: get
+  operationId: getPowersystemconditionsYears
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pricerespevent
+  method: get
+  operationId: getPricerespevent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pricerespevent/current
+  method: get
+  operationId: getPricerespeventCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pricerespevent/info
+  method: get
+  operationId: getPricerespeventInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pricerespevent/month/{month}
+  method: get
+  operationId: getPricerespeventMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pricerespevent/month/{month}/location/{location}
+  method: get
+  operationId: getPricerespeventMonthByMonthLocationByLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints
+  method: get
+  operationId: getRealtimeconstraints
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/current
+  method: get
+  operationId: getRealtimeconstraintsCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/current/hour
+  method: get
+  operationId: getRealtimeconstraintsCurrentHour
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/day/{day}
+  method: get
+  operationId: getRealtimeconstraintsDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/final
+  method: get
+  operationId: getRealtimeconstraintsFinal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/final/current
+  method: get
+  operationId: getRealtimeconstraintsFinalCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/final/day/{day}
+  method: get
+  operationId: getRealtimeconstraintsFinalDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/final/info
+  method: get
+  operationId: getRealtimeconstraintsFinalInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimeconstraints/info
+  method: get
+  operationId: getRealtimeconstraintsInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlydemand
+  method: get
+  operationId: getRealtimehourlydemand
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlydemand/current
+  method: get
+  operationId: getRealtimehourlydemandCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlydemand/current/location/{locationId}
+  method: get
+  operationId: getRealtimehourlydemandCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlydemand/current/locationType/{locationType}
+  method: get
+  operationId: getRealtimehourlydemandCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlydemand/day/{day}/location/{locationId}
+  method: get
+  operationId: getRealtimehourlydemandDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlydemand/info
+  method: get
+  operationId: getRealtimehourlydemandInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlyoperatingreserve
+  method: get
+  operationId: getRealtimehourlyoperatingreserve
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlyoperatingreserve/current/all
+  method: get
+  operationId: getRealtimehourlyoperatingreserveCurrentAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlyoperatingreserve/current/location/{locationId}
+  method: get
+  operationId: getRealtimehourlyoperatingreserveCurrentLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlyoperatingreserve/current/locationType/{locationType}
+  method: get
+  operationId: getRealtimehourlyoperatingreserveCurrentLocationTypeByLocationType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlyoperatingreserve/day/{day}/location/{locationId}
+  method: get
+  operationId: getRealtimehourlyoperatingreserveDayByDayLocationByLocationId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /realtimehourlyoperatingreserve/info
+  method: get
+  operationId: getRealtimehourlyoperatingreserveInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reliabilityregionloadforecast
+  method: get
+  operationId: getReliabilityregionloadforecast
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reliabilityregionloadforecast/current
+  method: get
+  operationId: getReliabilityregionloadforecastCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reliabilityregionloadforecast/day/{day}
+  method: get
+  operationId: getReliabilityregionloadforecastDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reliabilityregionloadforecast/day/{day}/all
+  method: get
+  operationId: getReliabilityregionloadforecastDayByDayAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reliabilityregionloadforecast/info
+  method: get
+  operationId: getReliabilityregionloadforecastInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /schedule2varstatus
+  method: get
+  operationId: getSchedule2varstatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /schedule2varstatus/current
+  method: get
+  operationId: getSchedule2varstatusCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /schedule2varstatus/info
+  method: get
+  operationId: getSchedule2varstatusInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /schedule2varstatus/month/{month}
+  method: get
+  operationId: getSchedule2varstatusMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /seasonalpeakhourdata
+  method: get
+  operationId: getSeasonalpeakhourdata
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /seasonalpeakhourdata/current
+  method: get
+  operationId: getSeasonalpeakhourdataCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /seasonalpeakhourdata/info
+  method: get
+  operationId: getSeasonalpeakhourdataInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /seasonalpeakhourdata/month/{month}
+  method: get
+  operationId: getSeasonalpeakhourdataMonthByMonth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendayforecast
+  method: get
+  operationId: getSevendayforecast
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendayforecast/current
+  method: get
+  operationId: getSevendayforecastCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendayforecast/day/{day}
+  method: get
+  operationId: getSevendayforecastDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendayforecast/day/{day}/all
+  method: get
+  operationId: getSevendayforecastDayByDayAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendayforecast/info
+  method: get
+  operationId: getSevendayforecastInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendaywindpowerforecast
+  method: get
+  operationId: getSevendaywindpowerforecast
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendaywindpowerforecast/current
+  method: get
+  operationId: getSevendaywindpowerforecastCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendaywindpowerforecast/day/{day}
+  method: get
+  operationId: getSevendaywindpowerforecastDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sevendaywindpowerforecast/info
+  method: get
+  operationId: getSevendaywindpowerforecastInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /singlesrccontingencylimits
+  method: get
+  operationId: getSinglesrccontingencylimits
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /singlesrccontingencylimits/current
+  method: get
+  operationId: getSinglesrccontingencylimitsCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /singlesrccontingencylimits/current/interface/{interfaceName}
+  method: get
+  operationId: getSinglesrccontingencylimitsCurrentInterfaceByInterfaceName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /singlesrccontingencylimits/day/{day}
+  method: get
+  operationId: getSinglesrccontingencylimitsDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /singlesrccontingencylimits/day/{day}/interface/{interfaceName}
+  method: get
+  operationId: getSinglesrccontingencylimitsDayByDayInterfaceByInterfaceName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /singlesrccontingencylimits/info
+  method: get
+  operationId: getSinglesrccontingencylimitsInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /totaltransfercapability
+  method: get
+  operationId: getTotaltransfercapability
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /totaltransfercapability/current
+  method: get
+  operationId: getTotaltransfercapabilityCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /totaltransfercapability/day/{day}
+  method: get
+  operationId: getTotaltransfercapabilityDayByDay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /totaltransfercapability/forecast
+  method: get
+  operationId: getTotaltransfercapabilityForecast
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /totaltransfercapability/info
+  method: get
+  operationId: getTotaltransfercapabilityInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /weeklylmpindex
+  method: get
+  operationId: getWeeklylmpindex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /weeklylmpindex/current
+  method: get
+  operationId: getWeeklylmpindexCurrent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /weeklylmpindex/info
+  method: get
+  operationId: getWeeklylmpindexInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /weeklylmpindex/year/{year}
+  method: get
+  operationId: getWeeklylmpindexYearByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost
+  method: get
+  operationId: getWhlsecost
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost/hourly/current/location/{location}
+  method: get
+  operationId: getWhlsecostHourlyCurrentLocationByLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost/hourly/month/{month}/location/{location}
+  method: get
+  operationId: getWhlsecostHourlyMonthByMonthLocationByLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost/info
+  method: get
+  operationId: getWhlsecostInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost/monthly/current/location/{location}
+  method: get
+  operationId: getWhlsecostMonthlyCurrentLocationByLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost/monthly/month/{month}/location/{location}
+  method: get
+  operationId: getWhlsecostMonthlyMonthByMonthLocationByLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost/yearly/current/location/{location}
+  method: get
+  operationId: getWhlsecostYearlyCurrentLocationByLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /whlsecost/yearly/year/{year}/location/{location}
+  method: get
+  operationId: getWhlsecostYearlyYearByYearLocationByLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none

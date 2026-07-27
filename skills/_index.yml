@@ -1,0 +1,59 @@
+generated: '2026-07-27'
+method: generated
+source: openapi/iso-new-england-web-services-openapi.yml
+description: >-
+  Packaged agent skills for the ISO New England Web Services API v1.1. ISO New England publishes no
+  AGENTS.md and no skill files (searched 2026-07-27), so these were authored by API Evangelist. Every
+  step is grounded in an operationId that exists verbatim in the harvested OpenAPI - each id below
+  was checked against the spec - and every skill carries the same auth, freshness and honesty rules
+  captured in conventions/iso-new-england-conventions.yml and errors/iso-new-england-problem-types.yml.
+skills:
+- file: iso-new-england-realtime-grid-snapshot.md
+  name: ISO New England real-time grid snapshot
+  api: openapi/iso-new-england-web-services-openapi.yml
+  operations:
+  - getFiveminutesystemloadCurrent
+  - getGenfuelmixCurrent
+  - getFiveminutelmpCurrent
+  - getFiveminutelmpCurrentLocationByLocationId
+  - getHourlyloadforecastCurrent
+  - getFiveminutelmpInfo
+  - getLocationsAll
+- file: iso-new-england-historical-lmp-pull.md
+  name: Pull historical ISO New England locational marginal prices
+  api: openapi/iso-new-england-web-services-openapi.yml
+  operations:
+  - getHourlylmpDaFinalDayByDay
+  - getHourlylmpDaFinalDayByDayLocationByLocationId
+  - getHourlylmpDaFinalDayByDayHourBySh
+  - getHourlylmpRtFinalDayByDay
+  - getHourlylmpRtPrelimCurrent
+  - getFiveminutelmpDayByDayLocationByLocationId
+  - getHourlylmpDaFinalInfo
+  - getDayaheadconstraintsDayByDay
+- file: iso-new-england-capacity-and-forecast.md
+  name: Read ISO New England capacity market results and system forecasts
+  api: openapi/iso-new-england-web-services-openapi.yml
+  operations:
+  - getFcmaraCurrent
+  - getFcmaraCpByCp
+  - getFcmaraCpByCpAraByAra
+  - getFcmmraCurrent
+  - getFcmmraCpByCpMonthByMonth
+  - getMorningreportCurrent
+  - getSevendayforecastCurrent
+  - getSevendaywindpowerforecastCurrent
+  - getForecastcapacityCurrent
+- file: iso-new-england-demand-response-and-reserves.md
+  name: Track ISO New England demand response and operating reserves
+  api: openapi/iso-new-england-web-services-openapi.yml
+  operations:
+  - getDrdispatchCurrent
+  - getDrdispatchCurrentLocationByLocationId
+  - getDrdispatchDayByDay
+  - getDrtpCurrent
+  - getDrtpDayByDay
+  - getPricerespeventCurrent
+  - getPricerespeventMonthByMonth
+  - getFiveminutereservepriceCurrent
+  - getDaasreservedataCurrent

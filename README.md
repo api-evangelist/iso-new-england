@@ -77,8 +77,19 @@ ISO New England's RESTful interface to energy and market data, deployed November
 - **Access gate:** `self-serve` — a free ISO Express account (name, phone, company, email, password, CAPTCHA) which ISO-NE states automatically grants access to the data feeds.
 - **Auth model:** HTTP Basic authentication over SSL. No API key header, no OAuth2, no OIDC, no mTLS, no accreditation.
 
-## Harvested Artifacts
+## Harvested Artifacts (searched — real ISO New England documents, saved verbatim)
 
-- `schemas/nextt-web-services.xsd` — NEXTT external transaction XML Schema, fetched 2026-07-27 from `https://www.iso-ne.com/static-assets/documents/2019/09/nextt-web-services.xsd` (HTTP 200, 12,751 bytes, parses as valid XSD).
+- `schemas/iso-new-england-web-services-ns0.xsd` — the full Web Services payload model, fetched 2026-07-27 from `https://webservices.iso-ne.com/docs/v1.1/ns0.xsd` (HTTP 200, 107,647 bytes, 205 complex types, parses as valid XSD).
+- `schemas/iso-new-england-web-services-ns1.xsd` — second schema namespace, from `https://webservices.iso-ne.com/docs/v1.1/ns1.xsd` (HTTP 200, 5,917 bytes).
+- `schemas/nextt-web-services.xsd` — NEXTT external transaction XML Schema, from `https://www.iso-ne.com/static-assets/documents/2019/09/nextt-web-services.xsd` (HTTP 200, 12,751 bytes).
+- `examples/` — 14 real response payloads observed anonymously on 2026-07-27 through the public ISO Express dashboard proxy, with the proxy envelope removed.
+- `vocabulary/iso-new-england-vocabulary.yml` — the 24 published parameter vocabularies (load/dispatch/reserve/capacity zones, external nodes, interfaces, NCPC types, fuel categories, bid types, ARA, market/outage/equipment/company/status codes) plus the live 1,302-entry location registry.
 
-No OpenAPI was harvested. The only machine-readable description of the Web Services API is a WADL served from inside the authenticated base path (HTTP 401 anonymously). No spec was authored, because reconstructing it from prose would be fabrication rather than harvest. See `review.yml` for every URL probed and its HTTP status.
+## Derived and Generated Artifacts (API Evangelist, not ISO New England)
+
+- `openapi/iso-new-england-web-services-openapi.yml` — **derived** OpenAPI 3.1: 489 GET operations, 217 schemas, 91 tags, 13 real response examples. Built by parsing all 489 machine-generated Enunciate documentation pages plus the two published XSDs. Every operation carries `x-evidence` naming the documentation page it came from. **ISO New England does not publish an OpenAPI** — its only machine-readable interface description is a WADL served from inside the authenticated base path (HTTP 401 anonymously). This document must never be presented as an ISO New England artifact.
+- `json-schema/`, `data-model/`, `errors/`, `conformance/`, `authentication/`, `agentic-access/` — derived from the OpenAPI and XSDs.
+- `conventions/`, `lifecycle/`, `changelog/`, `packages/`, `well-known/`, `security/` — searched or probed; absences (no rate limits, no deprecation policy, no status page, no `/.well-known` document, no first-party SDK, no security.txt, no trust centre) are recorded as data.
+- `skills/`, `arazzo/`, `mcp/`, `overlays/`, `llms/` — generated; every operationId used was verified verbatim against the spec. The MCP tool list is a **candidate** — ISO New England publishes no MCP server.
+
+See `review.yml` for every URL probed and its HTTP status, including the `specHarvest.revision` note explaining what the first pass missed.

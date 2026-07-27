@@ -1,0 +1,156 @@
+generated: '2026-07-27'
+method: searched
+source: https://www.iso-ne.com/participate/support/web-services-data
+also_sourced_from:
+- https://webservices.iso-ne.com/docs/v1.1/
+- openapi/iso-new-england-web-services-openapi.yml
+- anonymous probes of https://webservices.iso-ne.com/api/v1.1 on 2026-07-27
+description: >-
+  Cross-cutting request/response semantics of the ISO New England Web Services API v1.1, taken from
+  ISO New England's own documentation and from the harvested OpenAPI. This is a read-only market and
+  operations data API: all 489 documented path templates are GET, and no write, batch, or
+  long-running operation exists. Conventions ISO New England does not publish are recorded as absent
+  rather than guessed.
+
+authentication:
+  style: HTTP Basic over SSL
+  credential: ISO Express account username and password
+  header: 'Authorization: Basic <base64(user:password)>'
+  anonymous_access: false
+  evidence: 'Anonymous GET https://webservices.iso-ne.com/api/v1.1 -> HTTP 401 with a Basic challenge (2026-07-27).'
+  detail: authentication/iso-new-england-authentication.yml
+  note: >-
+    There is no API key, no OAuth 2.0, no OpenID Connect and no mTLS on this API. Credentials are
+    the same ISO Express web credentials, which ISO New England states are automatically granted
+    access to the public data feeds.
+
+content_negotiation:
+  formats: [application/xml, application/json]
+  default: application/xml
+  selection:
+  - style: url-extension
+    example: https://webservices.iso-ne.com/api/v1.1/fiveminutelmp/current.json
+    note: Append .xml or .json to the request URL.
+  - style: accept-header
+    example: 'Accept: application/json'
+  json_mapping:
+    note: >-
+      JSON is a direct mapping of the XML schema. XML attributes appear as "@name" properties and
+      element text as "$" - confirmed against real payloads (see examples/). The response is wrapped
+      in the plural element (e.g. {"FiveMinLmps": {"FiveMinLmp": [...]}}), and a single-item result
+      may be an object rather than an array.
+  schemas:
+  - schemas/iso-new-england-web-services-ns0.xsd
+  - schemas/iso-new-england-web-services-ns1.xsd
+  - json-schema/iso-new-england-web-services-schemas.json
+
+versioning:
+  scheme: uri-path
+  current: v1.1
+  base_path: https://webservices.iso-ne.com/api/v1.1
+  deployed: November 2013
+  docs: https://www.iso-ne.com/participate/support/web-services-data
+  note: >-
+    Version 1.1 has been the current version since November 2013. The resource set is extended in
+    place (Batteries fuel category added May 2026) rather than by cutting a new version.
+
+resource_shape:
+  read_only: true
+  methods: [GET]
+  operation_count: 489
+  root_resources: 91
+  patterns:
+  - pattern: /<resource>/current
+    meaning: The most recent interval/report the feed has published.
+  - pattern: /<resource>/day/{day}
+    meaning: A whole operating day, day formatted YYYYMMDD.
+  - pattern: /<resource>/month/{month}
+    meaning: A whole month, month formatted YYYYMM.
+  - pattern: /<resource>/year/{year}
+    meaning: A whole year, year formatted YYYY.
+  - pattern: /<resource>/location/{locationId}
+    meaning: Filter to one pricing/load location id (see vocabulary/iso-new-england-vocabulary.yml).
+  - pattern: /<resource>/locationType/{locationType}
+    meaning: Filter to a class of locations (HUB, LOAD ZONE, EXT. NODE, INT. AREA ...).
+  - pattern: /<resource>/info
+    meaning: >-
+      Feed freshness. Returns a ServiceInfo element with CreationDate and LatestBeginDate - the
+      closest thing this API has to a cache/freshness signal. Poll /info before re-pulling a feed.
+  - pattern: /<resource>/all
+    meaning: The unfiltered set for the current interval.
+  parameters:
+    style: path-only
+    query_parameters: none documented
+    formats_reference: https://www.iso-ne.com/participate/support/web-services-data
+    vocabulary: vocabulary/iso-new-england-vocabulary.yml
+
+pagination:
+  supported: false
+  note: >-
+    No pagination is documented and none was observed. Volume is bounded by the time window in the
+    path (current / day / month / year) and by location filters. Bulk history is served as CSV files
+    from ISO Express instead (https://www.iso-ne.com/isoexpress/), not through this API.
+
+idempotency:
+  idempotency_key: false
+  note: >-
+    The API is read-only - every operation is a GET and is therefore idempotent by HTTP semantics -
+    but ISO New England publishes no idempotency-key contract, because there is nothing to write.
+    No Idempotency pointer is claimed for this provider.
+
+field_selection:
+  expansion: false
+  sparse_fields: false
+  note: Responses are fixed-shape XSD types; no expansion or field-selection mechanism is documented.
+
+request_tracing:
+  request_id_header: none documented
+  note: No correlation/request-id header is documented, and none was returned on the 401 responses observed.
+
+rate_limiting:
+  documented: false
+  headers: none documented
+  note: >-
+    ISO New England documents no rate limit, quota, or throttling headers for the Web Services API,
+    and none could be observed without credentials. The /info endpoints and the publication cadence
+    of each feed (five-minute, fifteen-minute, hourly, daily) are the practical polling guide.
+  guidance: >-
+    Poll no faster than the feed publishes. Five-minute feeds update every five minutes; hourly and
+    day-ahead feeds update on their market schedule.
+
+caching:
+  headers: none documented
+  freshness_endpoint: /<resource>/info
+  note: >-
+    Use the per-resource /info endpoint (ServiceInfo.CreationDate and ServiceInfo.LatestBeginDate) to
+    decide whether new data exists before pulling a full interval.
+
+errors:
+  envelope: none published
+  problem_json: false
+  catalog: errors/iso-new-england-problem-types.yml
+  note: 401 is the only error status confirmed by probe; there is no documented error-code registry.
+
+events:
+  webhooks: false
+  streaming: false
+  asyncapi: false
+  note: >-
+    ISO New England publishes no webhooks, no streaming/push surface and no AsyncAPI. Change
+    notification is by polling, by the ISO Express report trees, or by the ISO's mailing lists and
+    Web Feeds page (https://www.iso-ne.com/participate/support/feeds).
+
+alternatives_to_the_api:
+  bulk_csv: https://www.iso-ne.com/isoexpress/
+  note: >-
+    Full historical report files download anonymously as CSV from ISO Express (verified: a 2.46 MB
+    day-ahead nodal LMP file returned HTTP 200 with no account on 2026-07-27). The API is the
+    per-resource, credentialed path to the same data.
+
+cross_links:
+  authentication: authentication/iso-new-england-authentication.yml
+  errors: errors/iso-new-england-problem-types.yml
+  lifecycle: lifecycle/iso-new-england-lifecycle.yml
+  vocabulary: vocabulary/iso-new-england-vocabulary.yml
+  data_model: data-model/iso-new-england-data-model.yml
+  examples: examples/_index.yml

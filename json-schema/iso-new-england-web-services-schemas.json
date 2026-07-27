@@ -1,0 +1,5229 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://raw.githubusercontent.com/api-evangelist/iso-new-england/refs/heads/main/json-schema/iso-new-england-web-services-schemas.json",
+ "title": "ISO New England Web Services API v1.1 data model",
+ "description": "JSON Schema 2020-12 rendering of the 217 data types ISO New England publishes as XML Schema at https://webservices.iso-ne.com/docs/v1.1/ns0.xsd and ns1.xsd (saved verbatim under schemas/). Derived by the API Evangelist enrichment pipeline on 2026-07-27 - XML attributes are rendered as \"@name\" properties and element text as \"$\", matching the JSON representation observed in real responses from the public ISO Express dashboard proxy. Not published by ISO New England.",
+ "x-provenance": {
+  "method": "derived",
+  "generated": "2026-07-27",
+  "sources": [
+   "https://webservices.iso-ne.com/docs/v1.1/ns0.xsd",
+   "https://webservices.iso-ne.com/docs/v1.1/ns1.xsd"
+  ]
+ },
+ "$defs": {
+  "ActualFifteenMinInterchange": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "ActInterchange": {
+     "type": "number"
+    },
+    "Purchase": {
+     "type": "number"
+    },
+    "Sale": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchange"
+  },
+  "ActualFifteenMinInterchanges": {
+   "type": "object",
+   "properties": {
+    "ActualFifteenMinInterchange": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ActualFifteenMinInterchange"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchanges"
+  },
+  "ActualInterchange": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "ActInterchange": {
+     "type": "number"
+    },
+    "Purchase": {
+     "type": "number"
+    },
+    "Sale": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchange"
+  },
+  "ActualInterchanges": {
+   "type": "object",
+   "properties": {
+    "ActualInterchange": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ActualInterchange"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchanges"
+  },
+  "CapacityScarcityCondition": {
+   "type": "object",
+   "properties": {
+    "TradingIntervalBegin": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "LocationId": {
+     "type": "integer"
+    },
+    "LocationName": {
+     "type": "string"
+    },
+    "SystemCondition": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "TradingIntervalBegin"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_CapacityScarcityCondition"
+  },
+  "CapacityScarcityConditions": {
+   "type": "object",
+   "properties": {
+    "CapacityScarcityCondition": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CapacityScarcityCondition"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_CapacityScarcityConditions"
+  },
+  "CombinedHourlyDemand": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "DaLoad": {
+     "type": "number"
+    },
+    "RtLoad": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_CombinedHourlyDemand"
+  },
+  "CombinedHourlyDemands": {
+   "type": "object",
+   "properties": {
+    "CombinedHourlyDemand": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CombinedHourlyDemand"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_CombinedHourlyDemands"
+  },
+  "DailyFrmThresholdPrice": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ForwardReservedHeatRate": {
+     "type": "number"
+    },
+    "FuelIndex": {
+     "type": "number"
+    },
+    "ForwardReserveThresholdPrice": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "ForwardReservedHeatRate",
+    "FuelIndex",
+    "ForwardReserveThresholdPrice"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrice"
+  },
+  "DailyFrmThresholdPrices": {
+   "type": "object",
+   "properties": {
+    "DailyFrmThresholdPrice": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DailyFrmThresholdPrice"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrices"
+  },
+  "DailyOfferThreshPrice": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "OfferThreshPrice": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "OfferThreshPrice"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DailyOfferThreshPrice"
+  },
+  "DailyOfferThreshPrices": {
+   "type": "object",
+   "properties": {
+    "DailyOfferThreshPrice": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DailyOfferThreshPrice"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DailyOfferThreshPrices"
+  },
+  "DayAheadConstraint": {
+   "$ref": "#/$defs/Constraint",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraint"
+  },
+  "DayAheadConstraints": {
+   "type": "object",
+   "properties": {
+    "DayAheadConstraint": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DayAheadConstraint"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraints"
+  },
+  "DayAheadLmpAvgCongestion": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "AvgOnPeakDaCongestion": {
+     "type": "number"
+    },
+    "AvgOffPeakDaCongestion": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestion"
+  },
+  "DayAheadLmpAvgCongestions": {
+   "type": "object",
+   "properties": {
+    "DayAheadLmpAvgCongestion": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DayAheadLmpAvgCongestion"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestions"
+  },
+  "DayAheadPrdClearing": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "DaClearedMw": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearing"
+  },
+  "DayAheadPrdClearings": {
+   "type": "object",
+   "properties": {
+    "DayAheadPrdClearing": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DayAheadPrdClearing"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearings"
+  },
+  "DayAheadVirtualProxy": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "OnPeakIncProxy": {
+     "type": "number"
+    },
+    "OnPeakDecProxy": {
+     "type": "number"
+    },
+    "OffPeakIncProxy": {
+     "type": "number"
+    },
+    "OffPeakDecProxy": {
+     "type": "number"
+    },
+    "ZonalLMPDate": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadVirtualProxy"
+  },
+  "DayAheadVirtualProxys": {
+   "type": "object",
+   "properties": {
+    "DayAheadVirtualProxy": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DayAheadVirtualProxy"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadVirtualProxys"
+  },
+  "DrDispatch": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "EffectiveDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "DispatchMw": {
+     "type": "number"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "EffectiveDate",
+    "DispatchMw",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DrDispatch"
+  },
+  "DrDispatches": {
+   "type": "object",
+   "properties": {
+    "DrDispatch": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DrDispatch"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DrDispatches"
+  },
+  "DrtpResult": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "CaseId": {
+     "type": "integer"
+    },
+    "HistoricalThresholdPrice": {
+     "type": "number"
+    },
+    "DemandReductionThresholdPrice": {
+     "type": "number"
+    },
+    "RegressionCoefficientA": {
+     "type": "number"
+    },
+    "RegressionCoefficientB": {
+     "type": "number"
+    },
+    "RegressionCoefficientC": {
+     "type": "number"
+    },
+    "Rsquare": {
+     "type": "number"
+    },
+    "TradingMonth": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ReferenceMonth": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "FuelIndexTradingMonth": {
+     "type": "number"
+    },
+    "FuelIndexReferenceMonth": {
+     "type": "number"
+    },
+    "PricePointLowerThreshold": {
+     "type": "number"
+    },
+    "PricePointUpperThreshold": {
+     "type": "number"
+    },
+    "AdjustedOfferCapacity": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "CaseId",
+    "RegressionCoefficientA",
+    "RegressionCoefficientB",
+    "RegressionCoefficientC",
+    "Rsquare"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResult"
+  },
+  "DrtpResults": {
+   "type": "object",
+   "properties": {
+    "DrtpResult": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/DrtpResult"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResults"
+  },
+  "ExternalFlow": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "ActualFlow": {
+     "type": "number"
+    },
+    "ImportLimit": {
+     "type": "number"
+    },
+    "ExportLimit": {
+     "type": "number"
+    },
+    "CurrentSchedule": {
+     "type": "number"
+    },
+    "Purchase": {
+     "type": "number"
+    },
+    "Sale": {
+     "type": "number"
+    },
+    "TotalExports": {
+     "type": "number"
+    },
+    "TotalImports": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ExternalFlow"
+  },
+  "ExternalFlows": {
+   "type": "object",
+   "properties": {
+    "ExternalFlow": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ExternalFlow"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ExternalFlows"
+  },
+  "FCMBilateralResults": {
+   "type": "object",
+   "properties": {
+    "FCMBilateralResult": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FCMBilateralResult"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FCMBilateralResults"
+  },
+  "FCMRAResults": {
+   "type": "object",
+   "properties": {
+    "FCMRAResult": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FCMRAResult"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FCMRAResults"
+  },
+  "FifteenMinBc": {
+   "type": "object",
+   "properties": {
+    "Type": {
+     "type": "string",
+     "enum": [
+      "PRELIM",
+      "FINAL"
+     ]
+    },
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ConstraintName": {
+     "type": "string"
+    },
+    "MarginalValueInterval": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MarginalValue": {
+     "type": "number"
+    },
+    "HourEnd": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "ConstraintName",
+    "MarginalValueInterval",
+    "HourEnd"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FifteenMinBc"
+  },
+  "FifteenMinBcs": {
+   "type": "object",
+   "properties": {
+    "FifteenMinBc": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FifteenMinBc"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FifteenMinBcs"
+  },
+  "FifteenMinLmp": {
+   "$ref": "#/$defs/Lmp",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FifteenMinLmp"
+  },
+  "FifteenMinLmps": {
+   "type": "object",
+   "properties": {
+    "FifteenMinLmp": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Lmp"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FifteenMinLmps"
+  },
+  "FinalHourlyReservePrice": {
+   "$ref": "#/$defs/ReservePrice",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrice"
+  },
+  "FinalHourlyReservePrices": {
+   "type": "object",
+   "properties": {
+    "FinalHourlyReservePrice": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FinalHourlyReservePrice"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrices"
+  },
+  "FiveMinLmp": {
+   "$ref": "#/$defs/Lmp",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmp"
+  },
+  "FiveMinLmps": {
+   "type": "object",
+   "properties": {
+    "FiveMinLmp": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Lmp"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmps"
+  },
+  "FiveMinRcp": {
+   "$ref": "#/$defs/Rcp",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinRcp"
+  },
+  "FiveMinRcps": {
+   "type": "object",
+   "properties": {
+    "FiveMinRcp": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FiveMinRcp"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinRcps"
+  },
+  "FiveMinReservePrice": {
+   "$ref": "#/$defs/ReservePrice",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinReservePrice"
+  },
+  "FiveMinReservePrices": {
+   "type": "object",
+   "properties": {
+    "FiveMinReservePrice": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FiveMinReservePrice"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinReservePrices"
+  },
+  "FiveMinSystemLoad": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "LoadMw": {
+     "type": "number"
+    },
+    "NativeLoad": {
+     "type": "number"
+    },
+    "ArdDemand": {
+     "type": "number"
+    },
+    "SystemLoadBtmPv": {
+     "type": "number"
+    },
+    "NativeLoadBtmPv": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinSystemLoad"
+  },
+  "FiveMinSystemLoads": {
+   "type": "object",
+   "properties": {
+    "FiveMinSystemLoad": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FiveMinSystemLoad"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinSystemLoads"
+  },
+  "forecast_capacity_analysis_report": {
+   "type": "object",
+   "properties": {
+    "report_day": {
+     "x-xsd-type": "type_day",
+     "description": "XSD type type_day is referenced but not declared in the published schemas."
+    },
+    "report_type": {
+     "type": "string",
+     "enum": [
+      "SCRA_A",
+      "SCRA_B",
+      "SCRA_07",
+      "SCRA_11",
+      "SCRA_20"
+     ]
+    },
+    "report_version_date": {
+     "x-xsd-type": "type_date",
+     "description": "XSD type type_date is referenced but not declared in the published schemas."
+    },
+    "forecast_capacity_analysis_hours": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/forecast_capacity_analysis_hours"
+     },
+     "maxItems": 25
+    }
+   },
+   "required": [
+    "report_day",
+    "report_type",
+    "report_version_date"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_forecast_capacity_analysis_report"
+  },
+  "forecast_capacity_analysis_hours": {
+   "type": "object",
+   "properties": {
+    "market_hour": {
+     "$ref": "#/$defs/market_hour"
+    },
+    "available_capacity_mw": {
+     "x-xsd-type": "type_mw",
+     "description": "XSD type type_mw is referenced but not declared in the published schemas."
+    },
+    "load_forecast_mw": {
+     "x-xsd-type": "type_mw",
+     "description": "XSD type type_mw is referenced but not declared in the published schemas."
+    },
+    "reserve_requirement_mw": {
+     "x-xsd-type": "type_mw",
+     "description": "XSD type type_mw is referenced but not declared in the published schemas."
+    },
+    "capacity_requirement_mw": {
+     "x-xsd-type": "type_mw",
+     "description": "XSD type type_mw is referenced but not declared in the published schemas."
+    },
+    "surplus_capacity_mw": {
+     "x-xsd-type": "type_mw",
+     "description": "XSD type type_mw is referenced but not declared in the published schemas."
+    }
+   },
+   "required": [
+    "market_hour",
+    "available_capacity_mw",
+    "load_forecast_mw",
+    "reserve_requirement_mw",
+    "capacity_requirement_mw",
+    "surplus_capacity_mw"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_forecast_capacity_analysis_hours"
+  },
+  "market_hour": {
+   "type": "object",
+   "properties": {
+    "gmt_begin_date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "local_day": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "local_hour_end": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "gmt_begin_date",
+    "local_day",
+    "local_hour_end"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_market_hour"
+  },
+  "forecast_capacity_analysis_reports": {
+   "type": "object",
+   "properties": {
+    "forecast_capacity_analysis_report": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/forecast_capacity_analysis_report"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_forecast_capacity_analysis_reports"
+  },
+  "FtrAuctionClearingPrice": {
+   "type": "object",
+   "properties": {
+    "AuctionName": {
+     "type": "string"
+    },
+    "ClassType": {
+     "type": "string"
+    },
+    "LocationID": {
+     "type": "integer"
+    },
+    "LocationName": {
+     "type": "string"
+    },
+    "LocationType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "ClearingPrice": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "LocationID",
+    "LocationName",
+    "LocationType",
+    "Location",
+    "ClearingPrice"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FtrAuctionClearingPrice"
+  },
+  "FtrAuctionClearingPrices": {
+   "type": "object",
+   "properties": {
+    "FtrAuctionClearingPrice": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FtrAuctionClearingPrice"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FtrAuctionClearingPrices"
+  },
+  "FtrAuctionResult": {
+   "type": "object",
+   "properties": {
+    "AuctionName": {
+     "type": "string"
+    },
+    "CustomerId": {
+     "type": "integer"
+    },
+    "CustomerName": {
+     "type": "string"
+    },
+    "SourceLocation": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "SourceLocationType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    },
+    "SinkLocation": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "SinkLocationType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    },
+    "BuySell": {
+     "type": "string"
+    },
+    "ClassType": {
+     "type": "string"
+    },
+    "AwardFTRMW": {
+     "type": "number"
+    },
+    "AwardFTRPrice": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FtrAuctionResult"
+  },
+  "FtrAuctionResults": {
+   "type": "object",
+   "properties": {
+    "FtrAuctionResult": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/FtrAuctionResult"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FtrAuctionResults"
+  },
+  "GenFuelMix": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "GenMw": {
+     "type": "number"
+    },
+    "FuelCategoryRollup": {
+     "type": "string"
+    },
+    "FuelCategory": {
+     "type": "string"
+    },
+    "MarginalFlag": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    }
+   },
+   "required": [
+    "BeginDate",
+    "GenMw",
+    "FuelCategoryRollup"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMix"
+  },
+  "GenFuelMixes": {
+   "type": "object",
+   "properties": {
+    "GenFuelMix": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/GenFuelMix"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMixes"
+  },
+  "HbDayAheadArdBids": {
+   "type": "object",
+   "properties": {
+    "HbDayAheadArdBid": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbArdBid"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadArdBids"
+  },
+  "HbDayAheadDemandBid": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MaskedParticipantId": {
+     "type": "integer"
+    },
+    "MaskedLocationId": {
+     "type": "integer"
+    },
+    "LocationType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    },
+    "BidType": {
+     "type": "string"
+    },
+    "BidId": {
+     "type": "integer"
+    },
+    "Segments": {
+     "$ref": "#/$defs/Segments"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBid"
+  },
+  "HbDayAheadDemandBids": {
+   "type": "object",
+   "properties": {
+    "HbDayAheadDemandBid": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbDayAheadDemandBid"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBids"
+  },
+  "HbDayAheadDrrBids": {
+   "type": "object",
+   "properties": {
+    "HbDayAheadDrrBid": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbDrrBid"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDrrBids"
+  },
+  "HbDayAheadEnergyOffers": {
+   "type": "object",
+   "properties": {
+    "HbDayAheadEnergyOffer": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbEnergyOffer"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadEnergyOffers"
+  },
+  "HbDayAheadLoadResponseOffer": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MaskedCustomerId": {
+     "type": "integer"
+    },
+    "MaskedAssetId": {
+     "type": "integer"
+    },
+    "OfferMw": {
+     "type": "number"
+    },
+    "OfferPrice": {
+     "type": "number"
+    },
+    "CurtailmentPrice": {
+     "type": "number"
+    },
+    "MinInterruptHours": {
+     "type": "integer"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffer"
+  },
+  "HbDayAheadLoadResponseOffers": {
+   "type": "object",
+   "properties": {
+    "HbDayAheadLoadResponseOffer": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbDayAheadLoadResponseOffer"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffers"
+  },
+  "HbFTRAuction": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "SourceLocation": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "SourceLocationType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    },
+    "SinkLocation": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "SinkLocationType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    },
+    "BuySell": {
+     "type": "string"
+    },
+    "ClassType": {
+     "type": "string"
+    },
+    "BidMW": {
+     "type": "number"
+    },
+    "BidPrice": {
+     "type": "number"
+    },
+    "BidStatus": {
+     "type": "string"
+    },
+    "AuctionName": {
+     "type": "string"
+    },
+    "MaskedCustomerId": {
+     "type": "integer"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuction"
+  },
+  "HbFTRAuctions": {
+   "type": "object",
+   "properties": {
+    "HbFTRAuction": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbFTRAuction"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuctions"
+  },
+  "HbForwardReserveAuctionOffer": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MaskedCustomerId": {
+     "type": "integer"
+    },
+    "ReserveZone": {
+     "$ref": "#/$defs/ReserveLocRef"
+    },
+    "ProductType": {
+     "type": "string"
+    },
+    "Segments": {
+     "$ref": "#/$defs/Segments"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffer"
+  },
+  "HbForwardReserveAuctionOffers": {
+   "type": "object",
+   "properties": {
+    "HbForwardReserveAuctionOffer": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbForwardReserveAuctionOffer"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffers"
+  },
+  "HbImportExport": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MarketType": {
+     "type": "string"
+    },
+    "MaskedCustomerId": {
+     "type": "integer"
+    },
+    "MaskedSourceId": {
+     "type": "integer"
+    },
+    "MaskedSinkId": {
+     "type": "integer"
+    },
+    "EmergencyFlag": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "Direction": {
+     "type": "string"
+    },
+    "TransactionType": {
+     "type": "string"
+    },
+    "Price": {
+     "type": "number"
+    },
+    "Mw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbImportExport"
+  },
+  "HbImportExports": {
+   "type": "object",
+   "properties": {
+    "HbImportExport": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbImportExport"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbImportExports"
+  },
+  "HbRealTimeArdBids": {
+   "type": "object",
+   "properties": {
+    "HbRealTimeArdBid": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbArdBid"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeArdBids"
+  },
+  "HbRealTimeDrrBids": {
+   "type": "object",
+   "properties": {
+    "HbRealTimeDrrBid": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbDrrBid"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids"
+  },
+  "HbRealTimeEnergyOffers": {
+   "type": "object",
+   "properties": {
+    "HbRealTimeEnergyOffer": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbEnergyOffer"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeEnergyOffers"
+  },
+  "HbRegulationOffer": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MaskedParticipantId": {
+     "type": "integer"
+    },
+    "MaskedAssetId": {
+     "type": "integer"
+    },
+    "RegulationCapability": {
+     "type": "number"
+    },
+    "RegulationOfferPrice": {
+     "type": "number"
+    },
+    "SelfScheduledRegulation": {
+     "type": "number"
+    },
+    "RegulationLowLimit": {
+     "type": "number"
+    },
+    "RegulationHighLimit": {
+     "type": "number"
+    },
+    "RegulationStatus": {
+     "type": "string",
+     "enum": [
+      "AVAILABLE",
+      "UNAVAILABLE"
+     ]
+    },
+    "AutomaticResponseRate": {
+     "type": "number"
+    },
+    "RegulationServiceOfferPrice": {
+     "type": "number"
+    },
+    "RegulationCapacityOfferPrice": {
+     "type": "number"
+    },
+    "IntertemporalOpportunityCost": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffer"
+  },
+  "HbRegulationOffers": {
+   "type": "object",
+   "properties": {
+    "HbRegulationOffer": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HbRegulationOffer"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffers"
+  },
+  "Hbfcmara": {
+   "type": "object",
+   "properties": {
+    "Cp": {
+     "type": "string"
+    },
+    "AucType": {
+     "type": "string"
+    },
+    "MaskResID": {
+     "type": "number"
+    },
+    "MaskLPID": {
+     "type": "number"
+    },
+    "MaskCZID": {
+     "type": "number"
+    },
+    "ResType": {
+     "type": "string"
+    },
+    "MaskIntfcID": {
+     "type": "number"
+    },
+    "BidType": {
+     "type": "string"
+    },
+    "Seg1Mw": {
+     "type": "number"
+    },
+    "Seg1Price": {
+     "type": "number"
+    },
+    "Seg2Mw": {
+     "type": "number"
+    },
+    "Seg2Price": {
+     "type": "number"
+    },
+    "Seg3Mw": {
+     "type": "number"
+    },
+    "Seg3Price": {
+     "type": "number"
+    },
+    "Seg4Mw": {
+     "type": "number"
+    },
+    "Seg4Price": {
+     "type": "number"
+    },
+    "Seg5Mw": {
+     "type": "number"
+    },
+    "Seg5Price": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "Cp"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmara"
+  },
+  "Hbfcmaras": {
+   "type": "object",
+   "properties": {
+    "Hbfcmara": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Hbfcmara"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmaras"
+  },
+  "Hbfcmmra": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "AucType": {
+     "type": "string"
+    },
+    "MaskResID": {
+     "type": "number"
+    },
+    "MaskLPID": {
+     "type": "number"
+    },
+    "MaskCZID": {
+     "type": "number"
+    },
+    "ResType": {
+     "type": "string"
+    },
+    "MaskIntfcID": {
+     "type": "number"
+    },
+    "BidType": {
+     "type": "string"
+    },
+    "Seg1Mw": {
+     "type": "number"
+    },
+    "Seg1Price": {
+     "type": "number"
+    },
+    "Seg2Mw": {
+     "type": "number"
+    },
+    "Seg2Price": {
+     "type": "number"
+    },
+    "Seg3Mw": {
+     "type": "number"
+    },
+    "Seg3Price": {
+     "type": "number"
+    },
+    "Seg4Mw": {
+     "type": "number"
+    },
+    "Seg4Price": {
+     "type": "number"
+    },
+    "Seg5Mw": {
+     "type": "number"
+    },
+    "Seg5Price": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmmra"
+  },
+  "Hbfcmmras": {
+   "type": "object",
+   "properties": {
+    "Hbfcmmra": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Hbfcmmra"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmmras"
+  },
+  "HourlyBAInterchange": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "InterfaceFlow": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/InterfaceFlow"
+     }
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyBAInterchange"
+  },
+  "HourlyBAInterchanges": {
+   "type": "object",
+   "properties": {
+    "HourlyBAInterchange": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyBAInterchange"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyBAInterchanges"
+  },
+  "HourlyDaDemand": {
+   "$ref": "#/$defs/Demand",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemand"
+  },
+  "HourlyDaDemands": {
+   "type": "object",
+   "properties": {
+    "HourlyDaDemand": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyDaDemand"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemands"
+  },
+  "HourlyDaOperatingReserve": {
+   "$ref": "#/$defs/OperatingReserve",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserve"
+  },
+  "HourlyDaOperatingReserves": {
+   "type": "object",
+   "properties": {
+    "HourlyDaOperatingReserve": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyDaOperatingReserve"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserves"
+  },
+  "HourlyLmp": {
+   "$ref": "#/$defs/Lmp",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmp"
+  },
+  "HourlyLmps": {
+   "type": "object",
+   "properties": {
+    "HourlyLmp": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyLmp"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmps"
+  },
+  "HourlyLoadForecast": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "CreationDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "LoadMw": {
+     "type": "number"
+    },
+    "LoadAdjustmentMw": {
+     "type": "number"
+    },
+    "NetLoadMw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "CreationDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadForecast"
+  },
+  "HourlyLoadForecasts": {
+   "type": "object",
+   "properties": {
+    "HourlyLoadForecast": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyLoadForecast"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadForecasts"
+  },
+  "HourlyLoadGenInterchange": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Load": {
+     "type": "number"
+    },
+    "NativeLoad": {
+     "type": "number"
+    },
+    "ArdDemand": {
+     "type": "number"
+    },
+    "TotalGeneration": {
+     "type": "number"
+    },
+    "TotalInterchange": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadGenInterchange"
+  },
+  "HourlyLoadGenInterchanges": {
+   "type": "object",
+   "properties": {
+    "HourlyLoadGenInterchange": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyLoadGenInterchange"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadGenInterchanges"
+  },
+  "HourlyPeakEnergyRent": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/CapacityRef"
+    },
+    "RTLMPLocation": {
+     "type": "string"
+    },
+    "RTLMP": {
+     "type": "number"
+    },
+    "PERFuelType": {
+     "type": "string"
+    },
+    "StrikePrice": {
+     "type": "number"
+    },
+    "SystemLoad": {
+     "type": "number"
+    },
+    "ScaleFactor": {
+     "type": "number"
+    },
+    "HourlyPER": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRent"
+  },
+  "HourlyPeakEnergyRents": {
+   "type": "object",
+   "properties": {
+    "HourlyPeakEnergyRent": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyPeakEnergyRent"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRents"
+  },
+  "HourlyRcp": {
+   "$ref": "#/$defs/Rcp",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcp"
+  },
+  "HourlyRcps": {
+   "type": "object",
+   "properties": {
+    "HourlyRcp": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyRcp"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcps"
+  },
+  "HourlyRtDemand": {
+   "$ref": "#/$defs/Demand",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtDemand"
+  },
+  "HourlyRtDemands": {
+   "type": "object",
+   "properties": {
+    "HourlyRtDemand": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyRtDemand"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtDemands"
+  },
+  "HourlyRtOperatingReserve": {
+   "$ref": "#/$defs/OperatingReserve",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserve"
+  },
+  "HourlyRtOperatingReserves": {
+   "type": "object",
+   "properties": {
+    "HourlyRtOperatingReserve": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlyRtOperatingReserve"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserves"
+  },
+  "HourlySystemLoad": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "Load": {
+     "type": "number"
+    },
+    "NativeLoad": {
+     "type": "number"
+    },
+    "ArdDemand": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoad"
+  },
+  "HourlySystemLoads": {
+   "type": "object",
+   "properties": {
+    "HourlySystemLoad": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/HourlySystemLoad"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads"
+  },
+  "LmpIndex": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "OnPeak": {
+     "type": "number"
+    },
+    "OffPeak": {
+     "type": "number"
+    },
+    "Average": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location",
+    "OnPeak",
+    "OffPeak",
+    "Average"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_LmpIndex"
+  },
+  "LmpIndexes": {
+   "type": "object",
+   "properties": {
+    "LmpIndex": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/LmpIndex"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_LmpIndexes"
+  },
+  "LoadZoneNCPC": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "DaEconomicCredit": {
+     "type": "number"
+    },
+    "DaHighVoltageCredit": {
+     "type": "number"
+    },
+    "DaLowVoltageCredit": {
+     "type": "number"
+    },
+    "DaLscprCredit": {
+     "type": "number"
+    },
+    "DaScrCredit": {
+     "type": "number"
+    },
+    "RtEconomicCredit": {
+     "type": "number"
+    },
+    "RtHighVoltageCredit": {
+     "type": "number"
+    },
+    "RtLowVoltageCredit": {
+     "type": "number"
+    },
+    "RtPerfAuditCredit": {
+     "type": "number"
+    },
+    "RtLscprCredit": {
+     "type": "number"
+    },
+    "RtRrpocCredit": {
+     "type": "number"
+    },
+    "RtDlocCredit": {
+     "type": "number"
+    },
+    "RtScrCredit": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_LoadZoneNCPC"
+  },
+  "LoadZoneNCPCs": {
+   "type": "object",
+   "properties": {
+    "LoadZoneNCPC": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/LoadZoneNCPC"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_LoadZoneNCPCs"
+  },
+  "Location": {
+   "type": "object",
+   "properties": {
+    "LocationID": {
+     "type": "integer"
+    },
+    "LocationType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    },
+    "LocationName": {
+     "type": "string"
+    },
+    "NetworkNodeType": {
+     "type": "string",
+     "enum": [
+      "UNIT",
+      "LOAD"
+     ]
+    },
+    "AreaType": {
+     "type": "string",
+     "enum": [
+      "INTERNAL",
+      "EXTERNAL"
+     ]
+    }
+   },
+   "required": [
+    "LocationID",
+    "LocationType",
+    "LocationName",
+    "NetworkNodeType",
+    "AreaType"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Location"
+  },
+  "LocationRef": {
+   "type": "object",
+   "properties": {
+    "$": {
+     "type": "string",
+     "description": "Element text value (serialized as \"$\" in the JSON representation, per observed API responses)."
+    },
+    "@LocId": {
+     "type": "integer"
+    },
+    "@LocType": {
+     "type": "string",
+     "enum": [
+      "NETWORK AREA",
+      "LOAD ZONE",
+      "NETWORK NODE",
+      "HUB",
+      "HUB NODE",
+      "RELIABILITY REGION",
+      "EXT. NODE",
+      "RESERVE ZONE",
+      "SYSTEM",
+      "INT. AREA",
+      "EXT. AREA",
+      "DISPATCH ZONE",
+      "CAPACITY ZONE",
+      "DRRAZ",
+      "DRR AGGREGATION ZONE"
+     ]
+    }
+   },
+   "required": [
+    "@LocId"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef"
+  },
+  "Locations": {
+   "type": "object",
+   "properties": {
+    "Location": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Location"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Locations"
+  },
+  "MonthlyLmpIndex": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "DaOnPeakLMP": {
+     "type": "number"
+    },
+    "DaOffPeakLMP": {
+     "type": "number"
+    },
+    "DaAverageLMP": {
+     "type": "number"
+    },
+    "RtOnPeakLMP": {
+     "type": "number"
+    },
+    "RtOffPeakLMP": {
+     "type": "number"
+    },
+    "RtAverageLMP": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyLmpIndex"
+  },
+  "MonthlyLmpIndexes": {
+   "type": "object",
+   "properties": {
+    "MonthlyLmpIndex": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MonthlyLmpIndex"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyLmpIndexes"
+  },
+  "MonthlyNetworkLoad": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "NetworkLoadId": {
+     "type": "integer"
+    },
+    "NetworkLoadName": {
+     "type": "string"
+    },
+    "CustomerId": {
+     "type": "integer"
+    },
+    "CustomerName": {
+     "type": "string"
+    },
+    "DunsNumber": {
+     "type": "string"
+    },
+    "DunsName": {
+     "type": "string"
+    },
+    "ReliabilityRegionId": {
+     "type": "integer"
+    },
+    "ReliabilityRegionName": {
+     "type": "string"
+    },
+    "LocalNetwork": {
+     "type": "string"
+    },
+    "NetworkLoadValueMw": {
+     "type": "number"
+    },
+    "PoolNetworkLoadValueMw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyNetworkLoad"
+  },
+  "MonthlyNetworkLoads": {
+   "type": "object",
+   "properties": {
+    "MonthlyNetworkLoad": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MonthlyNetworkLoad"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyNetworkLoads"
+  },
+  "MonthlyPeakEnergyRent": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/CapacityRef"
+    },
+    "MonthlyPER": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyPeakEnergyRent"
+  },
+  "MonthlyPeakEnergyRents": {
+   "type": "object",
+   "properties": {
+    "MonthlyPeakEnergyRent": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MonthlyPeakEnergyRent"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyPeakEnergyRents"
+  },
+  "MorningReport": {
+   "type": "object",
+   "properties": {
+    "ReportType": {
+     "type": "string"
+    },
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "CreationDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "PeakLoadYesterdayHour": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "PeakLoadYesterdayMw": {
+     "type": "number"
+    },
+    "CsoMw": {
+     "type": "number"
+    },
+    "CapAdditionsMw": {
+     "type": "number"
+    },
+    "GenOutagesReductionMW": {
+     "type": "number"
+    },
+    "GenPlannedOutagesReductionMW": {
+     "type": "number"
+    },
+    "GenForcedOutagesReductionMW": {
+     "type": "number"
+    },
+    "UncommittedGenBeforePeakMw": {
+     "type": "number"
+    },
+    "NonMrktSensComnts": {
+     "type": "string"
+    },
+    "UncommittedAvailGenMw": {
+     "type": "number"
+    },
+    "DRRCapacityMw": {
+     "type": "number"
+    },
+    "UncommitedAvailDRRMw": {
+     "type": "number"
+    },
+    "NetCapDeliveryMw": {
+     "type": "number"
+    },
+    "TieDelivery": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TieDelivery"
+     }
+    },
+    "TotAvailCapMw": {
+     "type": "number"
+    },
+    "PeakLoadTodayHour": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "PeakLoadTodayMw": {
+     "type": "number"
+    },
+    "TotalOperReserveReqMw": {
+     "type": "number"
+    },
+    "CapRequiredMw": {
+     "type": "number"
+    },
+    "SurplusDeficiencyMw": {
+     "type": "number"
+    },
+    "ReplReserveRequiredMw": {
+     "type": "number"
+    },
+    "ExcessCommitMw": {
+     "type": "number"
+    },
+    "LargestFirstContMw": {
+     "type": "number"
+    },
+    "AmsPeakLoadExpMw": {
+     "type": "number"
+    },
+    "NyIsoSarAvail": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "TenMinReserveReqMw": {
+     "type": "number"
+    },
+    "TenMinReserveEstMw": {
+     "type": "number"
+    },
+    "ThirtyMinReserveReqMw": {
+     "type": "number"
+    },
+    "ThirtyMinReserveEstMw": {
+     "type": "number"
+    },
+    "ExpActOp4Mw": {
+     "type": "number"
+    },
+    "AddlCapAvailOp4ActMw": {
+     "type": "number"
+    },
+    "InterchangeDetail": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/InterchangeDetail"
+     }
+    },
+    "CityForecastDetail": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CityForecastDetail"
+     }
+    },
+    "NonCommUnitsCapMw": {
+     "type": "number"
+    },
+    "UnitCommMinOrrCount": {
+     "type": "integer"
+    },
+    "UnitCommMinOrrMw": {
+     "type": "number"
+    },
+    "GeoMagDistForecast": {
+     "type": "string"
+    },
+    "GeoMagDistAlert": {
+     "type": "string"
+    },
+    "GeoMagDistIntensity": {
+     "type": "string"
+    },
+    "GeoMagDistObsActivity": {
+     "type": "string"
+    },
+    "GeoMagDistIsoAction": {
+     "type": "string"
+    },
+    "GeoMagDistOthCntrAction": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "ReportType",
+    "BeginDate",
+    "CreationDate",
+    "PeakLoadYesterdayHour",
+    "PeakLoadYesterdayMw",
+    "CsoMw",
+    "CapAdditionsMw",
+    "GenOutagesReductionMW",
+    "GenPlannedOutagesReductionMW",
+    "GenForcedOutagesReductionMW",
+    "UncommittedGenBeforePeakMw",
+    "UncommittedAvailGenMw",
+    "DRRCapacityMw",
+    "UncommitedAvailDRRMw",
+    "NetCapDeliveryMw",
+    "TotAvailCapMw",
+    "PeakLoadTodayHour",
+    "PeakLoadTodayMw",
+    "TotalOperReserveReqMw",
+    "CapRequiredMw",
+    "SurplusDeficiencyMw",
+    "ReplReserveRequiredMw",
+    "ExcessCommitMw",
+    "LargestFirstContMw",
+    "AmsPeakLoadExpMw",
+    "TenMinReserveReqMw",
+    "TenMinReserveEstMw",
+    "ThirtyMinReserveReqMw",
+    "ThirtyMinReserveEstMw",
+    "ExpActOp4Mw",
+    "AddlCapAvailOp4ActMw",
+    "UnitCommMinOrrCount",
+    "UnitCommMinOrrMw"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MorningReport"
+  },
+  "MorningReports": {
+   "type": "object",
+   "properties": {
+    "MorningReport": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MorningReport"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MorningReports"
+  },
+  "NCPC": {
+   "type": "object",
+   "properties": {
+    "NCPCType": {
+     "type": "string",
+     "enum": [
+      "GPA",
+      "VAR",
+      "HIGHVAR",
+      "EXTLOCECONOMIC",
+      "LSCPR",
+      "ECONOMIC",
+      "RRP",
+      "DLOC"
+     ]
+    },
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "CreditType": {
+     "type": "string"
+    },
+    "DaNcpcCharge": {
+     "type": "number"
+    },
+    "RtNcpcCharge": {
+     "type": "number"
+    },
+    "NcpcCharge": {
+     "type": "number"
+    },
+    "ExternalNodeCharge": {
+     "type": "number"
+    },
+    "RelRegnNetworkLoad": {
+     "type": "number"
+    },
+    "VarNetworkLoad": {
+     "type": "number"
+    },
+    "GpaRtlo": {
+     "type": "number"
+    },
+    "RtNcpcDeviations": {
+     "type": "number"
+    },
+    "DaNcpcLoadObligation": {
+     "type": "number"
+    },
+    "RtNcpcLoadObligation": {
+     "type": "number"
+    },
+    "DaNcpcChargeRate": {
+     "type": "number"
+    },
+    "RtNcpcChargeRate": {
+     "type": "number"
+    },
+    "NcpcChargeRate": {
+     "type": "number"
+    },
+    "ExternalNodeChargeRate": {
+     "type": "number"
+    },
+    "DaGenObligation": {
+     "type": "number"
+    },
+    "DaLoadObligation": {
+     "type": "number"
+    },
+    "RtRrpLoadObligation": {
+     "type": "number"
+    },
+    "RtDlocLoadObligation": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_NCPC"
+  },
+  "NCPCMonthlyAsset": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "AssetId": {
+     "type": "integer"
+    },
+    "AssetName": {
+     "type": "string"
+    },
+    "AssetType": {
+     "type": "string"
+    },
+    "DaNcpcCredit": {
+     "type": "number"
+    },
+    "RtNcpcCredit": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_NCPCMonthlyAsset"
+  },
+  "NCPCMonthlyAssets": {
+   "type": "object",
+   "properties": {
+    "NCPCMonthlyAsset": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/NCPCMonthlyAsset"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_NCPCMonthlyAssets"
+  },
+  "NCPCs": {
+   "type": "object",
+   "properties": {
+    "NCPC": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/NCPC"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_NCPCs"
+  },
+  "next_day_opcap_report": {
+   "type": "object",
+   "properties": {
+    "begin_date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "creation_date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "cso_mw": {
+     "type": "number"
+    },
+    "capacity_additions_mw": {
+     "type": "number"
+    },
+    "generation_planned_outage_and_reduction_mw": {
+     "type": "number"
+    },
+    "generation_forced_outage_and_reduction_mw": {
+     "type": "number"
+    },
+    "generation_outage_and_reduction_mw": {
+     "type": "number"
+    },
+    "uncommitted_available_generation_mw": {
+     "type": "number"
+    },
+    "drr_capacity_mw": {
+     "type": "number"
+    },
+    "uncommitted_available_drr_mw": {
+     "type": "number"
+    },
+    "capacity_net_delivery_mw": {
+     "type": "number"
+    },
+    "tie_delivery": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/tie_delivery"
+     }
+    },
+    "total_available_capacity_mw": {
+     "type": "number"
+    },
+    "peak_load_today_hour": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "peak_load_today_mw": {
+     "type": "number"
+    },
+    "total_operating_reserve_requirement_mw": {
+     "type": "number"
+    },
+    "capacity_required_mw": {
+     "type": "number"
+    },
+    "surplus_or_deficiency_mw": {
+     "type": "number"
+    },
+    "replacement_reserve_requirement_mw": {
+     "type": "number"
+    },
+    "excess_commitment_mw": {
+     "type": "number"
+    },
+    "largest_first_contingency_mw": {
+     "type": "number"
+    },
+    "ams_peak_load_exposure_mw": {
+     "type": "number"
+    },
+    "ten_min_reserve_requirement_mw": {
+     "type": "number"
+    },
+    "ten_minute_reserve_estimate_mw": {
+     "type": "number"
+    },
+    "thirty_minute_reserve_requirement_mw": {
+     "type": "number"
+    },
+    "thirty_minute_reserve_estimate_mw": {
+     "type": "number"
+    },
+    "expected_op4_actions": {
+     "type": "string"
+    },
+    "additional_capacity_available_op4_action_mw": {
+     "type": "number"
+    },
+    "interchange_detail": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/interchange_detail"
+     }
+    },
+    "city_forecast_detail": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/city_forecast_detail"
+     }
+    },
+    "non_market_sensitive_comments": {
+     "type": "string"
+    },
+    "units_for_minimum_orr_count": {
+     "type": "number"
+    },
+    "units_for_minimum_orr_mw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "begin_date",
+    "creation_date",
+    "cso_mw",
+    "capacity_additions_mw",
+    "generation_planned_outage_and_reduction_mw",
+    "generation_forced_outage_and_reduction_mw",
+    "generation_outage_and_reduction_mw",
+    "uncommitted_available_generation_mw",
+    "drr_capacity_mw",
+    "uncommitted_available_drr_mw",
+    "capacity_net_delivery_mw",
+    "total_available_capacity_mw",
+    "peak_load_today_hour",
+    "peak_load_today_mw",
+    "total_operating_reserve_requirement_mw",
+    "capacity_required_mw",
+    "surplus_or_deficiency_mw",
+    "replacement_reserve_requirement_mw",
+    "excess_commitment_mw",
+    "largest_first_contingency_mw",
+    "ams_peak_load_exposure_mw",
+    "ten_min_reserve_requirement_mw",
+    "ten_minute_reserve_estimate_mw",
+    "thirty_minute_reserve_requirement_mw",
+    "thirty_minute_reserve_estimate_mw",
+    "additional_capacity_available_op4_action_mw",
+    "units_for_minimum_orr_count",
+    "units_for_minimum_orr_mw"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_next_day_opcap_report"
+  },
+  "tie_delivery": {
+   "type": "object",
+   "properties": {
+    "interface_name": {
+     "type": "string"
+    },
+    "tie_flow_mw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "interface_name",
+    "tie_flow_mw"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_tie_delivery"
+  },
+  "interchange_detail": {
+   "type": "object",
+   "properties": {
+    "interface_name": {
+     "type": "string"
+    },
+    "import_limit_in_mw": {
+     "type": "number"
+    },
+    "export_limit_out_mw": {
+     "type": "number"
+    },
+    "scheduled_mw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "interface_name",
+    "import_limit_in_mw",
+    "export_limit_out_mw",
+    "scheduled_mw"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_interchange_detail"
+  },
+  "city_forecast_detail": {
+   "type": "object",
+   "properties": {
+    "city_name": {
+     "type": "string"
+    },
+    "high_temperature": {
+     "type": "number"
+    },
+    "weather_conditions": {
+     "type": "string"
+    },
+    "wind_direction_speed": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "city_name",
+    "high_temperature",
+    "weather_conditions",
+    "wind_direction_speed"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_city_forecast_detail"
+  },
+  "Op4Alert": {
+   "type": "object",
+   "properties": {
+    "AlertId": {
+     "type": "integer"
+    },
+    "Status": {
+     "type": "string",
+     "enum": [
+      "Caution",
+      "Watch",
+      "Warning"
+     ]
+    },
+    "Action": {
+     "type": "string",
+     "enum": [
+      "Action 1",
+      "Action 2",
+      "Action 3",
+      "Action 4",
+      "Action 5",
+      "Action 6",
+      "Action 7",
+      "Action 8",
+      "Action 9",
+      "Action 10",
+      "Action 11"
+     ]
+    },
+    "ActionDescription": {
+     "type": "string"
+    },
+    "DateInEffect": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "TimeIn": {
+     "type": "string"
+    },
+    "TimeOut": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "AlertId",
+    "Status",
+    "Action",
+    "ActionDescription",
+    "DateInEffect",
+    "TimeIn",
+    "TimeOut"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Op4Alert"
+  },
+  "Op4Alerts": {
+   "type": "object",
+   "properties": {
+    "Op4Alert": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Op4Alert"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Op4Alerts"
+  },
+  "Outage": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "AppNumber": {
+     "type": "integer"
+    },
+    "Company1": {
+     "type": "string"
+    },
+    "Company2": {
+     "type": "string"
+    },
+    "ToStation": {
+     "type": "string"
+    },
+    "FromStation": {
+     "type": "string"
+    },
+    "NonLineStation": {
+     "type": "string"
+    },
+    "EquipType": {
+     "type": "string"
+    },
+    "EquipDesc": {
+     "type": "string"
+    },
+    "Volt": {
+     "type": "integer"
+    },
+    "PlnStart": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "PlnEnd": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ActStart": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ActEnd": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Status": {
+     "type": "string"
+    },
+    "ReqType": {
+     "type": "string"
+    },
+    "EcoFlag": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "MtoFlag": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "OvrFlag": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    }
+   },
+   "required": [
+    "BeginDate",
+    "AppNumber",
+    "Company1"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Outage"
+  },
+  "Outages": {
+   "type": "object",
+   "properties": {
+    "Outage": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Outage"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Outages"
+  },
+  "PerformanceScore": {
+   "type": "object",
+   "properties": {
+    "Type": {
+     "type": "string",
+     "enum": [
+      "PRELIM",
+      "FINAL"
+     ]
+    },
+    "TradingDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "HourEnd": {
+     "type": "string"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "CapacityScarcityConditionType": {
+     "type": "string"
+    },
+    "ActualCapacityProvided": {
+     "type": "number"
+    },
+    "RealTimeReserveDesignation": {
+     "type": "number"
+    },
+    "Load": {
+     "type": "number"
+    },
+    "ReserveRequirement": {
+     "type": "number"
+    },
+    "CapacitySupplyObligation": {
+     "type": "number"
+    },
+    "BalancingRatio": {
+     "type": "number"
+    },
+    "TradingInterval": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "TradingDate",
+    "HourEnd",
+    "Location",
+    "TradingInterval"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScore"
+  },
+  "PerformanceScores": {
+   "type": "object",
+   "properties": {
+    "PerformanceScore": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PerformanceScore"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScores"
+  },
+  "PowerSystemCondition": {
+   "type": "object",
+   "properties": {
+    "ReportedArea": {
+     "type": "string"
+    },
+    "SystemCondition": {
+     "type": "string"
+    },
+    "TimeIn": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "TimeOut": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ActionDescription": {
+     "type": "string"
+    },
+    "Reason": {
+     "type": "string"
+    },
+    "SortOrder": {
+     "type": "integer"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemCondition"
+  },
+  "PowerSystemConditions": {
+   "type": "object",
+   "properties": {
+    "PowerSystemCondition": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PowerSystemCondition"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemConditions"
+  },
+  "PowerSystemRegion": {
+   "type": "object",
+   "properties": {
+    "RegionId": {
+     "type": "integer"
+    },
+    "RegionName": {
+     "type": "string"
+    },
+    "Status": {
+     "type": "string",
+     "enum": [
+      "Normal",
+      "Power Caution",
+      "Power Watch",
+      "Power Warning",
+      "Cold Weather Watch Conditions",
+      "Cold Weather Warning Conditions",
+      "Cold Weather Event Conditions",
+      "Master/Local Control Center 2 Alert",
+      "Energy Emergency"
+     ]
+    },
+    "StatusDescription": {
+     "type": "string"
+    },
+    "DateUpdated": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "RegionId",
+    "RegionName",
+    "Status",
+    "StatusDescription",
+    "DateUpdated"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegion"
+  },
+  "PowerSystemRegions": {
+   "type": "object",
+   "properties": {
+    "PowerSystemRegion": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PowerSystemRegion"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegions"
+  },
+  "PowerSystemStatus": {
+   "type": "object",
+   "properties": {
+    "Op4Alerts": {
+     "$ref": "#/$defs/Op4Alerts"
+    },
+    "PowerSystemRegions": {
+     "$ref": "#/$defs/PowerSystemRegions"
+    }
+   },
+   "required": [
+    "PowerSystemRegions"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemStatus"
+  },
+  "PrelimHourlyReservePrice": {
+   "$ref": "#/$defs/ReservePrice",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrice"
+  },
+  "PrelimHourlyReservePrices": {
+   "type": "object",
+   "properties": {
+    "PrelimHourlyReservePrice": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PrelimHourlyReservePrice"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrices"
+  },
+  "PriceRespEvent": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Program": {
+     "type": "string"
+    },
+    "EventId": {
+     "type": "number"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "RegionId": {
+     "type": "integer"
+    },
+    "StartTime": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "RestoreTime": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvent"
+  },
+  "PriceRespEvents": {
+   "type": "object",
+   "properties": {
+    "PriceRespEvent": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/PriceRespEvent"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvents"
+  },
+  "RealTimeConstraint": {
+   "$ref": "#/$defs/Constraint",
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraint"
+  },
+  "RealTimeConstraints": {
+   "type": "object",
+   "properties": {
+    "RealTimeConstraint": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/RealTimeConstraint"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraints"
+  },
+  "ReliabilityRegionLoadForecast": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "CreationDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ReliabilityRegion": {
+     "type": "string"
+    },
+    "LoadMw": {
+     "type": "number"
+    },
+    "ReliabilityRegionLoadPercentage": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "CreationDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ReliabilityRegionLoadForecast"
+  },
+  "ReliabilityRegionLoadForecasts": {
+   "type": "object",
+   "properties": {
+    "ReliabilityRegionLoadForecast": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ReliabilityRegionLoadForecast"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ReliabilityRegionLoadForecasts"
+  },
+  "Schedule2VarStatus": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ReportDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "AssetId": {
+     "type": "integer"
+    },
+    "AssetName": {
+     "type": "string"
+    },
+    "AssetType": {
+     "type": "string"
+    },
+    "LeadStatusEffDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "LeadTestDueDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "LeadProgStatus": {
+     "type": "string"
+    },
+    "LagStatusEffDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "LagTestDueDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "LagProgStatus": {
+     "type": "string"
+    },
+    "LagTestMw": {
+     "type": "number"
+    },
+    "LagQualVarCap": {
+     "type": "number"
+    },
+    "LeadQualVarCap": {
+     "type": "number"
+    },
+    "TotQualVarCap": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "ReportDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Schedule2VarStatus"
+  },
+  "Schedules2VarStatus": {
+   "type": "object",
+   "properties": {
+    "Schedule2VarStatus": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Schedule2VarStatus"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Schedules2VarStatus"
+  },
+  "SeasonalPeakHourData": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "HourlyPeakLoad": {
+     "type": "number"
+    },
+    "SystemPeakForecast": {
+     "type": "number"
+    },
+    "SettlementStatus": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SeasonalPeakHourData"
+  },
+  "SeasonalPeakHoursData": {
+   "type": "object",
+   "properties": {
+    "SeasonalPeakHourData": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/SeasonalPeakHourData"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SeasonalPeakHoursData"
+  },
+  "ServiceInfo": {
+   "type": "object",
+   "properties": {
+    "LatestBeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "CreationDate": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "LatestBeginDate",
+    "CreationDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo"
+  },
+  "SevenDayForecast": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MarketDay": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MarketDay"
+     }
+    },
+    "CreationDate": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "CreationDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecast"
+  },
+  "SevenDayForecasts": {
+   "type": "object",
+   "properties": {
+    "SevenDayForecast": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/SevenDayForecast"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecasts"
+  },
+  "SevenDayWindForecast": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MarketDays": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MarketDays"
+     }
+    },
+    "CreationDate": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayWindForecast"
+  },
+  "SevenDayWindForecasts": {
+   "type": "object",
+   "properties": {
+    "SevenDayWindForecast": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/SevenDayWindForecast"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayWindForecasts"
+  },
+  "SingleSrcContingencyLimit": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "RtFlowMw": {
+     "type": "number"
+    },
+    "LowestLimitMw": {
+     "type": "number"
+    },
+    "DistributionFactor": {
+     "type": "number"
+    },
+    "InterfaceName": {
+     "type": "string"
+    },
+    "ActMarginMw": {
+     "type": "number"
+    },
+    "AuthorizedMarginMw": {
+     "type": "number"
+    },
+    "BaseLimitMw": {
+     "type": "number"
+    },
+    "SingleSrcContingencyMw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SingleSrcContingencyLimit"
+  },
+  "SingleSrcContingencyLimits": {
+   "type": "object",
+   "properties": {
+    "SingleSrcContingencyLimit": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/SingleSrcContingencyLimit"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SingleSrcContingencyLimits"
+  },
+  "Station": {
+   "type": "object",
+   "properties": {
+    "StationName": {
+     "type": "string"
+    },
+    "StationType": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "StationName",
+    "StationType"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Station"
+  },
+  "Stations": {
+   "type": "object",
+   "properties": {
+    "Station": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Station"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Stations"
+  },
+  "SupplyCurvePair": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "CumulativeSupplyMw": {
+     "type": "number"
+    },
+    "OfferPrice": {
+     "type": "number"
+    },
+    "TradingMonth": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ReferenceMonth": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "CumulativeSupplyMw",
+    "OfferPrice"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePair"
+  },
+  "SupplyCurvePairs": {
+   "type": "object",
+   "properties": {
+    "SupplyCurvePair": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/SupplyCurvePair"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePairs"
+  },
+  "Ttc": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "TtcLocations": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TtcLocations"
+     }
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Ttc"
+  },
+  "Ttcs": {
+   "type": "object",
+   "properties": {
+    "Ttc": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Ttc"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Ttcs"
+  },
+  "Auction": {
+   "type": "object",
+   "properties": {
+    "Id": {
+     "type": "integer"
+    },
+    "Description": {
+     "type": "string"
+    },
+    "ApprovalDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "AuctionBeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Type": {
+     "type": "string"
+    },
+    "CommitmentPeriod": {
+     "$ref": "#/$defs/Period"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Auction"
+  },
+  "BilatClearedCapacityZone": {
+   "type": "object",
+   "properties": {
+    "CapacityZoneID": {
+     "type": "integer"
+    },
+    "CapacityZoneType": {
+     "type": "string"
+    },
+    "CapacityZoneName": {
+     "type": "string"
+    },
+    "TransferringApproved": {
+     "type": "number"
+    },
+    "AcquiringApproved": {
+     "type": "number"
+    },
+    "NetCapacityApproved": {
+     "type": "number"
+    },
+    "ClearedExternalInterfaces": {
+     "$ref": "#/$defs/BilatClearedInterfaces"
+    }
+   },
+   "required": [
+    "CapacityZoneID",
+    "CapacityZoneName",
+    "TransferringApproved",
+    "AcquiringApproved",
+    "NetCapacityApproved",
+    "ClearedExternalInterfaces"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedCapacityZone"
+  },
+  "BilatClearedCapacityZones": {
+   "type": "object",
+   "properties": {
+    "ClearedCapacityZone": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/BilatClearedCapacityZone"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedCapacityZones"
+  },
+  "BilatClearedInterface": {
+   "type": "object",
+   "properties": {
+    "ExternalInterfaceId": {
+     "type": "integer"
+    },
+    "ExternalInterfaceName": {
+     "type": "string"
+    },
+    "TransferringApproved": {
+     "type": "number"
+    },
+    "AcquiringApproved": {
+     "type": "number"
+    },
+    "NetCapacityApproved": {
+     "type": "number"
+    },
+    "ClearedInterfaces": {
+     "$ref": "#/$defs/BilatClearedInterfaces"
+    }
+   },
+   "required": [
+    "ExternalInterfaceId",
+    "ExternalInterfaceName",
+    "TransferringApproved",
+    "AcquiringApproved",
+    "NetCapacityApproved",
+    "ClearedInterfaces"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedInterface"
+  },
+  "BilatClearedInterfaces": {
+   "type": "object",
+   "properties": {
+    "ClearedExternalInterface": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/BilatClearedInterface"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedInterfaces"
+  },
+  "BilatSystemResult": {
+   "type": "object",
+   "properties": {
+    "TransferringApproved": {
+     "type": "number"
+    },
+    "AcquiringApproved": {
+     "type": "number"
+    },
+    "NetCapacityApproved": {
+     "type": "number"
+    },
+    "ClearedExternalInterfaces": {
+     "$ref": "#/$defs/BilatClearedInterfaces"
+    }
+   },
+   "required": [
+    "TransferringApproved",
+    "AcquiringApproved",
+    "NetCapacityApproved",
+    "ClearedExternalInterfaces"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_BilatSystemResult"
+  },
+  "CapacityRef": {
+   "type": "object",
+   "properties": {
+    "$": {
+     "type": "string",
+     "description": "Element text value (serialized as \"$\" in the JSON representation, per observed API responses)."
+    },
+    "@CapacityZoneId": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "@CapacityZoneId"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_CapacityRef"
+  },
+  "CityForecastDetail": {
+   "type": "object",
+   "properties": {
+    "CityName": {
+     "type": "string"
+    },
+    "HighTemperature": {
+     "type": "integer"
+    },
+    "WeatherConditions": {
+     "type": "string"
+    },
+    "WindDirSpeed": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "CityName",
+    "HighTemperature",
+    "WeatherConditions",
+    "WindDirSpeed"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_CityForecastDetail"
+  },
+  "CityWeather": {
+   "type": "object",
+   "properties": {
+    "CityName": {
+     "type": "string"
+    },
+    "HighTempF": {
+     "type": "integer"
+    },
+    "DewPointF": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "CityName",
+    "HighTempF",
+    "DewPointF"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_CityWeather"
+  },
+  "ClearedCapacityZone": {
+   "type": "object",
+   "properties": {
+    "CapacityZoneID": {
+     "type": "integer"
+    },
+    "CapacityZoneType": {
+     "type": "string"
+    },
+    "CapacityZoneName": {
+     "type": "string"
+    },
+    "SupplySubmitted": {
+     "type": "number"
+    },
+    "DemandSubmitted": {
+     "type": "number"
+    },
+    "SupplyCleared": {
+     "type": "number"
+    },
+    "DemandCleared": {
+     "type": "number"
+    },
+    "NetCapacityCleared": {
+     "type": "number"
+    },
+    "ISOSupplySubmitted": {
+     "type": "number"
+    },
+    "ISOSupplyCleared": {
+     "type": "number"
+    },
+    "ISODemandSubmitted": {
+     "type": "number"
+    },
+    "ISODemandCleared": {
+     "type": "number"
+    },
+    "ClearingPrice": {
+     "type": "number"
+    },
+    "ClearedExternalInterfaces": {
+     "$ref": "#/$defs/ClearedInterfaces"
+    }
+   },
+   "required": [
+    "CapacityZoneID",
+    "CapacityZoneName",
+    "SupplySubmitted",
+    "DemandSubmitted",
+    "SupplyCleared",
+    "DemandCleared",
+    "NetCapacityCleared",
+    "ClearingPrice",
+    "ClearedExternalInterfaces"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZone"
+  },
+  "ClearedCapacityZones": {
+   "type": "object",
+   "properties": {
+    "ClearedCapacityZone": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ClearedCapacityZone"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZones"
+  },
+  "ClearedInterface": {
+   "type": "object",
+   "properties": {
+    "ExternalInterfaceId": {
+     "type": "integer"
+    },
+    "ExternalInterfaceName": {
+     "type": "string"
+    },
+    "SupplySubmitted": {
+     "type": "number"
+    },
+    "DemandSubmitted": {
+     "type": "number"
+    },
+    "SupplyCleared": {
+     "type": "number"
+    },
+    "DemandCleared": {
+     "type": "number"
+    },
+    "NetCapacityCleared": {
+     "type": "number"
+    },
+    "ISOSupplySubmitted": {
+     "type": "number"
+    },
+    "ISOSupplyCleared": {
+     "type": "number"
+    },
+    "ClearingPrice": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "ExternalInterfaceId",
+    "ExternalInterfaceName",
+    "SupplySubmitted",
+    "DemandSubmitted",
+    "SupplyCleared",
+    "DemandCleared",
+    "NetCapacityCleared",
+    "ClearingPrice"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterface"
+  },
+  "ClearedInterfaces": {
+   "type": "object",
+   "properties": {
+    "ClearedExternalInterface": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ClearedInterface"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterfaces"
+  },
+  "Constraint": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ConstraintName": {
+     "type": "string"
+    },
+    "ContingencyName": {
+     "type": "string"
+    },
+    "InterfaceFlag": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "MarginalValue": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "ConstraintName"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Constraint"
+  },
+  "Demand": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "Load": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Demand"
+  },
+  "FCMBilateralResult": {
+   "type": "object",
+   "properties": {
+    "Auction": {
+     "$ref": "#/$defs/Auction"
+    },
+    "MonthlyResults": {
+     "$ref": "#/$defs/MonthlyResults"
+    }
+   },
+   "required": [
+    "Auction",
+    "MonthlyResults"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FCMBilateralResult"
+  },
+  "FCMRAResult": {
+   "type": "object",
+   "properties": {
+    "Auction": {
+     "$ref": "#/$defs/Auction"
+    },
+    "ClearedCapacityZones": {
+     "$ref": "#/$defs/ClearedCapacityZones"
+    },
+    "SystemResults": {
+     "$ref": "#/$defs/SystemResults"
+    },
+    "ISOAuctionParticipation": {
+     "$ref": "#/$defs/ISOParticipation"
+    },
+    "SystemDemandCurveResults": {
+     "$ref": "#/$defs/SystemDemandCurveResults"
+    }
+   },
+   "required": [
+    "Auction",
+    "ClearedCapacityZones",
+    "SystemResults",
+    "ISOAuctionParticipation"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_FCMRAResult"
+  },
+  "HbArdBid": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MaskedParticipantId": {
+     "type": "integer"
+    },
+    "MaskedAssetId": {
+     "type": "integer"
+    },
+    "Claim10Mw": {
+     "type": "number"
+    },
+    "Claim30Mw": {
+     "type": "number"
+    },
+    "MinimumConsumption": {
+     "type": "number"
+    },
+    "MaximumConsumption": {
+     "type": "number"
+    },
+    "Segments": {
+     "$ref": "#/$defs/Segments"
+    },
+    "UnitStatus": {
+     "type": "string",
+     "enum": [
+      "MUST_RUN",
+      "ECONOMIC",
+      "UNAVAILABLE"
+     ]
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbArdBid"
+  },
+  "HbDrrBid": {
+   "type": "object",
+   "properties": {
+    "Day": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "HourEnd": {
+     "type": "string"
+    },
+    "MaskedParticipantId": {
+     "type": "integer"
+    },
+    "MaskedAssetId": {
+     "type": "integer"
+    },
+    "MaxDailyEnergy": {
+     "type": "number"
+    },
+    "MinimumReduction": {
+     "type": "number"
+    },
+    "MaximumReduction": {
+     "type": "number"
+    },
+    "InterruptionCost": {
+     "type": "number"
+    },
+    "Segments": {
+     "$ref": "#/$defs/Segments2"
+    },
+    "Claim10Mw": {
+     "type": "number"
+    },
+    "Claim30Mw": {
+     "type": "number"
+    },
+    "UnitStatus": {
+     "type": "string",
+     "enum": [
+      "ECONOMIC",
+      "UNAVAILABLE"
+     ]
+    }
+   },
+   "required": [
+    "Day",
+    "HourEnd",
+    "MaskedParticipantId",
+    "MaskedAssetId",
+    "MinimumReduction",
+    "MaximumReduction",
+    "InterruptionCost",
+    "Segments",
+    "Claim10Mw",
+    "Claim30Mw",
+    "UnitStatus"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbDrrBid"
+  },
+  "HbEnergyOffer": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MaskedParticipantId": {
+     "type": "integer"
+    },
+    "MaskedAssetId": {
+     "type": "integer"
+    },
+    "MustTakeEnergy": {
+     "type": "integer"
+    },
+    "MaxDailyEnergy": {
+     "type": "number"
+    },
+    "EconomicMax": {
+     "type": "number"
+    },
+    "EconomicMin": {
+     "type": "number"
+    },
+    "ColdStartPrice": {
+     "type": "number"
+    },
+    "IntermediateStartPrice": {
+     "type": "number"
+    },
+    "HotStartPrice": {
+     "type": "number"
+    },
+    "NoLoadPrice": {
+     "type": "number"
+    },
+    "Segments": {
+     "$ref": "#/$defs/Segments"
+    },
+    "Claim10Mw": {
+     "type": "number"
+    },
+    "Claim30Mw": {
+     "type": "number"
+    },
+    "UnitStatus": {
+     "type": "string",
+     "enum": [
+      "MUST_RUN",
+      "ECONOMIC",
+      "UNAVAILABLE"
+     ]
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_HbEnergyOffer"
+  },
+  "ISOParticipation": {
+   "type": "object",
+   "properties": {
+    "ISOSupplySubmitted": {
+     "type": "number"
+    },
+    "ISODemandSubmitted": {
+     "type": "number"
+    },
+    "ISOSupplyCleared": {
+     "type": "number"
+    },
+    "ISODemandCleared": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ISOParticipation"
+  },
+  "InterchangeDetail": {
+   "type": "object",
+   "properties": {
+    "TieName": {
+     "type": "string"
+    },
+    "ImportLimitInMw": {
+     "type": "number"
+    },
+    "ExportLimitOutMw": {
+     "type": "number"
+    },
+    "ScheduledMw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "TieName",
+    "ImportLimitInMw",
+    "ExportLimitOutMw",
+    "ScheduledMw"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_InterchangeDetail"
+  },
+  "InterfaceFlow": {
+   "type": "object",
+   "properties": {
+    "BalancingAuthority": {
+     "type": "string"
+    },
+    "ActInterchange": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BalancingAuthority"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_InterfaceFlow"
+  },
+  "Lmp": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "LmpTotal": {
+     "type": "number"
+    },
+    "EnergyComponent": {
+     "type": "number"
+    },
+    "CongestionComponent": {
+     "type": "number"
+    },
+    "LossComponent": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Lmp"
+  },
+  "MarketDateData": {
+   "type": "object",
+   "properties": {
+    "HourEnding": {
+     "type": "string"
+    },
+    "WindPowerForecast": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "WindPowerForecast"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MarketDateData"
+  },
+  "MarketDateInfo": {
+   "type": "object",
+   "properties": {
+    "MarketDateData": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MarketDateData"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MarketDateInfo"
+  },
+  "MarketDay": {
+   "type": "object",
+   "properties": {
+    "MarketDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "CsoMw": {
+     "type": "number"
+    },
+    "ColdWeatherOutagesMw": {
+     "type": "number"
+    },
+    "OtherGenOutagesMw": {
+     "type": "number"
+    },
+    "DelistMw": {
+     "type": "number"
+    },
+    "TotAvailGenMw": {
+     "type": "number"
+    },
+    "PeakImportMw": {
+     "type": "number"
+    },
+    "TotAvailGenImportMw": {
+     "type": "number"
+    },
+    "PeakLoadMw": {
+     "type": "number"
+    },
+    "ReplReserveReqMw": {
+     "type": "number"
+    },
+    "ReqdReserveMw": {
+     "type": "number"
+    },
+    "ReqdReserveInclReplMw": {
+     "type": "number"
+    },
+    "TotLoadPlusReqdReserveMw": {
+     "type": "number"
+    },
+    "DrrMw": {
+     "type": "number"
+    },
+    "SurplusDeficiencyMw": {
+     "type": "number"
+    },
+    "RtegMw": {
+     "type": "number"
+    },
+    "PowerWatch": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "PowerWarn": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "ColdWeatherWatch": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "ColdWeatherWarn": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "ColdWeatherEvent": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "EnergyEmergency": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "Weather": {
+     "$ref": "#/$defs/Weather"
+    },
+    "@Day": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "MarketDate",
+    "CsoMw",
+    "ColdWeatherOutagesMw",
+    "OtherGenOutagesMw",
+    "DelistMw",
+    "TotAvailGenMw",
+    "PeakImportMw",
+    "TotAvailGenImportMw",
+    "PeakLoadMw",
+    "ReplReserveReqMw",
+    "ReqdReserveMw",
+    "ReqdReserveInclReplMw",
+    "TotLoadPlusReqdReserveMw",
+    "DrrMw",
+    "SurplusDeficiencyMw",
+    "RtegMw",
+    "PowerWatch",
+    "PowerWarn",
+    "ColdWeatherWatch",
+    "ColdWeatherWarn",
+    "ColdWeatherEvent",
+    "EnergyEmergency",
+    "Weather",
+    "@Day"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MarketDay"
+  },
+  "MarketDays": {
+   "type": "object",
+   "properties": {
+    "MarketDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "MarketDateInfo": {
+     "$ref": "#/$defs/MarketDateInfo"
+    },
+    "@Day": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "MarketDate",
+    "@Day"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MarketDays"
+  },
+  "MonthlyResult": {
+   "type": "object",
+   "properties": {
+    "Month": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ClearedCapacityZones": {
+     "$ref": "#/$defs/BilatClearedCapacityZones"
+    },
+    "SystemResult": {
+     "$ref": "#/$defs/BilatSystemResult"
+    }
+   },
+   "required": [
+    "Month",
+    "ClearedCapacityZones",
+    "SystemResult"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyResult"
+  },
+  "MonthlyResults": {
+   "type": "object",
+   "properties": {
+    "MonthlyResult": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/MonthlyResult"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyResults"
+  },
+  "OperatingReserve": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "Econimic": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "Rmr": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "Var": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "RmrVar": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N",
+      "-"
+     ]
+    },
+    "EconomicMw": {
+     "type": "number"
+    },
+    "EconomicCost": {
+     "type": "number"
+    },
+    "RmrMw": {
+     "type": "number"
+    },
+    "RmrCost": {
+     "type": "number"
+    },
+    "VarMw": {
+     "type": "number"
+    },
+    "VarCost": {
+     "type": "number"
+    },
+    "RmrVarMw": {
+     "type": "number"
+    },
+    "RmrVarCost": {
+     "type": "number"
+    },
+    "TotalMw": {
+     "type": "number"
+    },
+    "TotalCost": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_OperatingReserve"
+  },
+  "Period": {
+   "type": "object",
+   "properties": {
+    "Id": {
+     "type": "integer"
+    },
+    "Description": {
+     "type": "string"
+    },
+    "Type": {
+     "type": "string"
+    },
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "EndDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ParentId": {
+     "type": "integer"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Period"
+  },
+  "Rcp": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "RegClearingPrice": {
+     "type": "number"
+    },
+    "RegServiceClearingPrice": {
+     "type": "number"
+    },
+    "RegCapacityClearingPrice": {
+     "type": "number"
+    },
+    "HourEnd": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Rcp"
+  },
+  "ReserveLocRef": {
+   "type": "object",
+   "properties": {
+    "$": {
+     "type": "string",
+     "description": "Element text value (serialized as \"$\" in the JSON representation, per observed API responses)."
+    },
+    "@LocId": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "@LocId"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ReserveLocRef"
+  },
+  "ReservePrice": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ReserveZoneId": {
+     "type": "integer"
+    },
+    "ReserveZoneName": {
+     "type": "string"
+    },
+    "TenMinSpinRequirement": {
+     "type": "number"
+    },
+    "Total10MinRequirement": {
+     "type": "number"
+    },
+    "Total30MinRequirement": {
+     "type": "number"
+    },
+    "TmsrDesignatedMw": {
+     "type": "number"
+    },
+    "TmnsrDesignatedMw": {
+     "type": "number"
+    },
+    "TmorDesignatedMw": {
+     "type": "number"
+    },
+    "TmsrClearingPrice": {
+     "type": "number"
+    },
+    "TmnsrClearingPrice": {
+     "type": "number"
+    },
+    "TmorClearingPrice": {
+     "type": "number"
+    },
+    "IntervalBeginDate": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "required": [
+    "BeginDate"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_ReservePrice"
+  },
+  "Segment": {
+   "type": "object",
+   "properties": {
+    "Price": {
+     "type": "number"
+    },
+    "Mw": {
+     "type": "number"
+    },
+    "@Number": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "@Number"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Segment"
+  },
+  "Segment2": {
+   "type": "object",
+   "properties": {
+    "Price": {
+     "type": "number"
+    },
+    "Mw": {
+     "type": "number"
+    },
+    "@Number": {
+     "type": "integer"
+    }
+   },
+   "required": [
+    "@Number"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Segment2"
+  },
+  "Segments": {
+   "type": "object",
+   "properties": {
+    "Segment": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Segment"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Segments"
+  },
+  "Segments2": {
+   "type": "object",
+   "properties": {
+    "Segment": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/Segment2"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Segments2"
+  },
+  "SystemDemandCurveResults": {
+   "type": "object",
+   "properties": {
+    "SubmittedRepresentativeCsoMw": {
+     "type": "number"
+    },
+    "SubmittedSdcMw": {
+     "type": "number"
+    },
+    "ClearedRepresentativeCsoMw": {
+     "type": "number"
+    },
+    "ClearedSdcMw": {
+     "type": "number"
+    },
+    "ClearedNetCapacityMw": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SystemDemandCurveResults"
+  },
+  "SystemResults": {
+   "type": "object",
+   "properties": {
+    "SupplySubmitted": {
+     "type": "number"
+    },
+    "SupplyCleared": {
+     "type": "number"
+    },
+    "DemandSubmitted": {
+     "type": "number"
+    },
+    "DemandCleared": {
+     "type": "number"
+    },
+    "NetCapacityCleared": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "SupplySubmitted",
+    "SupplyCleared",
+    "DemandSubmitted",
+    "DemandCleared",
+    "NetCapacityCleared"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_SystemResults"
+  },
+  "TieDelivery": {
+   "type": "object",
+   "properties": {
+    "TieName": {
+     "type": "string"
+    },
+    "TieFlowMw": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "TieName",
+    "TieFlowMw"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_TieDelivery"
+  },
+  "TtcLocation": {
+   "type": "object",
+   "properties": {
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "ImportLimitMw": {
+     "type": "number"
+    },
+    "ExportLimitMw": {
+     "type": "number"
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocation"
+  },
+  "TtcLocations": {
+   "type": "object",
+   "properties": {
+    "TtcLocation": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/TtcLocation"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocations"
+  },
+  "Weather": {
+   "type": "object",
+   "properties": {
+    "CityWeather": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/CityWeather"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Weather"
+  },
+  "WeeklyLmpIndex": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "DaOnPeakLMP": {
+     "type": "number"
+    },
+    "DaOffPeakLMP": {
+     "type": "number"
+    },
+    "DaAverageLMP": {
+     "type": "number"
+    },
+    "RtOnPeakLMP": {
+     "type": "number"
+    },
+    "RtOffPeakLMP": {
+     "type": "number"
+    },
+    "RtAverageLMP": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Location"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_WeeklyLmpIndex"
+  },
+  "WeeklyLmpIndexes": {
+   "type": "object",
+   "properties": {
+    "WeeklyLmpIndex": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/WeeklyLmpIndex"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_WeeklyLmpIndexes"
+  },
+  "WhlseCost": {
+   "type": "object",
+   "properties": {
+    "BeginDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Hour": {
+     "type": "string"
+    },
+    "OnOff": {
+     "type": "string"
+    },
+    "Location": {
+     "$ref": "#/$defs/LocationRef"
+    },
+    "Lmp": {
+     "type": "number"
+    },
+    "Capacity": {
+     "type": "number"
+    },
+    "FirstC": {
+     "type": "number"
+    },
+    "SecondC": {
+     "type": "number"
+    },
+    "Regulation": {
+     "type": "number"
+    },
+    "FwdRsv": {
+     "type": "number"
+    },
+    "RtRsv": {
+     "type": "number"
+    },
+    "Inadv": {
+     "type": "number"
+    },
+    "MLRF": {
+     "type": "number"
+    },
+    "ARR": {
+     "type": "number"
+    },
+    "DRRCost": {
+     "type": "number"
+    },
+    "PRD": {
+     "type": "number"
+    },
+    "Sched2": {
+     "type": "number"
+    },
+    "Sched3": {
+     "type": "number"
+    },
+    "NEPOOL": {
+     "type": "number"
+    },
+    "TotalCost": {
+     "type": "number"
+    },
+    "RTLO": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "BeginDate",
+    "Hour",
+    "OnOff"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCost"
+  },
+  "WhlseCosts": {
+   "type": "object",
+   "properties": {
+    "WhlseCost": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/WhlseCost"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCosts"
+  },
+  "Years": {
+   "type": "object",
+   "properties": {
+    "Year": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns0.xsd#type_Years"
+  },
+  "ams_week": {
+   "type": "object",
+   "properties": {
+    "week_begin_date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "supply_resource_capacity_mw": {
+     "type": "number"
+    },
+    "demand_resource_capacity_mw": {
+     "type": "number"
+    },
+    "external_node_capacity_mw": {
+     "type": "number"
+    },
+    "non_commercial_capacity_mw": {
+     "type": "number"
+    },
+    "planned_outage_mw": {
+     "type": "number"
+    },
+    "unplanned_outage_allowance_mw": {
+     "type": "number"
+    },
+    "generation_at_risk_due_to_gas_supply_mw": {
+     "type": "number"
+    },
+    "net_available_capacity_mw": {
+     "type": "number"
+    },
+    "peak_load_forecast_mw": {
+     "type": "number"
+    },
+    "operating_reserve_requirement_mw": {
+     "type": "number"
+    },
+    "net_required_capacity_mw": {
+     "type": "number"
+    },
+    "operable_capacity_margin_mw": {
+     "type": "number"
+    },
+    "opcap_analysis_season_label": {
+     "type": "string"
+    },
+    "season_minimum_opcap_margin_flag": {
+     "type": "string",
+     "enum": [
+      "Y",
+      "N"
+     ]
+    }
+   },
+   "required": [
+    "week_begin_date",
+    "supply_resource_capacity_mw",
+    "demand_resource_capacity_mw",
+    "external_node_capacity_mw",
+    "non_commercial_capacity_mw",
+    "planned_outage_mw",
+    "unplanned_outage_allowance_mw",
+    "generation_at_risk_due_to_gas_supply_mw",
+    "net_available_capacity_mw",
+    "peak_load_forecast_mw",
+    "operating_reserve_requirement_mw",
+    "net_required_capacity_mw",
+    "operable_capacity_margin_mw",
+    "opcap_analysis_season_label",
+    "season_minimum_opcap_margin_flag"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_ams_week"
+  },
+  "annual_maintenance_schedule": {
+   "type": "object",
+   "properties": {
+    "report_day": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "ams_week": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/ams_week"
+     }
+    }
+   },
+   "required": [
+    "report_day"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_annual_maintenance_schedule"
+  },
+  "isone_web_services": {
+   "allOf": [
+    {
+     "$ref": "#/$defs/isone_web_services"
+    },
+    {
+     "type": "object",
+     "properties": {
+      "annual_maintenance_schedule": {
+       "$ref": "#/$defs/annual_maintenance_schedule"
+      },
+      "nodal_load": {
+       "$ref": "#/$defs/nodal_load"
+      }
+     }
+    }
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#element:isone_web_services"
+  },
+  "lmp": {
+   "type": "object",
+   "properties": {
+    "energy_component": {
+     "type": "number"
+    },
+    "marginal_loss_component": {
+     "type": "number"
+    },
+    "congestion_component": {
+     "type": "number"
+    },
+    "locational_marginal_price": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "energy_component",
+    "marginal_loss_component",
+    "congestion_component",
+    "locational_marginal_price"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_lmp"
+  },
+  "load_zone": {
+   "type": "object",
+   "properties": {
+    "load_zone_id": {
+     "type": "integer"
+    },
+    "load_zone_name": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "load_zone_id",
+    "load_zone_name"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_load_zone"
+  },
+  "monthly_load_zone_nodal_load": {
+   "type": "object",
+   "properties": {
+    "load_zone": {
+     "$ref": "#/$defs/load_zone"
+    },
+    "average_load_weight_factor_pct": {
+     "type": "number"
+    },
+    "maximum_load_weight_factor_pct": {
+     "type": "number"
+    },
+    "minimum_load_weight_factor_pct": {
+     "type": "number"
+    },
+    "std_dev_load_weight_factor_pct": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "load_zone",
+    "average_load_weight_factor_pct",
+    "maximum_load_weight_factor_pct",
+    "minimum_load_weight_factor_pct",
+    "std_dev_load_weight_factor_pct"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_monthly_load_zone_nodal_load"
+  },
+  "network_node": {
+   "type": "object",
+   "properties": {
+    "network_node_id": {
+     "type": "integer"
+    },
+    "network_node_name": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "network_node_id",
+    "network_node_name"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_network_node"
+  },
+  "nodal_load": {
+   "type": "object",
+   "properties": {
+    "month": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "nodal_load_statistics": {
+     "$ref": "#/$defs/nodal_load_statistics"
+    },
+    "nodal_load_weights": {
+     "$ref": "#/$defs/nodal_load_weights"
+    }
+   },
+   "required": [
+    "month"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_nodal_load"
+  },
+  "nodal_load_statistics": {
+   "type": "object",
+   "properties": {
+    "monthly_load_zone_nodal_load": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/monthly_load_zone_nodal_load"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_nodal_load_statistics"
+  },
+  "nodal_load_weight": {
+   "type": "object",
+   "properties": {
+    "load_zone": {
+     "$ref": "#/$defs/load_zone"
+    },
+    "nodal_load_weight_nodes": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/nodal_load_weight_nodes"
+     }
+    }
+   },
+   "required": [
+    "load_zone"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_nodal_load_weight"
+  },
+  "nodal_load_weight_nodes": {
+   "type": "object",
+   "properties": {
+    "market_hour": {
+     "$ref": "#/$defs/market_hour"
+    },
+    "network_node": {
+     "$ref": "#/$defs/network_node"
+    },
+    "load_weight_factor_mw": {
+     "type": "number"
+    },
+    "lmp": {
+     "$ref": "#/$defs/lmp"
+    }
+   },
+   "required": [
+    "market_hour",
+    "network_node",
+    "load_weight_factor_mw",
+    "lmp"
+   ],
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_nodal_load_weight_nodes"
+  },
+  "nodal_load_weights": {
+   "type": "object",
+   "properties": {
+    "nodal_load_weight": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/nodal_load_weight"
+     }
+    }
+   },
+   "x-xsd-source": "schemas/iso-new-england-web-services-ns1.xsd#type_nodal_load_weights"
+  }
+ }
+}

@@ -1,0 +1,198 @@
+{
+ "FiveMinLmps": {
+  "FiveMinLmp": [
+   {
+    "LmpTotal": 68.04,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 0.16,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4000",
+     "@LocType": "HUB",
+     "$": ".H.INTERNAL_HUB"
+    }
+   },
+   {
+    "LmpTotal": 64.36,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": -3.52,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4001",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.MAINE"
+    }
+   },
+   {
+    "LmpTotal": 67.85,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": -0.03,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4002",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.NEWHAMPSHIRE"
+    }
+   },
+   {
+    "LmpTotal": 70.19,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 2.31,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4003",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.VERMONT"
+    }
+   },
+   {
+    "LmpTotal": 67.93,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 0.05,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4004",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.CONNECTICUT"
+    }
+   },
+   {
+    "LmpTotal": 67.32,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": -0.56,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4005",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.RHODEISLAND"
+    }
+   },
+   {
+    "LmpTotal": 68.45,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 0.57,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4006",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.SEMASS"
+    }
+   },
+   {
+    "LmpTotal": 68.16,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 0.28,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4007",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.WCMASS"
+    }
+   },
+   {
+    "LmpTotal": 68.22,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 0.34,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4008",
+     "@LocType": "LOAD ZONE",
+     "$": ".Z.NEMASSBOST"
+    }
+   },
+   {
+    "LmpTotal": 63.68,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": -4.2,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4010",
+     "@LocType": "EXT. NODE",
+     "$": ".I.SALBRYNB345 1"
+    }
+   },
+   {
+    "LmpTotal": 68.03,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 0.15,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4011",
+     "@LocType": "EXT. NODE",
+     "$": ".I.ROSETON 345 1"
+    }
+   },
+   {
+    "LmpTotal": 67.3,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": -0.58,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4012",
+     "@LocType": "EXT. NODE",
+     "$": ".I.HQ_P1_P2345 5"
+    }
+   },
+   {
+    "LmpTotal": 71.64,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 3.76,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4013",
+     "@LocType": "EXT. NODE",
+     "$": ".I.HQHIGATE120 2"
+    }
+   },
+   {
+    "LmpTotal": 69.04,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 1.16,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4014",
+     "@LocType": "EXT. NODE",
+     "$": ".I.SHOREHAM138 99"
+    }
+   },
+   {
+    "LmpTotal": 68.53,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": 0.65,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4017",
+     "@LocType": "EXT. NODE",
+     "$": ".I.NRTHPORT138 5"
+    }
+   },
+   {
+    "LmpTotal": 60.9,
+    "CongestionComponent": 0,
+    "EnergyComponent": 67.88,
+    "LossComponent": -6.98,
+    "BeginDate": "2026-07-27T17:25:00.000-04:00",
+    "Location": {
+     "@LocId": "4018",
+     "@LocType": "EXT. NODE",
+     "$": ".I.HQMRL_RD345 1"
+    }
+   }
+  ]
+ }
+}

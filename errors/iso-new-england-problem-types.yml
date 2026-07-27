@@ -1,0 +1,34 @@
+generated: '2026-07-27'
+method: derived
+source: openapi/iso-new-england-web-services-openapi.yml + https://webservices.iso-ne.com/docs/v1.1/
+format: http-status
+note: 'ISO New England publishes no error-code reference and no RFC 9457 problem+json envelope for the
+  Web Services API. The only error semantics documented or observed are HTTP status codes: every anonymous
+  request to the base path, to any resource and to the WADL returned 401 with a WWW-Authenticate Basic
+  challenge on 2026-07-27. Nothing here is invented - absent error documentation is recorded as absent.'
+envelope:
+  format: none published
+  content_type_observed: text/html;charset=utf-8
+  problem_json: false
+problems:
+- status: 401
+  title: Unauthorized
+  meaning: HTTP Basic credentials were missing or invalid. The API requires HTTP Basic authentication
+    over SSL using an ISO Express account.
+  remediation: Create a free ISO Express account at https://www.iso-ne.com/signup and send HTTP Basic
+    credentials over TLS. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
+  evidence: 'Anonymous probe 2026-07-27: https://webservices.iso-ne.com/api/v1.1 -> 401; /api/v1.1/fiveminutelmp/current.json
+    -> 401; /api/v1.1?_wadl&_type=xml -> 401'
+  applies_to: every operation in openapi/iso-new-england-web-services-openapi.yml
+- status: 404
+  title: Not Found
+  meaning: The requested resource path or the requested day/month/year has no data at this address.
+  remediation: Check the path template against https://webservices.iso-ne.com/docs/v1.1/ and the parameter
+    formats at https://www.iso-ne.com/participate/support/web-services-data
+  evidence: Anonymous probe 2026-07-27 of unknown paths on webservices.iso-ne.com (e.g. /openapi.json,
+    /swagger.json, /api-docs) -> 404
+not_published:
+- machine-readable error catalog
+- application/problem+json (RFC 9457) responses
+- provider error codes or a documented error envelope
+- documented retry / backoff guidance

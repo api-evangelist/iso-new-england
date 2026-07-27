@@ -1,0 +1,123 @@
+generated: '2026-07-27'
+method: derived
+status: candidate
+source: openapi/iso-new-england-web-services-openapi.yml
+provider_signal: ISO New England publishes no MCP server and makes no public statement about one. Probes
+  on 2026-07-27 found no /mcp, no /.well-known/oauth-protected-resource and no MCP listing for iso-ne.com.
+  The tool list below is a CANDIDATE derived from real operations in the harvested OpenAPI - each tool
+  names the exact operationId that backs it, and each tool inherits that operation's path parameters as
+  its input schema. Any server built from it would authenticate with the same HTTP Basic ISO Express credentials
+  the REST API requires.
+server:
+  name: iso-new-england-web-services
+  transport: http
+  url: null
+authentication:
+  scheme: http basic
+  note: HTTP Basic over SSL with ISO Express credentials; see authentication/iso-new-england-authentication.yml
+tool_count: 22
+tools:
+- name: get_current_five_minute_lmp
+  description: Get the current five-minute locational marginal prices for all locations.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFiveminutelmpCurrent
+  http: GET /fiveminutelmp/current
+- name: get_five_minute_lmp_for_location
+  description: Get the current five-minute LMP for one location id (e.g. 4000 for the Hub).
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFiveminutelmpCurrentLocationByLocationId
+  http: GET /fiveminutelmp/current/location/{locationId}
+  input_schema_from:
+  - locationId
+- name: get_five_minute_lmp_for_day_and_location
+  description: Get a whole day of five-minute LMPs for one location (day as YYYYMMDD).
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFiveminutelmpDayByDayLocationByLocationId
+  http: GET /fiveminutelmp/day/{day}/location/{locationId}
+  input_schema_from:
+  - day
+  - locationId
+- name: get_current_generation_fuel_mix
+  description: Get the current generation fuel mix in MW by fuel category.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getGenfuelmixCurrent
+  http: GET /genfuelmix/current
+- name: get_generation_fuel_mix_for_day
+  description: Get the generation fuel mix for a given day (YYYYMMDD).
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getGenfuelmixDayByDay
+  http: GET /genfuelmix/day/{day}
+  input_schema_from:
+  - day
+- name: get_current_system_load
+  description: Get the current five-minute system load.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFiveminutesystemloadCurrent
+  http: GET /fiveminutesystemload/current
+- name: get_current_hourly_load_forecast
+  description: Get the current hourly load forecast.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getHourlyloadforecastCurrent
+  http: GET /hourlyloadforecast/current
+- name: get_seven_day_forecast
+  description: Get the current seven-day capacity forecast.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getSevendayforecastCurrent
+  http: GET /sevendayforecast/current
+- name: get_morning_report
+  description: Get the current morning report of system capacity and demand.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getMorningreportCurrent
+  http: GET /morningreport/current
+- name: get_current_day_ahead_hourly_demand
+  description: Get the current day-ahead hourly demand.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getDayaheadhourlydemandCurrent
+  http: GET /dayaheadhourlydemand/current
+- name: get_current_day_ahead_constraints
+  description: Get the current day-ahead transmission constraints.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getDayaheadconstraintsCurrent
+  http: GET /dayaheadconstraints/current
+- name: get_current_real_time_hourly_demand
+  description: Get the current real-time hourly demand.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getRealtimehourlydemandCurrent
+  http: GET /realtimehourlydemand/current
+- name: get_current_actual_interchange
+  description: Get the current actual external interchange for all locations.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getActualinterchangeCurrent
+  http: GET /actualinterchange/current
+- name: get_current_regulation_clearing_price
+  description: Get the current five-minute regulation clearing price.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFiveminutercpCurrent
+  http: GET /fiveminutercp/current
+- name: get_current_reserve_price
+  description: Get the current five-minute operating-reserve prices.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFiveminutereservepriceCurrent
+  http: GET /fiveminutereserveprice/current
+- name: list_locations
+  description: List every pricing/load location the API publishes, with id, type and name.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getLocationsAll
+  http: GET /locations/all
+- name: get_location
+  description: Get a single location by id.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getLocationsByLocationId
+  http: GET /locations/{locationId}
+  input_schema_from:
+  - locationId
+- name: get_demand_response_dispatch
+  description: Get the current demand-response dispatch instructions.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getDrdispatchCurrent
+  http: GET /drdispatch/current
+- name: get_fcm_annual_reconfiguration_results
+  description: Get Forward Capacity Market annual reconfiguration auction results for a commitment period.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFcmaraCpByCp
+  http: GET /fcmara/cp/{cp}
+  input_schema_from:
+  - cp
+- name: get_seven_day_wind_power_forecast
+  description: Get the current seven-day wind power forecast.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getSevendaywindpowerforecastCurrent
+  http: GET /sevendaywindpowerforecast/current
+- name: get_outages_by_type
+  description: Get current transmission/generation outage postings for an outage type (short-term or long-term).
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getOutagesCurrentOutageTypeByOutageType
+  http: GET /outages/current/outageType/{outageType}
+  input_schema_from:
+  - outageType
+- name: get_service_info
+  description: Get the freshness (creation date / latest begin date) of the five-minute LMP feed.
+  source_operation: openapi/iso-new-england-web-services-openapi.yml#getFiveminutelmpInfo
+  http: GET /fiveminutelmp/info
+not_covered: 467 further read operations exist in the OpenAPI (FTR auctions, NCPC, hourly-bid participant
+  resources, constraints, interchange, reserve and capacity feeds). They are deliberately not enumerated
+  as tools here - a real server should expose a curated set, not 489 tools.

@@ -1,0 +1,70 @@
+{
+ "HourlyRtDemands": {
+  "HourlyRtDemand": [
+   {
+    "Load": 1217.883,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4001",
+     "$": ".Z.MAINE"
+    }
+   },
+   {
+    "Load": 1264.315,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4002",
+     "$": ".Z.NEWHAMPSHIRE"
+    }
+   },
+   {
+    "Load": 560.796,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4003",
+     "$": ".Z.VERMONT"
+    }
+   },
+   {
+    "Load": 3369.646,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4004",
+     "$": ".Z.CONNECTICUT"
+    }
+   },
+   {
+    "Load": 986.614,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4005",
+     "$": ".Z.RHODEISLAND"
+    }
+   },
+   {
+    "Load": 1856.469,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4006",
+     "$": ".Z.SEMASS"
+    }
+   },
+   {
+    "Load": 1783.999,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4007",
+     "$": ".Z.WCMASS"
+    }
+   },
+   {
+    "Load": 2829.463,
+    "BeginDate": "2026-07-22T23:00:00.000-04:00",
+    "Location": {
+     "@LocId": "4008",
+     "$": ".Z.NEMASSBOST"
+    }
+   }
+  ]
+ }
+}

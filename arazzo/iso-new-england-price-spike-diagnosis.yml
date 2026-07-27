@@ -1,0 +1,81 @@
+arazzo: 1.0.1
+info:
+  title: ISO New England price spike diagnosis
+  version: 1.0.0
+  description: >-
+    Explain a price event on a past operating day: pull the day-ahead hourly prices, the day's
+    transmission constraints, the fuel mix and the demand-response dispatch, then correlate the
+    congestion component of the LMP with the binding constraints. Every operationId exists verbatim
+    in the referenced OpenAPI. HTTP Basic credentials from a free ISO Express account are required.
+sourceDescriptions:
+- name: isone
+  url: ../openapi/iso-new-england-web-services-openapi.yml
+  type: openapi
+workflows:
+- workflowId: diagnose-price-spike
+  summary: Correlate day-ahead LMPs with constraints, fuel mix and demand-response dispatch for one day.
+  inputs:
+    type: object
+    required: [day]
+    properties:
+      day:
+        type: string
+        description: Operating day, formatted YYYYMMDD (ISO New England's documented day parameter format).
+        example: '20260726'
+      locationId:
+        type: string
+        description: Pricing location id to focus on. 4000 is the Hub.
+        default: '4000'
+  steps:
+  - stepId: da-prices-for-location
+    description: Day-ahead final hourly LMPs for the day at one location, split into energy, congestion and loss components.
+    operationId: getHourlylmpDaFinalDayByDayLocationByLocationId
+    parameters:
+    - name: day
+      in: path
+      value: $inputs.day
+    - name: locationId
+      in: path
+      value: $inputs.locationId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      prices: $response.body
+  - stepId: day-ahead-constraints
+    description: Binding day-ahead transmission constraints for the same day - the usual source of a congestion component.
+    operationId: getDayaheadconstraintsDayByDay
+    parameters:
+    - name: day
+      in: path
+      value: $inputs.day
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      constraints: $response.body#/DayAheadConstraints/DayAheadConstraint
+  - stepId: fuel-mix-for-day
+    description: Generation fuel mix for the day, to see which fuel was marginal.
+    operationId: getGenfuelmixDayByDay
+    parameters:
+    - name: day
+      in: path
+      value: $inputs.day
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      fuelMix: $response.body
+  - stepId: demand-response-dispatch
+    description: Whether demand resources were dispatched that day.
+    operationId: getDrdispatchDayByDay
+    parameters:
+    - name: day
+      in: path
+      value: $inputs.day
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      dispatch: $response.body
+  outputs:
+    prices: $steps.da-prices-for-location.outputs.prices
+    constraints: $steps.day-ahead-constraints.outputs.constraints
+    fuelMix: $steps.fuel-mix-for-day.outputs.fuelMix
+    dispatch: $steps.demand-response-dispatch.outputs.dispatch

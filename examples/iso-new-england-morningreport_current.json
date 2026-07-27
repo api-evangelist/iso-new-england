@@ -1,0 +1,129 @@
+{
+ "MorningReports": {
+  "MorningReport": [
+   {
+    "CreationDate": "2026-07-27T12:02:35.000-04:00",
+    "UncommitedAvailDRRMw": 14,
+    "GenPlannedOutagesReductionMW": 37,
+    "TotAvailCapMw": 22325,
+    "ReplReserveRequiredMw": 160,
+    "CityForecastDetail": [
+     {
+      "WindDirSpeed": "SE-11",
+      "HighTemperature": 72,
+      "WeatherConditions": "Clear",
+      "CityName": "Boston"
+     },
+     {
+      "WindDirSpeed": "S-7",
+      "HighTemperature": 80,
+      "WeatherConditions": "Thunderstorms",
+      "CityName": "Hartford"
+     }
+    ],
+    "NetCapDeliveryMw": -1740,
+    "AmsPeakLoadExpMw": 25228,
+    "PeakLoadYesterdayHour": "2026-07-26T20:00:00.000-04:00",
+    "PeakLoadYesterdayMw": 15746,
+    "CsoMw": 26707,
+    "ThirtyMinReserveEstMw": 3289,
+    "TotalOperReserveReqMw": 2048,
+    "PeakLoadTodayHour": "2026-07-27T19:00:00.000-04:00",
+    "CapRequiredMw": 19648,
+    "AddlCapAvailOp4ActMw": 0,
+    "TenMinReserveEstMw": 1436,
+    "GenOutagesReductionMW": 1567,
+    "ThirtyMinReserveReqMw": 612,
+    "GenForcedOutagesReductionMW": 1530,
+    "TieDelivery": [
+     {
+      "TieFlowMw": 0,
+      "TieName": "Highgate"
+     },
+     {
+      "TieFlowMw": -34,
+      "TieName": "NB"
+     },
+     {
+      "TieFlowMw": -1089,
+      "TieName": "NECEC"
+     },
+     {
+      "TieFlowMw": -598,
+      "TieName": "NYISO AC"
+     },
+     {
+      "TieFlowMw": 225,
+      "TieName": "NYISO CSC"
+     },
+     {
+      "TieFlowMw": 48,
+      "TieName": "NYISO NNC"
+     },
+     {
+      "TieFlowMw": -292,
+      "TieName": "Phase 2"
+     }
+    ],
+    "ReportType": "Operational Capacity Update Report",
+    "ExpActOp4Mw": "0",
+    "DRRCapacityMw": 199,
+    "TenMinReserveReqMw": 1436,
+    "UnitCommMinOrrCount": 0,
+    "UncommittedGenBeforePeakMw": 1580,
+    "InterchangeDetail": [
+     {
+      "ScheduledMw": 0,
+      "TieName": "Highgate",
+      "ImportLimitInMw": 0,
+      "ExportLimitOutMw": 0
+     },
+     {
+      "ScheduledMw": -34,
+      "TieName": "NB",
+      "ImportLimitInMw": -270,
+      "ExportLimitOutMw": 100
+     },
+     {
+      "ScheduledMw": -1089,
+      "TieName": "NECEC",
+      "ImportLimitInMw": -1250,
+      "ExportLimitOutMw": 0
+     },
+     {
+      "ScheduledMw": -598,
+      "TieName": "NYISO AC",
+      "ImportLimitInMw": -1400,
+      "ExportLimitOutMw": 1200
+     },
+     {
+      "ScheduledMw": 225,
+      "TieName": "NYISO CSC",
+      "ImportLimitInMw": -346,
+      "ExportLimitOutMw": 330
+     },
+     {
+      "ScheduledMw": 48,
+      "TieName": "NYISO NNC",
+      "ImportLimitInMw": -200,
+      "ExportLimitOutMw": 200
+     },
+     {
+      "ScheduledMw": -292,
+      "TieName": "Phase 2",
+      "ImportLimitInMw": -2000,
+      "ExportLimitOutMw": 1200
+     }
+    ],
+    "UncommittedAvailGenMw": 5778,
+    "BeginDate": "2026-07-27T00:00:00.000-04:00",
+    "LargestFirstContMw": 1249,
+    "ExcessCommitMw": 2517,
+    "PeakLoadTodayMw": 17600,
+    "SurplusDeficiencyMw": 2677,
+    "CapAdditionsMw": 1038,
+    "UnitCommMinOrrMw": 0
+   }
+  ]
+ }
+}

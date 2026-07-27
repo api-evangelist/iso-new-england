@@ -1,0 +1,68 @@
+generated: '2026-07-27'
+method: searched
+source: npm registry search, PyPI JSON API, and the ISO New England developer documentation
+description: >-
+  ISO New England ships NO first-party client library, SDK or CLI in any language. The GitHub
+  organization github.com/iso-ne exists but has 0 public repositories, the Web Services Data page
+  offers only documentation and a spreadsheet, and searches of npm and PyPI on 2026-07-27 returned
+  no ISO New England-published package. The libraries listed below are third-party, community or
+  vendor projects that read ISO New England data; they are recorded as leads for developers, and
+  every one is marked official:false. No SDKs pointer is claimed for this provider.
+
+official_sdks: 0
+packages:
+- language: python
+  registry: pypi
+  name: gridstatus
+  version_seen: 0.36.0
+  url: https://pypi.org/project/gridstatus/
+  source: https://github.com/gridstatus/gridstatus/
+  install: pip install gridstatus
+  official: false
+  vendor: GridStatus.io (third party)
+  covers_iso_ne: true
+  note: General US ISO/RTO data client that includes an ISO New England module. Reads public ISO Express data, not the credentialed Web Services API.
+- language: python
+  registry: pypi
+  name: isodata
+  version_seen: 0.10.0
+  url: https://pypi.org/project/isodata/
+  source: https://github.com/kmax12/isodata/
+  install: pip install isodata
+  official: false
+  vendor: third party
+  covers_iso_ne: true
+  note: Predecessor project to gridstatus, same author.
+- language: python
+  registry: pypi
+  name: pyiso
+  version_seen: 0.4.0
+  url: https://pypi.org/project/pyiso/
+  source: https://github.com/WattTime/pyiso
+  install: pip install pyiso
+  official: false
+  vendor: WattTime (third party)
+  covers_iso_ne: true
+  note: Long-standing client for ISO/RTO grid data sources including ISO New England. Legacy project.
+
+registries_searched:
+- registry: npm
+  query: 'iso-ne webservices / isone energy api'
+  result: no ISO New England package
+- registry: pypi
+  query: 'isone / iso-ne / isone-webservices'
+  result: 404 on every candidate name; no ISO New England package
+- registry: github
+  query: https://api.github.com/orgs/iso-ne
+  result: organization exists, 0 public repositories
+not_searched_exhaustively:
+- Maven Central
+- NuGet
+- pkg.go.dev
+- RubyGems
+- Packagist
+- crates.io
+not_searched_note: >-
+  Given the empty result on npm, PyPI and the provider's own GitHub org, and the absence of any SDK
+  link in ISO New England's documentation, no first-party package is expected on the remaining
+  registries. Recorded honestly rather than claimed as exhaustive.
