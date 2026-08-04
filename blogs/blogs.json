@@ -1,0 +1,21 @@
+{
+  "repo": "iso-new-england",
+  "feeds": [
+    {
+      "source": "https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis",
+      "feed_url": "https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://isonewswire.com/",
+      "feed_url": "https://isonewswire.com/feed/",
+      "title": "",
+      "saved": 3,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 3,
+  "fetched": "2026-08-01T15:49:00Z"
+}
