@@ -6,13 +6,14 @@
       "feed_url": "https://www.iso-ne.com/markets-operations/transmission-operations-services/oasis",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "none",
+      "error": "parse_failed"
     },
     {
       "source": "https://isonewswire.com/feed/",
       "feed_url": "https://isonewswire.com/feed/",
       "title": "",
-      "saved": 0,
+      "saved": 5,
       "method": "feed"
     },
     {
@@ -23,6 +24,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-08-06T14:08:46Z"
+  "post_count": 15,
+  "fetched": "2026-08-15T12:11:08Z"
 }
