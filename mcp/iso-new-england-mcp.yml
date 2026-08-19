@@ -121,3 +121,9 @@ tools:
 not_covered: 467 further read operations exist in the OpenAPI (FTR auctions, NCPC, hourly-bid participant
   resources, constraints, interchange, reserve and capacity feeds). They are deliberately not enumerated
   as tools here - a real server should expose a curated set, not 489 tools.
+deployment:
+  mode: none
+  verified: derived
+  tools: 22
+  checked: '2026-08-12'
+  source: catalog MCP census
