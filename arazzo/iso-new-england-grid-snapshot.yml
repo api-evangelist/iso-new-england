@@ -8,8 +8,20 @@ info:
     hourly load forecast. Every operationId exists verbatim in the referenced OpenAPI. All calls
     require HTTP Basic credentials from a free ISO Express account; anonymous calls return 401.
 sourceDescriptions:
-- name: isone
-  url: ../openapi/iso-new-england-web-services-openapi.yml
+- name: fiveminutelmpApi
+  url: ../openapi/iso-new-england-fiveminutelmp-api-openapi.yml
+  type: openapi
+- name: fiveminutesystemloadApi
+  url: ../openapi/iso-new-england-fiveminutesystemload-api-openapi.yml
+  type: openapi
+- name: genfuelmixApi
+  url: ../openapi/iso-new-england-genfuelmix-api-openapi.yml
+  type: openapi
+- name: hourlyloadforecastApi
+  url: ../openapi/iso-new-england-hourlyloadforecast-api-openapi.yml
+  type: openapi
+- name: locationsApi
+  url: ../openapi/iso-new-england-locations-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: grid-snapshot

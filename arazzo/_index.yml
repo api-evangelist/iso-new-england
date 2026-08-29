@@ -1,7 +1,7 @@
-generated: '2026-07-27'
-method: generated
-source: openapi/iso-new-england-web-services-openapi.yml
-description: >-
+x-generated: '2026-07-27'
+x-method: generated
+x-source: openapi/iso-new-england-web-services-openapi.yml
+x-description: >-
   Native Arazzo 1.0.1 workflows stitching real ISO New England Web Services operations into
   multi-step use cases. Every operationId used was verified to exist verbatim in the referenced
   OpenAPI. All steps require HTTP Basic credentials from a free ISO Express account - there is no

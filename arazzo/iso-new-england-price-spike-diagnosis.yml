@@ -8,8 +8,17 @@ info:
     congestion component of the LMP with the binding constraints. Every operationId exists verbatim
     in the referenced OpenAPI. HTTP Basic credentials from a free ISO Express account are required.
 sourceDescriptions:
-- name: isone
-  url: ../openapi/iso-new-england-web-services-openapi.yml
+- name: dayaheadconstraintsApi
+  url: ../openapi/iso-new-england-dayaheadconstraints-api-openapi.yml
+  type: openapi
+- name: drdispatchApi
+  url: ../openapi/iso-new-england-drdispatch-api-openapi.yml
+  type: openapi
+- name: genfuelmixApi
+  url: ../openapi/iso-new-england-genfuelmix-api-openapi.yml
+  type: openapi
+- name: hourlylmpApi
+  url: ../openapi/iso-new-england-hourlylmp-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: diagnose-price-spike
