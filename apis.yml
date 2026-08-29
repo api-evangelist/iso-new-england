@@ -19,6 +19,18 @@ description: ISO New England Inc. is the independent, nonprofit regional transmi
   resources, but it answers 401 to anonymous callers - a developer must first create a free,
   self-serve ISO Express account, which the ISO says automatically grants access to the data feeds,
   and then authenticate with HTTP Basic over SSL.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
