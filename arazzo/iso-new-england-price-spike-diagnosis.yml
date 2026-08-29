@@ -7,6 +7,22 @@ info:
     transmission constraints, the fuel mix and the demand-response dispatch, then correlate the
     congestion component of the LMP with the binding constraints. Every operationId exists verbatim
     in the referenced OpenAPI. HTTP Basic credentials from a free ISO Express account are required.
+  x-realizes-capability-ids:
+  - BC-3830.30
+  - BC-3840.30
+  x-capability-derivation:
+    method: 'deterministic join: sourceDescriptions -> per-tag OpenAPI -> tag/capability edge. No classification at this step.'
+    min_confidence: 0.7
+    sources:
+    - capability_id: BC-3830.30
+      capability_name: Operational Planning
+      spec: iso-new-england-dayaheadconstraints-api-openapi.yml
+      confidence: 0.7
+    - capability_id: BC-3840.30
+      capability_name: Demand Response Operations
+      spec: iso-new-england-drdispatch-api-openapi.yml
+      confidence: 0.85
+    model: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities, CC BY 4.0
 sourceDescriptions:
 - name: dayaheadconstraintsApi
   url: ../openapi/iso-new-england-dayaheadconstraints-api-openapi.yml
