@@ -1,0 +1,287 @@
+slug: iso-new-england
+provider: ISO New England
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Power & Water Utilities
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 27
+edges:
+- tag: drdispatch
+  spec_file: iso-new-england-drdispatch-api-openapi.yml
+  capability_id: BC-3840.30
+  capability_id_l1: BC-3840
+  capability_name: Demand Response Operations
+  confidence: 0.85
+  evidence: '"Get the current DR Dispatches" and "Get an entire days DR Dispatch for given dispatch zone";
+    schema DrDispatch'
+  reason: Operations publish demand-response dispatch instructions by dispatch zone — this is the dispatch
+    element of Demand Response Operations within distributed energy resource management.
+- tag: powersystem
+  spec_file: iso-new-england-powersystem-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.85
+  evidence: '"Get the current Power System Regional Status and any current OP4 Alerts"; schemas PowerSystemStatus,
+    PowerSystemRegion, Op4Alert'
+  reason: Current regional power-system status and OP-4 (emergency operating procedure) alerts are the
+    real-time supervision and emergency-condition posture of the bulk power system — Real-Time System
+    Operations.
+- tag: dayaheadhourlyoperatingreserve
+  spec_file: iso-new-england-dayaheadhourlyoperatingreserve-api-openapi.yml
+  capability_id: BC-3830.40
+  capability_id_l1: BC-3830
+  capability_name: Reserves & Ancillary Services
+  confidence: 0.8
+  evidence: 'Get the current Day Ahead Hourly Operating Reserve for a given location; schemas: HourlyDaOperatingReserves,
+    OperatingReserve'
+  reason: Operations explicitly publish day-ahead hourly operating reserve quantities/prices by location,
+    which is squarely procurement and reporting of operating reserves and ancillary services by the system
+    operator.
+- tag: outages
+  spec_file: iso-new-england-outages-api-openapi.yml
+  capability_id: BC-3810.50
+  capability_id_l1: BC-3810
+  capability_name: Transmission Outage Coordination
+  confidence: 0.8
+  evidence: '"Get outages for station", "Get outages for request", "Get an entire days outages"; schemas
+    Outages, Outage, Stations, Station; paths filter by outageType, equipType, company, status'
+  reason: Outage requests keyed by station, equipment type, requesting company, request type and status
+    are transmission outage requests coordinated between transmission owners and the system operator —
+    Transmission Outage Coordination. Some chance the intended home is the system-operator-side operational
+    planning capability, hence 0.8.
+- tag: realtimehourlydemand
+  spec_file: iso-new-england-realtimehourlydemand-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.8
+  evidence: '"Get the current Real Time Hourly Demand", "Get the current Rt Hourly Demand for a given
+    location type"; schemas HourlyRtDemand, Demand'
+  reason: Real-time hourly system demand by location is the actual-load side of the system operator's
+    continuous supervision of generation, demand and interchange — Real-Time System Operations.
+- tag: realtimehourlyoperatingreserve
+  spec_file: iso-new-england-realtimehourlyoperatingreserve-api-openapi.yml
+  capability_id: BC-3830.40
+  capability_id_l1: BC-3830
+  capability_name: Reserves & Ancillary Services
+  confidence: 0.8
+  evidence: '"Get the current Real Time Hourly Operating Reserves"; schemas HourlyRtOperatingReserve,
+    OperatingReserve'
+  reason: Publication of real-time hourly operating reserve levels by location is the system-operator
+    reserves and ancillary-services function (BC-3830.40); it is a reporting feed over that capability
+    rather than procurement itself, so 0.8.
+- tag: fcmara
+  spec_file: iso-new-england-fcmara-api-openapi.yml
+  capability_id: BC-3850.40
+  capability_id_l1: BC-3850
+  capability_name: Capacity Market Participation
+  confidence: 0.78
+  evidence: paths /fcmara/cp/{cp}/ara/{ara}; schemas FCMRAResult, ClearedCapacityZone, SystemDemandCurveResults,
+    Auction
+  reason: Forward Capacity Market annual reconfiguration auction results — cleared capacity zones, demand
+    curves, auction periods — which is capacity-market qualification and clearing data under Capacity
+    Market Participation.
+- tag: fcmmra
+  spec_file: iso-new-england-fcmmra-api-openapi.yml
+  capability_id: BC-3850.40
+  capability_id_l1: BC-3850
+  capability_name: Capacity Market Participation
+  confidence: 0.78
+  evidence: schemas FCMRAResult, ClearedCapacityZones, SystemDemandCurveResults, Auction; path /fcmmra/cp/{cp}/month/{month}
+  reason: Monthly Forward Capacity Market reconfiguration auction clearing results, i.e. capacity-market
+    auction outcomes, mapping to Capacity Market Participation.
+- tag: fcmabp
+  spec_file: iso-new-england-fcmabp-api-openapi.yml
+  capability_id: BC-3850.40
+  capability_id_l1: BC-3850
+  capability_name: Capacity Market Participation
+  confidence: 0.75
+  evidence: schemas FCMBilateralResult, BilatClearedCapacityZone, Auction, ClearedInterface; paths /fcmabp/cp/{cp}/arabp/{arabp}
+  reason: Forward Capacity Market bilateral-period results with cleared capacity zones and auction periods
+    — capacity market mechanism data, mapping to Capacity Market Participation. Slight discount because
+    the vendor administers rather than participates in the auction.
+- tag: fcmmbp
+  spec_file: iso-new-england-fcmmbp-api-openapi.yml
+  capability_id: BC-3850.40
+  capability_id_l1: BC-3850
+  capability_name: Capacity Market Participation
+  confidence: 0.75
+  evidence: schemas FCMBilateralResult, BilatClearedCapacityZones, Auction, MonthlyResult; path /fcmmbp/cp/{cp}/month/{month}
+  reason: Monthly Forward Capacity Market bilateral results by capability period and month — capacity-market
+    mechanism data mapping to Capacity Market Participation.
+- tag: hbdayaheadenergyoffer
+  spec_file: iso-new-england-hbdayaheadenergyoffer-api-openapi.yml
+  capability_id: BC-3850.10
+  capability_id_l1: BC-3850
+  capability_name: Wholesale Power Trading
+  confidence: 0.75
+  evidence: '"Get the current HbDayAheadEnergyOffersElement for Hub, Load Zones, and External Nodes";
+    schemas HbEnergyOffer, HbDayAheadEnergyOffers'
+  reason: Historical day-ahead energy offer data from the RTO's wholesale market — direct day-ahead physical
+    power market transaction data.
+- tag: hbfcmara
+  spec_file: iso-new-england-hbfcmara-api-openapi.yml
+  capability_id: BC-3850.40
+  capability_id_l1: BC-3850
+  capability_name: Capacity Market Participation
+  confidence: 0.75
+  evidence: '"Get the current Annual Reconfiguration Auction Historical Bids for Hub, Load Zones, and
+    External Nodes"'
+  reason: FCM Annual Reconfiguration Auction bid data — Forward Capacity Market auction data, matching
+    capacity-market auction participation.
+- tag: hbfcmmra
+  spec_file: iso-new-england-hbfcmmra-api-openapi.yml
+  capability_id: BC-3850.40
+  capability_id_l1: BC-3850
+  capability_name: Capacity Market Participation
+  confidence: 0.75
+  evidence: '"Get the current Monthly Reconfiguration Auction Historical Bids"'
+  reason: FCM Monthly Reconfiguration Auction bid data — capacity-market auction data feed, matching capacity
+    market participation.
+- tag: fiveminutesystemload
+  spec_file: iso-new-england-fiveminutesystemload-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.72
+  evidence: 'Get the current Five Minute System Load for all locations; schemas: FiveMinSystemLoad'
+  reason: Total system load at five-minute resolution is core real-time system operations data for balancing
+    generation against demand on the bulk power system.
+- tag: actualinterchange
+  spec_file: iso-new-england-actualinterchange-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.7
+  evidence: 'Get the current Actual Interchange for all locations; schemas: ActualInterchange, LocationRef'
+  reason: ISO-NE is the system operator; actual interchange feeds report realised net interchange flows
+    by location, which is part of real-time supervision of system generation, demand and interchange.
+    Some chance it belongs under cross-border/interconnector coordination, hence not higher confidence.
+- tag: dayaheadconstraints
+  spec_file: iso-new-england-dayaheadconstraints-api-openapi.yml
+  capability_id: BC-3830.30
+  capability_id_l1: BC-3830
+  capability_name: Operational Planning
+  confidence: 0.7
+  evidence: 'Get the current Day Ahead Constraints; schemas: Constraint, DayAheadConstraint'
+  reason: Binding day-ahead transmission constraints are output of day-ahead system security analysis
+    performed by the system operator, matching Operational Planning. Could alternatively be read as market-clearing
+    output, so not higher.
+- tag: fifteenminuteinterchange
+  spec_file: iso-new-england-fifteenminuteinterchange-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.7
+  evidence: '"Get the current fifteen min Actual Interchange for a given location"; schema ActualFifteenMinInterchange'
+  reason: Actual interchange measurements per location are core real-time system-operations data — the
+    capability text itself covers supervision of system generation, demand, and interchange.
+- tag: fiveminuteestimatedzonalload
+  spec_file: iso-new-england-fiveminuteestimatedzonalload-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.7
+  evidence: Get the current Five Min Estimated Zonal Load; GET /fiveminuteestimatedzonalload/current/loadzone/{loadZoneId}
+  reason: ISO-NE is the RTO that operates the bulk power system; this feed publishes real-time (five-minute)
+    estimated demand per load zone, which is the system-operator's real-time surveillance of system demand.
+    Maps to Grid Control & Balancing / Real-Time System Operations rather than any customer-metering capability,
+    since the granularity is zonal system load, not customer meters.
+- tag: hbannualftrauction
+  spec_file: iso-new-england-hbannualftrauction-api-openapi.yml
+  capability_id: BC-3850
+  capability_id_l1: BC-3850
+  capability_name: Energy Trading & Settlement Management
+  confidence: 0.7
+  evidence: 'GET /hbannualftrauction/current — "Get the current HbAnnualFTRAuctionsElement"; schemas:
+    HbFTRAuctions, HbFTRAuction'
+  reason: Feed of annual Financial Transmission Rights auction data from the RTO's wholesale market platform
+    — wholesale power/financial-instrument market data supporting energy trading. Kept at L1 because FTR
+    congestion hedging spans trading and risk sub-capabilities rather than naming one.
+- tag: hbdayaheadardbid
+  spec_file: iso-new-england-hbdayaheadardbid-api-openapi.yml
+  capability_id: BC-3850
+  capability_id_l1: BC-3850
+  capability_name: Energy Trading & Settlement Management
+  confidence: 0.7
+  evidence: 'GET /hbdayaheadardbid/day/{day} — "Get an entire days HbDayAheadEnergyOffers"; schemas: HbArdBid,
+    HbDayAheadArdBids'
+  reason: Historical day-ahead market bid data (asset-related demand) from the wholesale market operator
+    — wholesale energy market participation data. Sub-capability left open between trading and position/scheduling.
+- tag: hbdayaheaddemandbid
+  spec_file: iso-new-england-hbdayaheaddemandbid-api-openapi.yml
+  capability_id: BC-3850.10
+  capability_id_l1: BC-3850
+  capability_name: Wholesale Power Trading
+  confidence: 0.7
+  evidence: '"Get the current Day Ahead Demand Bids for Hub, Load Zones, and External Nodes"; schema HbDayAheadDemandBids'
+  reason: Day-ahead market demand bid data at hubs, load zones and external nodes is squarely wholesale
+    power market (day-ahead) transaction data supporting front-office trading.
+- tag: hourlyloadgeninterchange
+  spec_file: iso-new-england-hourlyloadgeninterchange-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.7
+  evidence: '"Get the current Hourly System Load"; schemas HourlyLoadGenInterchange, HourlyLoadGenInterchanges'
+  reason: Hourly actuals of system load, generation and interchange — directly mirrors Real-Time System
+    Operations, 'supervision and control of system generation, demand, and interchange'.
+- tag: hourlyrcp
+  spec_file: iso-new-england-hourlyrcp-api-openapi.yml
+  capability_id: BC-3830.40
+  capability_id_l1: BC-3830
+  capability_name: Reserves & Ancillary Services
+  confidence: 0.7
+  evidence: Get the Service Info for Hourly Final Regulation Clearing Prices(RCPs)
+  reason: Regulation clearing prices are the price outcome of the frequency-regulation ancillary service
+    procured by the system operator, which is the Reserves & Ancillary Services sub-capability.
+- tag: powersystemconditions
+  spec_file: iso-new-england-powersystemconditions-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.7
+  evidence: GET /powersystemconditions/current; schemas PowerSystemConditions, PowerSystemCondition
+  reason: Current and historical power-system condition records for the bulk system operated by this RTO
+    belong to real-time system operations; the year/range endpoints are historical archives of the same
+    operating-condition data, so confidence is moderate.
+- tag: realtimeconstraints
+  spec_file: iso-new-england-realtimeconstraints-api-openapi.yml
+  capability_id: BC-3830.10
+  capability_id_l1: BC-3830
+  capability_name: Real-Time System Operations
+  confidence: 0.7
+  evidence: '"Get the current Real Time Constraints", "Get the current Hour Real Time Constraints", "Get
+    the current Final Real Time Constraints"'
+  reason: Binding real-time transmission constraints from the ISO's dispatch/security-constrained economic
+    dispatch are part of real-time system supervision and control. Some chance the intended home is transmission
+    protection/congestion rather than the balancing control room, hence 0.7.
+- tag: reliabilityregionloadforecast
+  spec_file: iso-new-england-reliabilityregionloadforecast-api-openapi.yml
+  capability_id: BC-3830.30
+  capability_id_l1: BC-3830
+  capability_name: Operational Planning
+  confidence: 0.7
+  evidence: '"Get the current RRFL" / "Get entire Day RRFL"; schemas ReliabilityRegionLoadForecast, ReliabilityRegionLoadForecasts'
+  reason: Day-level load forecasts by reliability region are the system operator's day-ahead/intraday
+    demand forecast underpinning security analysis and operating-margin planning — Operational Planning.
+    Could arguably sit with real-time operations, so moderate confidence.
+- tag: sevendayforecast
+  spec_file: iso-new-england-sevendayforecast-api-openapi.yml
+  capability_id: BC-3830.30
+  capability_id_l1: BC-3830
+  capability_name: Operational Planning
+  confidence: 0.7
+  evidence: GET /sevendayforecast/current  "Get the current SDF"; schemas Weather, CityWeather, MarketDay,
+    SevenDayForecast
+  reason: The ISO's seven-day forecast couples weather with market-day load/capacity outlooks — forward
+    system security and operating-margin planning by the system operator, i.e. operational planning rather
+    than any trading or asset function.
