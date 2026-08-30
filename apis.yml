@@ -113,6 +113,8 @@ apis:
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
+  - AMS
+  tags_raw:
   - ams
   properties:
   - type: OpenAPI
@@ -2531,7 +2533,8 @@ apis:
     12 path template(s) under /lmpIndex in the published ISO New England Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
-  tags:
+  tags: []
+  tags_raw:
   - lmpIndex
   properties:
   - type: OpenAPI
@@ -2610,6 +2613,8 @@ apis:
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
+  - Locations
+  tags_raw:
   - locations
   properties:
   - type: OpenAPI
@@ -3002,6 +3007,8 @@ apis:
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
+  - Outages
+  tags_raw:
   - outages
   properties:
   - type: OpenAPI
@@ -3081,6 +3088,8 @@ apis:
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
+  - PowerSystem
+  tags_raw:
   - powersystem
   properties:
   - type: OpenAPI
