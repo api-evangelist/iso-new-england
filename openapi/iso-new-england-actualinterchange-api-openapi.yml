@@ -1,0 +1,257 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Actualinterchange API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: actualinterchange
+  description: 4 path template(s) under /actualinterchange in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /actualinterchange:
+    get:
+      operationId: getActualinterchange
+      summary: Default resource
+      description: Default resource. Redirects to Actual Interchange Info.
+      tags:
+      - actualinterchange
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.actualinterchange.html
+        harvested: '2026-07-27'
+  /actualinterchange/current:
+    get:
+      operationId: getActualinterchangeCurrent
+      summary: Get the current Actual Interchange for all locations
+      description: Get the current Actual Interchange for all locations.
+      tags:
+      - actualinterchange
+      responses:
+        '200':
+          description: a ActualInterchangesElement containing the current Actual Interchange.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ActualInterchanges'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActualInterchanges'
+              example:
+                ActualInterchanges:
+                  ActualInterchange:
+                  - Sale: 70
+                    Purchase: -2
+                    ActInterchange: 68
+                    BeginDate: '2026-07-27T15:00:00.000-04:00'
+                    Location:
+                      '@LocId': '4010'
+                      $: .I.SALBRYNB345 1
+                  - Sale: 1718.75
+                    Purchase: -938.25
+                    ActInterchange: 780.5
+                    BeginDate: '2026-07-27T15:00:00.000-04:00'
+                    Location:
+                      '@LocId': '4011'
+                      $: .I.ROSETON 345 1
+                  - Sale: 0
+                    Purchase: 0
+                    ActInterchange: 0
+                    BeginDate: '2026-07-27T15:00:00.000-04:00'
+                    Location:
+                      '@LocId': '4012'
+                      $: .I.HQ_P1_P2345 5
+                  - Sale: 0
+                    Purchase: 0
+                    ActInterchange: 0
+                    BeginDate: '2026-07-27T15:00:00.000-04:00'
+                    Location:
+                      '@LocId': '4013'
+                      $: .I.HQHIGATE120 2
+                  - Sale: 300
+                    Purchase: 0
+                    ActInterchange: 300
+                    BeginDate: '2026-07-27T15:00:00.000-04:00'
+                    Location:
+                      '@LocId': '4014'
+                      $: .I.SHOREHAM138 99
+                  - Sale: 200
+                    Purchase: 0
+                    ActInterchange: 200
+                    BeginDate: '2026-07-27T15:00:00.000-04:00'
+                    Location:
+                      '@LocId': '4017'
+                      $: .I.NRTHPORT138 5
+                  - Sale: 0
+                    Purchase: -1120
+                    ActInterchange: -1120
+                    BeginDate: '2026-07-27T15:00:00.000-04:00'
+                    Location:
+                      '@LocId': '4018'
+                      $: .I.HQMRL_RD345 1
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.actualinterchange.current.html
+        harvested: '2026-07-27'
+      x-xml-element: ActualInterchanges
+      x-example-evidence:
+        source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+        observed: '2026-07-27'
+        note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
+  /actualinterchange/day/{day}:
+    get:
+      operationId: getActualinterchangeDayByDay
+      summary: Get an entire days Actaul Interchanges for a given Date
+      description: Get an entire days Actaul Interchanges for a given Date.
+      tags:
+      - actualinterchange
+      responses:
+        '200':
+          description: a ActualInterchangesElement containing the Actual Interchanges.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ActualInterchanges'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActualInterchanges'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.actualinterchange.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: ActualInterchanges
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /actualinterchange/info:
+    get:
+      operationId: getActualinterchangeInfo
+      summary: Get the Service Info for Actual Interchange
+      description: Get the Service Info for Actual Interchange.
+      tags:
+      - actualinterchange
+      responses:
+        '200':
+          description: the ServiceInfoElement for Actual Interchange.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.actualinterchange.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    ActualInterchange:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ActInterchange:
+          type: number
+        Purchase:
+          type: number
+        Sale:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchange
+    LocationRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ActualInterchanges:
+      type: object
+      properties:
+        ActualInterchange:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActualInterchange'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchanges
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

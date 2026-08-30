@@ -1,0 +1,185 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Fiveminutesystemload API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: fiveminutesystemload
+  description: 4 path template(s) under /fiveminutesystemload in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /fiveminutesystemload:
+    get:
+      operationId: getFiveminutesystemload
+      summary: Default resource
+      description: Default resource. Redirects to Five Minute System Load Info.
+      tags:
+      - fiveminutesystemload
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutesystemload.html
+        harvested: '2026-07-27'
+  /fiveminutesystemload/current:
+    get:
+      operationId: getFiveminutesystemloadCurrent
+      summary: Get the current Five Minute System Load for all locations
+      description: Get the current Five Minute System Load for all locations.
+      tags:
+      - fiveminutesystemload
+      responses:
+        '200':
+          description: a FiveMinSystemLoadElement containing the current Five Minute System Load.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinSystemLoad'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinSystemLoad'
+              example:
+                FiveMinSystemLoad:
+                - SystemLoadBtmPv: 19358.383
+                  NativeLoadBtmPv: 19330.783
+                  NativeLoad: 17004.273
+                  LoadMw: 17031.873
+                  BeginDate: '2026-07-27T17:20:00.000-04:00'
+                  ArdDemand: 27.6
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutesystemload.current.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinSystemLoad
+      x-example-evidence:
+        source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+        observed: '2026-07-27'
+        note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
+  /fiveminutesystemload/day/{day}:
+    get:
+      operationId: getFiveminutesystemloadDayByDay
+      summary: Get an entire days Five Minute System Loads for a given day
+      description: Get an entire days Five Minute System Loads for a given day. Only the past [?] days are supported.
+      tags:
+      - fiveminutesystemload
+      responses:
+        '200':
+          description: a FiveMinSystemLoadElement containing the Five Minute System loads.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinSystemLoads'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinSystemLoads'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutesystemload.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinSystemLoads
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /fiveminutesystemload/info:
+    get:
+      operationId: getFiveminutesystemloadInfo
+      summary: Get the Service Info for Five Minute System Load
+      description: Get the Service Info for Five Minute System Load.
+      tags:
+      - fiveminutesystemload
+      responses:
+        '200':
+          description: the ServiceInfoElement for Five Minute System Load.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutesystemload.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    FiveMinSystemLoad:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        LoadMw:
+          type: number
+        NativeLoad:
+          type: number
+        ArdDemand:
+          type: number
+        SystemLoadBtmPv:
+          type: number
+        NativeLoadBtmPv:
+          type: number
+      required:
+      - BeginDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinSystemLoad
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    FiveMinSystemLoads:
+      type: object
+      properties:
+        FiveMinSystemLoad:
+          type: array
+          items:
+            $ref: '#/components/schemas/FiveMinSystemLoad'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinSystemLoads
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

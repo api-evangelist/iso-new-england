@@ -1,0 +1,264 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Fiveminutercp API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: fiveminutercp
+  description: 7 path template(s) under /fiveminutercp in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /fiveminutercp:
+    get:
+      operationId: getFiveminutercp
+      summary: Default resource
+      description: Default resource. Redirects to Five Minute Five Minute Regulation Clearing Prices(RCPs). This endpoint has been deprecated.
+      tags:
+      - fiveminutercp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutercp.html
+        harvested: '2026-07-27'
+  /fiveminutercp/current:
+    get:
+      operationId: getFiveminutercpCurrent
+      summary: Get the current Five Minute Rcp
+      description: Get the current Five Minute Rcp. This endpoint has been deprecated.
+      tags:
+      - fiveminutercp
+      responses:
+        '200':
+          description: a FiveMinRcpsElement containing the current Five Minute Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutercp.current.html
+        harvested: '2026-07-27'
+  /fiveminutercp/day/{day}:
+    get:
+      operationId: getFiveminutercpDayByDay
+      summary: Get an entire days Five Minute RCP Only the past [?] days are supported
+      description: Get an entire days Five Minute RCP Only the past [?] days are supported. This endpoint has been deprecated.
+      tags:
+      - fiveminutercp
+      responses:
+        '200':
+          description: a FiveMinRcpsElement containing the Five Minute Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutercp.day.day.html
+        harvested: '2026-07-27'
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /fiveminutercp/info:
+    get:
+      operationId: getFiveminutercpInfo
+      summary: Get the Service Info for Five Minute Five Minute Regulation Clearing Prices(RCPs)
+      description: Get the Service Info for Five Minute Five Minute Regulation Clearing Prices(RCPs). This endpoint has been deprecated.
+      tags:
+      - fiveminutercp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Five Minute Reserve Price.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutercp.info.html
+        harvested: '2026-07-27'
+  /fiveminutercp/{Type}/current:
+    get:
+      operationId: getFiveminutercpByTypeCurrent
+      summary: Get the current Five Minute Rcp
+      description: Get the current Five Minute Rcp.
+      tags:
+      - fiveminutercp
+      responses:
+        '200':
+          description: a FiveMinRcpsElement containing the current Five Minute Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinRcps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinRcps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutercp.Type.current.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinRcps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+  /fiveminutercp/{Type}/day/{day}:
+    get:
+      operationId: getFiveminutercpByTypeDayByDay
+      summary: Get an entire days Five Minute RCP Only the past [?] days are supported
+      description: Get an entire days Five Minute RCP Only the past [?] days are supported.
+      tags:
+      - fiveminutercp
+      responses:
+        '200':
+          description: a FiveMinRcpsElement containing the Five Minute Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinRcps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinRcps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutercp.Type.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinRcps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /fiveminutercp/{Type}/info:
+    get:
+      operationId: getFiveminutercpByTypeInfo
+      summary: GET /fiveminutercp/{Type}/info
+      description: (no documentation provided)
+      tags:
+      - fiveminutercp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutercp.Type.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  schemas:
+    Rcp:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        RegClearingPrice:
+          type: number
+        RegServiceClearingPrice:
+          type: number
+        RegCapacityClearingPrice:
+          type: number
+        HourEnd:
+          type: string
+      required:
+      - BeginDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Rcp
+    FiveMinRcps:
+      type: object
+      properties:
+        FiveMinRcp:
+          type: array
+          items:
+            $ref: '#/components/schemas/FiveMinRcp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinRcps
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    FiveMinRcp:
+      $ref: '#/components/schemas/Rcp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinRcp
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

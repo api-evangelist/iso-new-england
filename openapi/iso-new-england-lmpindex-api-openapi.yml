@@ -1,0 +1,458 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Lmp Index API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: lmpIndex
+  description: 12 path template(s) under /lmpIndex in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /lmpIndex/monthly:
+    get:
+      operationId: getLmpIndexMonthly
+      summary: Default resource
+      description: Default resource. Redirects to Monthly LMP Index Info.
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.monthly.html
+        harvested: '2026-07-27'
+  /lmpIndex/monthly/da/current/location/{locationId}:
+    get:
+      operationId: getLmpIndexMonthlyDaCurrentLocationByLocationId
+      summary: Get the current DA LMP Index
+      description: Get the current DA LMP Index
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the current DA LMP Index.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.monthly.da.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /lmpIndex/monthly/da/year/{year}/location/{locationId}:
+    get:
+      operationId: getLmpIndexMonthlyDaYearByYearLocationByLocationId
+      summary: Get the DA LMP Index for given year
+      description: Get the DA LMP Index for given year
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the DA LMP Index for given year.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.monthly.da.year.year.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+      - name: year
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The year to retrieve data for (YYYY)
+  /lmpIndex/monthly/info:
+    get:
+      operationId: getLmpIndexMonthlyInfo
+      summary: Get the Service Info for Monthly LMP Index
+      description: Get the Service Info for Monthly LMP Index.
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: the ServiceInfoElement for Monthly LMP Index.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.monthly.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /lmpIndex/monthly/rt/current/location/{locationId}:
+    get:
+      operationId: getLmpIndexMonthlyRtCurrentLocationByLocationId
+      summary: Get the current RT LMP Index
+      description: Get the current RT LMP Index
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the current RT LMP Index.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.monthly.rt.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /lmpIndex/monthly/rt/year/{year}/location/{locationId}:
+    get:
+      operationId: getLmpIndexMonthlyRtYearByYearLocationByLocationId
+      summary: Get the RT LMP Index for given year
+      description: Get the RT LMP Index for given year
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the RT LMP Index for given year.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.monthly.rt.year.year.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+      - name: year
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The year to retrieve data for (YYYY)
+  /lmpIndex/weekly:
+    get:
+      operationId: getLmpIndexWeekly
+      summary: Default resource
+      description: Default resource. Redirects to Weekly LMP Index Info.
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.weekly.html
+        harvested: '2026-07-27'
+  /lmpIndex/weekly/da/current/location/{locationId}:
+    get:
+      operationId: getLmpIndexWeeklyDaCurrentLocationByLocationId
+      summary: Get the current DA LMP Index
+      description: Get the current DA LMP Index
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the current DA LMP Index.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.weekly.da.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /lmpIndex/weekly/da/year/{year}/location/{locationId}:
+    get:
+      operationId: getLmpIndexWeeklyDaYearByYearLocationByLocationId
+      summary: Get the DA LMP Index for given year
+      description: Get the DA LMP Index for given year
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the DA LMP Index for given year.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.weekly.da.year.year.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+      - name: year
+        in: path
+        required: true
+        schema:
+          type: string
+  /lmpIndex/weekly/info:
+    get:
+      operationId: getLmpIndexWeeklyInfo
+      summary: Get the Service Info for Weekly LMP Index
+      description: Get the Service Info for Weekly LMP Index.
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: the ServiceInfoElement for Weekly LMP Index.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.weekly.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /lmpIndex/weekly/rt/current/location/{locationId}:
+    get:
+      operationId: getLmpIndexWeeklyRtCurrentLocationByLocationId
+      summary: Get the current RT LMP Index
+      description: Get the current RT LMP Index
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the current RT LMP Index.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.weekly.rt.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /lmpIndex/weekly/rt/year/{year}/location/{locationId}:
+    get:
+      operationId: getLmpIndexWeeklyRtYearByYearLocationByLocationId
+      summary: Get the RT LMP Index for given year
+      description: Get the RT LMP Index for given year
+      tags:
+      - lmpIndex
+      responses:
+        '200':
+          description: a LmpIndexesElement containing the RT LMP Index for given year.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LmpIndexes'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.lmpIndex.weekly.rt.year.year.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: LmpIndexes
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+      - name: year
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  schemas:
+    LmpIndex:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        OnPeak:
+          type: number
+        OffPeak:
+          type: number
+        Average:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      - OnPeak
+      - OffPeak
+      - Average
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LmpIndex
+    LmpIndexes:
+      type: object
+      properties:
+        LmpIndex:
+          type: array
+          items:
+            $ref: '#/components/schemas/LmpIndex'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LmpIndexes
+    LocationRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

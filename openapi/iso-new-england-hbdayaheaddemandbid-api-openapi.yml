@@ -1,0 +1,276 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Hbdayaheaddemandbid API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: hbdayaheaddemandbid
+  description: 6 path template(s) under /hbdayaheaddemandbid in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /hbdayaheaddemandbid:
+    get:
+      operationId: getHbdayaheaddemandbid
+      summary: Default resource
+      description: Default resource. Redirects to Day Ahead Demand Bids.
+      tags:
+      - hbdayaheaddemandbid
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddemandbid.html
+        harvested: '2026-07-27'
+  /hbdayaheaddemandbid/current:
+    get:
+      operationId: getHbdayaheaddemandbidCurrent
+      summary: Get the current Day Ahead Demand Bids for Hub, Load Zones, and External Nodes
+      description: Get the current Day Ahead Demand Bids for Hub, Load Zones, and External Nodes.
+      tags:
+      - hbdayaheaddemandbid
+      responses:
+        '200':
+          description: a Ahead Demand BidsElement containing the current Day Ahead Demand Bids.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddemandbid.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadDemandBids
+  /hbdayaheaddemandbid/day/{day}:
+    get:
+      operationId: getHbdayaheaddemandbidDayByDay
+      summary: Get the Day Ahead Demand Bids for the given day
+      description: Get the Day Ahead Demand Bids for the given day.
+      tags:
+      - hbdayaheaddemandbid
+      responses:
+        '200':
+          description: a Ahead Demand BidsElement containing the Ahead Demand Bids.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddemandbid.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadDemandBids
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+  /hbdayaheaddemandbid/day/{day}/bidType/{bidType}:
+    get:
+      operationId: getHbdayaheaddemandbidDayByDayBidTypeByBidType
+      summary: GET /hbdayaheaddemandbid/day/{day}/bidType/{bidType}
+      description: (no documentation provided)
+      tags:
+      - hbdayaheaddemandbid
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddemandbid.day.day.bidType.bidType.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadDemandBids
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: bidType
+        in: path
+        required: true
+        schema:
+          type: string
+  /hbdayaheaddemandbid/day/{day}/locationType/{locationType}:
+    get:
+      operationId: getHbdayaheaddemandbidDayByDayLocationTypeByLocationType
+      summary: Get the Day Ahead Demand Bids for the given day based on given Location Type
+      description: Get the Day Ahead Demand Bids for the given day based on given Location Type.
+      tags:
+      - hbdayaheaddemandbid
+      responses:
+        '200':
+          description: a Ahead Demand BidsElement containing the Ahead Demand Bids.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDemandBids'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddemandbid.day.day.locationType.locationType.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadDemandBids
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationType
+        in: path
+        required: true
+        schema:
+          type: string
+  /hbdayaheaddemandbid/info:
+    get:
+      operationId: getHbdayaheaddemandbidInfo
+      summary: Get the Service Info for Day Ahead Demand Bids
+      description: Get the Service Info for Day Ahead Demand Bids.
+      tags:
+      - hbdayaheaddemandbid
+      responses:
+        '200':
+          description: the ServiceInfoElement for Day Ahead Demand Bids.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddemandbid.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    Segment:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HbDayAheadDemandBid:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        MaskedParticipantId:
+          type: integer
+        MaskedLocationId:
+          type: integer
+        LocationType:
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+        BidType:
+          type: string
+        BidId:
+          type: integer
+        Segments:
+          $ref: '#/components/schemas/Segments'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBid
+    HbDayAheadDemandBids:
+      type: object
+      properties:
+        HbDayAheadDemandBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDayAheadDemandBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBids
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

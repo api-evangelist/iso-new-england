@@ -1,0 +1,357 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Fcmara API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: fcmara
+  description: 4 path template(s) under /fcmara in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /fcmara/cp/{cp}:
+    get:
+      operationId: getFcmaraCpByCp
+      summary: GET /fcmara/cp/{cp}
+      description: (no documentation provided)
+      tags:
+      - fcmara
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FCMRAResults'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FCMRAResults'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fcmara.cp.cp.html
+        harvested: '2026-07-27'
+      x-xml-element: FCMRAResults
+      parameters:
+      - name: cp
+        in: path
+        required: true
+        schema:
+          type: string
+  /fcmara/cp/{cp}/ara/{ara}:
+    get:
+      operationId: getFcmaraCpByCpAraByAra
+      summary: GET /fcmara/cp/{cp}/ara/{ara}
+      description: (no documentation provided)
+      tags:
+      - fcmara
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FCMRAResults'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FCMRAResults'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fcmara.cp.cp.ara.ara.html
+        harvested: '2026-07-27'
+      x-xml-element: FCMRAResults
+      parameters:
+      - name: cp
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ara
+        in: path
+        required: true
+        schema:
+          type: string
+  /fcmara/current:
+    get:
+      operationId: getFcmaraCurrent
+      summary: GET /fcmara/current
+      description: (no documentation provided)
+      tags:
+      - fcmara
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FCMRAResults'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FCMRAResults'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fcmara.current.html
+        harvested: '2026-07-27'
+      x-xml-element: FCMRAResults
+  /fcmara/info:
+    get:
+      operationId: getFcmaraInfo
+      summary: GET /fcmara/info
+      description: (no documentation provided)
+      tags:
+      - fcmara
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fcmara.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    ClearedCapacityZone:
+      type: object
+      properties:
+        CapacityZoneID:
+          type: integer
+        CapacityZoneType:
+          type: string
+        CapacityZoneName:
+          type: string
+        SupplySubmitted:
+          type: number
+        DemandSubmitted:
+          type: number
+        SupplyCleared:
+          type: number
+        DemandCleared:
+          type: number
+        NetCapacityCleared:
+          type: number
+        ISOSupplySubmitted:
+          type: number
+        ISOSupplyCleared:
+          type: number
+        ISODemandSubmitted:
+          type: number
+        ISODemandCleared:
+          type: number
+        ClearingPrice:
+          type: number
+        ClearedExternalInterfaces:
+          $ref: '#/components/schemas/ClearedInterfaces'
+      required:
+      - CapacityZoneID
+      - CapacityZoneName
+      - SupplySubmitted
+      - DemandSubmitted
+      - SupplyCleared
+      - DemandCleared
+      - NetCapacityCleared
+      - ClearingPrice
+      - ClearedExternalInterfaces
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZone
+    ClearedInterface:
+      type: object
+      properties:
+        ExternalInterfaceId:
+          type: integer
+        ExternalInterfaceName:
+          type: string
+        SupplySubmitted:
+          type: number
+        DemandSubmitted:
+          type: number
+        SupplyCleared:
+          type: number
+        DemandCleared:
+          type: number
+        NetCapacityCleared:
+          type: number
+        ISOSupplySubmitted:
+          type: number
+        ISOSupplyCleared:
+          type: number
+        ClearingPrice:
+          type: number
+      required:
+      - ExternalInterfaceId
+      - ExternalInterfaceName
+      - SupplySubmitted
+      - DemandSubmitted
+      - SupplyCleared
+      - DemandCleared
+      - NetCapacityCleared
+      - ClearingPrice
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterface
+    Period:
+      type: object
+      properties:
+        Id:
+          type: integer
+        Description:
+          type: string
+        Type:
+          type: string
+        BeginDate:
+          type: string
+          format: date-time
+        EndDate:
+          type: string
+          format: date-time
+        ParentId:
+          type: integer
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Period
+    SystemDemandCurveResults:
+      type: object
+      properties:
+        SubmittedRepresentativeCsoMw:
+          type: number
+        SubmittedSdcMw:
+          type: number
+        ClearedRepresentativeCsoMw:
+          type: number
+        ClearedSdcMw:
+          type: number
+        ClearedNetCapacityMw:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemDemandCurveResults
+    ClearedCapacityZones:
+      type: object
+      properties:
+        ClearedCapacityZone:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClearedCapacityZone'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZones
+    Auction:
+      type: object
+      properties:
+        Id:
+          type: integer
+        Description:
+          type: string
+        ApprovalDate:
+          type: string
+          format: date-time
+        AuctionBeginDate:
+          type: string
+          format: date-time
+        Type:
+          type: string
+        CommitmentPeriod:
+          $ref: '#/components/schemas/Period'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Auction
+    ISOParticipation:
+      type: object
+      properties:
+        ISOSupplySubmitted:
+          type: number
+        ISODemandSubmitted:
+          type: number
+        ISOSupplyCleared:
+          type: number
+        ISODemandCleared:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ISOParticipation
+    FCMRAResults:
+      type: object
+      properties:
+        FCMRAResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/FCMRAResult'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMRAResults
+    ClearedInterfaces:
+      type: object
+      properties:
+        ClearedExternalInterface:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClearedInterface'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterfaces
+    SystemResults:
+      type: object
+      properties:
+        SupplySubmitted:
+          type: number
+        SupplyCleared:
+          type: number
+        DemandSubmitted:
+          type: number
+        DemandCleared:
+          type: number
+        NetCapacityCleared:
+          type: number
+      required:
+      - SupplySubmitted
+      - SupplyCleared
+      - DemandSubmitted
+      - DemandCleared
+      - NetCapacityCleared
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemResults
+    FCMRAResult:
+      type: object
+      properties:
+        Auction:
+          $ref: '#/components/schemas/Auction'
+        ClearedCapacityZones:
+          $ref: '#/components/schemas/ClearedCapacityZones'
+        SystemResults:
+          $ref: '#/components/schemas/SystemResults'
+        ISOAuctionParticipation:
+          $ref: '#/components/schemas/ISOParticipation'
+        SystemDemandCurveResults:
+          $ref: '#/components/schemas/SystemDemandCurveResults'
+      required:
+      - Auction
+      - ClearedCapacityZones
+      - SystemResults
+      - ISOAuctionParticipation
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMRAResult
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

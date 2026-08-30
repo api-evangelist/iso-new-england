@@ -1,0 +1,499 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Morningreport API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: morningreport
+  description: 6 path template(s) under /morningreport in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /morningreport:
+    get:
+      operationId: getMorningreport
+      summary: Default resource
+      description: Default resource. Redirects to MR.
+      tags:
+      - morningreport
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.morningreport.html
+        harvested: '2026-07-27'
+  /morningreport/current:
+    get:
+      operationId: getMorningreportCurrent
+      summary: Get the current MR
+      description: Get the current MR.
+      tags:
+      - morningreport
+      responses:
+        '200':
+          description: a MorningReportsElement containing the current TTCs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+              example:
+                MorningReports:
+                  MorningReport:
+                  - CreationDate: '2026-07-27T12:02:35.000-04:00'
+                    UncommitedAvailDRRMw: 14
+                    GenPlannedOutagesReductionMW: 37
+                    TotAvailCapMw: 22325
+                    ReplReserveRequiredMw: 160
+                    CityForecastDetail:
+                    - WindDirSpeed: SE-11
+                      HighTemperature: 72
+                      WeatherConditions: Clear
+                      CityName: Boston
+                    - WindDirSpeed: S-7
+                      HighTemperature: 80
+                      WeatherConditions: Thunderstorms
+                      CityName: Hartford
+                    NetCapDeliveryMw: -1740
+                    AmsPeakLoadExpMw: 25228
+                    PeakLoadYesterdayHour: '2026-07-26T20:00:00.000-04:00'
+                    PeakLoadYesterdayMw: 15746
+                    CsoMw: 26707
+                    ThirtyMinReserveEstMw: 3289
+                    TotalOperReserveReqMw: 2048
+                    PeakLoadTodayHour: '2026-07-27T19:00:00.000-04:00'
+                    CapRequiredMw: 19648
+                    AddlCapAvailOp4ActMw: 0
+                    TenMinReserveEstMw: 1436
+                    GenOutagesReductionMW: 1567
+                    ThirtyMinReserveReqMw: 612
+                    GenForcedOutagesReductionMW: 1530
+                    TieDelivery:
+                    - TieFlowMw: 0
+                      TieName: Highgate
+                    - TieFlowMw: -34
+                      TieName: NB
+                    - TieFlowMw: -1089
+                      TieName: NECEC
+                    - TieFlowMw: -598
+                      TieName: NYISO AC
+                    - TieFlowMw: 225
+                      TieName: NYISO CSC
+                    - TieFlowMw: 48
+                      TieName: NYISO NNC
+                    - TieFlowMw: -292
+                      TieName: Phase 2
+                    ReportType: Operational Capacity Update Report
+                    ExpActOp4Mw: '0'
+                    DRRCapacityMw: 199
+                    TenMinReserveReqMw: 1436
+                    UnitCommMinOrrCount: 0
+                    UncommittedGenBeforePeakMw: 1580
+                    InterchangeDetail:
+                    - ScheduledMw: 0
+                      TieName: Highgate
+                      ImportLimitInMw: 0
+                      ExportLimitOutMw: 0
+                    - ScheduledMw: -34
+                      TieName: NB
+                      ImportLimitInMw: -270
+                      ExportLimitOutMw: 100
+                    - ScheduledMw: -1089
+                      TieName: NECEC
+                      ImportLimitInMw: -1250
+                      ExportLimitOutMw: 0
+                    - ScheduledMw: -598
+                      TieName: NYISO AC
+                      ImportLimitInMw: -1400
+                      ExportLimitOutMw: 1200
+                    - ScheduledMw: 225
+                      TieName: NYISO CSC
+                      ImportLimitInMw: -346
+                      ExportLimitOutMw: 330
+                    - ScheduledMw: 48
+                      TieName: NYISO NNC
+                      ImportLimitInMw: -200
+                      ExportLimitOutMw: 200
+                    - ScheduledMw: -292
+                      TieName: Phase 2
+                      ImportLimitInMw: -2000
+                      ExportLimitOutMw: 1200
+                    UncommittedAvailGenMw: 5778
+                    BeginDate: '2026-07-27T00:00:00.000-04:00'
+                    LargestFirstContMw: 1249
+                    ExcessCommitMw: 2517
+                    PeakLoadTodayMw: 17600
+                    SurplusDeficiencyMw: 2677
+                    CapAdditionsMw: 1038
+                    UnitCommMinOrrMw: 0
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.morningreport.current.html
+        harvested: '2026-07-27'
+      x-xml-element: MorningReports
+      x-example-evidence:
+        source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+        observed: '2026-07-27'
+        note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
+  /morningreport/day/{day}:
+    get:
+      operationId: getMorningreportDayByDay
+      summary: GET /morningreport/day/{day}
+      description: (no documentation provided)
+      tags:
+      - morningreport
+      responses:
+        '200':
+          description: a MorningReportsElement containing the MRs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.morningreport.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: MorningReports
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Retrieve data for the day (YYYYMMDD)
+  /morningreport/day/{day}/all:
+    get:
+      operationId: getMorningreportDayByDayAll
+      summary: GET /morningreport/day/{day}/all
+      description: (no documentation provided)
+      tags:
+      - morningreport
+      responses:
+        '200':
+          description: a MorningReportsElement containing the MRs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.morningreport.day.day.all.html
+        harvested: '2026-07-27'
+      x-xml-element: MorningReports
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Retrieve data for the day (YYYYMMDD)
+  /morningreport/day/{day}/reportType/{reportType}:
+    get:
+      operationId: getMorningreportDayByDayReportTypeByReportType
+      summary: GET /morningreport/day/{day}/reportType/{reportType}
+      description: (no documentation provided)
+      tags:
+      - morningreport
+      responses:
+        '200':
+          description: a MorningReportsElement containing the MRs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MorningReports'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.morningreport.day.day.reportType.reportType.html
+        harvested: '2026-07-27'
+      x-xml-element: MorningReports
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Retrieve data for the day (YYYYMMDD) for a type
+      - name: reportType
+        in: path
+        required: true
+        schema:
+          type: string
+  /morningreport/info:
+    get:
+      operationId: getMorningreportInfo
+      summary: Get the Service Info for MR
+      description: Get the Service Info for MR.
+      tags:
+      - morningreport
+      responses:
+        '200':
+          description: the ServiceInfoElement for MR.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.morningreport.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    InterchangeDetail:
+      type: object
+      properties:
+        TieName:
+          type: string
+        ImportLimitInMw:
+          type: number
+        ExportLimitOutMw:
+          type: number
+        ScheduledMw:
+          type: number
+      required:
+      - TieName
+      - ImportLimitInMw
+      - ExportLimitOutMw
+      - ScheduledMw
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_InterchangeDetail
+    CityForecastDetail:
+      type: object
+      properties:
+        CityName:
+          type: string
+        HighTemperature:
+          type: integer
+        WeatherConditions:
+          type: string
+        WindDirSpeed:
+          type: string
+      required:
+      - CityName
+      - HighTemperature
+      - WeatherConditions
+      - WindDirSpeed
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CityForecastDetail
+    MorningReport:
+      type: object
+      properties:
+        ReportType:
+          type: string
+        BeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+        PeakLoadYesterdayHour:
+          type: string
+          format: date-time
+        PeakLoadYesterdayMw:
+          type: number
+        CsoMw:
+          type: number
+        CapAdditionsMw:
+          type: number
+        GenOutagesReductionMW:
+          type: number
+        GenPlannedOutagesReductionMW:
+          type: number
+        GenForcedOutagesReductionMW:
+          type: number
+        UncommittedGenBeforePeakMw:
+          type: number
+        NonMrktSensComnts:
+          type: string
+        UncommittedAvailGenMw:
+          type: number
+        DRRCapacityMw:
+          type: number
+        UncommitedAvailDRRMw:
+          type: number
+        NetCapDeliveryMw:
+          type: number
+        TieDelivery:
+          type: array
+          items:
+            $ref: '#/components/schemas/TieDelivery'
+        TotAvailCapMw:
+          type: number
+        PeakLoadTodayHour:
+          type: string
+          format: date-time
+        PeakLoadTodayMw:
+          type: number
+        TotalOperReserveReqMw:
+          type: number
+        CapRequiredMw:
+          type: number
+        SurplusDeficiencyMw:
+          type: number
+        ReplReserveRequiredMw:
+          type: number
+        ExcessCommitMw:
+          type: number
+        LargestFirstContMw:
+          type: number
+        AmsPeakLoadExpMw:
+          type: number
+        NyIsoSarAvail:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        TenMinReserveReqMw:
+          type: number
+        TenMinReserveEstMw:
+          type: number
+        ThirtyMinReserveReqMw:
+          type: number
+        ThirtyMinReserveEstMw:
+          type: number
+        ExpActOp4Mw:
+          type: number
+        AddlCapAvailOp4ActMw:
+          type: number
+        InterchangeDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/InterchangeDetail'
+        CityForecastDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/CityForecastDetail'
+        NonCommUnitsCapMw:
+          type: number
+        UnitCommMinOrrCount:
+          type: integer
+        UnitCommMinOrrMw:
+          type: number
+        GeoMagDistForecast:
+          type: string
+        GeoMagDistAlert:
+          type: string
+        GeoMagDistIntensity:
+          type: string
+        GeoMagDistObsActivity:
+          type: string
+        GeoMagDistIsoAction:
+          type: string
+        GeoMagDistOthCntrAction:
+          type: string
+      required:
+      - ReportType
+      - BeginDate
+      - CreationDate
+      - PeakLoadYesterdayHour
+      - PeakLoadYesterdayMw
+      - CsoMw
+      - CapAdditionsMw
+      - GenOutagesReductionMW
+      - GenPlannedOutagesReductionMW
+      - GenForcedOutagesReductionMW
+      - UncommittedGenBeforePeakMw
+      - UncommittedAvailGenMw
+      - DRRCapacityMw
+      - UncommitedAvailDRRMw
+      - NetCapDeliveryMw
+      - TotAvailCapMw
+      - PeakLoadTodayHour
+      - PeakLoadTodayMw
+      - TotalOperReserveReqMw
+      - CapRequiredMw
+      - SurplusDeficiencyMw
+      - ReplReserveRequiredMw
+      - ExcessCommitMw
+      - LargestFirstContMw
+      - AmsPeakLoadExpMw
+      - TenMinReserveReqMw
+      - TenMinReserveEstMw
+      - ThirtyMinReserveReqMw
+      - ThirtyMinReserveEstMw
+      - ExpActOp4Mw
+      - AddlCapAvailOp4ActMw
+      - UnitCommMinOrrCount
+      - UnitCommMinOrrMw
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MorningReport
+    MorningReports:
+      type: object
+      properties:
+        MorningReport:
+          type: array
+          items:
+            $ref: '#/components/schemas/MorningReport'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MorningReports
+    TieDelivery:
+      type: object
+      properties:
+        TieName:
+          type: string
+        TieFlowMw:
+          type: number
+      required:
+      - TieName
+      - TieFlowMw
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TieDelivery
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

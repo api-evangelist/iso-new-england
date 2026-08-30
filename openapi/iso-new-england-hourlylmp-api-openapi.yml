@@ -1,0 +1,762 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Hourlylmp API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: hourlylmp
+  description: 24 path template(s) under /hourlylmp in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /hourlylmp/da/final:
+    get:
+      operationId: getHourlylmpDaFinal
+      summary: Default resource
+      description: Default resource. Redirects to Final RT LMP Info.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.html
+        harvested: '2026-07-27'
+  /hourlylmp/da/final/current:
+    get:
+      operationId: getHourlylmpDaFinalCurrent
+      summary: Get the current Final Hourly LMPs for Hub, Load Zones, and External Nodes
+      description: Get the current Final Hourly LMPs for Hub, Load Zones, and External Nodes.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Final Da Hourly Lmps.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+  /hourlylmp/da/final/current/all:
+    get:
+      operationId: getHourlylmpDaFinalCurrentAll
+      summary: Get the current Final Hourly LMPs for all locations
+      description: Get the current Final Hourly LMPs for all locations.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Final Da Hourly Lmps.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.current.all.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+  /hourlylmp/da/final/current/location/{locationId}:
+    get:
+      operationId: getHourlylmpDaFinalCurrentLocationByLocationId
+      summary: Get the current Final Da Hourly LMPs for a given location
+      description: Get the current Final Da Hourly LMPs for a given location.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Final Da Hourly LMP for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmp'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmp'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmp
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /hourlylmp/da/final/day/latest:
+    get:
+      operationId: getHourlylmpDaFinalDayLatest
+      summary: Get the latest published day's DA Final Hourly LMPs for all locations
+      description: Get the latest published day's DA Final Hourly LMPs for all locations.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.day.latest.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+  /hourlylmp/da/final/day/{day}:
+    get:
+      operationId: getHourlylmpDaFinalDayByDay
+      summary: GET /hourlylmp/da/final/day/{day}
+      description: (no documentation provided)
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+  /hourlylmp/da/final/day/{day}/hour/{sh}:
+    get:
+      operationId: getHourlylmpDaFinalDayByDayHourBySh
+      summary: GET /hourlylmp/da/final/day/{day}/hour/{sh}
+      description: (no documentation provided)
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.day.day.hour.sh.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sh
+        in: path
+        required: true
+        schema:
+          type: string
+  /hourlylmp/da/final/day/{day}/location/{locationId}:
+    get:
+      operationId: getHourlylmpDaFinalDayByDayLocationByLocationId
+      summary: Get the current Final Da Hourly LMPs for a given location
+      description: Get the current Final Da Hourly LMPs for a given location.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Final Da Hourly LMP for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.day.day.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /hourlylmp/da/final/info:
+    get:
+      operationId: getHourlylmpDaFinalInfo
+      summary: Get the Service Info for Final Da Hourly LMPs
+      description: Get the Service Info for Final Da Hourly LMPs.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Final Da Houry LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.da.final.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /hourlylmp/rt/final:
+    get:
+      operationId: getHourlylmpRtFinal
+      summary: Default resource
+      description: Default resource. Redirects to Final RT Hourly LMP Info.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.final.html
+        harvested: '2026-07-27'
+  /hourlylmp/rt/final/day/{day}:
+    get:
+      operationId: getHourlylmpRtFinalDayByDay
+      summary: GET /hourlylmp/rt/final/day/{day}
+      description: (no documentation provided)
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.final.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+  /hourlylmp/rt/final/day/{day}/hour/{sh}:
+    get:
+      operationId: getHourlylmpRtFinalDayByDayHourBySh
+      summary: GET /hourlylmp/rt/final/day/{day}/hour/{sh}
+      description: (no documentation provided)
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.final.day.day.hour.sh.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sh
+        in: path
+        required: true
+        schema:
+          type: string
+  /hourlylmp/rt/final/day/{day}/location/{locationId}:
+    get:
+      operationId: getHourlylmpRtFinalDayByDayLocationByLocationId
+      summary: 'Get the current Final RT Hourly LMPs for day for location '
+      description: Get the current Final RT Hourly LMPs for day for location .
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Final RT Hourly LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.final.day.day.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /hourlylmp/rt/final/info:
+    get:
+      operationId: getHourlylmpRtFinalInfo
+      summary: Get the Service Info for Final Rt Hourly LMPs
+      description: Get the Service Info for Final Rt Hourly LMPs.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.final.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /hourlylmp/rt/prelim:
+    get:
+      operationId: getHourlylmpRtPrelim
+      summary: Default resource
+      description: Default resource. Redirects to Prelim RT Hourly LMP Info.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.html
+        harvested: '2026-07-27'
+  /hourlylmp/rt/prelim/current:
+    get:
+      operationId: getHourlylmpRtPrelimCurrent
+      summary: Get the current Prelim RT Hourly LMPs for Hub, Load Zones, and External Nodes
+      description: Get the current Prelim RT Hourly LMPs for Hub, Load Zones, and External Nodes.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Prelim RT Hourly LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+  /hourlylmp/rt/prelim/current/all:
+    get:
+      operationId: getHourlylmpRtPrelimCurrentAll
+      summary: Get the current Prelim RT Hourly LMPs for all locations
+      description: Get the current Prelim RT Hourly LMPs for all locations.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Prelim RT Hourly LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.current.all.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+  /hourlylmp/rt/prelim/current/location/{locationId}:
+    get:
+      operationId: getHourlylmpRtPrelimCurrentLocationByLocationId
+      summary: Get the current Prelim RT Hourly LMPs for a given location
+      description: Get the current Prelim RT Hourly LMPs for a given location.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpElement containing the current Prelim RT Hourly LMP for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmp'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmp'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmp
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /hourlylmp/rt/prelim/day/{day}:
+    get:
+      operationId: getHourlylmpRtPrelimDayByDay
+      summary: Get the current Prelim RT Hourly LMPs for a given Date
+      description: Get the current Prelim RT Hourly LMPs for a given Date.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Prelim RT Hourly LMP for the given date .
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /hourlylmp/rt/prelim/day/{day}/hour/{sh}:
+    get:
+      operationId: getHourlylmpRtPrelimDayByDayHourBySh
+      summary: GET /hourlylmp/rt/prelim/day/{day}/hour/{sh}
+      description: (no documentation provided)
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.day.day.hour.sh.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sh
+        in: path
+        required: true
+        schema:
+          type: string
+  /hourlylmp/rt/prelim/day/{day}/location/{locationId}:
+    get:
+      operationId: getHourlylmpRtPrelimDayByDayLocationByLocationId
+      summary: Get the current Prelim RT Hourly LMPs for a given location
+      description: Get the current Prelim RT Hourly LMPs for a given location.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the current Prelim RT Hourly LMP for the given date and location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.day.day.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /hourlylmp/rt/prelim/info:
+    get:
+      operationId: getHourlylmpRtPrelimInfo
+      summary: Get the Service Info for Prelim RT Hourly LMPs
+      description: Get the Service Info for Prelim RT Hourly LMPs.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Prelim Rt Hourly LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /hourlylmp/rt/prelim/previous:
+    get:
+      operationId: getHourlylmpRtPrelimPrevious
+      summary: Get the previous interval Prelim RT Hourly LMPs for Hub, Load Zones, and External Nodes
+      description: Get the previous interval Prelim RT Hourly LMPs for Hub, Load Zones, and External Nodes.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the previous interval Prelim RT Hourly LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.previous.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+  /hourlylmp/rt/prelim/previous/all:
+    get:
+      operationId: getHourlylmpRtPrelimPreviousAll
+      summary: Get the previous interval Prelim RT Hourly LMPs for all locations
+      description: Get the previous interval Prelim RT Hourly LMPs for all locations.
+      tags:
+      - hourlylmp
+      responses:
+        '200':
+          description: a HourlyLmpsElement containing the previous interval Prelim RT Hourly LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlylmp.rt.prelim.previous.all.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLmps
+components:
+  schemas:
+    LocationRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    HourlyLmp:
+      $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmp
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlyLmps:
+      type: object
+      properties:
+        HourlyLmp:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyLmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmps
+    Lmp:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        LmpTotal:
+          type: number
+        EnergyComponent:
+          type: number
+        CongestionComponent:
+          type: number
+        LossComponent:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

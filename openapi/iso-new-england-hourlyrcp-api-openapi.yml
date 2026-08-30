@@ -1,0 +1,272 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Hourlyrcp API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: hourlyrcp
+  description: 8 path template(s) under /hourlyrcp in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /hourlyrcp/final:
+    get:
+      operationId: getHourlyrcpFinal
+      summary: Default resource
+      description: Default resource. Redirects to Hourly Final Regulation Clearing Prices(RCPs).
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.final.html
+        harvested: '2026-07-27'
+  /hourlyrcp/final/current:
+    get:
+      operationId: getHourlyrcpFinalCurrent
+      summary: Get the current Hourly Final Rcp
+      description: Get the current Hourly Final Rcp.
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: a HourlyRcpsElement containing the current Hourly Final Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.final.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRcps
+  /hourlyrcp/final/day/{day}:
+    get:
+      operationId: getHourlyrcpFinalDayByDay
+      summary: Get an entire days HourlyPrelim RCP Only the past [?] days are supported
+      description: Get an entire days HourlyPrelim RCP Only the past [?] days are supported.
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: a HourlyRcpsElement containing the Hourly Final Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.final.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRcps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /hourlyrcp/final/info:
+    get:
+      operationId: getHourlyrcpFinalInfo
+      summary: Get the Service Info for Hourly Final Regulation Clearing Prices(RCPs)
+      description: Get the Service Info for Hourly Final Regulation Clearing Prices(RCPs).
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Hourly Final Reserve Price.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.final.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /hourlyrcp/prelim:
+    get:
+      operationId: getHourlyrcpPrelim
+      summary: Default resource
+      description: Default resource. Redirects to Hourly Prelim Regulation Clearing Prices(RCPs).
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.prelim.html
+        harvested: '2026-07-27'
+  /hourlyrcp/prelim/current:
+    get:
+      operationId: getHourlyrcpPrelimCurrent
+      summary: Get the current Hourly Prelim Rcp
+      description: Get the current Hourly Prelim Rcp.
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: a HourlyRcpsElement containing the current Hourly Prelim Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.prelim.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRcps
+  /hourlyrcp/prelim/day/{day}:
+    get:
+      operationId: getHourlyrcpPrelimDayByDay
+      summary: Get an entire days HourlyPrelim RCP Only the past [?] days are supported
+      description: Get an entire days HourlyPrelim RCP Only the past [?] days are supported.
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: a HourlyRcpsElement containing the Hourly Prelim Regulation Clearing Prices(RCPs).
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRcps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.prelim.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRcps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /hourlyrcp/prelim/info:
+    get:
+      operationId: getHourlyrcpPrelimInfo
+      summary: Get the Service Info for Hourly Prelim Regulation Clearing Prices(RCPs)
+      description: Get the Service Info for Hourly Prelim Regulation Clearing Prices(RCPs).
+      tags:
+      - hourlyrcp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Hourly Prelim Reserve Price.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyrcp.prelim.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    HourlyRcps:
+      type: object
+      properties:
+        HourlyRcp:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyRcp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcps
+    HourlyRcp:
+      $ref: '#/components/schemas/Rcp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcp
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Rcp:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        RegClearingPrice:
+          type: number
+        RegServiceClearingPrice:
+          type: number
+        RegCapacityClearingPrice:
+          type: number
+        HourEnd:
+          type: string
+      required:
+      - BeginDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Rcp
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

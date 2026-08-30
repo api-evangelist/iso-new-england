@@ -1,0 +1,308 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Realtimehourlyoperatingreserve API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: realtimehourlyoperatingreserve
+  description: 6 path template(s) under /realtimehourlyoperatingreserve in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /realtimehourlyoperatingreserve:
+    get:
+      operationId: getRealtimehourlyoperatingreserve
+      summary: Default resource
+      description: Default resource. Redirects to Real Time Operating Reserve Info .
+      tags:
+      - realtimehourlyoperatingreserve
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.realtimehourlyoperatingreserve.html
+        harvested: '2026-07-27'
+  /realtimehourlyoperatingreserve/current/all:
+    get:
+      operationId: getRealtimehourlyoperatingreserveCurrentAll
+      summary: 'Get the current Real Time Hourly Operating Reserves '
+      description: Get the current Real Time Hourly Operating Reserves .
+      tags:
+      - realtimehourlyoperatingreserve
+      responses:
+        '200':
+          description: a HourlyRtOperatingReservesElement containing the current Real Time Hourly Operating Reserves.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserves'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserves'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.realtimehourlyoperatingreserve.current.all.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRtOperatingReserves
+  /realtimehourlyoperatingreserve/current/location/{locationId}:
+    get:
+      operationId: getRealtimehourlyoperatingreserveCurrentLocationByLocationId
+      summary: Get the current Real Time Hourly Operating Reserve for a given location
+      description: Get the current Real Time Hourly Operating Reserve for a given location.
+      tags:
+      - realtimehourlyoperatingreserve
+      responses:
+        '200':
+          description: a HourlyRtOperatingReserveElement containing the current Real Time Hourly Operating Reserve for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserve'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserve'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.realtimehourlyoperatingreserve.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRtOperatingReserve
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /realtimehourlyoperatingreserve/current/locationType/{locationType}:
+    get:
+      operationId: getRealtimehourlyoperatingreserveCurrentLocationTypeByLocationType
+      summary: Get the current Real Time Hourly Operating Reserve for a given location type
+      description: Get the current Real Time Hourly Operating Reserve for a given location type.
+      tags:
+      - realtimehourlyoperatingreserve
+      responses:
+        '200':
+          description: a HourlyRtOperatingReservesElement containing the current Real Time Hourly Operating Reserve for the given location type.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserves'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserves'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.realtimehourlyoperatingreserve.current.locationType.locationType.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRtOperatingReserves
+      parameters:
+      - name: locationType
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The locationType
+  /realtimehourlyoperatingreserve/day/{day}/location/{locationId}:
+    get:
+      operationId: getRealtimehourlyoperatingreserveDayByDayLocationByLocationId
+      summary: Get an entire days Real Time Hourly Operating Reserve for given location
+      description: Get an entire days Real Time Hourly Operating Reserve for given location. Only the past [?] days are supported.
+      tags:
+      - realtimehourlyoperatingreserve
+      responses:
+        '200':
+          description: a HourlyRtOperatingReservesElement containing the Real Time Hourly Operating Reserve.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserves'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyRtOperatingReserves'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.realtimehourlyoperatingreserve.day.day.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyRtOperatingReserves
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /realtimehourlyoperatingreserve/info:
+    get:
+      operationId: getRealtimehourlyoperatingreserveInfo
+      summary: Get the Service Info for Real Time Hourly Operating Reserve
+      description: Get the Service Info for Real Time Hourly Operating Reserve.
+      tags:
+      - realtimehourlyoperatingreserve
+      responses:
+        '200':
+          description: the ServiceInfoElement for Real Time Hourly OperatingReserve.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.realtimehourlyoperatingreserve.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    LocationRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlyRtOperatingReserve:
+      $ref: '#/components/schemas/OperatingReserve'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserve
+    OperatingReserve:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        Econimic:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        Rmr:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        Var:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        RmrVar:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        EconomicMw:
+          type: number
+        EconomicCost:
+          type: number
+        RmrMw:
+          type: number
+        RmrCost:
+          type: number
+        VarMw:
+          type: number
+        VarCost:
+          type: number
+        RmrVarMw:
+          type: number
+        RmrVarCost:
+          type: number
+        TotalMw:
+          type: number
+        TotalCost:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_OperatingReserve
+    HourlyRtOperatingReserves:
+      type: object
+      properties:
+        HourlyRtOperatingReserve:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyRtOperatingReserve'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserves
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

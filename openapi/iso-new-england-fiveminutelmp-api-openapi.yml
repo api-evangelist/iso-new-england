@@ -1,0 +1,691 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Fiveminutelmp API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: fiveminutelmp
+  description: 14 path template(s) under /fiveminutelmp in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /fiveminutelmp:
+    get:
+      operationId: getFiveminutelmp
+      summary: Default resource
+      description: Default resource. Redirects to Five Minute LMP Info.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.html
+        harvested: '2026-07-27'
+  /fiveminutelmp/current:
+    get:
+      operationId: getFiveminutelmpCurrent
+      summary: Get the current Five Minute LMPs for Hub, Load Zones, and External Nodes
+      description: Get the current Five Minute LMPs for Hub, Load Zones, and External Nodes.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinuteLmpsElement containing the current Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+              example:
+                FiveMinLmps:
+                  FiveMinLmp:
+                  - LmpTotal: 68.04
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 0.16
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4000'
+                      '@LocType': HUB
+                      $: .H.INTERNAL_HUB
+                  - LmpTotal: 64.36
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: -3.52
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4001'
+                      '@LocType': LOAD ZONE
+                      $: .Z.MAINE
+                  - LmpTotal: 67.85
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: -0.03
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4002'
+                      '@LocType': LOAD ZONE
+                      $: .Z.NEWHAMPSHIRE
+                  - LmpTotal: 70.19
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 2.31
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4003'
+                      '@LocType': LOAD ZONE
+                      $: .Z.VERMONT
+                  - LmpTotal: 67.93
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 0.05
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4004'
+                      '@LocType': LOAD ZONE
+                      $: .Z.CONNECTICUT
+                  - LmpTotal: 67.32
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: -0.56
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4005'
+                      '@LocType': LOAD ZONE
+                      $: .Z.RHODEISLAND
+                  - LmpTotal: 68.45
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 0.57
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4006'
+                      '@LocType': LOAD ZONE
+                      $: .Z.SEMASS
+                  - LmpTotal: 68.16
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 0.28
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4007'
+                      '@LocType': LOAD ZONE
+                      $: .Z.WCMASS
+                  - LmpTotal: 68.22
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 0.34
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4008'
+                      '@LocType': LOAD ZONE
+                      $: .Z.NEMASSBOST
+                  - LmpTotal: 63.68
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: -4.2
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4010'
+                      '@LocType': EXT. NODE
+                      $: .I.SALBRYNB345 1
+                  - LmpTotal: 68.03
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 0.15
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4011'
+                      '@LocType': EXT. NODE
+                      $: .I.ROSETON 345 1
+                  - LmpTotal: 67.3
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: -0.58
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4012'
+                      '@LocType': EXT. NODE
+                      $: .I.HQ_P1_P2345 5
+                  - LmpTotal: 71.64
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 3.76
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4013'
+                      '@LocType': EXT. NODE
+                      $: .I.HQHIGATE120 2
+                  - LmpTotal: 69.04
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 1.16
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4014'
+                      '@LocType': EXT. NODE
+                      $: .I.SHOREHAM138 99
+                  - LmpTotal: 68.53
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: 0.65
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4017'
+                      '@LocType': EXT. NODE
+                      $: .I.NRTHPORT138 5
+                  - LmpTotal: 60.9
+                    CongestionComponent: 0
+                    EnergyComponent: 67.88
+                    LossComponent: -6.98
+                    BeginDate: '2026-07-27T17:25:00.000-04:00'
+                    Location:
+                      '@LocId': '4018'
+                      '@LocType': EXT. NODE
+                      $: .I.HQMRL_RD345 1
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.current.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      x-example-evidence:
+        source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+        observed: '2026-07-27'
+        note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
+  /fiveminutelmp/current/all:
+    get:
+      operationId: getFiveminutelmpCurrentAll
+      summary: Get the current Five Minute LMPs for all locations
+      description: Get the current Five Minute LMPs for all locations
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinuteLmpsElement containing the current Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.current.all.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+  /fiveminutelmp/current/location/{locationId}:
+    get:
+      operationId: getFiveminutelmpCurrentLocationByLocationId
+      summary: Get the current Five Minute LMPs for a given location
+      description: Get the current Five Minute LMPs for a given location.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a LmpElement containing the current Five Minute LMP for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmp'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmp'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmp
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /fiveminutelmp/current/locationType/{locationType}:
+    get:
+      operationId: getFiveminutelmpCurrentLocationTypeByLocationType
+      summary: Get the current Five Minute LMPs for a given location type
+      description: Get the current Five Minute LMPs for a given location type.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinLmpsElement containing the current Five Minute LMP for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.current.locationType.locationType.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: locationType
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The locationType (one of RESERVE ZONE, HUB, NETWORK NODE, RELIABILITY REGION, HUB NODE, SYSTEM, NETWORK AREA, LOAD ZONE)
+  /fiveminutelmp/day/{day}/location/{locationId}:
+    get:
+      operationId: getFiveminutelmpDayByDayLocationByLocationId
+      summary: Get an entire days Five Minute LMPs for a given location
+      description: Get an entire days Five Minute LMPs for a given location. Only the past [?] days are supported.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinuteLmpsElement containing the Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.day.day.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /fiveminutelmp/info:
+    get:
+      operationId: getFiveminutelmpInfo
+      summary: Get the Service Info for Five Minute LMPs
+      description: Get the Service Info for Five Minute LMPs.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+              example:
+                ServiceInfo:
+                  CreationDate: '2026-07-27T17:25:25.000-04:00'
+                  LatestBeginDate: '2026-07-27T17:25:00.000-04:00'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+      x-example-evidence:
+        source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+        observed: '2026-07-27'
+        note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
+  /fiveminutelmp/{Type}/current:
+    get:
+      operationId: getFiveminutelmpByTypeCurrent
+      summary: Get the current Five Minute LMPs for Hub, Load Zones, and External Nodes
+      description: Get the current Five Minute LMPs for Hub, Load Zones, and External Nodes.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinuteLmpsElement containing the current Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.Type.current.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+  /fiveminutelmp/{Type}/current/all:
+    get:
+      operationId: getFiveminutelmpByTypeCurrentAll
+      summary: Get the current Five Minute LMPs for all locations
+      description: Get the current Five Minute LMPs for all locations
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinuteLmpsElement containing the current Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.Type.current.all.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+  /fiveminutelmp/{Type}/current/location/{locationId}:
+    get:
+      operationId: getFiveminutelmpByTypeCurrentLocationByLocationId
+      summary: Get the current Five Minute LMPs for a given location
+      description: Get the current Five Minute LMPs for a given location.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a LmpElement containing the current Five Minute LMP for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.Type.current.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /fiveminutelmp/{Type}/current/locationType/{locationType}:
+    get:
+      operationId: getFiveminutelmpByTypeCurrentLocationTypeByLocationType
+      summary: Get the current Five Minute LMPs for a given location type
+      description: Get the current Five Minute LMPs for a given location type.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinLmpsElement containing the current Five Minute LMP for the given location.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.Type.current.locationType.locationType.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationType
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The locationType (one of RESERVE ZONE, HUB, NETWORK NODE, RELIABILITY REGION, HUB NODE, SYSTEM, NETWORK AREA, LOAD ZONE)
+  /fiveminutelmp/{Type}/day/{day}/location/{locationId}:
+    get:
+      operationId: getFiveminutelmpByTypeDayByDayLocationByLocationId
+      summary: Get an entire days Five Minute LMPs for a given location
+      description: Get an entire days Five Minute LMPs for a given location. Only the past [?] days are supported.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: a FiveMinuteLmpsElement containing the Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.Type.day.day.location.locationId.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The location id
+  /fiveminutelmp/{Type}/day/{day}/starthour/{sh}:
+    get:
+      operationId: getFiveminutelmpByTypeDayByDayStarthourBySh
+      summary: GET /fiveminutelmp/{Type}/day/{day}/starthour/{sh}
+      description: (no documentation provided)
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiveMinLmps'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.Type.day.day.starthour.sh.html
+        harvested: '2026-07-27'
+      x-xml-element: FiveMinLmps
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sh
+        in: path
+        required: true
+        schema:
+          type: string
+  /fiveminutelmp/{Type}/info:
+    get:
+      operationId: getFiveminutelmpByTypeInfo
+      summary: Get the Service Info for Five Minute LMPs
+      description: Get the Service Info for Five Minute LMPs.
+      tags:
+      - fiveminutelmp
+      responses:
+        '200':
+          description: the ServiceInfoElement for Five Minute LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.fiveminutelmp.Type.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+      parameters:
+      - name: Type
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  schemas:
+    FiveMinLmp:
+      $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmp
+    LocationRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    FiveMinLmps:
+      type: object
+      properties:
+        FiveMinLmp:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmps
+    Lmp:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        LmpTotal:
+          type: number
+        EnergyComponent:
+          type: number
+        CongestionComponent:
+          type: number
+        LossComponent:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

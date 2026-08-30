@@ -1,0 +1,509 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Sevendayforecast API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: sevendayforecast
+  description: 5 path template(s) under /sevendayforecast in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /sevendayforecast:
+    get:
+      operationId: getSevendayforecast
+      summary: Default resource
+      description: Default resource. Redirects to SDF.
+      tags:
+      - sevendayforecast
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.sevendayforecast.html
+        harvested: '2026-07-27'
+  /sevendayforecast/current:
+    get:
+      operationId: getSevendayforecastCurrent
+      summary: Get the current SDF
+      description: Get the current SDF.
+      tags:
+      - sevendayforecast
+      responses:
+        '200':
+          description: a SevenDayForecastsElement containing the current SDFs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SevenDayForecasts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SevenDayForecasts'
+              example:
+                SevenDayForecasts:
+                  SevenDayForecast:
+                  - CreationDate: '2026-07-27T09:14:58.000-04:00'
+                    MarketDay:
+                    - OtherGenOutagesMw: 1786
+                      DelistMw: 971
+                      MarketDate: '2026-07-28T00:00:00.000-04:00'
+                      TotAvailGenImportMw: 29332
+                      ColdWeatherWarn: N
+                      PowerWatch: N
+                      CsoMw: 26707
+                      ColdWeatherWatch: N
+                      Weather:
+                        CityWeather:
+                        - HighTempF: 78
+                          DewPointF: 66
+                          CityName: Boston
+                        - HighTempF: 77
+                          DewPointF: 69
+                          CityName: Hartford
+                      ColdWeatherEvent: N
+                      ReplReserveReqMw: 160
+                      PeakImportMw: 3440
+                      PeakLoadMw: 17630
+                      ReqdReserveMw: 2048
+                      ReqdReserveInclReplMw: 2208
+                      PowerWarn: N
+                      TotLoadPlusReqdReserveMw: 19838
+                      SurplusDeficiencyMw: 9494
+                      DrrMw: 245
+                      Day: 2
+                      TotAvailGenMw: 25892
+                      ColdWeatherOutagesMw: 0
+                    - OtherGenOutagesMw: 2232
+                      DelistMw: 971
+                      MarketDate: '2026-07-29T00:00:00.000-04:00'
+                      TotAvailGenImportMw: 28886
+                      ColdWeatherWarn: N
+                      PowerWatch: N
+                      CsoMw: 26707
+                      ColdWeatherWatch: N
+                      Weather:
+                        CityWeather:
+                        - HighTempF: 69
+                          DewPointF: 65
+                          CityName: Boston
+                        - HighTempF: 73
+                          DewPointF: 68
+                          CityName: Hartford
+                      ColdWeatherEvent: N
+                      ReplReserveReqMw: 160
+                      PeakImportMw: 3440
+                      PeakLoadMw: 16390
+                      ReqdReserveMw: 2048
+                      ReqdReserveInclReplMw: 2208
+                      PowerWarn: N
+                      TotLoadPlusReqdReserveMw: 18598
+                      SurplusDeficiencyMw: 10288
+                      DrrMw: 245
+                      Day: 3
+                      TotAvailGenMw: 25446
+                      ColdWeatherOutagesMw: 0
+                    - OtherGenOutagesMw: 2397
+                      DelistMw: 971
+                      MarketDate: '2026-07-30T00:00:00.000-04:00'
+                      TotAvailGenImportMw: 28721
+                      ColdWeatherWarn: '-'
+                      PowerWatch: N
+                      CsoMw: 26707
+                      ColdWeatherWatch: '-'
+                      Weather:
+                        CityWeather:
+                        - HighTempF: 69
+                          DewPointF: 65
+                          CityName: Boston
+                        - HighTempF: 74
+                          DewPointF: 64
+                          CityName: Hartford
+                      ColdWeatherEvent: '-'
+                      ReplReserveReqMw: 160
+                      PeakImportMw: 3440
+                      PeakLoadMw: 16160
+                      ReqdReserveMw: 2048
+                      ReqdReserveInclReplMw: 2208
+                      PowerWarn: N
+                      TotLoadPlusReqdReserveMw: 18368
+                      SurplusDeficiencyMw: 10353
+                      DrrMw: 245
+                      Day: 4
+                      TotAvailGenMw: 25281
+                      ColdWeatherOutagesMw: 0
+                    - OtherGenOutagesMw: 2506
+                      DelistMw: 971
+                      MarketDate: '2026-07-31T00:00:00.000-04:00'
+                      TotAvailGenImportMw: 28942
+                      ColdWeatherWarn: '-'
+                      PowerWatch: N
+                      CsoMw: 26707
+                      ColdWeatherWatch: '-'
+                      Weather:
+                        CityWeather:
+                        - HighTempF: 74
+                          DewPointF: 63
+                          CityName: Boston
+                        - HighTempF: 80
+                          DewPointF: 64
+                          CityName: Hartford
+                      ColdWeatherEvent: '-'
+                      ReplReserveReqMw: 160
+                      PeakImportMw: 3770
+                      PeakLoadMw: 16920
+                      ReqdReserveMw: 2048
+                      ReqdReserveInclReplMw: 2208
+                      PowerWarn: N
+                      TotLoadPlusReqdReserveMw: 19128
+                      SurplusDeficiencyMw: 9814
+                      DrrMw: 245
+                      Day: 5
+                      TotAvailGenMw: 25172
+                      ColdWeatherOutagesMw: 0
+                    - OtherGenOutagesMw: 2560
+                      DelistMw: 971
+                      MarketDate: '2026-08-01T00:00:00.000-04:00'
+                      TotAvailGenImportMw: 29135
+                      ColdWeatherWarn: '-'
+                      PowerWatch: N
+                      CsoMw: 26754
+                      ColdWeatherWatch: '-'
+                      Weather:
+                        CityWeather:
+                        - HighTempF: 78
+                          DewPointF: 64
+                          CityName: Boston
+                        - HighTempF: 83
+                          DewPointF: 65
+                          CityName: Hartford
+                      ColdWeatherEvent: '-'
+                      ReplReserveReqMw: 160
+                      PeakImportMw: 3970
+                      PeakLoadMw: 17330
+                      ReqdReserveMw: 2048
+                      ReqdReserveInclReplMw: 2208
+                      PowerWarn: N
+                      TotLoadPlusReqdReserveMw: 19538
+                      SurplusDeficiencyMw: 9597
+                      DrrMw: 245
+                      Day: 6
+                      TotAvailGenMw: 25165
+                      ColdWeatherOutagesMw: 0
+                    - OtherGenOutagesMw: 2710
+                      DelistMw: 971
+                      MarketDate: '2026-08-02T00:00:00.000-04:00'
+                      TotAvailGenImportMw: 28985
+                      ColdWeatherWarn: '-'
+                      PowerWatch: N
+                      CsoMw: 26754
+                      ColdWeatherWatch: '-'
+                      Weather:
+                        CityWeather:
+                        - HighTempF: 81
+                          DewPointF: 66
+                          CityName: Boston
+                        - HighTempF: 82
+                          DewPointF: 67
+                          CityName: Hartford
+                      ColdWeatherEvent: '-'
+                      ReplReserveReqMw: 160
+                      PeakImportMw: 3970
+                      PeakLoadMw: 18090
+                      ReqdReserveMw: 2048
+                      ReqdReserveInclReplMw: 2208
+                      PowerWarn: N
+                      TotLoadPlusReqdReserveMw: 20298
+                      SurplusDeficiencyMw: 8687
+                      DrrMw: 245
+                      Day: 7
+                      TotAvailGenMw: 25015
+                      ColdWeatherOutagesMw: 0
+                    BeginDate: '2026-07-28T00:00:00.000-04:00'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.sevendayforecast.current.html
+        harvested: '2026-07-27'
+      x-xml-element: SevenDayForecasts
+      x-example-evidence:
+        source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+        observed: '2026-07-27'
+        note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
+  /sevendayforecast/day/{day}:
+    get:
+      operationId: getSevendayforecastDayByDay
+      summary: Get most recent Day SDFs
+      description: Get most recent Day SDFs.
+      tags:
+      - sevendayforecast
+      responses:
+        '200':
+          description: a SevenDayForecastsElement containing the SDFs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SevenDayForecasts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SevenDayForecasts'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.sevendayforecast.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: SevenDayForecasts
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Retrieve data for the day in(YYYYMMDD)
+  /sevendayforecast/day/{day}/all:
+    get:
+      operationId: getSevendayforecastDayByDayAll
+      summary: Get entire Day SDFs
+      description: Get entire Day SDFs.
+      tags:
+      - sevendayforecast
+      responses:
+        '200':
+          description: a SevenDayForecastsElement containing the SDFs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SevenDayForecasts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SevenDayForecasts'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.sevendayforecast.day.day.all.html
+        harvested: '2026-07-27'
+      x-xml-element: SevenDayForecasts
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Retrieve data for the day in(YYYYMMDD)
+  /sevendayforecast/info:
+    get:
+      operationId: getSevendayforecastInfo
+      summary: Get the Service Info for SDF
+      description: Get the Service Info for SDF.
+      tags:
+      - sevendayforecast
+      responses:
+        '200':
+          description: the ServiceInfoElement for TTC.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.sevendayforecast.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    Weather:
+      type: object
+      properties:
+        CityWeather:
+          type: array
+          items:
+            $ref: '#/components/schemas/CityWeather'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Weather
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    MarketDay:
+      type: object
+      properties:
+        MarketDate:
+          type: string
+          format: date-time
+        CsoMw:
+          type: number
+        ColdWeatherOutagesMw:
+          type: number
+        OtherGenOutagesMw:
+          type: number
+        DelistMw:
+          type: number
+        TotAvailGenMw:
+          type: number
+        PeakImportMw:
+          type: number
+        TotAvailGenImportMw:
+          type: number
+        PeakLoadMw:
+          type: number
+        ReplReserveReqMw:
+          type: number
+        ReqdReserveMw:
+          type: number
+        ReqdReserveInclReplMw:
+          type: number
+        TotLoadPlusReqdReserveMw:
+          type: number
+        DrrMw:
+          type: number
+        SurplusDeficiencyMw:
+          type: number
+        RtegMw:
+          type: number
+        PowerWatch:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        PowerWarn:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        ColdWeatherWatch:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        ColdWeatherWarn:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        ColdWeatherEvent:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        EnergyEmergency:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        Weather:
+          $ref: '#/components/schemas/Weather'
+        '@Day':
+          type: integer
+      required:
+      - MarketDate
+      - CsoMw
+      - ColdWeatherOutagesMw
+      - OtherGenOutagesMw
+      - DelistMw
+      - TotAvailGenMw
+      - PeakImportMw
+      - TotAvailGenImportMw
+      - PeakLoadMw
+      - ReplReserveReqMw
+      - ReqdReserveMw
+      - ReqdReserveInclReplMw
+      - TotLoadPlusReqdReserveMw
+      - DrrMw
+      - SurplusDeficiencyMw
+      - RtegMw
+      - PowerWatch
+      - PowerWarn
+      - ColdWeatherWatch
+      - ColdWeatherWarn
+      - ColdWeatherEvent
+      - EnergyEmergency
+      - Weather
+      - '@Day'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDay
+    CityWeather:
+      type: object
+      properties:
+        CityName:
+          type: string
+        HighTempF:
+          type: integer
+        DewPointF:
+          type: integer
+      required:
+      - CityName
+      - HighTempF
+      - DewPointF
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CityWeather
+    SevenDayForecasts:
+      type: object
+      properties:
+        SevenDayForecast:
+          type: array
+          items:
+            $ref: '#/components/schemas/SevenDayForecast'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecasts
+    SevenDayForecast:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        MarketDay:
+          type: array
+          items:
+            $ref: '#/components/schemas/MarketDay'
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - BeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecast
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

@@ -1,0 +1,195 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Hbdayaheaddrrbid API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: hbdayaheaddrrbid
+  description: 3 path template(s) under /hbdayaheaddrrbid in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /hbdayaheaddrrbid/current:
+    get:
+      operationId: getHbdayaheaddrrbidCurrent
+      summary: Webservice end point to find out current Day Ahead Drr bids
+      description: Webservice end point to find out current Day Ahead Drr bids.
+      tags:
+      - hbdayaheaddrrbid
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDrrBids'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDrrBids'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddrrbid.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadDrrBids
+  /hbdayaheaddrrbid/day/{day}:
+    get:
+      operationId: getHbdayaheaddrrbidDayByDay
+      summary: Webservice end point to find out Day Ahead Drr bids for a day
+      description: Webservice end point to find out Day Ahead Drr bids for a day.
+      tags:
+      - hbdayaheaddrrbid
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDrrBids'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadDrrBids'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddrrbid.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadDrrBids
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+  /hbdayaheaddrrbid/info:
+    get:
+      operationId: getHbdayaheaddrrbidInfo
+      summary: Get the Service Info for HbDayAheadDrrBid
+      description: Get the Service Info for HbDayAheadDrrBid.
+      tags:
+      - hbdayaheaddrrbid
+      responses:
+        '200':
+          description: the ServiceInfoElement for HbDayAheadDrrBids.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheaddrrbid.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    Segments2:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment2'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HbDayAheadDrrBids:
+      type: object
+      properties:
+        HbDayAheadDrrBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDrrBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDrrBids
+    HbDrrBid:
+      type: object
+      properties:
+        Day:
+          type: string
+          format: date-time
+        HourEnd:
+          type: string
+        MaskedParticipantId:
+          type: integer
+        MaskedAssetId:
+          type: integer
+        MaxDailyEnergy:
+          type: number
+        MinimumReduction:
+          type: number
+        MaximumReduction:
+          type: number
+        InterruptionCost:
+          type: number
+        Segments:
+          $ref: '#/components/schemas/Segments2'
+        Claim10Mw:
+          type: number
+        Claim30Mw:
+          type: number
+        UnitStatus:
+          type: string
+          enum:
+          - ECONOMIC
+          - UNAVAILABLE
+      required:
+      - Day
+      - HourEnd
+      - MaskedParticipantId
+      - MaskedAssetId
+      - MinimumReduction
+      - MaximumReduction
+      - InterruptionCost
+      - Segments
+      - Claim10Mw
+      - Claim30Mw
+      - UnitStatus
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDrrBid
+    Segment2:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

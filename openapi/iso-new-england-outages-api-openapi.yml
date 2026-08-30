@@ -1,0 +1,821 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Outages API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: outages
+  description: 20 path template(s) under /outages in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /outages:
+    get:
+      operationId: getOutages
+      summary: Default resource
+      description: Default resource. Redirects to outage Info.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.html
+        harvested: '2026-07-27'
+  /outages/current/outageType/{outageType}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageType
+      summary: Get the current outages
+      description: Get the current outages.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the current outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+  /outages/current/outageType/{outageType}/company/{company}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageTypeCompanyByCompany
+      summary: Get outages for company
+      description: Get outages for company.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.company.company.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: company
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The company to retrieve data for
+  /outages/current/outageType/{outageType}/equipType/{equipType}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageTypeEquipTypeByEquipType
+      summary: Get outages for type
+      description: Get outages for type.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.equipType.equipType.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: equipType
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The type to retrieve data for
+  /outages/current/outageType/{outageType}/flags/{flags}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageTypeFlagsByFlags
+      summary: Get outages for flags
+      description: Get outages for flags.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.flags.flags.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: flags
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The flags to retrieve data for
+  /outages/current/outageType/{outageType}/plannedDay/{plannedDay}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageTypePlannedDayByPlannedDay
+      summary: Get an entire days outages
+      description: Get an entire days outages.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.plannedDay.plannedDay.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: plannedDay
+        in: path
+        required: true
+        schema:
+          type: string
+  /outages/current/outageType/{outageType}/requestType/{requestType}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageTypeRequestTypeByRequestType
+      summary: Get outages for request
+      description: Get outages for request.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.requestType.requestType.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: requestType
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The request to retrieve data for
+  /outages/current/outageType/{outageType}/station/{station}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageTypeStationByStation
+      summary: Get outages for station
+      description: Get outages for station.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.station.station.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: station
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The station to retrieve data for
+  /outages/current/outageType/{outageType}/status/{status}:
+    get:
+      operationId: getOutagesCurrentOutageTypeByOutageTypeStatusByStatus
+      summary: Get outages for status
+      description: Get outages for status.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.current.outageType.outageType.status.status.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: status
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The status to retrieve data for
+  /outages/day/{day}/outageType/{outageType}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageType
+      summary: Get the current outages
+      description: Get the current outages.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the current outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+  /outages/day/{day}/outageType/{outageType}/company/{company}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageTypeCompanyByCompany
+      summary: Get outages for company
+      description: Get outages for company.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.company.company.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: company
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The company to retrieve data for
+  /outages/day/{day}/outageType/{outageType}/equipType/{equipType}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageTypeEquipTypeByEquipType
+      summary: Get outages for type
+      description: Get outages for type.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.equipType.equipType.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: equipType
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The type to retrieve data for
+  /outages/day/{day}/outageType/{outageType}/flags/{flags}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageTypeFlagsByFlags
+      summary: Get outages for flags
+      description: Get outages for flags.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.flags.flags.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: flags
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The flags to retrieve data for
+  /outages/day/{day}/outageType/{outageType}/plannedDay/{plannedDay}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageTypePlannedDayByPlannedDay
+      summary: Get an entire days outages
+      description: Get an entire days outages.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.plannedDay.plannedDay.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: plannedDay
+        in: path
+        required: true
+        schema:
+          type: string
+  /outages/day/{day}/outageType/{outageType}/requestType/{requestType}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageTypeRequestTypeByRequestType
+      summary: Get outages for request
+      description: Get outages for request.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.requestType.requestType.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: requestType
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The request to retrieve data for
+  /outages/day/{day}/outageType/{outageType}/station/{station}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageTypeStationByStation
+      summary: Get outages for station
+      description: Get outages for station.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.station.station.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: station
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The station to retrieve data for
+  /outages/day/{day}/outageType/{outageType}/status/{status}:
+    get:
+      operationId: getOutagesDayByDayOutageTypeByOutageTypeStatusByStatus
+      summary: Get outages for status
+      description: Get outages for status.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a OutagesElement containing the outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Outages'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outages'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.day.day.outageType.outageType.status.status.html
+        harvested: '2026-07-27'
+      x-xml-element: Outages
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: outageType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: status
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The status to retrieve data for
+  /outages/info:
+    get:
+      operationId: getOutagesInfo
+      summary: Get the Service Info for outages
+      description: Get the Service Info for outages.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: the ServiceInfoElement for outages.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /outages/stations:
+    get:
+      operationId: getOutagesStations
+      summary: Get stations
+      description: Get stations.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a StationsElement containing the stations.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Stations'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stations'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.stations.html
+        harvested: '2026-07-27'
+      x-xml-element: Stations
+  /outages/stations/{stationType}:
+    get:
+      operationId: getOutagesStationsByStationType
+      summary: Get stations
+      description: Get stations.
+      tags:
+      - outages
+      responses:
+        '200':
+          description: a StationsElement containing the stations.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Stations'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stations'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.outages.stations.stationType.html
+        harvested: '2026-07-27'
+      x-xml-element: Stations
+      parameters:
+      - name: stationType
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  schemas:
+    Outages:
+      type: object
+      properties:
+        Outage:
+          type: array
+          items:
+            $ref: '#/components/schemas/Outage'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outages
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Stations:
+      type: object
+      properties:
+        Station:
+          type: array
+          items:
+            $ref: '#/components/schemas/Station'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Stations
+    Outage:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        AppNumber:
+          type: integer
+        Company1:
+          type: string
+        Company2:
+          type: string
+        ToStation:
+          type: string
+        FromStation:
+          type: string
+        NonLineStation:
+          type: string
+        EquipType:
+          type: string
+        EquipDesc:
+          type: string
+        Volt:
+          type: integer
+        PlnStart:
+          type: string
+          format: date-time
+        PlnEnd:
+          type: string
+          format: date-time
+        ActStart:
+          type: string
+          format: date-time
+        ActEnd:
+          type: string
+          format: date-time
+        Status:
+          type: string
+        ReqType:
+          type: string
+        EcoFlag:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        MtoFlag:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+        OvrFlag:
+          type: string
+          enum:
+          - Y
+          - N
+          - '-'
+      required:
+      - BeginDate
+      - AppNumber
+      - Company1
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outage
+    Station:
+      type: object
+      properties:
+        StationName:
+          type: string
+        StationType:
+          type: string
+      required:
+      - StationName
+      - StationType
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Station
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

@@ -1,0 +1,211 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Monthlyper API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: monthlyper
+  description: 5 path template(s) under /monthlyper in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /monthlyper:
+    get:
+      operationId: getMonthlyper
+      summary: Default resource
+      description: Default resource. Redirects to MonthlyPER Info.
+      tags:
+      - monthlyper
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.monthlyper.html
+        harvested: '2026-07-27'
+  /monthlyper/current:
+    get:
+      operationId: getMonthlyperCurrent
+      summary: Get the current MonthlyPER
+      description: Get the current MonthlyPER.
+      tags:
+      - monthlyper
+      responses:
+        '200':
+          description: a MonthlyPERElement containing the current MonthlyPER.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MonthlyPeakEnergyRents'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyPeakEnergyRents'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.monthlyper.current.html
+        harvested: '2026-07-27'
+      x-xml-element: MonthlyPeakEnergyRents
+  /monthlyper/info:
+    get:
+      operationId: getMonthlyperInfo
+      summary: Get the Service Info for MonthlyPER
+      description: Get the Service Info for MonthlyPER.
+      tags:
+      - monthlyper
+      responses:
+        '200':
+          description: the ServiceInfoElement for MonthlyPER.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.monthlyper.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+  /monthlyper/month/{month}:
+    get:
+      operationId: getMonthlyperMonthByMonth
+      summary: Get an entire months MonthlyPERs
+      description: Get an entire months MonthlyPERs.Only the past 30 days
+      tags:
+      - monthlyper
+      responses:
+        '200':
+          description: a MonthlyPERsElement containing the MonthlyPERs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MonthlyPeakEnergyRents'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyPeakEnergyRents'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.monthlyper.month.month.html
+        harvested: '2026-07-27'
+      x-xml-element: MonthlyPeakEnergyRents
+      parameters:
+      - name: month
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The month to retrieve data for (YYYYMM)
+  /monthlyper/month/{month}/capacityZone/{capacityZoneId}:
+    get:
+      operationId: getMonthlyperMonthByMonthCapacityZoneByCapacityZoneId
+      summary: Get an entire months HourlyPERs
+      description: Get an entire months HourlyPERs.Only the past 30 days
+      tags:
+      - monthlyper
+      responses:
+        '200':
+          description: a HourlyPERsElement containing the HourlyPERs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MonthlyPeakEnergyRents'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyPeakEnergyRents'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.monthlyper.month.month.capacityZone.capacityZoneId.html
+        harvested: '2026-07-27'
+      x-xml-element: MonthlyPeakEnergyRents
+      parameters:
+      - name: month
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The month to retrieve data for (YYYYMM)
+      - name: capacityZoneId
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  schemas:
+    CapacityRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@CapacityZoneId':
+          type: integer
+      required:
+      - '@CapacityZoneId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CapacityRef
+    MonthlyPeakEnergyRent:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/CapacityRef'
+        MonthlyPER:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyPeakEnergyRent
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    MonthlyPeakEnergyRents:
+      type: object
+      properties:
+        MonthlyPeakEnergyRent:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonthlyPeakEnergyRent'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyPeakEnergyRents
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

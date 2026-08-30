@@ -1,0 +1,213 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Hbdayaheadenergyoffer API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: hbdayaheadenergyoffer
+  description: 4 path template(s) under /hbdayaheadenergyoffer in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /hbdayaheadenergyoffer:
+    get:
+      operationId: getHbdayaheadenergyoffer
+      summary: Default resource
+      description: Default resource. Redirects to HbDayAheadEnergyOffer Info.
+      tags:
+      - hbdayaheadenergyoffer
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheadenergyoffer.html
+        harvested: '2026-07-27'
+  /hbdayaheadenergyoffer/current:
+    get:
+      operationId: getHbdayaheadenergyofferCurrent
+      summary: Get the current HbDayAheadEnergyOffersElement for Hub, Load Zones, and External Nodes
+      description: Get the current HbDayAheadEnergyOffersElement for Hub, Load Zones, and External Nodes.
+      tags:
+      - hbdayaheadenergyoffer
+      responses:
+        '200':
+          description: a HbDayAheadEnergyOffersElement containing the current DayAheadEnergyOffer.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadEnergyOffers'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadEnergyOffers'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheadenergyoffer.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadEnergyOffers
+  /hbdayaheadenergyoffer/day/{day}:
+    get:
+      operationId: getHbdayaheadenergyofferDayByDay
+      summary: Get an entire days HbDayAheadEnergyOffers
+      description: Get an entire days HbDayAheadEnergyOffers.
+      tags:
+      - hbdayaheadenergyoffer
+      responses:
+        '200':
+          description: a HbDayAheadEnergyOfferElement containing the HbDayAheadEnergyOffers.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadEnergyOffers'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HbDayAheadEnergyOffers'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheadenergyoffer.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HbDayAheadEnergyOffers
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /hbdayaheadenergyoffer/info:
+    get:
+      operationId: getHbdayaheadenergyofferInfo
+      summary: Get the Service Info for HbDayAheadEnergyOffers
+      description: Get the Service Info for HbDayAheadEnergyOffers.
+      tags:
+      - hbdayaheadenergyoffer
+      responses:
+        '200':
+          description: the ServiceInfoElement for HbDayAheadEnergyOffers.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hbdayaheadenergyoffer.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    Segment:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HbEnergyOffer:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        MaskedParticipantId:
+          type: integer
+        MaskedAssetId:
+          type: integer
+        MustTakeEnergy:
+          type: integer
+        MaxDailyEnergy:
+          type: number
+        EconomicMax:
+          type: number
+        EconomicMin:
+          type: number
+        ColdStartPrice:
+          type: number
+        IntermediateStartPrice:
+          type: number
+        HotStartPrice:
+          type: number
+        NoLoadPrice:
+          type: number
+        Segments:
+          $ref: '#/components/schemas/Segments'
+        Claim10Mw:
+          type: number
+        Claim30Mw:
+          type: number
+        UnitStatus:
+          type: string
+          enum:
+          - MUST_RUN
+          - ECONOMIC
+          - UNAVAILABLE
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbEnergyOffer
+    HbDayAheadEnergyOffers:
+      type: object
+      properties:
+        HbDayAheadEnergyOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbEnergyOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadEnergyOffers
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems

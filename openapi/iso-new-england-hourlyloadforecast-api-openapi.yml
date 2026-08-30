@@ -1,0 +1,213 @@
+openapi: 3.2.0
+info:
+  title: ISO New England Web Services API v1.1 Hourlyloadforecast API
+  version: '1.1'
+  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  contact:
+    name: ISO New England Ask ISO
+    url: https://askiso.iso-ne.com/s/
+  x-provenance:
+    method: derived
+    derived_by: API Evangelist enrichment pipeline
+    derived_on: '2026-07-27'
+    sources:
+    - https://webservices.iso-ne.com/docs/v1.1/
+    - https://webservices.iso-ne.com/docs/v1.1/ns0.xsd
+    - https://webservices.iso-ne.com/docs/v1.1/ns1.xsd
+    - https://www.iso-ne.com/participate/support/web-services-data
+    not_provider_published: true
+    note: Derived from provider-published HTML documentation and XSDs. Not an ISO New England artifact.
+servers:
+- url: https://webservices.iso-ne.com/api/v1.1
+  description: Production base path (HTTP Basic over SSL)
+security:
+- basicAuth: []
+tags:
+- name: hourlyloadforecast
+  description: 5 path template(s) under /hourlyloadforecast in the published ISO New England Web Services API v1.1 documentation.
+paths:
+  /hourlyloadforecast:
+    get:
+      operationId: getHourlyloadforecast
+      summary: Default resource
+      description: Default resource. Redirects to Load Forecast Info .
+      tags:
+      - hourlyloadforecast
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/xml:
+              schema:
+                description: Response payload is not described in the published documentation.
+            application/json:
+              schema:
+                description: Response payload is not described in the published documentation.
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyloadforecast.html
+        harvested: '2026-07-27'
+  /hourlyloadforecast/all/day/{day}:
+    get:
+      operationId: getHourlyloadforecastAllDayByDay
+      summary: Get Hourly System Load Forecast for given day
+      description: Get Hourly System Load Forecast for given day
+      tags:
+      - hourlyloadforecast
+      responses:
+        '200':
+          description: a HourlyLoadForecastsElement containing the Hourly System Load Forecast.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLoadForecasts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLoadForecasts'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyloadforecast.all.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLoadForecasts
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /hourlyloadforecast/current:
+    get:
+      operationId: getHourlyloadforecastCurrent
+      summary: Get the current Hourly System Load Forecast
+      description: Get the current Hourly System Load Forecast.
+      tags:
+      - hourlyloadforecast
+      responses:
+        '200':
+          description: a HourlyLoadForecastElement containing the current Hourly System LoadForecast.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLoadForecast'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLoadForecast'
+              example:
+                HourlyLoadForecast:
+                - NetLoadMw: 13320
+                  CreationDate: '2026-07-27T16:21:15.000-04:00'
+                  LoadMw: 13320
+                  BeginDate: '2026-07-29T23:00:00.000-04:00'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyloadforecast.current.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLoadForecast
+      x-example-evidence:
+        source: https://www.iso-ne.com/ws/wsclient (public ISO Express dashboard proxy, anonymous POST)
+        observed: '2026-07-27'
+        note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
+  /hourlyloadforecast/day/{day}:
+    get:
+      operationId: getHourlyloadforecastDayByDay
+      summary: Get Hourly System Load Forecast for given day
+      description: Get Hourly System Load Forecast for given day
+      tags:
+      - hourlyloadforecast
+      responses:
+        '200':
+          description: a HourlyLoadForecastsElement containing the Hourly System Load Forecast.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/HourlyLoadForecasts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HourlyLoadForecasts'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyloadforecast.day.day.html
+        harvested: '2026-07-27'
+      x-xml-element: HourlyLoadForecasts
+      parameters:
+      - name: day
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The day to retrieve data for (YYYYMMDD)
+  /hourlyloadforecast/info:
+    get:
+      operationId: getHourlyloadforecastInfo
+      summary: Get the Service Info for Five Minute LMPs
+      description: Get the Service Info for Five Minute LMPs.
+      tags:
+      - hourlyloadforecast
+      responses:
+        '200':
+          description: the ServiceInfoElement for Load Forecast LMPs.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceInfo'
+        '401':
+          description: Unauthorized - HTTP Basic credentials from an ISO Express account are required. Verified by anonymous probe on 2026-07-27.
+      x-evidence:
+        source: https://webservices.iso-ne.com/docs/v1.1/rest.hourlyloadforecast.info.html
+        harvested: '2026-07-27'
+      x-xml-element: ServiceInfo
+components:
+  schemas:
+    HourlyLoadForecasts:
+      type: object
+      properties:
+        HourlyLoadForecast:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyLoadForecast'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadForecasts
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlyLoadForecast:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+        LoadMw:
+          type: number
+        LoadAdjustmentMw:
+          type: number
+        NetLoadMw:
+          type: number
+      required:
+      - BeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadForecast
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication over SSL. Credentials come from a free, self-serve ISO Express account; ISO New England states that ISO Express account holders are automatically granted access to the public data feeds. See https://www.iso-ne.com/participate/applications-status-changes/access-software-systems
