@@ -32,18 +32,18 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: free
-  onboarding: self-serve
+  pricing: unknown
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Free - Self-serve ISO Express account required for the API
-  confidence: high
+  label: Unknown
+  confidence: low
   source:
-  - probe
-  - documentation
-  generated: '2026-07-27'
-  method: observed
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
 imageNote: >-
   The `image` property was removed on 2026-08-26. It had been copied verbatim out of a
   bootstrap template and pointed at an icon belonging to groq, not to this company.
@@ -3715,9 +3715,10 @@ common:
   url: packages/iso-new-england-packages.yml
 - type: WellKnown
   url: well-known/iso-new-england-well-known.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   name: Candidate MCP tool set derived from the OpenAPI (no server is published by ISO New England)
   url: mcp/iso-new-england-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: DataModel
   url: data-model/iso-new-england-data-model.yml
 - type: Overlay
