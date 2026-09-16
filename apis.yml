@@ -2,23 +2,21 @@ aid: iso-new-england
 url: https://raw.githubusercontent.com/api-evangelist/iso-new-england/refs/heads/main/apis.yml
 name: ISO New England
 kind: company
-description: ISO New England Inc. is the independent, nonprofit regional transmission organization
-  authorized by the Federal Energy Regulatory Commission to operate the high-voltage power system,
-  administer the wholesale electricity markets, and plan the power system for Connecticut, Rhode
-  Island, Massachusetts, Vermont, New Hampshire, and most of Maine. Home market is the United
-  States. It sits at the wholesale layer of the value chain, between generators, transmission
-  owners, interconnections with New York and Canada, and the load-serving entities that resell
-  power to retail customers - and it states on its own site that handling retail electricity is
-  something it does not do. Its API posture is the sector's classic split, read from the wholesale
-  end. Market and system data is genuinely open, so open that the ISO Express portal serves full
-  nodal day-ahead LMP files as anonymous CSV and the public dashboards are backed by an anonymous
-  JSON feed. Consumer data does not exist here at all, and cannot, because ISO New England holds no
-  retail customer relationships and no Green Button, ESPI, or consumer data-portability mandate
-  reaches it. The one documented programmatic contract, the Web Services API v1.1, is a real,
-  richly documented RESTful surface of 477 path templates across 90 market and operations
-  resources, but it answers 401 to anonymous callers - a developer must first create a free,
-  self-serve ISO Express account, which the ISO says automatically grants access to the data feeds,
-  and then authenticate with HTTP Basic over SSL.
+description: ISO New England Inc. is the independent, nonprofit regional transmission organization authorized
+  by the Federal Energy Regulatory Commission to operate the high-voltage power system, administer the
+  wholesale electricity markets, and plan the power system for Connecticut, Rhode Island, Massachusetts,
+  Vermont, New Hampshire, and most of Maine. Home market is the United States. It sits at the wholesale
+  layer of the value chain, between generators, transmission owners, interconnections with New York and
+  Canada, and the load-serving entities that resell power to retail customers - and it states on its own
+  site that handling retail electricity is something it does not do. Its API posture is the sector's classic
+  split, read from the wholesale end. Market and system data is genuinely open, so open that the ISO Express
+  portal serves full nodal day-ahead LMP files as anonymous CSV and the public dashboards are backed by
+  an anonymous JSON feed. Consumer data does not exist here at all, and cannot, because ISO New England
+  holds no retail customer relationships and no Green Button, ESPI, or consumer data-portability mandate
+  reaches it. The one documented programmatic contract, the Web Services API v1.1, is a real, richly documented
+  RESTful surface of 477 path templates across 90 market and operations resources, but it answers 401
+  to anonymous callers - a developer must first create a free, self-serve ISO Express account, which the
+  ISO says automatically grants access to the data feeds, and then authenticate with HTTP Basic over SSL.
 deliveryModel:
   model: saas
   open_source: false
@@ -44,13 +42,11 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
-imageNote: >-
-  The `image` property was removed on 2026-08-26. It had been copied verbatim out of a
-  bootstrap template and pointed at an icon belonging to groq, not to this company.
-  That asset returns HTTP 200, so the record rendered another company's brand
-  rather than a broken image, which is why it went unreported (roadmap#153).
-  No correct icon has been sourced yet. Shipping the wrong company's mark is worse
-  than shipping none; re-run the icon backfill once a real asset exists.
+imageNote: The `image` property was removed on 2026-08-26. It had been copied verbatim out of a bootstrap
+  template and pointed at an icon belonging to groq, not to this company. That asset returns HTTP 200,
+  so the record rendered another company's brand rather than a broken image, which is why it went unreported
+  (roadmap#153). No correct icon has been sourced yet. Shipping the wrong company's mark is worse than
+  shipping none; re-run the icon backfill once a real asset exists.
 tags:
 - Energy
 - United States
@@ -63,14 +59,13 @@ tags:
 - Renewables
 - New England
 created: '2026-07-27'
-modified: '2026-07-27'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: iso-new-england:iso-new-england-actualinterchange-api
   name: ISO New England Actualinterchange API
-  description: >-
-    4 path template(s) under /actualinterchange in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /actualinterchange in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -108,8 +103,7 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-ams-api
   name: ISO New England Ams API
-  description: >-
-    4 path template(s) under /ams in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /ams in the published ISO New England Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -149,9 +143,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-capacityscarcitycondition-api
   name: ISO New England Capacityscarcitycondition API
-  description: >-
-    6 path template(s) under /capacityscarcitycondition in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 6 path template(s) under /capacityscarcitycondition in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -189,9 +182,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-combinedhourlydemand-api
   name: ISO New England Combinedhourlydemand API
-  description: >-
-    3 path template(s) under /combinedhourlydemand in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 3 path template(s) under /combinedhourlydemand in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -229,8 +221,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-daasreservedata-api
   name: ISO New England Daasreservedata API
-  description: >-
-    3 path template(s) under /daasreservedata in the published ISO New England Web Services API v1.1 documentation.
+  description: 3 path template(s) under /daasreservedata in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -268,9 +260,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-daasstrikeprices-api
   name: ISO New England Daasstrikeprices API
-  description: >-
-    3 path template(s) under /daasstrikeprices in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 3 path template(s) under /daasstrikeprices in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -308,9 +299,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-dailyofferthreshprice-api
   name: ISO New England Dailyofferthreshprice API
-  description: >-
-    5 path template(s) under /dailyofferthreshprice in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 5 path template(s) under /dailyofferthreshprice in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -348,9 +338,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-dayaheadconstraints-api
   name: ISO New England Dayaheadconstraints API
-  description: >-
-    4 path template(s) under /dayaheadconstraints in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /dayaheadconstraints in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -388,9 +377,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-dayaheadhourlydemand-api
   name: ISO New England Dayaheadhourlydemand API
-  description: >-
-    6 path template(s) under /dayaheadhourlydemand in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 6 path template(s) under /dayaheadhourlydemand in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -428,9 +416,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-dayaheadhourlyoperatingreserve-api
   name: ISO New England Dayaheadhourlyoperatingreserve API
-  description: >-
-    6 path template(s) under /dayaheadhourlyoperatingreserve in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 6 path template(s) under /dayaheadhourlyoperatingreserve in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -468,9 +455,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-dayaheadlmpavgcongestion-api
   name: ISO New England Dayaheadlmpavgcongestion API
-  description: >-
-    5 path template(s) under /dayaheadlmpavgcongestion in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 5 path template(s) under /dayaheadlmpavgcongestion in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -508,9 +494,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-dayaheadprdclearing-api
   name: ISO New England Dayaheadprdclearing API
-  description: >-
-    5 path template(s) under /dayaheadprdclearing in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 5 path template(s) under /dayaheadprdclearing in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -548,9 +533,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-dayaheadvirtualproxy-api
   name: ISO New England Dayaheadvirtualproxy API
-  description: >-
-    6 path template(s) under /dayaheadvirtualproxy in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 6 path template(s) under /dayaheadvirtualproxy in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -588,8 +572,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-drdispatch-api
   name: ISO New England Drdispatch API
-  description: >-
-    6 path template(s) under /drdispatch in the published ISO New England Web Services API v1.1 documentation.
+  description: 6 path template(s) under /drdispatch in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -627,8 +611,7 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-drtp-api
   name: ISO New England Drtp API
-  description: >-
-    5 path template(s) under /drtp in the published ISO New England Web Services API v1.1 documentation.
+  description: 5 path template(s) under /drtp in the published ISO New England Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -666,8 +649,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fcmabp-api
   name: ISO New England Fcmabp API
-  description: >-
-    4 path template(s) under /fcmabp in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /fcmabp in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -705,8 +688,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fcmara-api
   name: ISO New England Fcmara API
-  description: >-
-    4 path template(s) under /fcmara in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /fcmara in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -744,8 +727,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fcmmbp-api
   name: ISO New England Fcmmbp API
-  description: >-
-    4 path template(s) under /fcmmbp in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /fcmmbp in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -783,8 +766,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fcmmra-api
   name: ISO New England Fcmmra API
-  description: >-
-    4 path template(s) under /fcmmra in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /fcmmra in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -822,9 +805,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fifteenminuteconstraints-api
   name: ISO New England Fifteenminuteconstraints API
-  description: >-
-    5 path template(s) under /fifteenminuteconstraints in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 5 path template(s) under /fifteenminuteconstraints in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -862,9 +844,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fifteenminuteinterchange-api
   name: ISO New England Fifteenminuteinterchange API
-  description: >-
-    6 path template(s) under /fifteenminuteinterchange in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 6 path template(s) under /fifteenminuteinterchange in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -902,9 +883,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fifteenminutelmp-api
   name: ISO New England Fifteenminutelmp API
-  description: >-
-    5 path template(s) under /fifteenminutelmp in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 5 path template(s) under /fifteenminutelmp in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -942,9 +922,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminuteconstraints-api
   name: ISO New England Fiveminuteconstraints API
-  description: >-
-    4 path template(s) under /fiveminuteconstraints in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 4 path template(s) under /fiveminuteconstraints in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -982,9 +961,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminuteestimatedzonalload-api
   name: ISO New England Fiveminuteestimatedzonalload API
-  description: >-
-    5 path template(s) under /fiveminuteestimatedzonalload in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 5 path template(s) under /fiveminuteestimatedzonalload in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1022,9 +1000,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminuteexternalflow-api
   name: ISO New England Fiveminuteexternalflow API
-  description: >-
-    7 path template(s) under /fiveminuteexternalflow in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 7 path template(s) under /fiveminuteexternalflow in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1062,8 +1039,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminutelmp-api
   name: ISO New England Fiveminutelmp API
-  description: >-
-    14 path template(s) under /fiveminutelmp in the published ISO New England Web Services API v1.1 documentation.
+  description: 14 path template(s) under /fiveminutelmp in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1101,8 +1078,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminutercp-api
   name: ISO New England Fiveminutercp API
-  description: >-
-    7 path template(s) under /fiveminutercp in the published ISO New England Web Services API v1.1 documentation.
+  description: 7 path template(s) under /fiveminutercp in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1140,9 +1117,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminutereserveprice-api
   name: ISO New England Fiveminutereserveprice API
-  description: >-
-    13 path template(s) under /fiveminutereserveprice in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 13 path template(s) under /fiveminutereserveprice in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1180,9 +1156,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminutesystemload-api
   name: ISO New England Fiveminutesystemload API
-  description: >-
-    4 path template(s) under /fiveminutesystemload in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /fiveminutesystemload in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1220,9 +1195,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-fiveminutezonalloadforecast-api
   name: ISO New England Fiveminutezonalloadforecast API
-  description: >-
-    3 path template(s) under /fiveminutezonalloadforecast in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 3 path template(s) under /fiveminutezonalloadforecast in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1260,9 +1234,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-forecastcapacity-api
   name: ISO New England Forecastcapacity API
-  description: >-
-    6 path template(s) under /forecastcapacity in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 6 path template(s) under /forecastcapacity in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1300,8 +1273,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-frmdtp-api
   name: ISO New England Frmdtp API
-  description: >-
-    5 path template(s) under /frmdtp in the published ISO New England Web Services API v1.1 documentation.
+  description: 5 path template(s) under /frmdtp in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1339,9 +1312,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-ftrauctionclearingprices-api
   name: ISO New England Ftrauctionclearingprices API
-  description: >-
-    4 path template(s) under /ftrauctionclearingprices in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 4 path template(s) under /ftrauctionclearingprices in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1379,9 +1351,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-ftrauctionresults-api
   name: ISO New England Ftrauctionresults API
-  description: >-
-    4 path template(s) under /ftrauctionresults in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /ftrauctionresults in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1419,8 +1390,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-genfuelmix-api
   name: ISO New England Genfuelmix API
-  description: >-
-    6 path template(s) under /genfuelmix in the published ISO New England Web Services API v1.1 documentation.
+  description: 6 path template(s) under /genfuelmix in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1458,9 +1429,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbannualftrauction-api
   name: ISO New England Hbannualftrauction API
-  description: >-
-    4 path template(s) under /hbannualftrauction in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /hbannualftrauction in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1498,8 +1468,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdaasardoffer-api
   name: ISO New England Hbdaasardoffer API
-  description: >-
-    3 path template(s) under /hbdaasardoffer in the published ISO New England Web Services API v1.1 documentation.
+  description: 3 path template(s) under /hbdaasardoffer in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1537,8 +1507,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdaasdrroffer-api
   name: ISO New England Hbdaasdrroffer API
-  description: >-
-    3 path template(s) under /hbdaasdrroffer in the published ISO New England Web Services API v1.1 documentation.
+  description: 3 path template(s) under /hbdaasdrroffer in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1576,9 +1546,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdaasenergyoffer-api
   name: ISO New England Hbdaasenergyoffer API
-  description: >-
-    3 path template(s) under /hbdaasenergyoffer in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 3 path template(s) under /hbdaasenergyoffer in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1616,9 +1585,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdayaheadardbid-api
   name: ISO New England Hbdayaheadardbid API
-  description: >-
-    4 path template(s) under /hbdayaheadardbid in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /hbdayaheadardbid in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1656,9 +1624,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdayaheaddemandbid-api
   name: ISO New England Hbdayaheaddemandbid API
-  description: >-
-    6 path template(s) under /hbdayaheaddemandbid in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 6 path template(s) under /hbdayaheaddemandbid in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1696,9 +1663,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdayaheaddrrbid-api
   name: ISO New England Hbdayaheaddrrbid API
-  description: >-
-    3 path template(s) under /hbdayaheaddrrbid in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 3 path template(s) under /hbdayaheaddrrbid in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1736,9 +1702,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdayaheadenergyoffer-api
   name: ISO New England Hbdayaheadenergyoffer API
-  description: >-
-    4 path template(s) under /hbdayaheadenergyoffer in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 4 path template(s) under /hbdayaheadenergyoffer in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1776,9 +1741,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbdayaheadloadresponseoffer-api
   name: ISO New England Hbdayaheadloadresponseoffer API
-  description: >-
-    4 path template(s) under /hbdayaheadloadresponseoffer in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 4 path template(s) under /hbdayaheadloadresponseoffer in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1816,8 +1780,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbfcmara-api
   name: ISO New England Hbfcmara API
-  description: >-
-    5 path template(s) under /hbfcmara in the published ISO New England Web Services API v1.1 documentation.
+  description: 5 path template(s) under /hbfcmara in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1855,8 +1819,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbfcmmra-api
   name: ISO New England Hbfcmmra API
-  description: >-
-    4 path template(s) under /hbfcmmra in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /hbfcmmra in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1894,9 +1858,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbforwardreserveauctionoffer-api
   name: ISO New England Hbforwardreserveauctionoffer API
-  description: >-
-    3 path template(s) under /hbforwardreserveauctionoffer in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 3 path template(s) under /hbforwardreserveauctionoffer in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1934,8 +1897,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbimportexport-api
   name: ISO New England Hbimportexport API
-  description: >-
-    4 path template(s) under /hbimportexport in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /hbimportexport in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -1973,9 +1936,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbmonthlyftrauction-api
   name: ISO New England Hbmonthlyftrauction API
-  description: >-
-    4 path template(s) under /hbmonthlyftrauction in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /hbmonthlyftrauction in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2013,9 +1975,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbrealtimeardbid-api
   name: ISO New England Hbrealtimeardbid API
-  description: >-
-    4 path template(s) under /hbrealtimeardbid in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /hbrealtimeardbid in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2053,9 +2014,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbrealtimedrrbid-api
   name: ISO New England Hbrealtimedrrbid API
-  description: >-
-    3 path template(s) under /hbrealtimedrrbid in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 3 path template(s) under /hbrealtimedrrbid in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2093,9 +2053,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbrealtimeenergyoffer-api
   name: ISO New England Hbrealtimeenergyoffer API
-  description: >-
-    4 path template(s) under /hbrealtimeenergyoffer in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 4 path template(s) under /hbrealtimeenergyoffer in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2133,9 +2092,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hbregulationoffer-api
   name: ISO New England Hbregulationoffer API
-  description: >-
-    4 path template(s) under /hbregulationoffer in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /hbregulationoffer in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2173,9 +2131,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlybainterchange-api
   name: ISO New England Hourlybainterchange API
-  description: >-
-    4 path template(s) under /hourlybainterchange in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /hourlybainterchange in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2213,9 +2170,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlyfinalreserveprice-api
   name: ISO New England Hourlyfinalreserveprice API
-  description: >-
-    7 path template(s) under /hourlyfinalreserveprice in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 7 path template(s) under /hourlyfinalreserveprice in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2253,8 +2209,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlylmp-api
   name: ISO New England Hourlylmp API
-  description: >-
-    24 path template(s) under /hourlylmp in the published ISO New England Web Services API v1.1 documentation.
+  description: 24 path template(s) under /hourlylmp in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2292,9 +2248,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlyloadforecast-api
   name: ISO New England Hourlyloadforecast API
-  description: >-
-    5 path template(s) under /hourlyloadforecast in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 5 path template(s) under /hourlyloadforecast in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2332,9 +2287,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlyloadgeninterchange-api
   name: ISO New England Hourlyloadgeninterchange API
-  description: >-
-    4 path template(s) under /hourlyloadgeninterchange in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 4 path template(s) under /hourlyloadgeninterchange in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2372,8 +2326,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlyper-api
   name: ISO New England Hourlyper API
-  description: >-
-    5 path template(s) under /hourlyper in the published ISO New England Web Services API v1.1 documentation.
+  description: 5 path template(s) under /hourlyper in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2411,9 +2365,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlyprelimreserveprice-api
   name: ISO New England Hourlyprelimreserveprice API
-  description: >-
-    7 path template(s) under /hourlyprelimreserveprice in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 7 path template(s) under /hourlyprelimreserveprice in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2451,8 +2404,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlyrcp-api
   name: ISO New England Hourlyrcp API
-  description: >-
-    8 path template(s) under /hourlyrcp in the published ISO New England Web Services API v1.1 documentation.
+  description: 8 path template(s) under /hourlyrcp in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2490,8 +2443,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-hourlysysload-api
   name: ISO New England Hourlysysload API
-  description: >-
-    8 path template(s) under /hourlysysload in the published ISO New England Web Services API v1.1 documentation.
+  description: 8 path template(s) under /hourlysysload in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2529,8 +2482,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-lmpindex-api
   name: ISO New England Lmp Index API
-  description: >-
-    12 path template(s) under /lmpIndex in the published ISO New England Web Services API v1.1 documentation.
+  description: 12 path template(s) under /lmpIndex in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags: []
@@ -2569,8 +2522,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-loadzonencpc-api
   name: ISO New England Loadzonencpc API
-  description: >-
-    6 path template(s) under /loadzonencpc in the published ISO New England Web Services API v1.1 documentation.
+  description: 6 path template(s) under /loadzonencpc in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2608,8 +2561,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-locations-api
   name: ISO New England Locations API
-  description: >-
-    3 path template(s) under /locations in the published ISO New England Web Services API v1.1 documentation.
+  description: 3 path template(s) under /locations in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2649,9 +2602,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-monthlyassetncpc-api
   name: ISO New England Monthlyassetncpc API
-  description: >-
-    4 path template(s) under /monthlyassetncpc in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /monthlyassetncpc in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2689,8 +2641,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-monthlylmpindex-api
   name: ISO New England Monthlylmpindex API
-  description: >-
-    4 path template(s) under /monthlylmpindex in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /monthlylmpindex in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2728,8 +2680,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-monthlyper-api
   name: ISO New England Monthlyper API
-  description: >-
-    5 path template(s) under /monthlyper in the published ISO New England Web Services API v1.1 documentation.
+  description: 5 path template(s) under /monthlyper in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2767,8 +2719,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-morningreport-api
   name: ISO New England Morningreport API
-  description: >-
-    6 path template(s) under /morningreport in the published ISO New England Web Services API v1.1 documentation.
+  description: 6 path template(s) under /morningreport in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2806,8 +2758,7 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-ncpc-api
   name: ISO New England Ncpc API
-  description: >-
-    5 path template(s) under /ncpc in the published ISO New England Web Services API v1.1 documentation.
+  description: 5 path template(s) under /ncpc in the published ISO New England Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2845,8 +2796,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-networkload-api
   name: ISO New England Networkload API
-  description: >-
-    4 path template(s) under /networkload in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /networkload in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2884,9 +2835,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-nextdayoperationalcapacityreport-api
   name: ISO New England Nextdayoperationalcapacityreport API
-  description: >-
-    4 path template(s) under /nextdayoperationalcapacityreport in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 4 path template(s) under /nextdayoperationalcapacityreport in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2924,8 +2874,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-nodalloadstat-api
   name: ISO New England Nodalloadstat API
-  description: >-
-    3 path template(s) under /nodalloadstat in the published ISO New England Web Services API v1.1 documentation.
+  description: 3 path template(s) under /nodalloadstat in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -2963,8 +2913,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-nodalloadweight-api
   name: ISO New England Nodalloadweight API
-  description: >-
-    6 path template(s) under /nodalloadweight in the published ISO New England Web Services API v1.1 documentation.
+  description: 6 path template(s) under /nodalloadweight in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3002,8 +2952,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-outages-api
   name: ISO New England Outages API
-  description: >-
-    20 path template(s) under /outages in the published ISO New England Web Services API v1.1 documentation.
+  description: 20 path template(s) under /outages in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3043,9 +2993,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-performancescore-api
   name: ISO New England Performancescore API
-  description: >-
-    4 path template(s) under /performancescore in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /performancescore in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3083,8 +3032,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-powersystem-api
   name: ISO New England Powersystem API
-  description: >-
-    2 path template(s) under /powersystem in the published ISO New England Web Services API v1.1 documentation.
+  description: 2 path template(s) under /powersystem in the published ISO New England Web Services API
+    v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3124,9 +3073,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-powersystemconditions-api
   name: ISO New England Powersystemconditions API
-  description: >-
-    4 path template(s) under /powersystemconditions in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 4 path template(s) under /powersystemconditions in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3164,8 +3112,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-pricerespevent-api
   name: ISO New England Pricerespevent API
-  description: >-
-    5 path template(s) under /pricerespevent in the published ISO New England Web Services API v1.1 documentation.
+  description: 5 path template(s) under /pricerespevent in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3203,9 +3151,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-realtimeconstraints-api
   name: ISO New England Realtimeconstraints API
-  description: >-
-    9 path template(s) under /realtimeconstraints in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 9 path template(s) under /realtimeconstraints in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3243,9 +3190,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-realtimehourlydemand-api
   name: ISO New England Realtimehourlydemand API
-  description: >-
-    6 path template(s) under /realtimehourlydemand in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 6 path template(s) under /realtimehourlydemand in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3283,9 +3229,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-realtimehourlyoperatingreserve-api
   name: ISO New England Realtimehourlyoperatingreserve API
-  description: >-
-    6 path template(s) under /realtimehourlyoperatingreserve in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 6 path template(s) under /realtimehourlyoperatingreserve in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3323,9 +3268,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-reliabilityregionloadforecast-api
   name: ISO New England Reliabilityregionloadforecast API
-  description: >-
-    5 path template(s) under /reliabilityregionloadforecast in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 5 path template(s) under /reliabilityregionloadforecast in the published ISO New England
+    Web Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3363,9 +3307,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-schedule2varstatus-api
   name: ISO New England Schedule2varstatus API
-  description: >-
-    4 path template(s) under /schedule2varstatus in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /schedule2varstatus in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3403,9 +3346,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-seasonalpeakhourdata-api
   name: ISO New England Seasonalpeakhourdata API
-  description: >-
-    4 path template(s) under /seasonalpeakhourdata in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 4 path template(s) under /seasonalpeakhourdata in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3443,9 +3385,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-sevendayforecast-api
   name: ISO New England Sevendayforecast API
-  description: >-
-    5 path template(s) under /sevendayforecast in the published ISO New England Web Services API v1.1
-    documentation.
+  description: 5 path template(s) under /sevendayforecast in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3483,9 +3424,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-sevendaywindpowerforecast-api
   name: ISO New England Sevendaywindpowerforecast API
-  description: >-
-    4 path template(s) under /sevendaywindpowerforecast in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 4 path template(s) under /sevendaywindpowerforecast in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3523,9 +3463,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-singlesrccontingencylimits-api
   name: ISO New England Singlesrccontingencylimits API
-  description: >-
-    6 path template(s) under /singlesrccontingencylimits in the published ISO New England Web Services
-    API v1.1 documentation.
+  description: 6 path template(s) under /singlesrccontingencylimits in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3563,9 +3502,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-totaltransfercapability-api
   name: ISO New England Totaltransfercapability API
-  description: >-
-    5 path template(s) under /totaltransfercapability in the published ISO New England Web Services API
-    v1.1 documentation.
+  description: 5 path template(s) under /totaltransfercapability in the published ISO New England Web
+    Services API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3603,8 +3541,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-weeklylmpindex-api
   name: ISO New England Weeklylmpindex API
-  description: >-
-    4 path template(s) under /weeklylmpindex in the published ISO New England Web Services API v1.1 documentation.
+  description: 4 path template(s) under /weeklylmpindex in the published ISO New England Web Services
+    API v1.1 documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3642,8 +3580,8 @@ apis:
     url: https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml
 - aid: iso-new-england:iso-new-england-whlsecost-api
   name: ISO New England Whlsecost API
-  description: >-
-    8 path template(s) under /whlsecost in the published ISO New England Web Services API v1.1 documentation.
+  description: 8 path template(s) under /whlsecost in the published ISO New England Web Services API v1.1
+    documentation.
   humanURL: https://webservices.iso-ne.com/docs/v1.1/
   baseURL: https://webservices.iso-ne.com/api/v1.1
   tags:
@@ -3691,7 +3629,7 @@ common:
   url: authentication/iso-new-england-authentication.yml
 - type: OpenAPI
   name: ISO New England Web Services API v1.1 (derived)
-  url: openapi/iso-new-england-web-services-openapi.yml
+  url: openapi/_original/iso-new-england-web-services-openapi.yml
 - type: JSONSchema
   url: json-schema/iso-new-england-web-services-schemas.json
 - type: Examples
@@ -3718,7 +3656,10 @@ common:
 - type: X-MCPServerCandidate
   name: Candidate MCP tool set derived from the OpenAPI (no server is published by ISO New England)
   url: mcp/iso-new-england-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
+    — a tool list derived from the published API contracts, not an existing server. The scorer already
+    read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type
+    surfaces with a server that does not exist.'
 - type: DataModel
   url: data-model/iso-new-england-data-model.yml
 - type: Overlay
