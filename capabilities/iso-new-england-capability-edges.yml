@@ -24,7 +24,8 @@ edges:
   reason: Operations publish demand-response dispatch instructions by dispatch zone — this is the dispatch
     element of Demand Response Operations within distributed energy resource management.
 - tag: powersystem
-  spec_file: iso-new-england-powersystem-api-openapi.yml
+  spec_file: iso-new-england-power-system-api-openapi.yml
+  reanchored_from: iso-new-england-powersystem-api-openapi.yml
   capability_id: BC-3830.10
   capability_id_l1: BC-3830
   capability_name: Real-Time System Operations
