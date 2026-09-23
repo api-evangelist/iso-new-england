@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: ISO New England Web Services API v1.1 Locations API
   version: '1.1'
-  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  description: RESTful interface to ISO New England energy and market data.
   contact:
     name: ISO New England Ask ISO
     url: https://askiso.iso-ne.com/s/
@@ -23,16 +23,15 @@ servers:
 security:
 - basicAuth: []
 tags:
-- name: locations
+- name: Locations
   description: 3 path template(s) under /locations in the published ISO New England Web Services API v1.1 documentation.
 paths:
   /locations:
     get:
       operationId: getLocations
       summary: Get list of core locations (Hub, Load Zones, External Nodes)
-      description: Get list of core locations (Hub, Load Zones, External Nodes)
       tags:
-      - locations
+      - Locations
       responses:
         '200':
           description: Successful response.
@@ -55,7 +54,7 @@ paths:
       summary: Get all Locations
       description: Get all Locations.
       tags:
-      - locations
+      - Locations
       responses:
         '200':
           description: the LocationsElement .
@@ -6467,7 +6466,7 @@ paths:
       summary: Get the Location by location id
       description: Get the Location by location id.
       tags:
-      - locations
+      - Locations
       responses:
         '200':
           description: the LocationsElement .
@@ -6493,14 +6492,6 @@ paths:
         description: The location id
 components:
   schemas:
-    Locations:
-      type: object
-      properties:
-        Location:
-          type: array
-          items:
-            $ref: '#/components/schemas/Location'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Locations
     Location:
       type: object
       properties:
@@ -6543,6 +6534,14 @@ components:
       - NetworkNodeType
       - AreaType
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Location
+    Locations:
+      type: object
+      properties:
+        Location:
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Locations
   securitySchemes:
     basicAuth:
       type: http

@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: ISO New England Web Services API v1.1 Fcmara API
   version: '1.1'
-  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  description: RESTful interface to ISO New England energy and market data.
   contact:
     name: ISO New England Ask ISO
     url: https://askiso.iso-ne.com/s/
@@ -137,19 +137,24 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    ServiceInfo:
+    Auction:
       type: object
       properties:
-        LatestBeginDate:
+        Id:
+          type: integer
+        Description:
+          type: string
+        ApprovalDate:
           type: string
           format: date-time
-        CreationDate:
+        AuctionBeginDate:
           type: string
           format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+        Type:
+          type: string
+        CommitmentPeriod:
+          $ref: '#/components/schemas/Period'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Auction
     ClearedCapacityZone:
       type: object
       properties:
@@ -192,6 +197,69 @@ components:
       - ClearingPrice
       - ClearedExternalInterfaces
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZone
+    ISOParticipation:
+      type: object
+      properties:
+        ISOSupplySubmitted:
+          type: number
+        ISODemandSubmitted:
+          type: number
+        ISOSupplyCleared:
+          type: number
+        ISODemandCleared:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ISOParticipation
+    Period:
+      type: object
+      properties:
+        Id:
+          type: integer
+        Description:
+          type: string
+        Type:
+          type: string
+        BeginDate:
+          type: string
+          format: date-time
+        EndDate:
+          type: string
+          format: date-time
+        ParentId:
+          type: integer
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Period
+    SystemResults:
+      type: object
+      properties:
+        SupplySubmitted:
+          type: number
+        SupplyCleared:
+          type: number
+        DemandSubmitted:
+          type: number
+        DemandCleared:
+          type: number
+        NetCapacityCleared:
+          type: number
+      required:
+      - SupplySubmitted
+      - SupplyCleared
+      - DemandSubmitted
+      - DemandCleared
+      - NetCapacityCleared
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemResults
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     ClearedInterface:
       type: object
       properties:
@@ -225,38 +293,6 @@ components:
       - NetCapacityCleared
       - ClearingPrice
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterface
-    Period:
-      type: object
-      properties:
-        Id:
-          type: integer
-        Description:
-          type: string
-        Type:
-          type: string
-        BeginDate:
-          type: string
-          format: date-time
-        EndDate:
-          type: string
-          format: date-time
-        ParentId:
-          type: integer
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Period
-    SystemDemandCurveResults:
-      type: object
-      properties:
-        SubmittedRepresentativeCsoMw:
-          type: number
-        SubmittedSdcMw:
-          type: number
-        ClearedRepresentativeCsoMw:
-          type: number
-        ClearedSdcMw:
-          type: number
-        ClearedNetCapacityMw:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemDemandCurveResults
     ClearedCapacityZones:
       type: object
       properties:
@@ -265,36 +301,6 @@ components:
           items:
             $ref: '#/components/schemas/ClearedCapacityZone'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZones
-    Auction:
-      type: object
-      properties:
-        Id:
-          type: integer
-        Description:
-          type: string
-        ApprovalDate:
-          type: string
-          format: date-time
-        AuctionBeginDate:
-          type: string
-          format: date-time
-        Type:
-          type: string
-        CommitmentPeriod:
-          $ref: '#/components/schemas/Period'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Auction
-    ISOParticipation:
-      type: object
-      properties:
-        ISOSupplySubmitted:
-          type: number
-        ISODemandSubmitted:
-          type: number
-        ISOSupplyCleared:
-          type: number
-        ISODemandCleared:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ISOParticipation
     FCMRAResults:
       type: object
       properties:
@@ -311,26 +317,20 @@ components:
           items:
             $ref: '#/components/schemas/ClearedInterface'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterfaces
-    SystemResults:
+    SystemDemandCurveResults:
       type: object
       properties:
-        SupplySubmitted:
+        SubmittedRepresentativeCsoMw:
           type: number
-        SupplyCleared:
+        SubmittedSdcMw:
           type: number
-        DemandSubmitted:
+        ClearedRepresentativeCsoMw:
           type: number
-        DemandCleared:
+        ClearedSdcMw:
           type: number
-        NetCapacityCleared:
+        ClearedNetCapacityMw:
           type: number
-      required:
-      - SupplySubmitted
-      - SupplyCleared
-      - DemandSubmitted
-      - DemandCleared
-      - NetCapacityCleared
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemResults
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemDemandCurveResults
     FCMRAResult:
       type: object
       properties:

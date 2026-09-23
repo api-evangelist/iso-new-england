@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: ISO New England Web Services API v1.1 Hourlylmp API
   version: '1.1'
-  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  description: RESTful interface to ISO New England energy and market data.
   contact:
     name: ISO New England Ask ISO
     url: https://askiso.iso-ne.com/s/
@@ -357,7 +357,7 @@ paths:
   /hourlylmp/rt/final/day/{day}/location/{locationId}:
     get:
       operationId: getHourlylmpRtFinalDayByDayLocationByLocationId
-      summary: 'Get the current Final RT Hourly LMPs for day for location '
+      summary: Get the current Final RT Hourly LMPs for day for location
       description: Get the current Final RT Hourly LMPs for day for location .
       tags:
       - hourlylmp
@@ -637,7 +637,7 @@ paths:
   /hourlylmp/rt/prelim/previous:
     get:
       operationId: getHourlylmpRtPrelimPrevious
-      summary: Get the previous interval Prelim RT Hourly LMPs for Hub, Load Zones, and External Nodes
+      summary: Get the previous interval Prelim RT Hourly LMPs for Hub, Load Zones, and…
       description: Get the previous interval Prelim RT Hourly LMPs for Hub, Load Zones, and External Nodes.
       tags:
       - hourlylmp
@@ -682,6 +682,29 @@ paths:
       x-xml-element: HourlyLmps
 components:
   schemas:
+    Lmp:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        LmpTotal:
+          type: number
+        EnergyComponent:
+          type: number
+        CongestionComponent:
+          type: number
+        LossComponent:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
+    HourlyLmp:
+      $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmp
     LocationRef:
       type: object
       properties:
@@ -711,9 +734,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    HourlyLmp:
-      $ref: '#/components/schemas/Lmp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmp
     ServiceInfo:
       type: object
       properties:
@@ -735,26 +755,6 @@ components:
           items:
             $ref: '#/components/schemas/HourlyLmp'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmps
-    Lmp:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        LmpTotal:
-          type: number
-        EnergyComponent:
-          type: number
-        CongestionComponent:
-          type: number
-        LossComponent:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
   securitySchemes:
     basicAuth:
       type: http

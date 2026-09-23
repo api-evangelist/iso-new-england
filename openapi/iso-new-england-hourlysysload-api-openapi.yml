@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: ISO New England Web Services API v1.1 Hourlysysload API
   version: '1.1'
-  description: RESTful interface to ISO New England energy and market data. This OpenAPI document was DERIVED by API Evangelist from ISO New England's own published, machine-generated Enunciate technical documentation at https://webservices.iso-ne.com/docs/v1.1/ and the two XML Schemas it publishes (ns0.xsd, ns1.xsd, saved verbatim under schemas/). ISO New England does not publish an OpenAPI definition; the only provider-published machine-readable description of the interface is a WADL at https://webservices.iso-ne.com/api/v1.1?_wadl&_type=xml, which sits behind the same HTTP Basic authentication as the API and returned HTTP 401 to anonymous probes. Every path, method, parameter, description, media type and schema in this document is copied from the provider's published sources; nothing was invented. Each operation carries x-evidence naming the exact documentation page it came from. All feeds are available in XML and JSON, selected by adding a .xml or .json extension to the request URL or by sending an Accept header of application/xml or application/json.
+  description: RESTful interface to ISO New England energy and market data.
   contact:
     name: ISO New England Ask ISO
     url: https://askiso.iso-ne.com/s/
@@ -51,7 +51,7 @@ paths:
   /hourlysysload/current:
     get:
       operationId: getHourlysysloadCurrent
-      summary: 'Get the current Hourly System Load '
+      summary: Get the current Hourly System Load
       description: Get the current Hourly System Load .
       tags:
       - hourlysysload
@@ -274,6 +274,27 @@ components:
       - BeginDate
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoad
+    HourlySystemLoads:
+      type: object
+      properties:
+        HourlySystemLoad:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlySystemLoad'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -303,27 +324,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlySystemLoads:
-      type: object
-      properties:
-        HourlySystemLoad:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlySystemLoad'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
   securitySchemes:
     basicAuth:
       type: http
