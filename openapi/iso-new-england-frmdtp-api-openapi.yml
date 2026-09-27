@@ -155,19 +155,6 @@ paths:
           type: string
 components:
   schemas:
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     DailyFrmThresholdPrice:
       type: object
       properties:
@@ -194,6 +181,19 @@ components:
           items:
             $ref: '#/components/schemas/DailyFrmThresholdPrice'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrices
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

@@ -126,14 +126,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    HbRegulationOffers:
-      type: object
-      properties:
-        HbRegulationOffer:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbRegulationOffer'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffers
     HbRegulationOffer:
       type: object
       properties:
@@ -181,6 +173,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HbRegulationOffers:
+      type: object
+      properties:
+        HbRegulationOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbRegulationOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffers
   securitySchemes:
     basicAuth:
       type: http

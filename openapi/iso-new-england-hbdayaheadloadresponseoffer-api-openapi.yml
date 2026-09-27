@@ -139,14 +139,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HbDayAheadLoadResponseOffers:
-      type: object
-      properties:
-        HbDayAheadLoadResponseOffer:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDayAheadLoadResponseOffer'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffers
     HbDayAheadLoadResponseOffer:
       type: object
       properties:
@@ -166,6 +158,14 @@ components:
         MinInterruptHours:
           type: integer
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffer
+    HbDayAheadLoadResponseOffers:
+      type: object
+      properties:
+        HbDayAheadLoadResponseOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDayAheadLoadResponseOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffers
   securitySchemes:
     basicAuth:
       type: http

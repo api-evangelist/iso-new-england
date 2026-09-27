@@ -172,14 +172,6 @@ components:
       required:
       - '@CapacityZoneId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CapacityRef
-    HourlyPeakEnergyRents:
-      type: object
-      properties:
-        HourlyPeakEnergyRent:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyPeakEnergyRent'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRents
     ServiceInfo:
       type: object
       properties:
@@ -193,6 +185,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlyPeakEnergyRents:
+      type: object
+      properties:
+        HourlyPeakEnergyRent:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyPeakEnergyRent'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRents
     HourlyPeakEnergyRent:
       type: object
       properties:

@@ -146,19 +146,6 @@ components:
           items:
             $ref: '#/components/schemas/FiveMinSystemLoad'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinSystemLoads
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     FiveMinSystemLoad:
       type: object
       properties:
@@ -178,6 +165,19 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinSystemLoad
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

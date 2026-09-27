@@ -149,14 +149,37 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Ttcs:
+    TtcLocations:
       type: object
       properties:
-        Ttc:
+        TtcLocation:
           type: array
           items:
-            $ref: '#/components/schemas/Ttc'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttcs
+            $ref: '#/components/schemas/TtcLocation'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocations
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    TtcLocation:
+      type: object
+      properties:
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ImportLimitMw:
+          type: number
+        ExportLimitMw:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocation
     LocationRef:
       type: object
       properties:
@@ -186,37 +209,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    TtcLocations:
-      type: object
-      properties:
-        TtcLocation:
-          type: array
-          items:
-            $ref: '#/components/schemas/TtcLocation'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocations
-    TtcLocation:
-      type: object
-      properties:
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        ImportLimitMw:
-          type: number
-        ExportLimitMw:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocation
     Ttc:
       type: object
       properties:
@@ -230,6 +222,14 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttc
+    Ttcs:
+      type: object
+      properties:
+        Ttc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ttc'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttcs
   securitySchemes:
     basicAuth:
       type: http

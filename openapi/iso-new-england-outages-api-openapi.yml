@@ -711,46 +711,6 @@ paths:
           type: string
 components:
   schemas:
-    Station:
-      type: object
-      properties:
-        StationName:
-          type: string
-        StationType:
-          type: string
-      required:
-      - StationName
-      - StationType
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Station
-    Outages:
-      type: object
-      properties:
-        Outage:
-          type: array
-          items:
-            $ref: '#/components/schemas/Outage'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outages
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Stations:
-      type: object
-      properties:
-        Station:
-          type: array
-          items:
-            $ref: '#/components/schemas/Station'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Stations
     Outage:
       type: object
       properties:
@@ -814,6 +774,46 @@ components:
       - AppNumber
       - Company1
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outage
+    Outages:
+      type: object
+      properties:
+        Outage:
+          type: array
+          items:
+            $ref: '#/components/schemas/Outage'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outages
+    Station:
+      type: object
+      properties:
+        StationName:
+          type: string
+        StationType:
+          type: string
+      required:
+      - StationName
+      - StationType
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Station
+    Stations:
+      type: object
+      properties:
+        Station:
+          type: array
+          items:
+            $ref: '#/components/schemas/Station'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Stations
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

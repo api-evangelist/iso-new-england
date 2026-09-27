@@ -126,19 +126,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Segments:
       type: object
       properties:
@@ -147,6 +134,26 @@ components:
           items:
             $ref: '#/components/schemas/Segment'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    HbRealTimeArdBids:
+      type: object
+      properties:
+        HbRealTimeArdBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbArdBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeArdBids
+    Segment:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
     HbArdBid:
       type: object
       properties:
@@ -174,26 +181,19 @@ components:
           - ECONOMIC
           - UNAVAILABLE
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbArdBid
-    Segment:
+    ServiceInfo:
       type: object
       properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
       required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
-    HbRealTimeArdBids:
-      type: object
-      properties:
-        HbRealTimeArdBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbArdBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeArdBids
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

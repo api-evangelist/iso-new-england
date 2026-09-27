@@ -161,6 +161,27 @@ paths:
           type: string
 components:
   schemas:
+    MonthlyPeakEnergyRents:
+      type: object
+      properties:
+        MonthlyPeakEnergyRent:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonthlyPeakEnergyRent'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyPeakEnergyRents
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     CapacityRef:
       type: object
       properties:
@@ -183,27 +204,6 @@ components:
         MonthlyPER:
           type: number
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyPeakEnergyRent
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    MonthlyPeakEnergyRents:
-      type: object
-      properties:
-        MonthlyPeakEnergyRent:
-          type: array
-          items:
-            $ref: '#/components/schemas/MonthlyPeakEnergyRent'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyPeakEnergyRents
   securitySchemes:
     basicAuth:
       type: http

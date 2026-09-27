@@ -137,24 +137,110 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Auction:
+    ClearedInterface:
+      type: object
+      properties:
+        ExternalInterfaceId:
+          type: integer
+        ExternalInterfaceName:
+          type: string
+        SupplySubmitted:
+          type: number
+        DemandSubmitted:
+          type: number
+        SupplyCleared:
+          type: number
+        DemandCleared:
+          type: number
+        NetCapacityCleared:
+          type: number
+        ISOSupplySubmitted:
+          type: number
+        ISOSupplyCleared:
+          type: number
+        ClearingPrice:
+          type: number
+      required:
+      - ExternalInterfaceId
+      - ExternalInterfaceName
+      - SupplySubmitted
+      - DemandSubmitted
+      - SupplyCleared
+      - DemandCleared
+      - NetCapacityCleared
+      - ClearingPrice
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterface
+    SystemDemandCurveResults:
+      type: object
+      properties:
+        SubmittedRepresentativeCsoMw:
+          type: number
+        SubmittedSdcMw:
+          type: number
+        ClearedRepresentativeCsoMw:
+          type: number
+        ClearedSdcMw:
+          type: number
+        ClearedNetCapacityMw:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemDemandCurveResults
+    Period:
       type: object
       properties:
         Id:
           type: integer
         Description:
           type: string
-        ApprovalDate:
-          type: string
-          format: date-time
-        AuctionBeginDate:
-          type: string
-          format: date-time
         Type:
           type: string
-        CommitmentPeriod:
-          $ref: '#/components/schemas/Period'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Auction
+        BeginDate:
+          type: string
+          format: date-time
+        EndDate:
+          type: string
+          format: date-time
+        ParentId:
+          type: integer
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Period
+    ClearedInterfaces:
+      type: object
+      properties:
+        ClearedExternalInterface:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClearedInterface'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterfaces
+    FCMRAResult:
+      type: object
+      properties:
+        Auction:
+          $ref: '#/components/schemas/Auction'
+        ClearedCapacityZones:
+          $ref: '#/components/schemas/ClearedCapacityZones'
+        SystemResults:
+          $ref: '#/components/schemas/SystemResults'
+        ISOAuctionParticipation:
+          $ref: '#/components/schemas/ISOParticipation'
+        SystemDemandCurveResults:
+          $ref: '#/components/schemas/SystemDemandCurveResults'
+      required:
+      - Auction
+      - ClearedCapacityZones
+      - SystemResults
+      - ISOAuctionParticipation
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMRAResult
+    ISOParticipation:
+      type: object
+      properties:
+        ISOSupplySubmitted:
+          type: number
+        ISODemandSubmitted:
+          type: number
+        ISOSupplyCleared:
+          type: number
+        ISODemandCleared:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ISOParticipation
     ClearedCapacityZone:
       type: object
       properties:
@@ -197,36 +283,6 @@ components:
       - ClearingPrice
       - ClearedExternalInterfaces
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZone
-    ISOParticipation:
-      type: object
-      properties:
-        ISOSupplySubmitted:
-          type: number
-        ISODemandSubmitted:
-          type: number
-        ISOSupplyCleared:
-          type: number
-        ISODemandCleared:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ISOParticipation
-    Period:
-      type: object
-      properties:
-        Id:
-          type: integer
-        Description:
-          type: string
-        Type:
-          type: string
-        BeginDate:
-          type: string
-          format: date-time
-        EndDate:
-          type: string
-          format: date-time
-        ParentId:
-          type: integer
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Period
     SystemResults:
       type: object
       properties:
@@ -247,6 +303,32 @@ components:
       - DemandCleared
       - NetCapacityCleared
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemResults
+    Auction:
+      type: object
+      properties:
+        Id:
+          type: integer
+        Description:
+          type: string
+        ApprovalDate:
+          type: string
+          format: date-time
+        AuctionBeginDate:
+          type: string
+          format: date-time
+        Type:
+          type: string
+        CommitmentPeriod:
+          $ref: '#/components/schemas/Period'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Auction
+    ClearedCapacityZones:
+      type: object
+      properties:
+        ClearedCapacityZone:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClearedCapacityZone'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZones
     ServiceInfo:
       type: object
       properties:
@@ -260,47 +342,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    ClearedInterface:
-      type: object
-      properties:
-        ExternalInterfaceId:
-          type: integer
-        ExternalInterfaceName:
-          type: string
-        SupplySubmitted:
-          type: number
-        DemandSubmitted:
-          type: number
-        SupplyCleared:
-          type: number
-        DemandCleared:
-          type: number
-        NetCapacityCleared:
-          type: number
-        ISOSupplySubmitted:
-          type: number
-        ISOSupplyCleared:
-          type: number
-        ClearingPrice:
-          type: number
-      required:
-      - ExternalInterfaceId
-      - ExternalInterfaceName
-      - SupplySubmitted
-      - DemandSubmitted
-      - SupplyCleared
-      - DemandCleared
-      - NetCapacityCleared
-      - ClearingPrice
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterface
-    ClearedCapacityZones:
-      type: object
-      properties:
-        ClearedCapacityZone:
-          type: array
-          items:
-            $ref: '#/components/schemas/ClearedCapacityZone'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedCapacityZones
     FCMRAResults:
       type: object
       properties:
@@ -309,47 +350,6 @@ components:
           items:
             $ref: '#/components/schemas/FCMRAResult'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMRAResults
-    ClearedInterfaces:
-      type: object
-      properties:
-        ClearedExternalInterface:
-          type: array
-          items:
-            $ref: '#/components/schemas/ClearedInterface'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ClearedInterfaces
-    SystemDemandCurveResults:
-      type: object
-      properties:
-        SubmittedRepresentativeCsoMw:
-          type: number
-        SubmittedSdcMw:
-          type: number
-        ClearedRepresentativeCsoMw:
-          type: number
-        ClearedSdcMw:
-          type: number
-        ClearedNetCapacityMw:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SystemDemandCurveResults
-    FCMRAResult:
-      type: object
-      properties:
-        Auction:
-          $ref: '#/components/schemas/Auction'
-        ClearedCapacityZones:
-          $ref: '#/components/schemas/ClearedCapacityZones'
-        SystemResults:
-          $ref: '#/components/schemas/SystemResults'
-        ISOAuctionParticipation:
-          $ref: '#/components/schemas/ISOParticipation'
-        SystemDemandCurveResults:
-          $ref: '#/components/schemas/SystemDemandCurveResults'
-      required:
-      - Auction
-      - ClearedCapacityZones
-      - SystemResults
-      - ISOAuctionParticipation
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMRAResult
   securitySchemes:
     basicAuth:
       type: http

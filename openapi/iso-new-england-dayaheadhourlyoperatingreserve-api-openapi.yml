@@ -192,48 +192,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    LocationRef:
+    HourlyDaOperatingReserves:
       type: object
       properties:
-        $:
-          type: string
-          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
-        '@LocId':
-          type: integer
-        '@LocType':
-          type: string
-          enum:
-          - NETWORK AREA
-          - LOAD ZONE
-          - NETWORK NODE
-          - HUB
-          - HUB NODE
-          - RELIABILITY REGION
-          - EXT. NODE
-          - RESERVE ZONE
-          - SYSTEM
-          - INT. AREA
-          - EXT. AREA
-          - DISPATCH ZONE
-          - CAPACITY ZONE
-          - DRRAZ
-          - DRR AGGREGATION ZONE
-      required:
-      - '@LocId'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+        HourlyDaOperatingReserve:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyDaOperatingReserve'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserves
     OperatingReserve:
       type: object
       properties:
@@ -293,14 +259,48 @@ components:
     HourlyDaOperatingReserve:
       $ref: '#/components/schemas/OperatingReserve'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserve
-    HourlyDaOperatingReserves:
+    LocationRef:
       type: object
       properties:
-        HourlyDaOperatingReserve:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyDaOperatingReserve'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserves
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

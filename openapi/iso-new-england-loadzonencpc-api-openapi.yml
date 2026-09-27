@@ -230,19 +230,6 @@ components:
       - BeginDate
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LoadZoneNCPC
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -272,6 +259,19 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LoadZoneNCPCs:
       type: object
       properties:

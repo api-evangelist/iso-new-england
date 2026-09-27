@@ -126,35 +126,6 @@ paths:
         description: The year to retrieve data for
 components:
   schemas:
-    LocationRef:
-      type: object
-      properties:
-        $:
-          type: string
-          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
-        '@LocId':
-          type: integer
-        '@LocType':
-          type: string
-          enum:
-          - NETWORK AREA
-          - LOAD ZONE
-          - NETWORK NODE
-          - HUB
-          - HUB NODE
-          - RELIABILITY REGION
-          - EXT. NODE
-          - RESERVE ZONE
-          - SYSTEM
-          - INT. AREA
-          - EXT. AREA
-          - DISPATCH ZONE
-          - CAPACITY ZONE
-          - DRRAZ
-          - DRR AGGREGATION ZONE
-      required:
-      - '@LocId'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
     HbFTRAuction:
       type: object
       properties:
@@ -216,14 +187,35 @@ components:
         MaskedCustomerId:
           type: integer
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuction
-    HbFTRAuctions:
+    LocationRef:
       type: object
       properties:
-        HbFTRAuction:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbFTRAuction'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuctions
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
     ServiceInfo:
       type: object
       properties:
@@ -237,6 +229,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HbFTRAuctions:
+      type: object
+      properties:
+        HbFTRAuction:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbFTRAuction'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuctions
   securitySchemes:
     basicAuth:
       type: http

@@ -156,6 +156,19 @@ paths:
         description: to retrieve data for (YYYY)
 components:
   schemas:
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -243,19 +256,6 @@ components:
         AwardFTRPrice:
           type: number
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FtrAuctionResult
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     FtrAuctionResults:
       type: object
       properties:

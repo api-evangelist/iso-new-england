@@ -138,9 +138,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    DayAheadConstraint:
-      $ref: '#/components/schemas/Constraint'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraint
     Constraint:
       type: object
       properties:
@@ -184,6 +181,9 @@ components:
           items:
             $ref: '#/components/schemas/DayAheadConstraint'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraints
+    DayAheadConstraint:
+      $ref: '#/components/schemas/Constraint'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraint
   securitySchemes:
     basicAuth:
       type: http

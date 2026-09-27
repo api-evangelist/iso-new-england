@@ -682,6 +682,14 @@ paths:
       x-xml-element: HourlyLmps
 components:
   schemas:
+    HourlyLmps:
+      type: object
+      properties:
+        HourlyLmp:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyLmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmps
     Lmp:
       type: object
       properties:
@@ -747,14 +755,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyLmps:
-      type: object
-      properties:
-        HourlyLmp:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyLmp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmps
   securitySchemes:
     basicAuth:
       type: http

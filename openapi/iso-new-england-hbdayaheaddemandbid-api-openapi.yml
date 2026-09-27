@@ -193,6 +193,34 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    Segment:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
+    HbDayAheadDemandBids:
+      type: object
+      properties:
+        HbDayAheadDemandBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDayAheadDemandBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBids
     HbDayAheadDemandBid:
       type: object
       properties:
@@ -241,34 +269,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Segment:
-      type: object
-      properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
-      required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
-    Segments:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
-    HbDayAheadDemandBids:
-      type: object
-      properties:
-        HbDayAheadDemandBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDayAheadDemandBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBids
   securitySchemes:
     basicAuth:
       type: http

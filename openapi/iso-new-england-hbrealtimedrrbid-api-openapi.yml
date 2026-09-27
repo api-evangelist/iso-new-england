@@ -111,19 +111,6 @@ components:
           items:
             $ref: '#/components/schemas/Segment2'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Segment2:
       type: object
       properties:
@@ -136,6 +123,14 @@ components:
       required:
       - '@Number'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
+    HbRealTimeDrrBids:
+      type: object
+      properties:
+        HbRealTimeDrrBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDrrBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
     HbDrrBid:
       type: object
       properties:
@@ -180,14 +175,19 @@ components:
       - Claim30Mw
       - UnitStatus
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDrrBid
-    HbRealTimeDrrBids:
+    ServiceInfo:
       type: object
       properties:
-        HbRealTimeDrrBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDrrBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

@@ -156,6 +156,22 @@ paths:
           type: string
 components:
   schemas:
+    DayAheadLmpAvgCongestion:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        AvgOnPeakDaCongestion:
+          type: number
+        AvgOffPeakDaCongestion:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestion
     DayAheadLmpAvgCongestions:
       type: object
       properties:
@@ -206,22 +222,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    DayAheadLmpAvgCongestion:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        AvgOnPeakDaCongestion:
-          type: number
-        AvgOffPeakDaCongestion:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestion
   securitySchemes:
     basicAuth:
       type: http

@@ -185,6 +185,14 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
+    NCPCs:
+      type: object
+      properties:
+        NCPC:
+          type: array
+          items:
+            $ref: '#/components/schemas/NCPC'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCs
     LocationRef:
       type: object
       properties:
@@ -214,6 +222,19 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     NCPC:
       type: object
       properties:
@@ -274,27 +295,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPC
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    NCPCs:
-      type: object
-      properties:
-        NCPC:
-          type: array
-          items:
-            $ref: '#/components/schemas/NCPC'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCs
   securitySchemes:
     basicAuth:
       type: http

@@ -268,6 +268,14 @@ paths:
           type: string
 components:
   schemas:
+    WhlseCosts:
+      type: object
+      properties:
+        WhlseCost:
+          type: array
+          items:
+            $ref: '#/components/schemas/WhlseCost'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCosts
     LocationRef:
       type: object
       properties:
@@ -297,6 +305,19 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     WhlseCost:
       type: object
       properties:
@@ -348,27 +369,6 @@ components:
       - Hour
       - OnOff
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCost
-    WhlseCosts:
-      type: object
-      properties:
-        WhlseCost:
-          type: array
-          items:
-            $ref: '#/components/schemas/WhlseCost'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCosts
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

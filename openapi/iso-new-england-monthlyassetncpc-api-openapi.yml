@@ -155,27 +155,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    NCPCMonthlyAssets:
-      type: object
-      properties:
-        NCPCMonthlyAsset:
-          type: array
-          items:
-            $ref: '#/components/schemas/NCPCMonthlyAsset'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCMonthlyAssets
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     NCPCMonthlyAsset:
       type: object
       properties:
@@ -197,6 +176,27 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCMonthlyAsset
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    NCPCMonthlyAssets:
+      type: object
+      properties:
+        NCPCMonthlyAsset:
+          type: array
+          items:
+            $ref: '#/components/schemas/NCPCMonthlyAsset'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCMonthlyAssets
   securitySchemes:
     basicAuth:
       type: http

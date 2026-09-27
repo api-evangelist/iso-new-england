@@ -175,14 +175,6 @@ components:
       - BeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReliabilityRegionLoadForecast
-    ReliabilityRegionLoadForecasts:
-      type: object
-      properties:
-        ReliabilityRegionLoadForecast:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReliabilityRegionLoadForecast'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReliabilityRegionLoadForecasts
     ServiceInfo:
       type: object
       properties:
@@ -196,6 +188,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    ReliabilityRegionLoadForecasts:
+      type: object
+      properties:
+        ReliabilityRegionLoadForecast:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReliabilityRegionLoadForecast'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReliabilityRegionLoadForecasts
   securitySchemes:
     basicAuth:
       type: http

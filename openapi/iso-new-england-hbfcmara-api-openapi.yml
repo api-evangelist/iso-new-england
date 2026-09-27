@@ -162,6 +162,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    Hbfcmaras:
+      type: object
+      properties:
+        Hbfcmara:
+          type: array
+          items:
+            $ref: '#/components/schemas/Hbfcmara'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmaras
     Hbfcmara:
       type: object
       properties:
@@ -204,14 +212,6 @@ components:
       required:
       - Cp
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmara
-    Hbfcmaras:
-      type: object
-      properties:
-        Hbfcmara:
-          type: array
-          items:
-            $ref: '#/components/schemas/Hbfcmara'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmaras
     ServiceInfo:
       type: object
       properties:

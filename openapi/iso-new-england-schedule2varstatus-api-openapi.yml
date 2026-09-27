@@ -139,14 +139,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Schedules2VarStatus:
-      type: object
-      properties:
-        Schedule2VarStatus:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schedule2VarStatus'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Schedules2VarStatus
     Schedule2VarStatus:
       type: object
       properties:
@@ -190,6 +182,14 @@ components:
       - BeginDate
       - ReportDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Schedule2VarStatus
+    Schedules2VarStatus:
+      type: object
+      properties:
+        Schedule2VarStatus:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schedule2VarStatus'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Schedules2VarStatus
   securitySchemes:
     basicAuth:
       type: http

@@ -126,27 +126,26 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    HbDayAheadArdBids:
+    Segments:
       type: object
       properties:
-        HbDayAheadArdBid:
+        Segment:
           type: array
           items:
-            $ref: '#/components/schemas/HbArdBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadArdBids
-    ServiceInfo:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    Segment:
       type: object
       properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
       required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
     HbArdBid:
       type: object
       properties:
@@ -174,26 +173,27 @@ components:
           - ECONOMIC
           - UNAVAILABLE
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbArdBid
-    Segment:
+    HbDayAheadArdBids:
       type: object
       properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
-      required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
-    Segments:
-      type: object
-      properties:
-        Segment:
+        HbDayAheadArdBid:
           type: array
           items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+            $ref: '#/components/schemas/HbArdBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadArdBids
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

@@ -103,6 +103,14 @@ paths:
         description: The month to retrieve data for (YYYYMM) for a season
 components:
   schemas:
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
     ReserveLocRef:
       type: object
       properties:
@@ -114,27 +122,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReserveLocRef
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HbForwardReserveAuctionOffers:
-      type: object
-      properties:
-        HbForwardReserveAuctionOffer:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbForwardReserveAuctionOffer'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffers
     Segment:
       type: object
       properties:
@@ -147,14 +134,6 @@ components:
       required:
       - '@Number'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
-    Segments:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
     HbForwardReserveAuctionOffer:
       type: object
       properties:
@@ -172,6 +151,27 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffer
+    HbForwardReserveAuctionOffers:
+      type: object
+      properties:
+        HbForwardReserveAuctionOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbForwardReserveAuctionOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffers
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

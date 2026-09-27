@@ -156,35 +156,27 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    DrtpResults:
+    SupplyCurvePair:
       type: object
       properties:
-        DrtpResult:
-          type: array
-          items:
-            $ref: '#/components/schemas/DrtpResult'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResults
-    SupplyCurvePairs:
-      type: object
-      properties:
-        SupplyCurvePair:
-          type: array
-          items:
-            $ref: '#/components/schemas/SupplyCurvePair'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePairs
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
+        BeginDate:
           type: string
           format: date-time
-        CreationDate:
+        CumulativeSupplyMw:
+          type: number
+        OfferPrice:
+          type: number
+        TradingMonth:
+          type: string
+          format: date-time
+        ReferenceMonth:
           type: string
           format: date-time
       required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+      - BeginDate
+      - CumulativeSupplyMw
+      - OfferPrice
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePair
     DrtpResult:
       type: object
       properties:
@@ -229,27 +221,35 @@ components:
       - RegressionCoefficientC
       - Rsquare
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResult
-    SupplyCurvePair:
+    DrtpResults:
       type: object
       properties:
-        BeginDate:
+        DrtpResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/DrtpResult'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResults
+    SupplyCurvePairs:
+      type: object
+      properties:
+        SupplyCurvePair:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupplyCurvePair'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePairs
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
           type: string
           format: date-time
-        CumulativeSupplyMw:
-          type: number
-        OfferPrice:
-          type: number
-        TradingMonth:
-          type: string
-          format: date-time
-        ReferenceMonth:
+        CreationDate:
           type: string
           format: date-time
       required:
-      - BeginDate
-      - CumulativeSupplyMw
-      - OfferPrice
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePair
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

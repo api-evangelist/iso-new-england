@@ -126,6 +126,21 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
+    SeasonalPeakHourData:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        HourlyPeakLoad:
+          type: number
+        SystemPeakForecast:
+          type: number
+        SettlementStatus:
+          type: string
+      required:
+      - BeginDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SeasonalPeakHourData
     SeasonalPeakHoursData:
       type: object
       properties:
@@ -147,21 +162,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    SeasonalPeakHourData:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        HourlyPeakLoad:
-          type: number
-        SystemPeakForecast:
-          type: number
-        SettlementStatus:
-          type: string
-      required:
-      - BeginDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SeasonalPeakHourData
   securitySchemes:
     basicAuth:
       type: http

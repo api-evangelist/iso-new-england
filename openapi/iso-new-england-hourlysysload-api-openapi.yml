@@ -274,14 +274,6 @@ components:
       - BeginDate
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoad
-    HourlySystemLoads:
-      type: object
-      properties:
-        HourlySystemLoad:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlySystemLoad'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
     ServiceInfo:
       type: object
       properties:
@@ -295,6 +287,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlySystemLoads:
+      type: object
+      properties:
+        HourlySystemLoad:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlySystemLoad'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
     LocationRef:
       type: object
       properties:

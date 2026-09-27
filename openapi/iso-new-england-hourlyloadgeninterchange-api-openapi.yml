@@ -126,6 +126,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    HourlyLoadGenInterchanges:
+      type: object
+      properties:
+        HourlyLoadGenInterchange:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyLoadGenInterchange'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadGenInterchanges
     HourlyLoadGenInterchange:
       type: object
       properties:
@@ -145,14 +153,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadGenInterchange
-    HourlyLoadGenInterchanges:
-      type: object
-      properties:
-        HourlyLoadGenInterchange:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyLoadGenInterchange'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadGenInterchanges
     ServiceInfo:
       type: object
       properties:

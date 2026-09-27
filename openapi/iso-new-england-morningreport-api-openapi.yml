@@ -284,23 +284,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    CityForecastDetail:
-      type: object
-      properties:
-        CityName:
-          type: string
-        HighTemperature:
-          type: integer
-        WeatherConditions:
-          type: string
-        WindDirSpeed:
-          type: string
-      required:
-      - CityName
-      - HighTemperature
-      - WeatherConditions
-      - WindDirSpeed
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CityForecastDetail
     InterchangeDetail:
       type: object
       properties:
@@ -460,6 +443,42 @@ components:
       - UnitCommMinOrrCount
       - UnitCommMinOrrMw
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MorningReport
+    MorningReports:
+      type: object
+      properties:
+        MorningReport:
+          type: array
+          items:
+            $ref: '#/components/schemas/MorningReport'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MorningReports
+    TieDelivery:
+      type: object
+      properties:
+        TieName:
+          type: string
+        TieFlowMw:
+          type: number
+      required:
+      - TieName
+      - TieFlowMw
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TieDelivery
+    CityForecastDetail:
+      type: object
+      properties:
+        CityName:
+          type: string
+        HighTemperature:
+          type: integer
+        WeatherConditions:
+          type: string
+        WindDirSpeed:
+          type: string
+      required:
+      - CityName
+      - HighTemperature
+      - WeatherConditions
+      - WindDirSpeed
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CityForecastDetail
     ServiceInfo:
       type: object
       properties:
@@ -473,25 +492,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    TieDelivery:
-      type: object
-      properties:
-        TieName:
-          type: string
-        TieFlowMw:
-          type: number
-      required:
-      - TieName
-      - TieFlowMw
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TieDelivery
-    MorningReports:
-      type: object
-      properties:
-        MorningReport:
-          type: array
-          items:
-            $ref: '#/components/schemas/MorningReport'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MorningReports
   securitySchemes:
     basicAuth:
       type: http

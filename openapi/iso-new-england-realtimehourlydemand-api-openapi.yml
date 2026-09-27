@@ -239,20 +239,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Demand:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        Load:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Demand
     HourlyRtDemands:
       type: object
       properties:
@@ -290,6 +276,23 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    HourlyRtDemand:
+      $ref: '#/components/schemas/Demand'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtDemand
+    Demand:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        Load:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Demand
     ServiceInfo:
       type: object
       properties:
@@ -303,9 +306,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyRtDemand:
-      $ref: '#/components/schemas/Demand'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtDemand
   securitySchemes:
     basicAuth:
       type: http

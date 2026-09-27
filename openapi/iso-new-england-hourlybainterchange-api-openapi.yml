@@ -126,6 +126,27 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlyBAInterchanges:
+      type: object
+      properties:
+        HourlyBAInterchange:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyBAInterchange'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyBAInterchanges
     InterfaceFlow:
       type: object
       properties:
@@ -149,27 +170,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyBAInterchange
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyBAInterchanges:
-      type: object
-      properties:
-        HourlyBAInterchange:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyBAInterchange'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyBAInterchanges
   securitySchemes:
     basicAuth:
       type: http

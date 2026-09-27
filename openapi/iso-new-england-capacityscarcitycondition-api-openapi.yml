@@ -184,6 +184,27 @@ paths:
           type: string
 components:
   schemas:
+    CapacityScarcityConditions:
+      type: object
+      properties:
+        CapacityScarcityCondition:
+          type: array
+          items:
+            $ref: '#/components/schemas/CapacityScarcityCondition'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CapacityScarcityConditions
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     CapacityScarcityCondition:
       type: object
       properties:
@@ -199,27 +220,6 @@ components:
       required:
       - TradingIntervalBegin
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CapacityScarcityCondition
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    CapacityScarcityConditions:
-      type: object
-      properties:
-        CapacityScarcityCondition:
-          type: array
-          items:
-            $ref: '#/components/schemas/CapacityScarcityCondition'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CapacityScarcityConditions
   securitySchemes:
     basicAuth:
       type: http

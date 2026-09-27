@@ -249,20 +249,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Demand:
+    HourlyDaDemands:
       type: object
       properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        Load:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Demand
+        HourlyDaDemand:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyDaDemand'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemands
     LocationRef:
       type: object
       properties:
@@ -292,14 +286,23 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    HourlyDaDemands:
+    HourlyDaDemand:
+      $ref: '#/components/schemas/Demand'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemand
+    Demand:
       type: object
       properties:
-        HourlyDaDemand:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyDaDemand'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemands
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        Load:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Demand
     ServiceInfo:
       type: object
       properties:
@@ -313,9 +316,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyDaDemand:
-      $ref: '#/components/schemas/Demand'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemand
   securitySchemes:
     basicAuth:
       type: http

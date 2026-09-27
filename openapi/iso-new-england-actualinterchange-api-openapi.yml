@@ -182,6 +182,19 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -219,19 +232,6 @@ components:
           items:
             $ref: '#/components/schemas/ActualInterchange'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchanges
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     ActualInterchange:
       type: object
       properties:

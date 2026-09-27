@@ -125,38 +125,6 @@ paths:
           type: string
 components:
   schemas:
-    WeeklyLmpIndexes:
-      type: object
-      properties:
-        WeeklyLmpIndex:
-          type: array
-          items:
-            $ref: '#/components/schemas/WeeklyLmpIndex'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WeeklyLmpIndexes
-    WeeklyLmpIndex:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        DaOnPeakLMP:
-          type: number
-        DaOffPeakLMP:
-          type: number
-        DaAverageLMP:
-          type: number
-        RtOnPeakLMP:
-          type: number
-        RtOffPeakLMP:
-          type: number
-        RtAverageLMP:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WeeklyLmpIndex
     ServiceInfo:
       type: object
       properties:
@@ -199,6 +167,38 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    WeeklyLmpIndex:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        DaOnPeakLMP:
+          type: number
+        DaOffPeakLMP:
+          type: number
+        DaAverageLMP:
+          type: number
+        RtOnPeakLMP:
+          type: number
+        RtOffPeakLMP:
+          type: number
+        RtAverageLMP:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WeeklyLmpIndex
+    WeeklyLmpIndexes:
+      type: object
+      properties:
+        WeeklyLmpIndex:
+          type: array
+          items:
+            $ref: '#/components/schemas/WeeklyLmpIndex'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WeeklyLmpIndexes
   securitySchemes:
     basicAuth:
       type: http

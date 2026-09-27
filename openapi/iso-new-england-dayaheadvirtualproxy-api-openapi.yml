@@ -186,6 +186,50 @@ paths:
           type: string
 components:
   schemas:
+    DayAheadVirtualProxy:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        OnPeakIncProxy:
+          type: number
+        OnPeakDecProxy:
+          type: number
+        OffPeakIncProxy:
+          type: number
+        OffPeakDecProxy:
+          type: number
+        ZonalLMPDate:
+          type: string
+          format: date-time
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadVirtualProxy
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    DayAheadVirtualProxys:
+      type: object
+      properties:
+        DayAheadVirtualProxy:
+          type: array
+          items:
+            $ref: '#/components/schemas/DayAheadVirtualProxy'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadVirtualProxys
     LocationRef:
       type: object
       properties:
@@ -215,50 +259,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    DayAheadVirtualProxys:
-      type: object
-      properties:
-        DayAheadVirtualProxy:
-          type: array
-          items:
-            $ref: '#/components/schemas/DayAheadVirtualProxy'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadVirtualProxys
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    DayAheadVirtualProxy:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        OnPeakIncProxy:
-          type: number
-        OnPeakDecProxy:
-          type: number
-        OffPeakIncProxy:
-          type: number
-        OffPeakDecProxy:
-          type: number
-        ZonalLMPDate:
-          type: string
-          format: date-time
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadVirtualProxy
   securitySchemes:
     basicAuth:
       type: http
