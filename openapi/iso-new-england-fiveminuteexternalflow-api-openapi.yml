@@ -222,6 +222,34 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    ExternalFlow:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ActualFlow:
+          type: number
+        ImportLimit:
+          type: number
+        ExportLimit:
+          type: number
+        CurrentSchedule:
+          type: number
+        Purchase:
+          type: number
+        Sale:
+          type: number
+        TotalExports:
+          type: number
+        TotalImports:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ExternalFlow
     LocationRef:
       type: object
       properties:
@@ -251,34 +279,14 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    ExternalFlow:
+    ExternalFlows:
       type: object
       properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        ActualFlow:
-          type: number
-        ImportLimit:
-          type: number
-        ExportLimit:
-          type: number
-        CurrentSchedule:
-          type: number
-        Purchase:
-          type: number
-        Sale:
-          type: number
-        TotalExports:
-          type: number
-        TotalImports:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ExternalFlow
+        ExternalFlow:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExternalFlow'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ExternalFlows
     ServiceInfo:
       type: object
       properties:
@@ -292,14 +300,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    ExternalFlows:
-      type: object
-      properties:
-        ExternalFlow:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExternalFlow'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ExternalFlows
   securitySchemes:
     basicAuth:
       type: http

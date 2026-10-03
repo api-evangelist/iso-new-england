@@ -6492,6 +6492,14 @@ paths:
         description: The location id
 components:
   schemas:
+    Locations:
+      type: object
+      properties:
+        Location:
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Locations
     Location:
       type: object
       properties:
@@ -6534,14 +6542,6 @@ components:
       - NetworkNodeType
       - AreaType
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Location
-    Locations:
-      type: object
-      properties:
-        Location:
-          type: array
-          items:
-            $ref: '#/components/schemas/Location'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Locations
   securitySchemes:
     basicAuth:
       type: http

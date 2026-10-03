@@ -168,6 +168,14 @@ components:
       - BeginDate
       - OfferThreshPrice
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyOfferThreshPrice
+    DailyOfferThreshPrices:
+      type: object
+      properties:
+        DailyOfferThreshPrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyOfferThreshPrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyOfferThreshPrices
     ServiceInfo:
       type: object
       properties:
@@ -181,14 +189,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    DailyOfferThreshPrices:
-      type: object
-      properties:
-        DailyOfferThreshPrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/DailyOfferThreshPrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyOfferThreshPrices
   securitySchemes:
     basicAuth:
       type: http

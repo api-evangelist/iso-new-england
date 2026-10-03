@@ -137,6 +137,27 @@ paths:
         description: The day to retrieve data for (YYYYMMDD)
 components:
   schemas:
+    HbImportExports:
+      type: object
+      properties:
+        HbImportExport:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbImportExport'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbImportExports
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     HbImportExport:
       type: object
       properties:
@@ -168,27 +189,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbImportExport
-    HbImportExports:
-      type: object
-      properties:
-        HbImportExport:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbImportExport'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbImportExports
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

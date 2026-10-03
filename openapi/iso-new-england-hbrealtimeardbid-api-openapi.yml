@@ -126,22 +126,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Segments:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
-    HbRealTimeArdBids:
-      type: object
-      properties:
-        HbRealTimeArdBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbArdBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeArdBids
     Segment:
       type: object
       properties:
@@ -194,6 +178,22 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    HbRealTimeArdBids:
+      type: object
+      properties:
+        HbRealTimeArdBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbArdBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeArdBids
   securitySchemes:
     basicAuth:
       type: http

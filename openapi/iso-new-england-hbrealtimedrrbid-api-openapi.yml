@@ -103,14 +103,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Segments2:
+    HbRealTimeDrrBids:
       type: object
       properties:
-        Segment:
+        HbRealTimeDrrBid:
           type: array
           items:
-            $ref: '#/components/schemas/Segment2'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
+            $ref: '#/components/schemas/HbDrrBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
     Segment2:
       type: object
       properties:
@@ -123,14 +123,6 @@ components:
       required:
       - '@Number'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
-    HbRealTimeDrrBids:
-      type: object
-      properties:
-        HbRealTimeDrrBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDrrBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
     HbDrrBid:
       type: object
       properties:
@@ -188,6 +180,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Segments2:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment2'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
   securitySchemes:
     basicAuth:
       type: http

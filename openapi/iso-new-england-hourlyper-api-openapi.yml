@@ -161,6 +161,29 @@ paths:
           type: string
 components:
   schemas:
+    HourlyPeakEnergyRent:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/CapacityRef'
+        RTLMPLocation:
+          type: string
+        RTLMP:
+          type: number
+        PERFuelType:
+          type: string
+        StrikePrice:
+          type: number
+        SystemLoad:
+          type: number
+        ScaleFactor:
+          type: number
+        HourlyPER:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRent
     CapacityRef:
       type: object
       properties:
@@ -193,29 +216,6 @@ components:
           items:
             $ref: '#/components/schemas/HourlyPeakEnergyRent'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRents
-    HourlyPeakEnergyRent:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/CapacityRef'
-        RTLMPLocation:
-          type: string
-        RTLMP:
-          type: number
-        PERFuelType:
-          type: string
-        StrikePrice:
-          type: number
-        SystemLoad:
-          type: number
-        ScaleFactor:
-          type: number
-        HourlyPER:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRent
   securitySchemes:
     basicAuth:
       type: http

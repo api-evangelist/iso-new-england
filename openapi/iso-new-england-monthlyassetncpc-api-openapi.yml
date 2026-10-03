@@ -126,6 +126,14 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
+    NCPCMonthlyAssets:
+      type: object
+      properties:
+        NCPCMonthlyAsset:
+          type: array
+          items:
+            $ref: '#/components/schemas/NCPCMonthlyAsset'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCMonthlyAssets
     LocationRef:
       type: object
       properties:
@@ -189,14 +197,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    NCPCMonthlyAssets:
-      type: object
-      properties:
-        NCPCMonthlyAsset:
-          type: array
-          items:
-            $ref: '#/components/schemas/NCPCMonthlyAsset'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCMonthlyAssets
   securitySchemes:
     basicAuth:
       type: http

@@ -150,6 +150,43 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
+    PerformanceScores:
+      type: object
+      properties:
+        PerformanceScore:
+          type: array
+          items:
+            $ref: '#/components/schemas/PerformanceScore'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScores
+    LocationRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
     PerformanceScore:
       type: object
       properties:
@@ -188,35 +225,6 @@ components:
       - Location
       - TradingInterval
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScore
-    LocationRef:
-      type: object
-      properties:
-        $:
-          type: string
-          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
-        '@LocId':
-          type: integer
-        '@LocType':
-          type: string
-          enum:
-          - NETWORK AREA
-          - LOAD ZONE
-          - NETWORK NODE
-          - HUB
-          - HUB NODE
-          - RELIABILITY REGION
-          - EXT. NODE
-          - RESERVE ZONE
-          - SYSTEM
-          - INT. AREA
-          - EXT. AREA
-          - DISPATCH ZONE
-          - CAPACITY ZONE
-          - DRRAZ
-          - DRR AGGREGATION ZONE
-      required:
-      - '@LocId'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
     ServiceInfo:
       type: object
       properties:
@@ -230,14 +238,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    PerformanceScores:
-      type: object
-      properties:
-        PerformanceScore:
-          type: array
-          items:
-            $ref: '#/components/schemas/PerformanceScore'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScores
   securitySchemes:
     basicAuth:
       type: http

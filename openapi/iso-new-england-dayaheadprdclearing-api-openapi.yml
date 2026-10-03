@@ -158,38 +158,6 @@ paths:
           type: string
 components:
   schemas:
-    DayAheadPrdClearing:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        DaClearedMw:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearing
-    DayAheadPrdClearings:
-      type: object
-      properties:
-        DayAheadPrdClearing:
-          type: array
-          items:
-            $ref: '#/components/schemas/DayAheadPrdClearing'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearings
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -219,6 +187,38 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    DayAheadPrdClearings:
+      type: object
+      properties:
+        DayAheadPrdClearing:
+          type: array
+          items:
+            $ref: '#/components/schemas/DayAheadPrdClearing'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearings
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    DayAheadPrdClearing:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        DaClearedMw:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearing
   securitySchemes:
     basicAuth:
       type: http

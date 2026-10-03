@@ -216,9 +216,6 @@ paths:
           type: string
 components:
   schemas:
-    FiveMinRcp:
-      $ref: '#/components/schemas/Rcp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinRcp
     FiveMinRcps:
       type: object
       properties:
@@ -227,19 +224,6 @@ components:
           items:
             $ref: '#/components/schemas/FiveMinRcp'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinRcps
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Rcp:
       type: object
       properties:
@@ -257,6 +241,22 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Rcp
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    FiveMinRcp:
+      $ref: '#/components/schemas/Rcp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinRcp
   securitySchemes:
     basicAuth:
       type: http

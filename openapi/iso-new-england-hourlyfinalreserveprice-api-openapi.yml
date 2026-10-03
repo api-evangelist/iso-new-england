@@ -255,14 +255,9 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReservePrice
-    FinalHourlyReservePrices:
-      type: object
-      properties:
-        FinalHourlyReservePrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/FinalHourlyReservePrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrices
+    FinalHourlyReservePrice:
+      $ref: '#/components/schemas/ReservePrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrice
     ServiceInfo:
       type: object
       properties:
@@ -276,9 +271,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    FinalHourlyReservePrice:
-      $ref: '#/components/schemas/ReservePrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrice
+    FinalHourlyReservePrices:
+      type: object
+      properties:
+        FinalHourlyReservePrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/FinalHourlyReservePrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrices
   securitySchemes:
     basicAuth:
       type: http

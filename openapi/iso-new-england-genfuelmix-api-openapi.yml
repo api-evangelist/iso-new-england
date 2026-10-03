@@ -257,14 +257,6 @@ paths:
         note: Real response payload observed anonymously through the public dashboard proxy; the proxy envelope and its _url key were removed.
 components:
   schemas:
-    GenFuelMixes:
-      type: object
-      properties:
-        GenFuelMix:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenFuelMix'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMixes
     GenFuelMix:
       type: object
       properties:
@@ -288,6 +280,14 @@ components:
       - GenMw
       - FuelCategoryRollup
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMix
+    GenFuelMixes:
+      type: object
+      properties:
+        GenFuelMix:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenFuelMix'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMixes
     ServiceInfo:
       type: object
       properties:

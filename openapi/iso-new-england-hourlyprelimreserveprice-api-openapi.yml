@@ -221,30 +221,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    PrelimHourlyReservePrice:
-      $ref: '#/components/schemas/ReservePrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrice
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    PrelimHourlyReservePrices:
-      type: object
-      properties:
-        PrelimHourlyReservePrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/PrelimHourlyReservePrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrices
     ReservePrice:
       type: object
       properties:
@@ -279,6 +255,30 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReservePrice
+    PrelimHourlyReservePrice:
+      $ref: '#/components/schemas/ReservePrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrice
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    PrelimHourlyReservePrices:
+      type: object
+      properties:
+        PrelimHourlyReservePrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrelimHourlyReservePrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrices
   securitySchemes:
     basicAuth:
       type: http

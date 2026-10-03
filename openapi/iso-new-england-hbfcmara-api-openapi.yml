@@ -162,14 +162,19 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Hbfcmaras:
+    ServiceInfo:
       type: object
       properties:
-        Hbfcmara:
-          type: array
-          items:
-            $ref: '#/components/schemas/Hbfcmara'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmaras
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Hbfcmara:
       type: object
       properties:
@@ -212,19 +217,14 @@ components:
       required:
       - Cp
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmara
-    ServiceInfo:
+    Hbfcmaras:
       type: object
       properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+        Hbfcmara:
+          type: array
+          items:
+            $ref: '#/components/schemas/Hbfcmara'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmaras
   securitySchemes:
     basicAuth:
       type: http

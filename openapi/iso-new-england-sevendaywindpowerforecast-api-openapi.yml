@@ -126,30 +126,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    SevenDayWindForecast:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        MarketDays:
-          type: array
-          items:
-            $ref: '#/components/schemas/MarketDays'
-        CreationDate:
-          type: string
-          format: date-time
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayWindForecast
-    MarketDateData:
-      type: object
-      properties:
-        HourEnding:
-          type: string
-        WindPowerForecast:
-          type: number
-      required:
-      - WindPowerForecast
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDateData
     MarketDateInfo:
       type: object
       properties:
@@ -172,6 +148,16 @@ components:
       - MarketDate
       - '@Day'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDays
+    MarketDateData:
+      type: object
+      properties:
+        HourEnding:
+          type: string
+        WindPowerForecast:
+          type: number
+      required:
+      - WindPowerForecast
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDateData
     SevenDayWindForecasts:
       type: object
       properties:
@@ -193,6 +179,20 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    SevenDayWindForecast:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        MarketDays:
+          type: array
+          items:
+            $ref: '#/components/schemas/MarketDays'
+        CreationDate:
+          type: string
+          format: date-time
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayWindForecast
   securitySchemes:
     basicAuth:
       type: http

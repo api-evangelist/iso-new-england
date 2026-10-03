@@ -150,30 +150,6 @@ paths:
           type: string
 components:
   schemas:
-    RealTimeConstraint:
-      $ref: '#/components/schemas/Constraint'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraint
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    RealTimeConstraints:
-      type: object
-      properties:
-        RealTimeConstraint:
-          type: array
-          items:
-            $ref: '#/components/schemas/RealTimeConstraint'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraints
     Constraint:
       type: object
       properties:
@@ -196,6 +172,30 @@ components:
       - BeginDate
       - ConstraintName
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Constraint
+    RealTimeConstraint:
+      $ref: '#/components/schemas/Constraint'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraint
+    RealTimeConstraints:
+      type: object
+      properties:
+        RealTimeConstraint:
+          type: array
+          items:
+            $ref: '#/components/schemas/RealTimeConstraint'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraints
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

@@ -177,6 +177,14 @@ components:
       - CumulativeSupplyMw
       - OfferPrice
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePair
+    SupplyCurvePairs:
+      type: object
+      properties:
+        SupplyCurvePair:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupplyCurvePair'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePairs
     DrtpResult:
       type: object
       properties:
@@ -221,22 +229,6 @@ components:
       - RegressionCoefficientC
       - Rsquare
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResult
-    DrtpResults:
-      type: object
-      properties:
-        DrtpResult:
-          type: array
-          items:
-            $ref: '#/components/schemas/DrtpResult'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResults
-    SupplyCurvePairs:
-      type: object
-      properties:
-        SupplyCurvePair:
-          type: array
-          items:
-            $ref: '#/components/schemas/SupplyCurvePair'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SupplyCurvePairs
     ServiceInfo:
       type: object
       properties:
@@ -250,6 +242,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    DrtpResults:
+      type: object
+      properties:
+        DrtpResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/DrtpResult'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrtpResults
   securitySchemes:
     basicAuth:
       type: http

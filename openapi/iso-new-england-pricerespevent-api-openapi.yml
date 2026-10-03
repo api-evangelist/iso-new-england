@@ -160,19 +160,14 @@ paths:
         description: The location id
 components:
   schemas:
-    ServiceInfo:
+    PriceRespEvents:
       type: object
       properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+        PriceRespEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceRespEvent'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvents
     LocationRef:
       type: object
       properties:
@@ -225,14 +220,19 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvent
-    PriceRespEvents:
+    ServiceInfo:
       type: object
       properties:
-        PriceRespEvent:
-          type: array
-          items:
-            $ref: '#/components/schemas/PriceRespEvent'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvents
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

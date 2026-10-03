@@ -164,6 +164,25 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    HourlyLoadForecast:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+        LoadMw:
+          type: number
+        LoadAdjustmentMw:
+          type: number
+        NetLoadMw:
+          type: number
+      required:
+      - BeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadForecast
     ServiceInfo:
       type: object
       properties:
@@ -185,25 +204,6 @@ components:
           items:
             $ref: '#/components/schemas/HourlyLoadForecast'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadForecasts
-    HourlyLoadForecast:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-        LoadMw:
-          type: number
-        LoadAdjustmentMw:
-          type: number
-        NetLoadMw:
-          type: number
-      required:
-      - BeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLoadForecast
   securitySchemes:
     basicAuth:
       type: http

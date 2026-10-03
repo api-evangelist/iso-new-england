@@ -83,6 +83,45 @@ components:
       required:
       - PowerSystemRegions
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemStatus
+    PowerSystemRegion:
+      type: object
+      properties:
+        RegionId:
+          type: integer
+        RegionName:
+          type: string
+        Status:
+          type: string
+          enum:
+          - Normal
+          - Power Caution
+          - Power Watch
+          - Power Warning
+          - Cold Weather Watch Conditions
+          - Cold Weather Warning Conditions
+          - Cold Weather Event Conditions
+          - Master/Local Control Center 2 Alert
+          - Energy Emergency
+        StatusDescription:
+          type: string
+        DateUpdated:
+          type: string
+          format: date-time
+      required:
+      - RegionId
+      - RegionName
+      - Status
+      - StatusDescription
+      - DateUpdated
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegion
+    PowerSystemRegions:
+      type: object
+      properties:
+        PowerSystemRegion:
+          type: array
+          items:
+            $ref: '#/components/schemas/PowerSystemRegion'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegions
     Op4Alert:
       type: object
       properties:
@@ -134,45 +173,6 @@ components:
           items:
             $ref: '#/components/schemas/Op4Alert'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Op4Alerts
-    PowerSystemRegion:
-      type: object
-      properties:
-        RegionId:
-          type: integer
-        RegionName:
-          type: string
-        Status:
-          type: string
-          enum:
-          - Normal
-          - Power Caution
-          - Power Watch
-          - Power Warning
-          - Cold Weather Watch Conditions
-          - Cold Weather Warning Conditions
-          - Cold Weather Event Conditions
-          - Master/Local Control Center 2 Alert
-          - Energy Emergency
-        StatusDescription:
-          type: string
-        DateUpdated:
-          type: string
-          format: date-time
-      required:
-      - RegionId
-      - RegionName
-      - Status
-      - StatusDescription
-      - DateUpdated
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegion
-    PowerSystemRegions:
-      type: object
-      properties:
-        PowerSystemRegion:
-          type: array
-          items:
-            $ref: '#/components/schemas/PowerSystemRegion'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegions
   securitySchemes:
     basicAuth:
       type: http

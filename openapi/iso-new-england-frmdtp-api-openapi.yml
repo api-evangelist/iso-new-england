@@ -155,6 +155,14 @@ paths:
           type: string
 components:
   schemas:
+    DailyFrmThresholdPrices:
+      type: object
+      properties:
+        DailyFrmThresholdPrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyFrmThresholdPrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrices
     DailyFrmThresholdPrice:
       type: object
       properties:
@@ -173,14 +181,6 @@ components:
       - FuelIndex
       - ForwardReserveThresholdPrice
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrice
-    DailyFrmThresholdPrices:
-      type: object
-      properties:
-        DailyFrmThresholdPrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/DailyFrmThresholdPrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrices
     ServiceInfo:
       type: object
       properties:

@@ -103,14 +103,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Segments2:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment2'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
     Segment2:
       type: object
       properties:
@@ -180,6 +172,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Segments2:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment2'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
     HbDayAheadDrrBids:
       type: object
       properties:

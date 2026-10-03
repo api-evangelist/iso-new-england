@@ -137,14 +137,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    MonthlyResults:
-      type: object
-      properties:
-        MonthlyResult:
-          type: array
-          items:
-            $ref: '#/components/schemas/MonthlyResult'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyResults
     BilatClearedCapacityZone:
       type: object
       properties:
@@ -170,6 +162,112 @@ components:
       - NetCapacityApproved
       - ClearedExternalInterfaces
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedCapacityZone
+    Auction:
+      type: object
+      properties:
+        Id:
+          type: integer
+        Description:
+          type: string
+        ApprovalDate:
+          type: string
+          format: date-time
+        AuctionBeginDate:
+          type: string
+          format: date-time
+        Type:
+          type: string
+        CommitmentPeriod:
+          $ref: '#/components/schemas/Period'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Auction
+    BilatClearedCapacityZones:
+      type: object
+      properties:
+        ClearedCapacityZone:
+          type: array
+          items:
+            $ref: '#/components/schemas/BilatClearedCapacityZone'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedCapacityZones
+    MonthlyResult:
+      type: object
+      properties:
+        Month:
+          type: string
+          format: date-time
+        ClearedCapacityZones:
+          $ref: '#/components/schemas/BilatClearedCapacityZones'
+        SystemResult:
+          $ref: '#/components/schemas/BilatSystemResult'
+      required:
+      - Month
+      - ClearedCapacityZones
+      - SystemResult
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyResult
+    MonthlyResults:
+      type: object
+      properties:
+        MonthlyResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonthlyResult'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyResults
+    FCMBilateralResult:
+      type: object
+      properties:
+        Auction:
+          $ref: '#/components/schemas/Auction'
+        MonthlyResults:
+          $ref: '#/components/schemas/MonthlyResults'
+      required:
+      - Auction
+      - MonthlyResults
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMBilateralResult
+    BilatSystemResult:
+      type: object
+      properties:
+        TransferringApproved:
+          type: number
+        AcquiringApproved:
+          type: number
+        NetCapacityApproved:
+          type: number
+        ClearedExternalInterfaces:
+          $ref: '#/components/schemas/BilatClearedInterfaces'
+      required:
+      - TransferringApproved
+      - AcquiringApproved
+      - NetCapacityApproved
+      - ClearedExternalInterfaces
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatSystemResult
+    BilatClearedInterfaces:
+      type: object
+      properties:
+        ClearedExternalInterface:
+          type: array
+          items:
+            $ref: '#/components/schemas/BilatClearedInterface'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedInterfaces
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    FCMBilateralResults:
+      type: object
+      properties:
+        FCMBilateralResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/FCMBilateralResult'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMBilateralResults
     BilatClearedInterface:
       type: object
       properties:
@@ -193,104 +291,6 @@ components:
       - NetCapacityApproved
       - ClearedInterfaces
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedInterface
-    BilatClearedCapacityZones:
-      type: object
-      properties:
-        ClearedCapacityZone:
-          type: array
-          items:
-            $ref: '#/components/schemas/BilatClearedCapacityZone'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedCapacityZones
-    BilatClearedInterfaces:
-      type: object
-      properties:
-        ClearedExternalInterface:
-          type: array
-          items:
-            $ref: '#/components/schemas/BilatClearedInterface'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatClearedInterfaces
-    BilatSystemResult:
-      type: object
-      properties:
-        TransferringApproved:
-          type: number
-        AcquiringApproved:
-          type: number
-        NetCapacityApproved:
-          type: number
-        ClearedExternalInterfaces:
-          $ref: '#/components/schemas/BilatClearedInterfaces'
-      required:
-      - TransferringApproved
-      - AcquiringApproved
-      - NetCapacityApproved
-      - ClearedExternalInterfaces
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_BilatSystemResult
-    FCMBilateralResults:
-      type: object
-      properties:
-        FCMBilateralResult:
-          type: array
-          items:
-            $ref: '#/components/schemas/FCMBilateralResult'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMBilateralResults
-    Auction:
-      type: object
-      properties:
-        Id:
-          type: integer
-        Description:
-          type: string
-        ApprovalDate:
-          type: string
-          format: date-time
-        AuctionBeginDate:
-          type: string
-          format: date-time
-        Type:
-          type: string
-        CommitmentPeriod:
-          $ref: '#/components/schemas/Period'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Auction
-    FCMBilateralResult:
-      type: object
-      properties:
-        Auction:
-          $ref: '#/components/schemas/Auction'
-        MonthlyResults:
-          $ref: '#/components/schemas/MonthlyResults'
-      required:
-      - Auction
-      - MonthlyResults
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FCMBilateralResult
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    MonthlyResult:
-      type: object
-      properties:
-        Month:
-          type: string
-          format: date-time
-        ClearedCapacityZones:
-          $ref: '#/components/schemas/BilatClearedCapacityZones'
-        SystemResult:
-          $ref: '#/components/schemas/BilatSystemResult'
-      required:
-      - Month
-      - ClearedCapacityZones
-      - SystemResult
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyResult
     Period:
       type: object
       properties:

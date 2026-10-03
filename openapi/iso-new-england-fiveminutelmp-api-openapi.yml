@@ -609,14 +609,9 @@ paths:
           type: string
 components:
   schemas:
-    FiveMinLmps:
-      type: object
-      properties:
-        FiveMinLmp:
-          type: array
-          items:
-            $ref: '#/components/schemas/Lmp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmps
+    FiveMinLmp:
+      $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmp
     Lmp:
       type: object
       properties:
@@ -679,9 +674,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    FiveMinLmp:
-      $ref: '#/components/schemas/Lmp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmp
+    FiveMinLmps:
+      type: object
+      properties:
+        FiveMinLmp:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmps
   securitySchemes:
     basicAuth:
       type: http
