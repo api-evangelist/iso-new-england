@@ -126,14 +126,19 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    HbRegulationOffers:
+    ServiceInfo:
       type: object
       properties:
-        HbRegulationOffer:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbRegulationOffer'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffers
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     HbRegulationOffer:
       type: object
       properties:
@@ -168,19 +173,14 @@ components:
         IntertemporalOpportunityCost:
           type: number
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffer
-    ServiceInfo:
+    HbRegulationOffers:
       type: object
       properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+        HbRegulationOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbRegulationOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffers
   securitySchemes:
     basicAuth:
       type: http

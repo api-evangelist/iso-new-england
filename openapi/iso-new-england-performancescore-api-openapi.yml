@@ -150,14 +150,6 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
-    PerformanceScores:
-      type: object
-      properties:
-        PerformanceScore:
-          type: array
-          items:
-            $ref: '#/components/schemas/PerformanceScore'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScores
     LocationRef:
       type: object
       properties:
@@ -225,6 +217,14 @@ components:
       - Location
       - TradingInterval
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScore
+    PerformanceScores:
+      type: object
+      properties:
+        PerformanceScore:
+          type: array
+          items:
+            $ref: '#/components/schemas/PerformanceScore'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PerformanceScores
     ServiceInfo:
       type: object
       properties:

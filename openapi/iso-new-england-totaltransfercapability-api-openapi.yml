@@ -149,24 +149,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Ttcs:
-      type: object
-      properties:
-        Ttc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Ttc'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttcs
-    TtcLocation:
-      type: object
-      properties:
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        ImportLimitMw:
-          type: number
-        ExportLimitMw:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocation
     LocationRef:
       type: object
       properties:
@@ -209,14 +191,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    TtcLocations:
-      type: object
-      properties:
-        TtcLocation:
-          type: array
-          items:
-            $ref: '#/components/schemas/TtcLocation'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocations
     Ttc:
       type: object
       properties:
@@ -230,6 +204,32 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttc
+    TtcLocations:
+      type: object
+      properties:
+        TtcLocation:
+          type: array
+          items:
+            $ref: '#/components/schemas/TtcLocation'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocations
+    TtcLocation:
+      type: object
+      properties:
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ImportLimitMw:
+          type: number
+        ExportLimitMw:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocation
+    Ttcs:
+      type: object
+      properties:
+        Ttc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ttc'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttcs
   securitySchemes:
     basicAuth:
       type: http

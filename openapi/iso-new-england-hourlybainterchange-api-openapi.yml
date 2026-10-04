@@ -126,24 +126,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    HourlyBAInterchanges:
-      type: object
-      properties:
-        HourlyBAInterchange:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyBAInterchange'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyBAInterchanges
-    InterfaceFlow:
-      type: object
-      properties:
-        BalancingAuthority:
-          type: string
-        ActInterchange:
-          type: number
-      required:
-      - BalancingAuthority
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_InterfaceFlow
     HourlyBAInterchange:
       type: object
       properties:
@@ -170,6 +152,24 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    InterfaceFlow:
+      type: object
+      properties:
+        BalancingAuthority:
+          type: string
+        ActInterchange:
+          type: number
+      required:
+      - BalancingAuthority
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_InterfaceFlow
+    HourlyBAInterchanges:
+      type: object
+      properties:
+        HourlyBAInterchange:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyBAInterchange'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyBAInterchanges
   securitySchemes:
     basicAuth:
       type: http

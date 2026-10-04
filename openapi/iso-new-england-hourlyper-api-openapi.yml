@@ -184,17 +184,6 @@ components:
         HourlyPER:
           type: number
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRent
-    CapacityRef:
-      type: object
-      properties:
-        $:
-          type: string
-          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
-        '@CapacityZoneId':
-          type: integer
-      required:
-      - '@CapacityZoneId'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CapacityRef
     ServiceInfo:
       type: object
       properties:
@@ -216,6 +205,17 @@ components:
           items:
             $ref: '#/components/schemas/HourlyPeakEnergyRent'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyPeakEnergyRents
+    CapacityRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@CapacityZoneId':
+          type: integer
+      required:
+      - '@CapacityZoneId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CapacityRef
   securitySchemes:
     basicAuth:
       type: http

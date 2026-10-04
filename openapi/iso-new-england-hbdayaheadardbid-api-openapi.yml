@@ -126,6 +126,27 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    HbDayAheadArdBids:
+      type: object
+      properties:
+        HbDayAheadArdBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbArdBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadArdBids
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Segment:
       type: object
       properties:
@@ -165,19 +186,6 @@ components:
           - ECONOMIC
           - UNAVAILABLE
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbArdBid
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Segments:
       type: object
       properties:
@@ -186,14 +194,6 @@ components:
           items:
             $ref: '#/components/schemas/Segment'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
-    HbDayAheadArdBids:
-      type: object
-      properties:
-        HbDayAheadArdBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbArdBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadArdBids
   securitySchemes:
     basicAuth:
       type: http

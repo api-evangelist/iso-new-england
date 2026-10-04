@@ -155,6 +155,27 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HbFTRAuctions:
+      type: object
+      properties:
+        HbFTRAuction:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbFTRAuction'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuctions
     HbFTRAuction:
       type: object
       properties:
@@ -216,27 +237,6 @@ components:
         MaskedCustomerId:
           type: integer
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuction
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HbFTRAuctions:
-      type: object
-      properties:
-        HbFTRAuction:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbFTRAuction'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbFTRAuctions
   securitySchemes:
     basicAuth:
       type: http

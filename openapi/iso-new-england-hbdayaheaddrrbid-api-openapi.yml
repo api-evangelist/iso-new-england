@@ -103,18 +103,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Segment2:
+    HbDayAheadDrrBids:
       type: object
       properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
-      required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
+        HbDayAheadDrrBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDrrBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDrrBids
     HbDrrBid:
       type: object
       properties:
@@ -159,6 +155,18 @@ components:
       - Claim30Mw
       - UnitStatus
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDrrBid
+    Segment2:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
     ServiceInfo:
       type: object
       properties:
@@ -180,14 +188,6 @@ components:
           items:
             $ref: '#/components/schemas/Segment2'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
-    HbDayAheadDrrBids:
-      type: object
-      properties:
-        HbDayAheadDrrBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDrrBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDrrBids
   securitySchemes:
     basicAuth:
       type: http

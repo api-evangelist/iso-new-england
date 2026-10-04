@@ -156,6 +156,43 @@ paths:
           type: string
 components:
   schemas:
+    DayAheadLmpAvgCongestion:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        AvgOnPeakDaCongestion:
+          type: number
+        AvgOffPeakDaCongestion:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestion
+    DayAheadLmpAvgCongestions:
+      type: object
+      properties:
+        DayAheadLmpAvgCongestion:
+          type: array
+          items:
+            $ref: '#/components/schemas/DayAheadLmpAvgCongestion'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestions
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -185,43 +222,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    DayAheadLmpAvgCongestions:
-      type: object
-      properties:
-        DayAheadLmpAvgCongestion:
-          type: array
-          items:
-            $ref: '#/components/schemas/DayAheadLmpAvgCongestion'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestions
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    DayAheadLmpAvgCongestion:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        AvgOnPeakDaCongestion:
-          type: number
-        AvgOffPeakDaCongestion:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadLmpAvgCongestion
   securitySchemes:
     basicAuth:
       type: http

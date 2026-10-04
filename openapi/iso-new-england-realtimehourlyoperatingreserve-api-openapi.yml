@@ -248,14 +248,9 @@ components:
       - BeginDate
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_OperatingReserve
-    HourlyRtOperatingReserves:
-      type: object
-      properties:
-        HourlyRtOperatingReserve:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyRtOperatingReserve'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserves
+    HourlyRtOperatingReserve:
+      $ref: '#/components/schemas/OperatingReserve'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserve
     LocationRef:
       type: object
       properties:
@@ -298,9 +293,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyRtOperatingReserve:
-      $ref: '#/components/schemas/OperatingReserve'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserve
+    HourlyRtOperatingReserves:
+      type: object
+      properties:
+        HourlyRtOperatingReserve:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyRtOperatingReserve'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtOperatingReserves
   securitySchemes:
     basicAuth:
       type: http

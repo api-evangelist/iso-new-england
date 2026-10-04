@@ -192,6 +192,45 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    ActualFifteenMinInterchanges:
+      type: object
+      properties:
+        ActualFifteenMinInterchange:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActualFifteenMinInterchange'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchanges
+    ActualFifteenMinInterchange:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ActInterchange:
+          type: number
+        Purchase:
+          type: number
+        Sale:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchange
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -221,45 +260,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    ActualFifteenMinInterchange:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        ActInterchange:
-          type: number
-        Purchase:
-          type: number
-        Sale:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchange
-    ActualFifteenMinInterchanges:
-      type: object
-      properties:
-        ActualFifteenMinInterchange:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActualFifteenMinInterchange'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchanges
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

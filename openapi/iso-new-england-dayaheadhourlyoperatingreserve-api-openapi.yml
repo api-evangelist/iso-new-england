@@ -192,9 +192,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    HourlyDaOperatingReserve:
-      $ref: '#/components/schemas/OperatingReserve'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserve
     OperatingReserve:
       type: object
       properties:
@@ -251,6 +248,9 @@ components:
       - BeginDate
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_OperatingReserve
+    HourlyDaOperatingReserve:
+      $ref: '#/components/schemas/OperatingReserve'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserve
     LocationRef:
       type: object
       properties:
@@ -280,14 +280,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    HourlyDaOperatingReserves:
-      type: object
-      properties:
-        HourlyDaOperatingReserve:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyDaOperatingReserve'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserves
     ServiceInfo:
       type: object
       properties:
@@ -301,6 +293,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlyDaOperatingReserves:
+      type: object
+      properties:
+        HourlyDaOperatingReserve:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyDaOperatingReserve'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaOperatingReserves
   securitySchemes:
     basicAuth:
       type: http

@@ -126,6 +126,27 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
+    HbDayAheadLoadResponseOffers:
+      type: object
+      properties:
+        HbDayAheadLoadResponseOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDayAheadLoadResponseOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffers
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     HbDayAheadLoadResponseOffer:
       type: object
       properties:
@@ -145,27 +166,6 @@ components:
         MinInterruptHours:
           type: integer
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffer
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HbDayAheadLoadResponseOffers:
-      type: object
-      properties:
-        HbDayAheadLoadResponseOffer:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDayAheadLoadResponseOffer'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadLoadResponseOffers
   securitySchemes:
     basicAuth:
       type: http

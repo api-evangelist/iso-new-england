@@ -221,6 +221,27 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    DrDispatches:
+      type: object
+      properties:
+        DrDispatch:
+          type: array
+          items:
+            $ref: '#/components/schemas/DrDispatch'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrDispatches
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     DrDispatch:
       type: object
       properties:
@@ -240,27 +261,6 @@ components:
       - DispatchMw
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrDispatch
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    DrDispatches:
-      type: object
-      properties:
-        DrDispatch:
-          type: array
-          items:
-            $ref: '#/components/schemas/DrDispatch'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DrDispatches
   securitySchemes:
     basicAuth:
       type: http

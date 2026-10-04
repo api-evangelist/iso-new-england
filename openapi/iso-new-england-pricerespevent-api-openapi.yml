@@ -160,14 +160,6 @@ paths:
         description: The location id
 components:
   schemas:
-    PriceRespEvents:
-      type: object
-      properties:
-        PriceRespEvent:
-          type: array
-          items:
-            $ref: '#/components/schemas/PriceRespEvent'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvents
     LocationRef:
       type: object
       properties:
@@ -220,6 +212,14 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvent
+    PriceRespEvents:
+      type: object
+      properties:
+        PriceRespEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceRespEvent'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PriceRespEvents
     ServiceInfo:
       type: object
       properties:

@@ -214,14 +214,6 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    NCPCs:
-      type: object
-      properties:
-        NCPC:
-          type: array
-          items:
-            $ref: '#/components/schemas/NCPC'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCs
     ServiceInfo:
       type: object
       properties:
@@ -235,6 +227,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    NCPCs:
+      type: object
+      properties:
+        NCPC:
+          type: array
+          items:
+            $ref: '#/components/schemas/NCPC'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_NCPCs
     NCPC:
       type: object
       properties:

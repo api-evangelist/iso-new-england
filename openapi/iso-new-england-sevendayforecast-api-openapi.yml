@@ -340,20 +340,31 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    CityWeather:
+    SevenDayForecast:
       type: object
       properties:
-        CityName:
+        BeginDate:
           type: string
-        HighTempF:
-          type: integer
-        DewPointF:
-          type: integer
+          format: date-time
+        MarketDay:
+          type: array
+          items:
+            $ref: '#/components/schemas/MarketDay'
+        CreationDate:
+          type: string
+          format: date-time
       required:
-      - CityName
-      - HighTempF
-      - DewPointF
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CityWeather
+      - BeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecast
+    Weather:
+      type: object
+      properties:
+        CityWeather:
+          type: array
+          items:
+            $ref: '#/components/schemas/CityWeather'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Weather
     MarketDay:
       type: object
       properties:
@@ -456,31 +467,6 @@ components:
       - Weather
       - '@Day'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDay
-    SevenDayForecast:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        MarketDay:
-          type: array
-          items:
-            $ref: '#/components/schemas/MarketDay'
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - BeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecast
-    SevenDayForecasts:
-      type: object
-      properties:
-        SevenDayForecast:
-          type: array
-          items:
-            $ref: '#/components/schemas/SevenDayForecast'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecasts
     ServiceInfo:
       type: object
       properties:
@@ -494,14 +480,28 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Weather:
+    SevenDayForecasts:
       type: object
       properties:
-        CityWeather:
+        SevenDayForecast:
           type: array
           items:
-            $ref: '#/components/schemas/CityWeather'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Weather
+            $ref: '#/components/schemas/SevenDayForecast'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayForecasts
+    CityWeather:
+      type: object
+      properties:
+        CityName:
+          type: string
+        HighTempF:
+          type: integer
+        DewPointF:
+          type: integer
+      required:
+      - CityName
+      - HighTempF
+      - DewPointF
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CityWeather
   securitySchemes:
     basicAuth:
       type: http

@@ -221,6 +221,27 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    FinalHourlyReservePrices:
+      type: object
+      properties:
+        FinalHourlyReservePrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/FinalHourlyReservePrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrices
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     ReservePrice:
       type: object
       properties:
@@ -258,27 +279,6 @@ components:
     FinalHourlyReservePrice:
       $ref: '#/components/schemas/ReservePrice'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrice
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    FinalHourlyReservePrices:
-      type: object
-      properties:
-        FinalHourlyReservePrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/FinalHourlyReservePrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FinalHourlyReservePrices
   securitySchemes:
     basicAuth:
       type: http

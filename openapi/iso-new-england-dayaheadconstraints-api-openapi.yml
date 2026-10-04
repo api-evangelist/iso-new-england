@@ -138,6 +138,27 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    DayAheadConstraints:
+      type: object
+      properties:
+        DayAheadConstraint:
+          type: array
+          items:
+            $ref: '#/components/schemas/DayAheadConstraint'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraints
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Constraint:
       type: object
       properties:
@@ -160,27 +181,6 @@ components:
       - BeginDate
       - ConstraintName
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Constraint
-    DayAheadConstraints:
-      type: object
-      properties:
-        DayAheadConstraint:
-          type: array
-          items:
-            $ref: '#/components/schemas/DayAheadConstraint'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraints
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     DayAheadConstraint:
       $ref: '#/components/schemas/Constraint'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadConstraint

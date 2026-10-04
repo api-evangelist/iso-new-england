@@ -126,6 +126,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    HbDayAheadEnergyOffers:
+      type: object
+      properties:
+        HbDayAheadEnergyOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbEnergyOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadEnergyOffers
     Segment:
       type: object
       properties:
@@ -138,35 +146,6 @@ components:
       required:
       - '@Number'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HbDayAheadEnergyOffers:
-      type: object
-      properties:
-        HbDayAheadEnergyOffer:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbEnergyOffer'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadEnergyOffers
-    Segments:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
     HbEnergyOffer:
       type: object
       properties:
@@ -206,6 +185,27 @@ components:
           - ECONOMIC
           - UNAVAILABLE
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbEnergyOffer
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
   securitySchemes:
     basicAuth:
       type: http

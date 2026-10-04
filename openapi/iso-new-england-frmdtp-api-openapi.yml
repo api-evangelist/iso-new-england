@@ -155,14 +155,19 @@ paths:
           type: string
 components:
   schemas:
-    DailyFrmThresholdPrices:
+    ServiceInfo:
       type: object
       properties:
-        DailyFrmThresholdPrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/DailyFrmThresholdPrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrices
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     DailyFrmThresholdPrice:
       type: object
       properties:
@@ -181,19 +186,14 @@ components:
       - FuelIndex
       - ForwardReserveThresholdPrice
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrice
-    ServiceInfo:
+    DailyFrmThresholdPrices:
       type: object
       properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+        DailyFrmThresholdPrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyFrmThresholdPrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyFrmThresholdPrices
   securitySchemes:
     basicAuth:
       type: http

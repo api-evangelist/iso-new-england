@@ -126,6 +126,27 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
+    Hbfcmmras:
+      type: object
+      properties:
+        Hbfcmmra:
+          type: array
+          items:
+            $ref: '#/components/schemas/Hbfcmmra'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmmras
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Hbfcmmra:
       type: object
       properties:
@@ -169,27 +190,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmmra
-    Hbfcmmras:
-      type: object
-      properties:
-        Hbfcmmra:
-          type: array
-          items:
-            $ref: '#/components/schemas/Hbfcmmra'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Hbfcmmras
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

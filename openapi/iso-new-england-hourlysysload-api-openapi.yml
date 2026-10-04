@@ -274,14 +274,19 @@ components:
       - BeginDate
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoad
-    HourlySystemLoads:
+    ServiceInfo:
       type: object
       properties:
-        HourlySystemLoad:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlySystemLoad'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -311,19 +316,14 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    ServiceInfo:
+    HourlySystemLoads:
       type: object
       properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+        HourlySystemLoad:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlySystemLoad'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
   securitySchemes:
     basicAuth:
       type: http

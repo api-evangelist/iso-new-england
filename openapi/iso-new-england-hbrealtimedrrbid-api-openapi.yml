@@ -103,26 +103,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    HbRealTimeDrrBids:
-      type: object
-      properties:
-        HbRealTimeDrrBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDrrBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
-    Segment2:
-      type: object
-      properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
-      required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
     HbDrrBid:
       type: object
       properties:
@@ -167,6 +147,26 @@ components:
       - Claim30Mw
       - UnitStatus
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDrrBid
+    Segment2:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
+    HbRealTimeDrrBids:
+      type: object
+      properties:
+        HbRealTimeDrrBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDrrBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
     ServiceInfo:
       type: object
       properties:

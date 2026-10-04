@@ -109,6 +109,27 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    CombinedHourlyDemands:
+      type: object
+      properties:
+        CombinedHourlyDemand:
+          type: array
+          items:
+            $ref: '#/components/schemas/CombinedHourlyDemand'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CombinedHourlyDemands
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -154,27 +175,6 @@ components:
       - BeginDate
       - Location
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CombinedHourlyDemand
-    CombinedHourlyDemands:
-      type: object
-      properties:
-        CombinedHourlyDemand:
-          type: array
-          items:
-            $ref: '#/components/schemas/CombinedHourlyDemand'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CombinedHourlyDemands
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
   securitySchemes:
     basicAuth:
       type: http

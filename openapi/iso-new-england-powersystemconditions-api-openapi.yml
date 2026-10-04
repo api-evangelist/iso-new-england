@@ -137,14 +137,6 @@ paths:
       x-xml-element: Years
 components:
   schemas:
-    PowerSystemConditions:
-      type: object
-      properties:
-        PowerSystemCondition:
-          type: array
-          items:
-            $ref: '#/components/schemas/PowerSystemCondition'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemConditions
     Years:
       type: object
       properties:
@@ -153,6 +145,14 @@ components:
           items:
             type: string
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Years
+    PowerSystemConditions:
+      type: object
+      properties:
+        PowerSystemCondition:
+          type: array
+          items:
+            $ref: '#/components/schemas/PowerSystemCondition'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemConditions
     PowerSystemCondition:
       type: object
       properties:

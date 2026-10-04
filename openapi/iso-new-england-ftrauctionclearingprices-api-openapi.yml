@@ -155,14 +155,6 @@ paths:
           type: string
 components:
   schemas:
-    FtrAuctionClearingPrices:
-      type: object
-      properties:
-        FtrAuctionClearingPrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/FtrAuctionClearingPrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FtrAuctionClearingPrices
     LocationRef:
       type: object
       properties:
@@ -192,6 +184,14 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    FtrAuctionClearingPrices:
+      type: object
+      properties:
+        FtrAuctionClearingPrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/FtrAuctionClearingPrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FtrAuctionClearingPrices
     ServiceInfo:
       type: object
       properties:

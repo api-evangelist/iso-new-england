@@ -682,26 +682,6 @@ paths:
       x-xml-element: HourlyLmps
 components:
   schemas:
-    Lmp:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        LmpTotal:
-          type: number
-        EnergyComponent:
-          type: number
-        CongestionComponent:
-          type: number
-        LossComponent:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
     HourlyLmps:
       type: object
       properties:
@@ -710,6 +690,9 @@ components:
           items:
             $ref: '#/components/schemas/HourlyLmp'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmps
+    HourlyLmp:
+      $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmp
     LocationRef:
       type: object
       properties:
@@ -739,6 +722,26 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    Lmp:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        LmpTotal:
+          type: number
+        EnergyComponent:
+          type: number
+        CongestionComponent:
+          type: number
+        LossComponent:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
     ServiceInfo:
       type: object
       properties:
@@ -752,9 +755,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyLmp:
-      $ref: '#/components/schemas/Lmp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyLmp
   securitySchemes:
     basicAuth:
       type: http

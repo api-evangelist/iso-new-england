@@ -103,6 +103,38 @@ paths:
         description: The month to retrieve data for (YYYYMM) for a season
 components:
   schemas:
+    ReserveLocRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReserveLocRef
+    HbForwardReserveAuctionOffers:
+      type: object
+      properties:
+        HbForwardReserveAuctionOffer:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbForwardReserveAuctionOffer'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffers
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     Segment:
       type: object
       properties:
@@ -132,27 +164,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffer
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HbForwardReserveAuctionOffers:
-      type: object
-      properties:
-        HbForwardReserveAuctionOffer:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbForwardReserveAuctionOffer'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffers
     Segments:
       type: object
       properties:
@@ -161,17 +172,6 @@ components:
           items:
             $ref: '#/components/schemas/Segment'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
-    ReserveLocRef:
-      type: object
-      properties:
-        $:
-          type: string
-          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
-        '@LocId':
-          type: integer
-      required:
-      - '@LocId'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReserveLocRef
   securitySchemes:
     basicAuth:
       type: http

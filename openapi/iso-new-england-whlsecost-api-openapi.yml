@@ -268,14 +268,6 @@ paths:
           type: string
 components:
   schemas:
-    WhlseCosts:
-      type: object
-      properties:
-        WhlseCost:
-          type: array
-          items:
-            $ref: '#/components/schemas/WhlseCost'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCosts
     LocationRef:
       type: object
       properties:
@@ -305,6 +297,14 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    WhlseCosts:
+      type: object
+      properties:
+        WhlseCost:
+          type: array
+          items:
+            $ref: '#/components/schemas/WhlseCost'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCosts
     ServiceInfo:
       type: object
       properties:

@@ -609,29 +609,6 @@ paths:
           type: string
 components:
   schemas:
-    FiveMinLmp:
-      $ref: '#/components/schemas/Lmp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmp
-    Lmp:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        LmpTotal:
-          type: number
-        EnergyComponent:
-          type: number
-        CongestionComponent:
-          type: number
-        LossComponent:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
     LocationRef:
       type: object
       properties:
@@ -661,6 +638,26 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    Lmp:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        LmpTotal:
+          type: number
+        EnergyComponent:
+          type: number
+        CongestionComponent:
+          type: number
+        LossComponent:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Lmp
     ServiceInfo:
       type: object
       properties:
@@ -682,6 +679,9 @@ components:
           items:
             $ref: '#/components/schemas/Lmp'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmps
+    FiveMinLmp:
+      $ref: '#/components/schemas/Lmp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinLmp
   securitySchemes:
     basicAuth:
       type: http

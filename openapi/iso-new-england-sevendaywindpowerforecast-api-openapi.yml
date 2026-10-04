@@ -126,28 +126,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    MarketDateInfo:
-      type: object
-      properties:
-        MarketDateData:
-          type: array
-          items:
-            $ref: '#/components/schemas/MarketDateData'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDateInfo
-    MarketDays:
-      type: object
-      properties:
-        MarketDate:
-          type: string
-          format: date-time
-        MarketDateInfo:
-          $ref: '#/components/schemas/MarketDateInfo'
-        '@Day':
-          type: integer
-      required:
-      - MarketDate
-      - '@Day'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDays
     MarketDateData:
       type: object
       properties:
@@ -166,19 +144,20 @@ components:
           items:
             $ref: '#/components/schemas/SevenDayWindForecast'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayWindForecasts
-    ServiceInfo:
+    MarketDays:
       type: object
       properties:
-        LatestBeginDate:
+        MarketDate:
           type: string
           format: date-time
-        CreationDate:
-          type: string
-          format: date-time
+        MarketDateInfo:
+          $ref: '#/components/schemas/MarketDateInfo'
+        '@Day':
+          type: integer
       required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+      - MarketDate
+      - '@Day'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDays
     SevenDayWindForecast:
       type: object
       properties:
@@ -193,6 +172,27 @@ components:
           type: string
           format: date-time
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_SevenDayWindForecast
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    MarketDateInfo:
+      type: object
+      properties:
+        MarketDateData:
+          type: array
+          items:
+            $ref: '#/components/schemas/MarketDateData'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MarketDateInfo
   securitySchemes:
     basicAuth:
       type: http
