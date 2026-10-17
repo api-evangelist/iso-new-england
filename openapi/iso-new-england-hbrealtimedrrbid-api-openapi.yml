@@ -103,6 +103,35 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HbRealTimeDrrBids:
+      type: object
+      properties:
+        HbRealTimeDrrBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDrrBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
+    Segments2:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment2'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
     HbDrrBid:
       type: object
       properties:
@@ -159,35 +188,6 @@ components:
       required:
       - '@Number'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment2
-    HbRealTimeDrrBids:
-      type: object
-      properties:
-        HbRealTimeDrrBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDrrBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeDrrBids
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Segments2:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment2'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments2
   securitySchemes:
     basicAuth:
       type: http

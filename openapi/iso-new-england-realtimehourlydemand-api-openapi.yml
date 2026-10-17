@@ -239,6 +239,9 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    HourlyRtDemand:
+      $ref: '#/components/schemas/Demand'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtDemand
     LocationRef:
       type: object
       properties:
@@ -281,9 +284,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyRtDemand:
-      $ref: '#/components/schemas/Demand'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRtDemand
     Demand:
       type: object
       properties:

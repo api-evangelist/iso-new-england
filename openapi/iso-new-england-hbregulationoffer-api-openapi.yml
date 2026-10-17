@@ -126,19 +126,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     HbRegulationOffer:
       type: object
       properties:
@@ -173,6 +160,19 @@ components:
         IntertemporalOpportunityCost:
           type: number
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRegulationOffer
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     HbRegulationOffers:
       type: object
       properties:

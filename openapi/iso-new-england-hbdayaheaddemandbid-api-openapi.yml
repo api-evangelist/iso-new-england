@@ -193,6 +193,47 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    HbDayAheadDemandBids:
+      type: object
+      properties:
+        HbDayAheadDemandBid:
+          type: array
+          items:
+            $ref: '#/components/schemas/HbDayAheadDemandBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBids
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    Segment:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
     HbDayAheadDemandBid:
       type: object
       properties:
@@ -228,47 +269,6 @@ components:
         Segments:
           $ref: '#/components/schemas/Segments'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBid
-    Segment:
-      type: object
-      properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
-      required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
-    HbDayAheadDemandBids:
-      type: object
-      properties:
-        HbDayAheadDemandBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbDayAheadDemandBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbDayAheadDemandBids
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Segments:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
   securitySchemes:
     basicAuth:
       type: http

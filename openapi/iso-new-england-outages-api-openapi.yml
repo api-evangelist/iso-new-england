@@ -711,25 +711,6 @@ paths:
           type: string
 components:
   schemas:
-    Station:
-      type: object
-      properties:
-        StationName:
-          type: string
-        StationType:
-          type: string
-      required:
-      - StationName
-      - StationType
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Station
-    Outages:
-      type: object
-      properties:
-        Outage:
-          type: array
-          items:
-            $ref: '#/components/schemas/Outage'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outages
     ServiceInfo:
       type: object
       properties:
@@ -743,14 +724,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Stations:
+    Outages:
       type: object
       properties:
-        Station:
+        Outage:
           type: array
           items:
-            $ref: '#/components/schemas/Station'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Stations
+            $ref: '#/components/schemas/Outage'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outages
     Outage:
       type: object
       properties:
@@ -814,6 +795,25 @@ components:
       - AppNumber
       - Company1
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Outage
+    Station:
+      type: object
+      properties:
+        StationName:
+          type: string
+        StationType:
+          type: string
+      required:
+      - StationName
+      - StationType
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Station
+    Stations:
+      type: object
+      properties:
+        Station:
+          type: array
+          items:
+            $ref: '#/components/schemas/Station'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Stations
   securitySchemes:
     basicAuth:
       type: http

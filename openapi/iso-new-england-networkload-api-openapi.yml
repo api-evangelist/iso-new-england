@@ -125,14 +125,6 @@ paths:
           type: string
 components:
   schemas:
-    MonthlyNetworkLoads:
-      type: object
-      properties:
-        MonthlyNetworkLoad:
-          type: array
-          items:
-            $ref: '#/components/schemas/MonthlyNetworkLoad'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyNetworkLoads
     ServiceInfo:
       type: object
       properties:
@@ -177,6 +169,14 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyNetworkLoad
+    MonthlyNetworkLoads:
+      type: object
+      properties:
+        MonthlyNetworkLoad:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonthlyNetworkLoad'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MonthlyNetworkLoads
   securitySchemes:
     basicAuth:
       type: http

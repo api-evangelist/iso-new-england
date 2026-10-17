@@ -103,6 +103,56 @@ paths:
         description: The month to retrieve data for (YYYYMM) for a season
 components:
   schemas:
+    HbForwardReserveAuctionOffer:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        MaskedCustomerId:
+          type: integer
+        ReserveZone:
+          $ref: '#/components/schemas/ReserveLocRef'
+        ProductType:
+          type: string
+        Segments:
+          $ref: '#/components/schemas/Segments'
+      required:
+      - BeginDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffer
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    Segments:
+      type: object
+      properties:
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+    Segment:
+      type: object
+      properties:
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
     ReserveLocRef:
       type: object
       properties:
@@ -122,56 +172,6 @@ components:
           items:
             $ref: '#/components/schemas/HbForwardReserveAuctionOffer'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffers
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Segment:
-      type: object
-      properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
-      required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
-    HbForwardReserveAuctionOffer:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        MaskedCustomerId:
-          type: integer
-        ReserveZone:
-          $ref: '#/components/schemas/ReserveLocRef'
-        ProductType:
-          type: string
-        Segments:
-          $ref: '#/components/schemas/Segments'
-      required:
-      - BeginDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbForwardReserveAuctionOffer
-    Segments:
-      type: object
-      properties:
-        Segment:
-          type: array
-          items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
   securitySchemes:
     basicAuth:
       type: http

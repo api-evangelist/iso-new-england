@@ -150,14 +150,6 @@ paths:
           type: string
 components:
   schemas:
-    RealTimeConstraints:
-      type: object
-      properties:
-        RealTimeConstraint:
-          type: array
-          items:
-            $ref: '#/components/schemas/RealTimeConstraint'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraints
     ServiceInfo:
       type: object
       properties:
@@ -171,6 +163,9 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    RealTimeConstraint:
+      $ref: '#/components/schemas/Constraint'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraint
     Constraint:
       type: object
       properties:
@@ -193,9 +188,14 @@ components:
       - BeginDate
       - ConstraintName
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Constraint
-    RealTimeConstraint:
-      $ref: '#/components/schemas/Constraint'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraint
+    RealTimeConstraints:
+      type: object
+      properties:
+        RealTimeConstraint:
+          type: array
+          items:
+            $ref: '#/components/schemas/RealTimeConstraint'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_RealTimeConstraints
   securitySchemes:
     basicAuth:
       type: http

@@ -372,14 +372,19 @@ paths:
           type: string
 components:
   schemas:
-    LmpIndexes:
+    ServiceInfo:
       type: object
       properties:
-        LmpIndex:
-          type: array
-          items:
-            $ref: '#/components/schemas/LmpIndex'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LmpIndexes
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LmpIndex:
       type: object
       properties:
@@ -401,19 +406,6 @@ components:
       - OffPeak
       - Average
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LmpIndex
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
     LocationRef:
       type: object
       properties:
@@ -443,6 +435,14 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    LmpIndexes:
+      type: object
+      properties:
+        LmpIndex:
+          type: array
+          items:
+            $ref: '#/components/schemas/LmpIndex'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LmpIndexes
   securitySchemes:
     basicAuth:
       type: http

@@ -182,6 +182,32 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    ActualInterchange:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ActInterchange:
+          type: number
+        Purchase:
+          type: number
+        Sale:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchange
+    ActualInterchanges:
+      type: object
+      properties:
+        ActualInterchange:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActualInterchange'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchanges
     LocationRef:
       type: object
       properties:
@@ -224,32 +250,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    ActualInterchange:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        ActInterchange:
-          type: number
-        Purchase:
-          type: number
-        Sale:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchange
-    ActualInterchanges:
-      type: object
-      properties:
-        ActualInterchange:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActualInterchange'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualInterchanges
   securitySchemes:
     basicAuth:
       type: http

@@ -284,34 +284,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    TieDelivery:
+    MorningReports:
       type: object
       properties:
-        TieName:
-          type: string
-        TieFlowMw:
-          type: number
-      required:
-      - TieName
-      - TieFlowMw
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TieDelivery
-    InterchangeDetail:
-      type: object
-      properties:
-        TieName:
-          type: string
-        ImportLimitInMw:
-          type: number
-        ExportLimitOutMw:
-          type: number
-        ScheduledMw:
-          type: number
-      required:
-      - TieName
-      - ImportLimitInMw
-      - ExportLimitOutMw
-      - ScheduledMw
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_InterchangeDetail
+        MorningReport:
+          type: array
+          items:
+            $ref: '#/components/schemas/MorningReport'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MorningReports
     CityForecastDetail:
       type: object
       properties:
@@ -329,14 +309,6 @@ components:
       - WeatherConditions
       - WindDirSpeed
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_CityForecastDetail
-    MorningReports:
-      type: object
-      properties:
-        MorningReport:
-          type: array
-          items:
-            $ref: '#/components/schemas/MorningReport'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_MorningReports
     ServiceInfo:
       type: object
       properties:
@@ -350,6 +322,34 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    InterchangeDetail:
+      type: object
+      properties:
+        TieName:
+          type: string
+        ImportLimitInMw:
+          type: number
+        ExportLimitOutMw:
+          type: number
+        ScheduledMw:
+          type: number
+      required:
+      - TieName
+      - ImportLimitInMw
+      - ExportLimitOutMw
+      - ScheduledMw
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_InterchangeDetail
+    TieDelivery:
+      type: object
+      properties:
+        TieName:
+          type: string
+        TieFlowMw:
+          type: number
+      required:
+      - TieName
+      - TieFlowMw
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TieDelivery
     MorningReport:
       type: object
       properties:

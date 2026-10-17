@@ -73,16 +73,6 @@ paths:
       x-xml-element: PowerSystemStatus
 components:
   schemas:
-    PowerSystemStatus:
-      type: object
-      properties:
-        Op4Alerts:
-          $ref: '#/components/schemas/Op4Alerts'
-        PowerSystemRegions:
-          $ref: '#/components/schemas/PowerSystemRegions'
-      required:
-      - PowerSystemRegions
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemStatus
     Op4Alert:
       type: object
       properties:
@@ -126,6 +116,24 @@ components:
       - TimeIn
       - TimeOut
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Op4Alert
+    PowerSystemRegions:
+      type: object
+      properties:
+        PowerSystemRegion:
+          type: array
+          items:
+            $ref: '#/components/schemas/PowerSystemRegion'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegions
+    PowerSystemStatus:
+      type: object
+      properties:
+        Op4Alerts:
+          $ref: '#/components/schemas/Op4Alerts'
+        PowerSystemRegions:
+          $ref: '#/components/schemas/PowerSystemRegions'
+      required:
+      - PowerSystemRegions
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemStatus
     PowerSystemRegion:
       type: object
       properties:
@@ -157,14 +165,6 @@ components:
       - StatusDescription
       - DateUpdated
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegion
-    PowerSystemRegions:
-      type: object
-      properties:
-        PowerSystemRegion:
-          type: array
-          items:
-            $ref: '#/components/schemas/PowerSystemRegion'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PowerSystemRegions
     Op4Alerts:
       type: object
       properties:

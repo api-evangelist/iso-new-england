@@ -221,6 +221,9 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    PrelimHourlyReservePrice:
+      $ref: '#/components/schemas/ReservePrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrice
     ServiceInfo:
       type: object
       properties:
@@ -234,9 +237,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    PrelimHourlyReservePrice:
-      $ref: '#/components/schemas/ReservePrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_PrelimHourlyReservePrice
     PrelimHourlyReservePrices:
       type: object
       properties:

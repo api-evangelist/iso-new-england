@@ -280,14 +280,6 @@ components:
       - GenMw
       - FuelCategoryRollup
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMix
-    GenFuelMixes:
-      type: object
-      properties:
-        GenFuelMix:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenFuelMix'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMixes
     ServiceInfo:
       type: object
       properties:
@@ -301,6 +293,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    GenFuelMixes:
+      type: object
+      properties:
+        GenFuelMix:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenFuelMix'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_GenFuelMixes
   securitySchemes:
     basicAuth:
       type: http

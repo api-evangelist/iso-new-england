@@ -158,14 +158,17 @@ paths:
           type: string
 components:
   schemas:
-    DayAheadPrdClearings:
+    DayAheadPrdClearing:
       type: object
       properties:
-        DayAheadPrdClearing:
-          type: array
-          items:
-            $ref: '#/components/schemas/DayAheadPrdClearing'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearings
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        DaClearedMw:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearing
     ServiceInfo:
       type: object
       properties:
@@ -179,17 +182,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    DayAheadPrdClearing:
+    DayAheadPrdClearings:
       type: object
       properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        DaClearedMw:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearing
+        DayAheadPrdClearing:
+          type: array
+          items:
+            $ref: '#/components/schemas/DayAheadPrdClearing'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DayAheadPrdClearings
     LocationRef:
       type: object
       properties:

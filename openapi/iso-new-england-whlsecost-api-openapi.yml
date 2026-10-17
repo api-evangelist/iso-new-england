@@ -268,35 +268,6 @@ paths:
           type: string
 components:
   schemas:
-    LocationRef:
-      type: object
-      properties:
-        $:
-          type: string
-          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
-        '@LocId':
-          type: integer
-        '@LocType':
-          type: string
-          enum:
-          - NETWORK AREA
-          - LOAD ZONE
-          - NETWORK NODE
-          - HUB
-          - HUB NODE
-          - RELIABILITY REGION
-          - EXT. NODE
-          - RESERVE ZONE
-          - SYSTEM
-          - INT. AREA
-          - EXT. AREA
-          - DISPATCH ZONE
-          - CAPACITY ZONE
-          - DRRAZ
-          - DRR AGGREGATION ZONE
-      required:
-      - '@LocId'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
     WhlseCosts:
       type: object
       properties:
@@ -369,6 +340,35 @@ components:
       - Hour
       - OnOff
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_WhlseCost
+    LocationRef:
+      type: object
+      properties:
+        $:
+          type: string
+          description: Element text value (serialized as "$" in the JSON representation, per observed API responses).
+        '@LocId':
+          type: integer
+        '@LocType':
+          type: string
+          enum:
+          - NETWORK AREA
+          - LOAD ZONE
+          - NETWORK NODE
+          - HUB
+          - HUB NODE
+          - RELIABILITY REGION
+          - EXT. NODE
+          - RESERVE ZONE
+          - SYSTEM
+          - INT. AREA
+          - EXT. AREA
+          - DISPATCH ZONE
+          - CAPACITY ZONE
+          - DRRAZ
+          - DRR AGGREGATION ZONE
+      required:
+      - '@LocId'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
   securitySchemes:
     basicAuth:
       type: http

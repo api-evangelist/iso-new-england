@@ -434,6 +434,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    FiveMinReservePrices:
+      type: object
+      properties:
+        FiveMinReservePrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/FiveMinReservePrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinReservePrices
     ReservePrice:
       type: object
       properties:
@@ -468,14 +476,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ReservePrice
-    FiveMinReservePrices:
-      type: object
-      properties:
-        FiveMinReservePrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/FiveMinReservePrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_FiveMinReservePrices
   securitySchemes:
     basicAuth:
       type: http

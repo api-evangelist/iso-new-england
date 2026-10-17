@@ -257,6 +257,9 @@ components:
           items:
             $ref: '#/components/schemas/HourlyDaDemand'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemands
+    HourlyDaDemand:
+      $ref: '#/components/schemas/Demand'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemand
     LocationRef:
       type: object
       properties:
@@ -299,9 +302,6 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyDaDemand:
-      $ref: '#/components/schemas/Demand'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyDaDemand
     Demand:
       type: object
       properties:

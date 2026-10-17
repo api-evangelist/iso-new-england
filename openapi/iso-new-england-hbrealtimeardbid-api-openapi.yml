@@ -126,14 +126,14 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    Segments:
+    HbRealTimeArdBids:
       type: object
       properties:
-        Segment:
+        HbRealTimeArdBid:
           type: array
           items:
-            $ref: '#/components/schemas/Segment'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
+            $ref: '#/components/schemas/HbArdBid'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeArdBids
     ServiceInfo:
       type: object
       properties:
@@ -147,18 +147,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    Segment:
+    Segments:
       type: object
       properties:
-        Price:
-          type: number
-        Mw:
-          type: number
-        '@Number':
-          type: integer
-      required:
-      - '@Number'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
+        Segment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segments
     HbArdBid:
       type: object
       properties:
@@ -186,14 +182,18 @@ components:
           - ECONOMIC
           - UNAVAILABLE
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbArdBid
-    HbRealTimeArdBids:
+    Segment:
       type: object
       properties:
-        HbRealTimeArdBid:
-          type: array
-          items:
-            $ref: '#/components/schemas/HbArdBid'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HbRealTimeArdBids
+        Price:
+          type: number
+        Mw:
+          type: number
+        '@Number':
+          type: integer
+      required:
+      - '@Number'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Segment
   securitySchemes:
     basicAuth:
       type: http

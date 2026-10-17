@@ -256,24 +256,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    HourlySystemLoad:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        Load:
-          type: number
-        NativeLoad:
-          type: number
-        ArdDemand:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoad
     ServiceInfo:
       type: object
       properties:
@@ -287,6 +269,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlySystemLoads:
+      type: object
+      properties:
+        HourlySystemLoad:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlySystemLoad'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
     LocationRef:
       type: object
       properties:
@@ -316,14 +306,24 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
-    HourlySystemLoads:
+    HourlySystemLoad:
       type: object
       properties:
-        HourlySystemLoad:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlySystemLoad'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoads
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        Load:
+          type: number
+        NativeLoad:
+          type: number
+        ArdDemand:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlySystemLoad
   securitySchemes:
     basicAuth:
       type: http

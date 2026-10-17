@@ -156,14 +156,6 @@ paths:
         description: The month to retrieve data for (YYYYMM)
 components:
   schemas:
-    DailyOfferThreshPrices:
-      type: object
-      properties:
-        DailyOfferThreshPrice:
-          type: array
-          items:
-            $ref: '#/components/schemas/DailyOfferThreshPrice'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyOfferThreshPrices
     ServiceInfo:
       type: object
       properties:
@@ -177,6 +169,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    DailyOfferThreshPrices:
+      type: object
+      properties:
+        DailyOfferThreshPrice:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyOfferThreshPrice'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_DailyOfferThreshPrices
     DailyOfferThreshPrice:
       type: object
       properties:

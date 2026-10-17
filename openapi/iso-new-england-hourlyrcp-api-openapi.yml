@@ -224,6 +224,30 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
+    HourlyRcp:
+      $ref: '#/components/schemas/Rcp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcp
+    ServiceInfo:
+      type: object
+      properties:
+        LatestBeginDate:
+          type: string
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+      required:
+      - LatestBeginDate
+      - CreationDate
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    HourlyRcps:
+      type: object
+      properties:
+        HourlyRcp:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyRcp'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcps
     Rcp:
       type: object
       properties:
@@ -241,30 +265,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Rcp
-    HourlyRcps:
-      type: object
-      properties:
-        HourlyRcp:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyRcp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcps
-    ServiceInfo:
-      type: object
-      properties:
-        LatestBeginDate:
-          type: string
-          format: date-time
-        CreationDate:
-          type: string
-          format: date-time
-      required:
-      - LatestBeginDate
-      - CreationDate
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
-    HourlyRcp:
-      $ref: '#/components/schemas/Rcp'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_HourlyRcp
   securitySchemes:
     basicAuth:
       type: http

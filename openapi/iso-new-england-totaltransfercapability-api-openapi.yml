@@ -191,6 +191,16 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    TtcLocation:
+      type: object
+      properties:
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ImportLimitMw:
+          type: number
+        ExportLimitMw:
+          type: number
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocation
     Ttc:
       type: object
       properties:
@@ -204,24 +214,6 @@ components:
       required:
       - BeginDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttc
-    TtcLocations:
-      type: object
-      properties:
-        TtcLocation:
-          type: array
-          items:
-            $ref: '#/components/schemas/TtcLocation'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocations
-    TtcLocation:
-      type: object
-      properties:
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        ImportLimitMw:
-          type: number
-        ExportLimitMw:
-          type: number
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocation
     Ttcs:
       type: object
       properties:
@@ -230,6 +222,14 @@ components:
           items:
             $ref: '#/components/schemas/Ttc'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_Ttcs
+    TtcLocations:
+      type: object
+      properties:
+        TtcLocation:
+          type: array
+          items:
+            $ref: '#/components/schemas/TtcLocation'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_TtcLocations
   securitySchemes:
     basicAuth:
       type: http

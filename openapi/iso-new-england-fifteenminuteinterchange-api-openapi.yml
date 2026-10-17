@@ -192,32 +192,6 @@ paths:
       x-xml-element: ServiceInfo
 components:
   schemas:
-    ActualFifteenMinInterchanges:
-      type: object
-      properties:
-        ActualFifteenMinInterchange:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActualFifteenMinInterchange'
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchanges
-    ActualFifteenMinInterchange:
-      type: object
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-        Location:
-          $ref: '#/components/schemas/LocationRef'
-        ActInterchange:
-          type: number
-        Purchase:
-          type: number
-        Sale:
-          type: number
-      required:
-      - BeginDate
-      - Location
-      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchange
     ServiceInfo:
       type: object
       properties:
@@ -231,6 +205,14 @@ components:
       - LatestBeginDate
       - CreationDate
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ServiceInfo
+    ActualFifteenMinInterchanges:
+      type: object
+      properties:
+        ActualFifteenMinInterchange:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActualFifteenMinInterchange'
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchanges
     LocationRef:
       type: object
       properties:
@@ -260,6 +242,24 @@ components:
       required:
       - '@LocId'
       x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_LocationRef
+    ActualFifteenMinInterchange:
+      type: object
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+        Location:
+          $ref: '#/components/schemas/LocationRef'
+        ActInterchange:
+          type: number
+        Purchase:
+          type: number
+        Sale:
+          type: number
+      required:
+      - BeginDate
+      - Location
+      x-xsd-source: schemas/iso-new-england-web-services-ns0.xsd#type_ActualFifteenMinInterchange
   securitySchemes:
     basicAuth:
       type: http
